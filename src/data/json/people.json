@@ -15,7 +15,7 @@
     "relation": "Great-grandmother",
     "gender": "f",
     "lifespan": "1898–1972",
-    "avatarSrc": "/photos/avatar-klara.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-klara.jpg",
     "photoCount": 13,
     "suggestedMatchPhotoId": "county-fair-1937"
   },
@@ -34,7 +34,7 @@
     "relation": "Grandmother",
     "gender": "f",
     "lifespan": "b. 1931",
-    "avatarSrc": "/photos/avatar-sarah.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-sarah.jpg",
     "photoCount": 19
   },
   {
@@ -68,7 +68,7 @@
     "relation": "Grandfather",
     "gender": "m",
     "lifespan": "1928–2009",
-    "avatarSrc": "/photos/avatar-tom.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-tom.jpg",
     "photoCount": 14
   },
   {

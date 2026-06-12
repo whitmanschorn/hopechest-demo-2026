@@ -20,7 +20,10 @@ import path from "node:path";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const SEED = path.join(ROOT, "src", "data", "seed");
 const OUT = path.join(ROOT, "src", "data", "json");
-const MANIFEST = path.join(ROOT, "scripts", "staging", "manifest.json");
+// Prefer the committed manifest (with blob URLs); fall back to fresh staging.
+const COMMITTED_MANIFEST = path.join(ROOT, "scripts", "image-manifest.json");
+const STAGING_MANIFEST = path.join(ROOT, "scripts", "staging", "manifest.json");
+const MANIFEST = existsSync(COMMITTED_MANIFEST) ? COMMITTED_MANIFEST : STAGING_MANIFEST;
 
 const read = (dir, name) => JSON.parse(readFileSync(path.join(dir, name), "utf8"));
 const anchor = (name) => structuredClone(read(SEED, `${name}.json`));
@@ -79,7 +82,7 @@ if (!existsSync(MANIFEST)) {
   console.error(`Missing ${MANIFEST}. Run fetch-archive.py + process-archive.py first.`);
   process.exit(1);
 }
-const manifest = read(path.dirname(MANIFEST), "manifest.json");
+const manifest = read(path.dirname(MANIFEST), path.basename(MANIFEST));
 
 // person metadata: gender, birth/death years, surname
 const meta = new Map();

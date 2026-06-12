@@ -2,7 +2,7 @@
   {
     "id": "klara-and-sarah-1933",
     "title": "Klara holding Sarah",
-    "src": "/photos/klara-and-sarah-1933.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-and-sarah-1933.jpg",
     "width": 730,
     "height": 934,
     "locationId": "kowalski-farm",
@@ -29,14 +29,14 @@
       "clue": "Sarah's age, and the baby-book entry dated July 14th"
     },
     "restoration": {
-      "restoredSrc": "/photos/klara-and-sarah-1933-restored.jpg",
+      "restoredSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-and-sarah-1933-restored.jpg",
       "summary": "Removed sepia fading, surface scratches, and edge vignetting. Recovered detail in both faces."
     }
   },
   {
     "id": "klara-portrait-1925",
     "title": "Klara on the farmhouse porch",
-    "src": "/photos/klara-portrait-1925.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-portrait-1925.jpg",
     "width": 643,
     "height": 958,
     "locationId": "kowalski-farm",
@@ -61,7 +61,7 @@
   {
     "id": "kowalski-farmhouse-1928",
     "title": "The Kowalski farmhouse",
-    "src": "/photos/kowalski-farmhouse-1928.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/kowalski-farmhouse-1928.jpg",
     "width": 919,
     "height": 686,
     "locationId": "kowalski-farm",
@@ -86,7 +86,7 @@
   {
     "id": "farm-harvest-1935",
     "title": "Harvest on the farm",
-    "src": "/photos/farm-harvest-1935.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/farm-harvest-1935.jpg",
     "width": 868,
     "height": 650,
     "locationId": "kowalski-farm",
@@ -111,7 +111,7 @@
   {
     "id": "klara-garden-1948",
     "title": "Klara picking beans",
-    "src": "/photos/klara-garden-1948.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-garden-1948.jpg",
     "width": 856,
     "height": 853,
     "locationId": "kowalski-farm",
@@ -136,7 +136,7 @@
   {
     "id": "county-fair-1937",
     "title": "The judges' stand, county fair",
-    "src": "/photos/county-fair-1937.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/county-fair-1937.jpg",
     "width": 955,
     "height": 638,
     "locationId": "door-county-fair",
@@ -160,7 +160,7 @@
   {
     "id": "sarah-school-portrait-1940",
     "title": "Sarah at her desk, third grade",
-    "src": "/photos/sarah-school-portrait-1940.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sarah-school-portrait-1940.jpg",
     "width": 753,
     "height": 798,
     "locationId": "sturgeon-bay-school",
@@ -185,7 +185,7 @@
   {
     "id": "front-porch-1941",
     "title": "Front porch, summer evening",
-    "src": "/photos/front-porch-1941.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/front-porch-1941.jpg",
     "width": 677,
     "height": 817,
     "locationId": "kowalski-farm",
@@ -210,7 +210,7 @@
   {
     "id": "sarah-and-friends-1944",
     "title": "Sarah and the Pierson girls",
-    "src": "/photos/sarah-and-friends-1944.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sarah-and-friends-1944.jpg",
     "width": 915,
     "height": 680,
     "locationId": "sturgeon-bay-store",
@@ -235,7 +235,7 @@
   {
     "id": "tom-army-portrait-1946",
     "title": "Tom in uniform",
-    "src": "/photos/tom-army-portrait-1946.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/tom-army-portrait-1946.jpg",
     "width": 686,
     "height": 932,
     "locationId": "fort-belvoir",
@@ -258,7 +258,7 @@
   {
     "id": "sunday-best-1947",
     "title": "Out on the town",
-    "src": "/photos/sunday-best-1947.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sunday-best-1947.jpg",
     "width": 872,
     "height": 691,
     "locationId": "eddies-tavern",
@@ -283,7 +283,7 @@
   {
     "id": "first-car-1949",
     "title": "Tom and the old Ford",
-    "src": "/photos/first-car-1949.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/first-car-1949.jpg",
     "width": 636,
     "height": 955,
     "locationId": "whitfield-place",
@@ -311,7 +311,7 @@
   {
     "id": "wedding-day-1950",
     "title": "Rice on the church steps",
-    "src": "/photos/wedding-day-1950.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/wedding-day-1950.jpg",
     "width": 831,
     "height": 711,
     "locationId": "st-marys",
@@ -337,7 +337,7 @@
   {
     "id": "eleanor-baby-1953",
     "title": "Feeding baby Eleanor",
-    "src": "/photos/eleanor-baby-1953.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/eleanor-baby-1953.jpg",
     "width": 636,
     "height": 944,
     "locationId": "town-park",
@@ -364,7 +364,7 @@
   {
     "id": "christmas-morning-1955",
     "title": "Picking out the tree",
-    "src": "/photos/christmas-morning-1955.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/christmas-morning-1955.jpg",
     "width": 907,
     "height": 672,
     "locationId": "main-street-sturgeon-bay",
@@ -388,7 +388,7 @@
   {
     "id": "susan-baby-1956",
     "title": "Susan, two days old",
-    "src": "/photos/susan-baby-1956.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/susan-baby-1956.jpg",
     "width": 864,
     "height": 858,
     "locationId": "st-vincents-green-bay",
@@ -412,7 +412,7 @@
   {
     "id": "lake-house-summer-1958",
     "title": "The cottages at Kangaroo Lake",
-    "src": "/photos/lake-house-summer-1958.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/lake-house-summer-1958.jpg",
     "width": 930,
     "height": 697,
     "locationId": "kangaroo-lake",
@@ -437,7 +437,7 @@
   {
     "id": "lake-swimmers-1960",
     "title": "The pier and bathing beach",
-    "src": "/photos/lake-swimmers-1960.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/lake-swimmers-1960.jpg",
     "width": 943,
     "height": 630,
     "locationId": "kangaroo-lake",
@@ -463,7 +463,7 @@
   {
     "id": "family-picnic-1962",
     "title": "Fourth of July picnic",
-    "src": "/photos/family-picnic-1962.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/family-picnic-1962.jpg",
     "width": 943,
     "height": 670,
     "locationId": "kangaroo-lake",
@@ -493,7 +493,7 @@
   {
     "id": "thanksgiving-1964",
     "title": "Thanksgiving at the farm",
-    "src": "/photos/thanksgiving-1964.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/thanksgiving-1964.jpg",
     "width": 549,
     "height": 928,
     "locationId": "kowalski-farm",
@@ -522,7 +522,7 @@
   {
     "id": "family-reunion-1968",
     "title": "The big reunion",
-    "src": "/photos/family-reunion-1968.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/family-reunion-1968.jpg",
     "width": 738,
     "height": 743,
     "locationId": "kowalski-farm",
@@ -547,7 +547,7 @@
   {
     "id": "tom-fishing-1972",
     "title": "Loading the fishing poles",
-    "src": "/photos/tom-fishing-1972.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/tom-fishing-1972.jpg",
     "width": 814,
     "height": 827,
     "locationId": "kangaroo-lake",
@@ -577,7 +577,7 @@
   {
     "id": "arch-001",
     "title": "Klara — mother and child",
-    "src": "/photos/arch-001.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-001.jpg",
     "width": 951,
     "height": 632,
     "locationId": "kangaroo-lake",
@@ -604,7 +604,7 @@
   {
     "id": "arch-002",
     "title": "The family at Kowalski farm",
-    "src": "/photos/arch-002.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-002.jpg",
     "width": 917,
     "height": 678,
     "locationId": "kowalski-farm",
@@ -630,7 +630,7 @@
   {
     "id": "arch-003",
     "title": "Ruth, 1987",
-    "src": "/photos/arch-003.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-003.jpg",
     "width": 850,
     "height": 839,
     "locationId": "gen-loc-16",
@@ -654,7 +654,7 @@
   {
     "id": "arch-004",
     "title": "Tom — mother and child",
-    "src": "/photos/arch-004.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-004.jpg",
     "width": 721,
     "height": 958,
     "locationId": "gen-loc-23",
@@ -678,7 +678,7 @@
   {
     "id": "arch-005",
     "title": "Eleanor — mother and child",
-    "src": "/photos/arch-005.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-005.jpg",
     "width": 860,
     "height": 709,
     "locationId": "green-bay",
@@ -700,7 +700,7 @@
   {
     "id": "arch-006",
     "title": "Mark, c. 1970",
-    "src": "/photos/arch-006.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-006.jpg",
     "width": 930,
     "height": 698,
     "locationId": "gen-loc-1",
@@ -721,7 +721,7 @@
   {
     "id": "arch-007",
     "title": "Susan at Green Bay town hall",
-    "src": "/photos/arch-007.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-007.jpg",
     "width": 696,
     "height": 933,
     "locationId": "gen-loc-2",
@@ -745,7 +745,7 @@
   {
     "id": "arch-008",
     "title": "The family at Ellison Bay fairgrounds",
-    "src": "/photos/arch-008.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-008.jpg",
     "width": 690,
     "height": 931,
     "locationId": "gen-loc-12",
@@ -769,7 +769,7 @@
   {
     "id": "arch-009",
     "title": "The family at Green Bay homestead",
-    "src": "/photos/arch-009.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-009.jpg",
     "width": 677,
     "height": 817,
     "locationId": "gen-loc-6",
@@ -796,7 +796,7 @@
   {
     "id": "arch-010",
     "title": "James — family on porch",
-    "src": "/photos/arch-010.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-010.jpg",
     "width": 953,
     "height": 642,
     "locationId": "st-marys",
@@ -821,7 +821,7 @@
   {
     "id": "arch-011",
     "title": "David, 1990",
-    "src": "/photos/arch-011.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-011.jpg",
     "width": 947,
     "height": 639,
     "locationId": "gen-loc-1",
@@ -843,7 +843,7 @@
   {
     "id": "arch-012",
     "title": "Józef — family on porch",
-    "src": "/photos/arch-012.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-012.jpg",
     "width": 955,
     "height": 645,
     "locationId": "gen-loc-4",
@@ -867,7 +867,7 @@
   {
     "id": "arch-013",
     "title": "Walter — family on porch",
-    "src": "/photos/arch-013.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-013.jpg",
     "width": 956,
     "height": 641,
     "locationId": "town-park",
@@ -890,7 +890,7 @@
   {
     "id": "arch-014",
     "title": "Edith — family on porch",
-    "src": "/photos/arch-014.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-014.jpg",
     "width": 949,
     "height": 640,
     "locationId": "gen-loc-6",
@@ -915,7 +915,7 @@
   {
     "id": "arch-015",
     "title": "The family at Brussels homestead",
-    "src": "/photos/arch-015.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-015.jpg",
     "width": 952,
     "height": 636,
     "locationId": "gen-loc-19",
@@ -938,7 +938,7 @@
   {
     "id": "arch-016",
     "title": "The family at The general store, Sturgeon Bay",
-    "src": "/photos/arch-016.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-016.jpg",
     "width": 963,
     "height": 719,
     "locationId": "sturgeon-bay-store",
@@ -961,7 +961,7 @@
   {
     "id": "arch-017",
     "title": "Ada — farm family",
-    "src": "/photos/arch-017.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-017.jpg",
     "width": 925,
     "height": 696,
     "locationId": "main-street-sturgeon-bay",
@@ -984,7 +984,7 @@
   {
     "id": "arch-018",
     "title": "Chidi, August 1965",
-    "src": "/photos/arch-018.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-018.jpg",
     "width": 881,
     "height": 682,
     "locationId": "kangaroo-lake",
@@ -1010,7 +1010,7 @@
   {
     "id": "arch-019",
     "title": "Grace, 2004",
-    "src": "/photos/arch-019.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-019.jpg",
     "width": 688,
     "height": 970,
     "locationId": "sturgeon-bay-school",
@@ -1035,7 +1035,7 @@
   {
     "id": "arch-020",
     "title": "Lauren — farm family",
-    "src": "/photos/arch-020.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-020.jpg",
     "width": 948,
     "height": 630,
     "locationId": "gen-loc-7",
@@ -1058,7 +1058,7 @@
   {
     "id": "arch-021",
     "title": "Henry at Ellison Bay fairgrounds",
-    "src": "/photos/arch-021.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-021.jpg",
     "width": 656,
     "height": 968,
     "locationId": "gen-loc-12",
@@ -1082,7 +1082,7 @@
   {
     "id": "arch-022",
     "title": "Clara at St. Vincent's Hospital",
-    "src": "/photos/arch-022.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-022.jpg",
     "width": 899,
     "height": 864,
     "locationId": "st-vincents-green-bay",
@@ -1103,7 +1103,7 @@
   {
     "id": "arch-023",
     "title": "The family at Brussels homestead",
-    "src": "/photos/arch-023.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-023.jpg",
     "width": 924,
     "height": 685,
     "locationId": "gen-loc-19",
@@ -1126,7 +1126,7 @@
   {
     "id": "arch-024",
     "title": "Kenneth, April 1979",
-    "src": "/photos/arch-024.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-024.jpg",
     "width": 957,
     "height": 691,
     "locationId": "gen-loc-20",
@@ -1153,7 +1153,7 @@
   {
     "id": "arch-025",
     "title": "Bruce — wheat harvest",
-    "src": "/photos/arch-025.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-025.jpg",
     "width": 926,
     "height": 683,
     "locationId": "sturgeon-bay-store",
@@ -1176,7 +1176,7 @@
   {
     "id": "arch-026",
     "title": "Diane, 1994",
-    "src": "/photos/arch-026.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-026.jpg",
     "width": 930,
     "height": 687,
     "locationId": "gen-loc-12",
@@ -1199,7 +1199,7 @@
   {
     "id": "arch-027",
     "title": "Anna, December 5, 2010",
-    "src": "/photos/arch-027.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-027.jpg",
     "width": 936,
     "height": 685,
     "locationId": "st-vincents-green-bay",
@@ -1225,7 +1225,7 @@
   {
     "id": "arch-028",
     "title": "Allen — wheat harvest",
-    "src": "/photos/arch-028.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-028.jpg",
     "width": 951,
     "height": 642,
     "locationId": "gen-loc-15",
@@ -1251,7 +1251,7 @@
   {
     "id": "arch-029",
     "title": "Albert at St. Mary's Catholic Church",
-    "src": "/photos/arch-029.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-029.jpg",
     "width": 927,
     "height": 688,
     "locationId": "st-marys",
@@ -1278,7 +1278,7 @@
   {
     "id": "arch-030",
     "title": "Hazel — wheat harvest",
-    "src": "/photos/arch-030.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-030.jpg",
     "width": 935,
     "height": 737,
     "locationId": "gen-loc-4",
@@ -1299,7 +1299,7 @@
   {
     "id": "arch-031",
     "title": "Richard at Milwaukee depot",
-    "src": "/photos/arch-031.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-031.jpg",
     "width": 923,
     "height": 690,
     "locationId": "gen-loc-24",
@@ -1324,7 +1324,7 @@
   {
     "id": "arch-032",
     "title": "Nancy at Green Bay town hall",
-    "src": "/photos/arch-032.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-032.jpg",
     "width": 868,
     "height": 650,
     "locationId": "gen-loc-2",
@@ -1345,7 +1345,7 @@
   {
     "id": "arch-033",
     "title": "Theodore — cornfield farmer",
-    "src": "/photos/arch-033.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-033.jpg",
     "width": 681,
     "height": 934,
     "locationId": "gen-loc-23",
@@ -1369,7 +1369,7 @@
   {
     "id": "arch-034",
     "title": "The family at Jacksonport church",
-    "src": "/photos/arch-034.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-034.jpg",
     "width": 700,
     "height": 936,
     "locationId": "gen-loc-20",
@@ -1392,7 +1392,7 @@
   {
     "id": "arch-035",
     "title": "The family at Kangaroo Lake cottages",
-    "src": "/photos/arch-035.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-035.jpg",
     "width": 924,
     "height": 713,
     "locationId": "kangaroo-lake",
@@ -1417,7 +1417,7 @@
   {
     "id": "arch-036",
     "title": "Paul — cornfield farmer",
-    "src": "/photos/arch-036.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-036.jpg",
     "width": 680,
     "height": 918,
     "locationId": "gen-loc-6",
@@ -1442,7 +1442,7 @@
   {
     "id": "arch-037",
     "title": "Helen, c. 1998",
-    "src": "/photos/arch-037.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-037.jpg",
     "width": 936,
     "height": 699,
     "locationId": "kangaroo-lake",
@@ -1466,7 +1466,7 @@
   {
     "id": "arch-038",
     "title": "Joseph at Kowalski farm",
-    "src": "/photos/arch-038.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-038.jpg",
     "width": 930,
     "height": 696,
     "locationId": "kowalski-farm",
@@ -1487,7 +1487,7 @@
   {
     "id": "arch-039",
     "title": "Janet at Brussels homestead",
-    "src": "/photos/arch-039.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-039.jpg",
     "width": 939,
     "height": 702,
     "locationId": "gen-loc-19",
@@ -1509,7 +1509,7 @@
   {
     "id": "arch-040",
     "title": "Carol at Green Bay",
-    "src": "/photos/arch-040.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-040.jpg",
     "width": 993,
     "height": 701,
     "locationId": "green-bay",
@@ -1532,7 +1532,7 @@
   {
     "id": "arch-041",
     "title": "Harold at The general store, Sturgeon Bay",
-    "src": "/photos/arch-041.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-041.jpg",
     "width": 940,
     "height": 709,
     "locationId": "sturgeon-bay-store",
@@ -1556,7 +1556,7 @@
   {
     "id": "arch-042",
     "title": "Vernon, May 2006",
-    "src": "/photos/arch-042.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-042.jpg",
     "width": 717,
     "height": 939,
     "locationId": "gen-loc-16",
@@ -1583,7 +1583,7 @@
   {
     "id": "arch-043",
     "title": "Patricia at Main Street",
-    "src": "/photos/arch-043.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-043.jpg",
     "width": 964,
     "height": 683,
     "locationId": "main-street-sturgeon-bay",
@@ -1607,7 +1607,7 @@
   {
     "id": "arch-044",
     "title": "The family at Minneapolis lake landing",
-    "src": "/photos/arch-044.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-044.jpg",
     "width": 679,
     "height": 917,
     "locationId": "gen-loc-8",
@@ -1631,7 +1631,7 @@
   {
     "id": "arch-045",
     "title": "Sarah at Chicago cemetery",
-    "src": "/photos/arch-045.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-045.jpg",
     "width": 704,
     "height": 931,
     "locationId": "gen-loc-16",
@@ -1655,7 +1655,7 @@
   {
     "id": "arch-046",
     "title": "Ruth — school children",
-    "src": "/photos/arch-046.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-046.jpg",
     "width": 893,
     "height": 814,
     "locationId": "gen-loc-18",
@@ -1681,7 +1681,7 @@
   {
     "id": "arch-047",
     "title": "Tom at Minneapolis lake landing",
-    "src": "/photos/arch-047.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-047.jpg",
     "width": 831,
     "height": 787,
     "locationId": "gen-loc-8",
@@ -1702,7 +1702,7 @@
   {
     "id": "arch-048",
     "title": "Eleanor — children playing",
-    "src": "/photos/arch-048.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-048.jpg",
     "width": 946,
     "height": 630,
     "locationId": "st-vincents-green-bay",
@@ -1725,7 +1725,7 @@
   {
     "id": "arch-049",
     "title": "Mark — children playing",
-    "src": "/photos/arch-049.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-049.jpg",
     "width": 925,
     "height": 619,
     "locationId": "gen-loc-23",
@@ -1748,7 +1748,7 @@
   {
     "id": "arch-050",
     "title": "The family at Madison park",
-    "src": "/photos/arch-050.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-050.jpg",
     "width": 637,
     "height": 947,
     "locationId": "gen-loc-7",
@@ -1777,7 +1777,7 @@
   {
     "id": "arch-051",
     "title": "Daniel at Green Bay homestead",
-    "src": "/photos/arch-051.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-051.jpg",
     "width": 883,
     "height": 681,
     "locationId": "gen-loc-6",
@@ -1804,7 +1804,7 @@
   {
     "id": "arch-052",
     "title": "Margaret at Madison fairgrounds",
-    "src": "/photos/arch-052.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-052.jpg",
     "width": 993,
     "height": 787,
     "locationId": "gen-loc-9",
@@ -1828,7 +1828,7 @@
   {
     "id": "arch-053",
     "title": "The family at Eddie's tavern",
-    "src": "/photos/arch-053.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-053.jpg",
     "width": 930,
     "height": 628,
     "locationId": "eddies-tavern",
@@ -1852,7 +1852,7 @@
   {
     "id": "arch-054",
     "title": "David at Madison general store",
-    "src": "/photos/arch-054.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-054.jpg",
     "width": 966,
     "height": 646,
     "locationId": "gen-loc-3",
@@ -1876,7 +1876,7 @@
   {
     "id": "arch-055",
     "title": "The family at The Whitfield place",
-    "src": "/photos/arch-055.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-055.jpg",
     "width": 963,
     "height": 640,
     "locationId": "whitfield-place",
@@ -1900,7 +1900,7 @@
   {
     "id": "arch-056",
     "title": "Walter at The Whitfield place",
-    "src": "/photos/arch-056.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-056.jpg",
     "width": 943,
     "height": 670,
     "locationId": "whitfield-place",
@@ -1924,7 +1924,7 @@
   {
     "id": "arch-057",
     "title": "The family at The general store, Sturgeon Bay",
-    "src": "/photos/arch-057.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-057.jpg",
     "width": 951,
     "height": 640,
     "locationId": "sturgeon-bay-store",
@@ -1946,7 +1946,7 @@
   {
     "id": "arch-058",
     "title": "Rose — family picnic",
-    "src": "/photos/arch-058.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-058.jpg",
     "width": 954,
     "height": 639,
     "locationId": "sturgeon-bay-school",
@@ -1971,7 +1971,7 @@
   {
     "id": "arch-059",
     "title": "Emeka — family picnic",
-    "src": "/photos/arch-059.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-059.jpg",
     "width": 951,
     "height": 644,
     "locationId": "kangaroo-lake",
@@ -1994,7 +1994,7 @@
   {
     "id": "arch-060",
     "title": "The family at Main Street",
-    "src": "/photos/arch-060.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-060.jpg",
     "width": 569,
     "height": 829,
     "locationId": "main-street-sturgeon-bay",
@@ -2017,7 +2017,7 @@
   {
     "id": "arch-061",
     "title": "The family at Minneapolis lake landing",
-    "src": "/photos/arch-061.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-061.jpg",
     "width": 965,
     "height": 705,
     "locationId": "gen-loc-8",
@@ -2038,7 +2038,7 @@
   {
     "id": "arch-062",
     "title": "Grace at St. Vincent's Hospital",
-    "src": "/photos/arch-062.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-062.jpg",
     "width": 929,
     "height": 722,
     "locationId": "st-vincents-green-bay",
@@ -2061,7 +2061,7 @@
   {
     "id": "arch-063",
     "title": "The family at Minneapolis lake landing",
-    "src": "/photos/arch-063.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-063.jpg",
     "width": 953,
     "height": 682,
     "locationId": "gen-loc-8",
@@ -2085,7 +2085,7 @@
   {
     "id": "arch-064",
     "title": "Henry — country church",
-    "src": "/photos/arch-064.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-064.jpg",
     "width": 976,
     "height": 779,
     "locationId": "gen-loc-17",
@@ -2107,7 +2107,7 @@
   {
     "id": "arch-065",
     "title": "Clara, 1987",
-    "src": "/photos/arch-065.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-065.jpg",
     "width": 694,
     "height": 929,
     "locationId": "gen-loc-1",
@@ -2133,7 +2133,7 @@
   {
     "id": "arch-066",
     "title": "The family at Green Bay",
-    "src": "/photos/arch-066.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-066.jpg",
     "width": 924,
     "height": 685,
     "locationId": "green-bay",
@@ -2158,7 +2158,7 @@
   {
     "id": "arch-067",
     "title": "The family at The general store, Sturgeon Bay",
-    "src": "/photos/arch-067.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-067.jpg",
     "width": 712,
     "height": 904,
     "locationId": "sturgeon-bay-store",
@@ -2181,7 +2181,7 @@
   {
     "id": "arch-068",
     "title": "Bruce at Fort Belvoir",
-    "src": "/photos/arch-068.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-068.jpg",
     "width": 689,
     "height": 925,
     "locationId": "fort-belvoir",
@@ -2206,7 +2206,7 @@
   {
     "id": "arch-069",
     "title": "The family at Jacksonport church",
-    "src": "/photos/arch-069.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-069.jpg",
     "width": 931,
     "height": 690,
     "locationId": "gen-loc-20",
@@ -2230,7 +2230,7 @@
   {
     "id": "arch-070",
     "title": "Anna at Madison park",
-    "src": "/photos/arch-070.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-070.jpg",
     "width": 928,
     "height": 686,
     "locationId": "gen-loc-7",
@@ -2254,7 +2254,7 @@
   {
     "id": "arch-071",
     "title": "The family at Green Bay",
-    "src": "/photos/arch-071.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-071.jpg",
     "width": 938,
     "height": 678,
     "locationId": "green-bay",
@@ -2281,7 +2281,7 @@
   {
     "id": "arch-072",
     "title": "Albert, c. 2010",
-    "src": "/photos/arch-072.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-072.jpg",
     "width": 906,
     "height": 870,
     "locationId": "st-vincents-green-bay",
@@ -2302,7 +2302,7 @@
   {
     "id": "arch-073",
     "title": "Hazel, December 2001",
-    "src": "/photos/arch-073.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-073.jpg",
     "width": 955,
     "height": 754,
     "locationId": "gen-loc-20",
@@ -2329,7 +2329,7 @@
   {
     "id": "arch-074",
     "title": "Richard, November 2, 2004",
-    "src": "/photos/arch-074.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-074.jpg",
     "width": 941,
     "height": 627,
     "locationId": "gen-loc-10",
@@ -2354,7 +2354,7 @@
   {
     "id": "arch-075",
     "title": "Nancy, August 20, 1959",
-    "src": "/photos/arch-075.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-075.jpg",
     "width": 913,
     "height": 680,
     "locationId": "town-park",
@@ -2380,7 +2380,7 @@
   {
     "id": "arch-076",
     "title": "Theodore — main street town",
-    "src": "/photos/arch-076.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-076.jpg",
     "width": 949,
     "height": 748,
     "locationId": "gen-loc-22",
@@ -2407,7 +2407,7 @@
   {
     "id": "arch-077",
     "title": "The family at Minneapolis main street",
-    "src": "/photos/arch-077.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-077.jpg",
     "width": 843,
     "height": 798,
     "locationId": "gen-loc-5",
@@ -2433,7 +2433,7 @@
   {
     "id": "arch-078",
     "title": "Karen at Green Bay homestead",
-    "src": "/photos/arch-078.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-078.jpg",
     "width": 929,
     "height": 644,
     "locationId": "gen-loc-6",
@@ -2459,7 +2459,7 @@
   {
     "id": "arch-079",
     "title": "Paul — main street town",
-    "src": "/photos/arch-079.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-079.jpg",
     "width": 944,
     "height": 744,
     "locationId": "gen-loc-21",
@@ -2483,7 +2483,7 @@
   {
     "id": "arch-080",
     "title": "The family at Jacksonport church",
-    "src": "/photos/arch-080.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-080.jpg",
     "width": 915,
     "height": 682,
     "locationId": "gen-loc-20",
@@ -2510,7 +2510,7 @@
   {
     "id": "arch-081",
     "title": "Joseph, March 2, 1986",
-    "src": "/photos/arch-081.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-081.jpg",
     "width": 922,
     "height": 884,
     "locationId": "st-vincents-green-bay",
@@ -2537,7 +2537,7 @@
   {
     "id": "arch-082",
     "title": "Janet — fishing river",
-    "src": "/photos/arch-082.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-082.jpg",
     "width": 942,
     "height": 904,
     "locationId": "gen-loc-3",
@@ -2562,7 +2562,7 @@
   {
     "id": "arch-083",
     "title": "Carol, November 2008",
-    "src": "/photos/arch-083.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-083.jpg",
     "width": 863,
     "height": 827,
     "locationId": "gen-loc-10",
@@ -2586,7 +2586,7 @@
   {
     "id": "arch-084",
     "title": "The family at Egg Harbor homestead",
-    "src": "/photos/arch-084.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-084.jpg",
     "width": 930,
     "height": 726,
     "locationId": "gen-loc-18",
@@ -2609,7 +2609,7 @@
   {
     "id": "arch-085",
     "title": "Vernon at Sister Bay depot",
-    "src": "/photos/arch-085.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-085.jpg",
     "width": 956,
     "height": 668,
     "locationId": "gen-loc-4",
@@ -2632,7 +2632,7 @@
   {
     "id": "arch-086",
     "title": "Patricia, June 1999",
-    "src": "/photos/arch-086.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-086.jpg",
     "width": 958,
     "height": 645,
     "locationId": "gen-loc-21",
@@ -2654,7 +2654,7 @@
   {
     "id": "arch-087",
     "title": "Klara, 1947",
-    "src": "/photos/arch-087.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-087.jpg",
     "width": 951,
     "height": 644,
     "locationId": "gen-loc-2",
@@ -2680,7 +2680,7 @@
   {
     "id": "arch-088",
     "title": "Sarah at Port of Baltimore",
-    "src": "/photos/arch-088.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-088.jpg",
     "width": 907,
     "height": 672,
     "locationId": "port-of-baltimore",
@@ -2704,7 +2704,7 @@
   {
     "id": "arch-089",
     "title": "Ruth, October 2005",
-    "src": "/photos/arch-089.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-089.jpg",
     "width": 953,
     "height": 692,
     "locationId": "gen-loc-25",
@@ -2728,7 +2728,7 @@
   {
     "id": "arch-090",
     "title": "Tom at Green Bay schoolhouse",
-    "src": "/photos/arch-090.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-090.jpg",
     "width": 896,
     "height": 873,
     "locationId": "gen-loc-1",
@@ -2754,7 +2754,7 @@
   {
     "id": "arch-091",
     "title": "Eleanor — christmas tree",
-    "src": "/photos/arch-091.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-091.jpg",
     "width": 835,
     "height": 765,
     "locationId": "green-bay",
@@ -2778,7 +2778,7 @@
   {
     "id": "arch-092",
     "title": "Mark — christmas tree",
-    "src": "/photos/arch-092.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-092.jpg",
     "width": 834,
     "height": 890,
     "locationId": "gen-loc-25",
@@ -2802,7 +2802,7 @@
   {
     "id": "arch-093",
     "title": "Susan — christmas tree",
-    "src": "/photos/arch-093.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-093.jpg",
     "width": 921,
     "height": 689,
     "locationId": "gen-loc-5",
@@ -2827,7 +2827,7 @@
   {
     "id": "arch-094",
     "title": "Daniel — christmas tree",
-    "src": "/photos/arch-094.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-094.jpg",
     "width": 932,
     "height": 690,
     "locationId": "gen-loc-21",
@@ -2848,7 +2848,7 @@
   {
     "id": "arch-095",
     "title": "Margaret at Chicago depot",
-    "src": "/photos/arch-095.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-095.jpg",
     "width": 913,
     "height": 683,
     "locationId": "gen-loc-13",
@@ -2871,7 +2871,7 @@
   {
     "id": "arch-096",
     "title": "James — vegetable garden",
-    "src": "/photos/arch-096.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-096.jpg",
     "width": 912,
     "height": 725,
     "locationId": "gen-loc-17",
@@ -2897,7 +2897,7 @@
   {
     "id": "arch-097",
     "title": "The family at Ellison Bay fairgrounds",
-    "src": "/photos/arch-097.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-097.jpg",
     "width": 789,
     "height": 993,
     "locationId": "gen-loc-12",
@@ -2921,7 +2921,7 @@
   {
     "id": "arch-098",
     "title": "The family at Port of Baltimore",
-    "src": "/photos/arch-098.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-098.jpg",
     "width": 979,
     "height": 729,
     "locationId": "port-of-baltimore",
@@ -2947,7 +2947,7 @@
   {
     "id": "arch-099",
     "title": "Walter at Fort Belvoir",
-    "src": "/photos/arch-099.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-099.jpg",
     "width": 959,
     "height": 650,
     "locationId": "fort-belvoir",
@@ -2971,7 +2971,7 @@
   {
     "id": "arch-100",
     "title": "The family at Chicago park",
-    "src": "/photos/arch-100.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-100.jpg",
     "width": 683,
     "height": 914,
     "locationId": "gen-loc-14",
@@ -2997,7 +2997,7 @@
   {
     "id": "arch-101",
     "title": "Rose — vegetable garden",
-    "src": "/photos/arch-101.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-101.jpg",
     "width": 684,
     "height": 893,
     "locationId": "gen-loc-12",
@@ -3020,7 +3020,7 @@
   {
     "id": "arch-102",
     "title": "The family at Main Street",
-    "src": "/photos/arch-102.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-102.jpg",
     "width": 967,
     "height": 735,
     "locationId": "main-street-sturgeon-bay",
@@ -3043,7 +3043,7 @@
   {
     "id": "arch-103",
     "title": "Ada at Green Bay homestead",
-    "src": "/photos/arch-103.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-103.jpg",
     "width": 695,
     "height": 937,
     "locationId": "gen-loc-6",
@@ -3067,7 +3067,7 @@
   {
     "id": "arch-104",
     "title": "Chidi at Minneapolis main street",
-    "src": "/photos/arch-104.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-104.jpg",
     "width": 692,
     "height": 933,
     "locationId": "gen-loc-5",
@@ -3093,7 +3093,7 @@
   {
     "id": "arch-105",
     "title": "Grace, April 2002",
-    "src": "/photos/arch-105.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-105.jpg",
     "width": 914,
     "height": 668,
     "locationId": "green-bay",
@@ -3115,7 +3115,7 @@
   {
     "id": "arch-106",
     "title": "Lauren at Chicago park",
-    "src": "/photos/arch-106.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-106.jpg",
     "width": 732,
     "height": 923,
     "locationId": "gen-loc-14",
@@ -3137,7 +3137,7 @@
   {
     "id": "arch-107",
     "title": "Henry — farm kitchen",
-    "src": "/photos/arch-107.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-107.jpg",
     "width": 931,
     "height": 693,
     "locationId": "gen-loc-13",
@@ -3162,7 +3162,7 @@
   {
     "id": "arch-108",
     "title": "Clara, 2016",
-    "src": "/photos/arch-108.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-108.jpg",
     "width": 692,
     "height": 930,
     "locationId": "gen-loc-3",
@@ -3187,7 +3187,7 @@
   {
     "id": "arch-109",
     "title": "Gary — farm kitchen",
-    "src": "/photos/arch-109.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-109.jpg",
     "width": 687,
     "height": 921,
     "locationId": "gen-loc-8",
@@ -3213,7 +3213,7 @@
   {
     "id": "arch-110",
     "title": "Kenneth, 1941",
-    "src": "/photos/arch-110.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-110.jpg",
     "width": 870,
     "height": 671,
     "locationId": "gen-loc-3",
@@ -3237,7 +3237,7 @@
   {
     "id": "arch-111",
     "title": "Bruce at Minneapolis lake landing",
-    "src": "/photos/arch-111.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-111.jpg",
     "width": 769,
     "height": 809,
     "locationId": "gen-loc-8",
@@ -3258,7 +3258,7 @@
   {
     "id": "arch-112",
     "title": "Diane at St. Vincent's Hospital",
-    "src": "/photos/arch-112.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-112.jpg",
     "width": 800,
     "height": 804,
     "locationId": "st-vincents-green-bay",
@@ -3282,7 +3282,7 @@
   {
     "id": "arch-113",
     "title": "Anna at Chicago cemetery",
-    "src": "/photos/arch-113.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-113.jpg",
     "width": 832,
     "height": 837,
     "locationId": "gen-loc-16",
@@ -3305,7 +3305,7 @@
   {
     "id": "arch-114",
     "title": "Allen at Madison general store",
-    "src": "/photos/arch-114.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-114.jpg",
     "width": 831,
     "height": 835,
     "locationId": "gen-loc-3",
@@ -3328,7 +3328,7 @@
   {
     "id": "arch-115",
     "title": "Albert at Madison lake landing",
-    "src": "/photos/arch-115.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-115.jpg",
     "width": 755,
     "height": 813,
     "locationId": "gen-loc-21",
@@ -3351,7 +3351,7 @@
   {
     "id": "arch-116",
     "title": "The family at Kowalski farm",
-    "src": "/photos/arch-116.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-116.jpg",
     "width": 814,
     "height": 775,
     "locationId": "kowalski-farm",
@@ -3375,7 +3375,7 @@
   {
     "id": "arch-117",
     "title": "Richard, March 6, 1998",
-    "src": "/photos/arch-117.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-117.jpg",
     "width": 740,
     "height": 817,
     "locationId": "gen-loc-26",
@@ -3400,7 +3400,7 @@
   {
     "id": "arch-118",
     "title": "Nancy at Eddie's tavern",
-    "src": "/photos/arch-118.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-118.jpg",
     "width": 694,
     "height": 782,
     "locationId": "eddies-tavern",
@@ -3423,7 +3423,7 @@
   {
     "id": "arch-119",
     "title": "The family at Green Bay homestead",
-    "src": "/photos/arch-119.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-119.jpg",
     "width": 844,
     "height": 706,
     "locationId": "gen-loc-6",
@@ -3449,7 +3449,7 @@
   {
     "id": "arch-120",
     "title": "Betty — man portrait",
-    "src": "/photos/arch-120.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-120.jpg",
     "width": 850,
     "height": 843,
     "locationId": "gen-loc-16",
@@ -3472,7 +3472,7 @@
   {
     "id": "arch-121",
     "title": "Karen — man portrait",
-    "src": "/photos/arch-121.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-121.jpg",
     "width": 843,
     "height": 843,
     "locationId": "gen-loc-17",
@@ -3497,7 +3497,7 @@
   {
     "id": "arch-122",
     "title": "Paul at Madison fairgrounds",
-    "src": "/photos/arch-122.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-122.jpg",
     "width": 861,
     "height": 854,
     "locationId": "gen-loc-9",
@@ -3522,7 +3522,7 @@
   {
     "id": "arch-123",
     "title": "The family at Milwaukee general store",
-    "src": "/photos/arch-123.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-123.jpg",
     "width": 661,
     "height": 869,
     "locationId": "gen-loc-25",
@@ -3549,7 +3549,7 @@
   {
     "id": "arch-124",
     "title": "The family at Madison general store",
-    "src": "/photos/arch-124.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-124.jpg",
     "width": 961,
     "height": 769,
     "locationId": "gen-loc-3",
@@ -3574,7 +3574,7 @@
   {
     "id": "arch-125",
     "title": "Janet — man portrait",
-    "src": "/photos/arch-125.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-125.jpg",
     "width": 762,
     "height": 947,
     "locationId": "gen-loc-7",
@@ -3597,7 +3597,7 @@
   {
     "id": "arch-126",
     "title": "Carol — man portrait",
-    "src": "/photos/arch-126.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-126.jpg",
     "width": 993,
     "height": 611,
     "locationId": "main-street-sturgeon-bay",
@@ -3623,7 +3623,7 @@
   {
     "id": "arch-127",
     "title": "The family at Green Bay orchard",
-    "src": "/photos/arch-127.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-127.jpg",
     "width": 993,
     "height": 605,
     "locationId": "gen-loc-11",
@@ -3645,7 +3645,7 @@
   {
     "id": "arch-128",
     "title": "The family at Door County Fairgrounds",
-    "src": "/photos/arch-128.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-128.jpg",
     "width": 935,
     "height": 738,
     "locationId": "door-county-fair",
@@ -3668,7 +3668,7 @@
   {
     "id": "arch-129",
     "title": "Patricia, March 1999",
-    "src": "/photos/arch-129.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-129.jpg",
     "width": 929,
     "height": 750,
     "locationId": "gen-loc-6",
@@ -3692,7 +3692,7 @@
   {
     "id": "arch-130",
     "title": "Klara — general store",
-    "src": "/photos/arch-130.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-130.jpg",
     "width": 950,
     "height": 751,
     "locationId": "gen-loc-4",
@@ -3717,7 +3717,7 @@
   {
     "id": "arch-131",
     "title": "Sarah, 1998",
-    "src": "/photos/arch-131.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-131.jpg",
     "width": 927,
     "height": 731,
     "locationId": "gen-loc-10",
@@ -3740,7 +3740,7 @@
   {
     "id": "arch-132",
     "title": "The family at Minneapolis schoolhouse",
-    "src": "/photos/arch-132.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-132.jpg",
     "width": 914,
     "height": 670,
     "locationId": "gen-loc-23",
@@ -3766,7 +3766,7 @@
   {
     "id": "arch-133",
     "title": "The family at Minneapolis lake landing",
-    "src": "/photos/arch-133.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-133.jpg",
     "width": 960,
     "height": 642,
     "locationId": "gen-loc-8",
@@ -3790,7 +3790,7 @@
   {
     "id": "arch-134",
     "title": "Eleanor at Madison general store",
-    "src": "/photos/arch-134.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-134.jpg",
     "width": 923,
     "height": 689,
     "locationId": "gen-loc-3",
@@ -3812,7 +3812,7 @@
   {
     "id": "arch-135",
     "title": "The family at St. Mary's Catholic Church",
-    "src": "/photos/arch-135.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-135.jpg",
     "width": 961,
     "height": 759,
     "locationId": "st-marys",
@@ -3840,7 +3840,7 @@
   {
     "id": "arch-136",
     "title": "The family at Green Bay schoolhouse",
-    "src": "/photos/arch-136.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-136.jpg",
     "width": 945,
     "height": 683,
     "locationId": "gen-loc-1",
@@ -3863,7 +3863,7 @@
   {
     "id": "arch-137",
     "title": "Daniel — old automobile",
-    "src": "/photos/arch-137.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-137.jpg",
     "width": 959,
     "height": 644,
     "locationId": "town-park",
@@ -3887,7 +3887,7 @@
   {
     "id": "arch-138",
     "title": "Margaret at Minneapolis lake landing",
-    "src": "/photos/arch-138.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-138.jpg",
     "width": 964,
     "height": 647,
     "locationId": "gen-loc-8",
@@ -3909,7 +3909,7 @@
   {
     "id": "arch-139",
     "title": "The family at Madison lake landing",
-    "src": "/photos/arch-139.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-139.jpg",
     "width": 919,
     "height": 684,
     "locationId": "gen-loc-21",
@@ -3934,7 +3934,7 @@
   {
     "id": "arch-140",
     "title": "David, September 1983",
-    "src": "/photos/arch-140.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-140.jpg",
     "width": 927,
     "height": 700,
     "locationId": "green-bay",
@@ -3957,7 +3957,7 @@
   {
     "id": "arch-141",
     "title": "The family at Door County Fairgrounds",
-    "src": "/photos/arch-141.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-141.jpg",
     "width": 928,
     "height": 705,
     "locationId": "door-county-fair",
@@ -3980,7 +3980,7 @@
   {
     "id": "arch-142",
     "title": "Walter at Minneapolis lake landing",
-    "src": "/photos/arch-142.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-142.jpg",
     "width": 929,
     "height": 689,
     "locationId": "gen-loc-8",
@@ -4003,7 +4003,7 @@
   {
     "id": "arch-143",
     "title": "Edith — old automobile",
-    "src": "/photos/arch-143.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-143.jpg",
     "width": 934,
     "height": 694,
     "locationId": "town-park",
@@ -4032,7 +4032,7 @@
   {
     "id": "arch-144",
     "title": "Rose — old automobile",
-    "src": "/photos/arch-144.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-144.jpg",
     "width": 950,
     "height": 708,
     "locationId": "gen-loc-14",
@@ -4058,7 +4058,7 @@
   {
     "id": "arch-145",
     "title": "The family at St. Mary's Catholic Church",
-    "src": "/photos/arch-145.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-145.jpg",
     "width": 903,
     "height": 864,
     "locationId": "st-marys",
@@ -4082,7 +4082,7 @@
   {
     "id": "arch-146",
     "title": "Ada — train depot",
-    "src": "/photos/arch-146.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-146.jpg",
     "width": 921,
     "height": 793,
     "locationId": "gen-loc-20",
@@ -4107,7 +4107,7 @@
   {
     "id": "arch-147",
     "title": "The family at The Whitfield place",
-    "src": "/photos/arch-147.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-147.jpg",
     "width": 923,
     "height": 693,
     "locationId": "whitfield-place",
@@ -4131,7 +4131,7 @@
   {
     "id": "arch-148",
     "title": "Grace at Sunset Park",
-    "src": "/photos/arch-148.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-148.jpg",
     "width": 939,
     "height": 695,
     "locationId": "town-park",
@@ -4154,7 +4154,7 @@
   {
     "id": "arch-149",
     "title": "Lauren at Ellison Bay fairgrounds",
-    "src": "/photos/arch-149.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-149.jpg",
     "width": 643,
     "height": 892,
     "locationId": "gen-loc-12",
@@ -4178,7 +4178,7 @@
   {
     "id": "arch-150",
     "title": "Henry at Minneapolis main street",
-    "src": "/photos/arch-150.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-150.jpg",
     "width": 956,
     "height": 642,
     "locationId": "gen-loc-5",
@@ -4203,7 +4203,7 @@
   {
     "id": "arch-151",
     "title": "Clara, July 6, 1993",
-    "src": "/photos/arch-151.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-151.jpg",
     "width": 938,
     "height": 738,
     "locationId": "gen-loc-11",
@@ -4231,7 +4231,7 @@
   {
     "id": "arch-152",
     "title": "Gary — barn livestock",
-    "src": "/photos/arch-152.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-152.jpg",
     "width": 931,
     "height": 731,
     "locationId": "st-marys",
@@ -4254,7 +4254,7 @@
   {
     "id": "arch-153",
     "title": "Kenneth at Minneapolis schoolhouse",
-    "src": "/photos/arch-153.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-153.jpg",
     "width": 937,
     "height": 740,
     "locationId": "gen-loc-23",
@@ -4280,7 +4280,7 @@
   {
     "id": "arch-154",
     "title": "Bruce at St. Mary's Catholic Church",
-    "src": "/photos/arch-154.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-154.jpg",
     "width": 958,
     "height": 644,
     "locationId": "st-marys",
@@ -4303,7 +4303,7 @@
   {
     "id": "arch-155",
     "title": "Diane, 2013",
-    "src": "/photos/arch-155.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-155.jpg",
     "width": 955,
     "height": 638,
     "locationId": "sturgeon-bay-store",
@@ -4329,7 +4329,7 @@
   {
     "id": "arch-156",
     "title": "Anna — county fair",
-    "src": "/photos/arch-156.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-156.jpg",
     "width": 916,
     "height": 714,
     "locationId": "port-of-baltimore",
@@ -4352,7 +4352,7 @@
   {
     "id": "arch-157",
     "title": "Allen at Egg Harbor homestead",
-    "src": "/photos/arch-157.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-157.jpg",
     "width": 914,
     "height": 724,
     "locationId": "gen-loc-18",
@@ -4376,7 +4376,7 @@
   {
     "id": "arch-158",
     "title": "The family at Chicago schoolhouse",
-    "src": "/photos/arch-158.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-158.jpg",
     "width": 913,
     "height": 675,
     "locationId": "gen-loc-22",
@@ -4402,7 +4402,7 @@
   {
     "id": "arch-159",
     "title": "Hazel — county fair",
-    "src": "/photos/arch-159.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-159.jpg",
     "width": 725,
     "height": 904,
     "locationId": "kangaroo-lake",
@@ -4423,7 +4423,7 @@
   {
     "id": "arch-160",
     "title": "Richard, c. 2009",
-    "src": "/photos/arch-160.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-160.jpg",
     "width": 728,
     "height": 954,
     "locationId": "st-marys",
@@ -4448,7 +4448,7 @@
   {
     "id": "arch-161",
     "title": "The family at Casco fairgrounds",
-    "src": "/photos/arch-161.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-161.jpg",
     "width": 921,
     "height": 729,
     "locationId": "gen-loc-17",
@@ -4472,7 +4472,7 @@
   {
     "id": "arch-162",
     "title": "Theodore, December 22, 1966",
-    "src": "/photos/arch-162.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-162.jpg",
     "width": 918,
     "height": 709,
     "locationId": "gen-loc-12",
@@ -4499,7 +4499,7 @@
   {
     "id": "arch-163",
     "title": "Betty — parade street",
-    "src": "/photos/arch-163.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-163.jpg",
     "width": 923,
     "height": 640,
     "locationId": "fort-belvoir",
@@ -4523,7 +4523,7 @@
   {
     "id": "arch-164",
     "title": "Karen — parade street",
-    "src": "/photos/arch-164.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-164.jpg",
     "width": 960,
     "height": 640,
     "locationId": "gen-loc-18",
@@ -4544,7 +4544,7 @@
   {
     "id": "arch-165",
     "title": "The family at Green Bay town hall",
-    "src": "/photos/arch-165.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-165.jpg",
     "width": 741,
     "height": 972,
     "locationId": "gen-loc-2",
@@ -4569,7 +4569,7 @@
   {
     "id": "arch-166",
     "title": "Helen, 2002",
-    "src": "/photos/arch-166.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-166.jpg",
     "width": 968,
     "height": 736,
     "locationId": "gen-loc-13",
@@ -4590,7 +4590,7 @@
   {
     "id": "arch-167",
     "title": "Joseph, 2009",
-    "src": "/photos/arch-167.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-167.jpg",
     "width": 968,
     "height": 644,
     "locationId": "sturgeon-bay-store",
@@ -4612,7 +4612,7 @@
   {
     "id": "arch-168",
     "title": "Janet at Port of Baltimore",
-    "src": "/photos/arch-168.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-168.jpg",
     "width": 963,
     "height": 668,
     "locationId": "port-of-baltimore",
@@ -4635,7 +4635,7 @@
   {
     "id": "arch-169",
     "title": "Carol at Chicago cemetery",
-    "src": "/photos/arch-169.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-169.jpg",
     "width": 917,
     "height": 686,
     "locationId": "gen-loc-16",
@@ -4658,7 +4658,7 @@
   {
     "id": "arch-170",
     "title": "The family at Fort Belvoir",
-    "src": "/photos/arch-170.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-170.jpg",
     "width": 963,
     "height": 635,
     "locationId": "fort-belvoir",
@@ -4682,7 +4682,7 @@
   {
     "id": "arch-171",
     "title": "The family at Jacksonport church",
-    "src": "/photos/arch-171.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-171.jpg",
     "width": 944,
     "height": 632,
     "locationId": "gen-loc-20",
@@ -4703,7 +4703,7 @@
   {
     "id": "arch-172",
     "title": "The family at Kowalski farm",
-    "src": "/photos/arch-172.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-172.jpg",
     "width": 946,
     "height": 630,
     "locationId": "kowalski-farm",
@@ -4729,7 +4729,7 @@
   {
     "id": "arch-173",
     "title": "Klara at Jacksonport church",
-    "src": "/photos/arch-173.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-173.jpg",
     "width": 958,
     "height": 638,
     "locationId": "gen-loc-20",
@@ -4750,7 +4750,7 @@
   {
     "id": "arch-174",
     "title": "Sarah — baseball game",
-    "src": "/photos/arch-174.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-174.jpg",
     "width": 947,
     "height": 631,
     "locationId": "st-vincents-green-bay",
@@ -4778,7 +4778,7 @@
   {
     "id": "arch-175",
     "title": "Ruth — baseball game",
-    "src": "/photos/arch-175.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-175.jpg",
     "width": 948,
     "height": 632,
     "locationId": "gen-loc-15",
@@ -4802,7 +4802,7 @@
   {
     "id": "arch-176",
     "title": "The family at Minneapolis schoolhouse",
-    "src": "/photos/arch-176.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-176.jpg",
     "width": 908,
     "height": 676,
     "locationId": "gen-loc-23",
@@ -4827,7 +4827,7 @@
   {
     "id": "arch-177",
     "title": "Eleanor — baseball game",
-    "src": "/photos/arch-177.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-177.jpg",
     "width": 643,
     "height": 859,
     "locationId": "gen-loc-6",
@@ -4849,7 +4849,7 @@
   {
     "id": "arch-178",
     "title": "Mark, 1984",
-    "src": "/photos/arch-178.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-178.jpg",
     "width": 947,
     "height": 632,
     "locationId": "gen-loc-8",
@@ -4874,7 +4874,7 @@
   {
     "id": "arch-179",
     "title": "Susan — swimming hole",
-    "src": "/photos/arch-179.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-179.jpg",
     "width": 626,
     "height": 939,
     "locationId": "gen-loc-14",
@@ -4898,7 +4898,7 @@
   {
     "id": "arch-180",
     "title": "The family at Green Bay schoolhouse",
-    "src": "/photos/arch-180.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-180.jpg",
     "width": 632,
     "height": 954,
     "locationId": "gen-loc-1",
@@ -4924,7 +4924,7 @@
   {
     "id": "arch-181",
     "title": "Margaret at Minneapolis schoolhouse",
-    "src": "/photos/arch-181.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-181.jpg",
     "width": 950,
     "height": 631,
     "locationId": "gen-loc-23",
@@ -4950,7 +4950,7 @@
   {
     "id": "arch-182",
     "title": "James, 2007",
-    "src": "/photos/arch-182.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-182.jpg",
     "width": 640,
     "height": 961,
     "locationId": "gen-loc-16",
@@ -4973,7 +4973,7 @@
   {
     "id": "arch-183",
     "title": "David at Fort Belvoir",
-    "src": "/photos/arch-183.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-183.jpg",
     "width": 916,
     "height": 680,
     "locationId": "fort-belvoir",
@@ -4995,7 +4995,7 @@
   {
     "id": "arch-184",
     "title": "Józef, December 25, 1966",
-    "src": "/photos/arch-184.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-184.jpg",
     "width": 963,
     "height": 734,
     "locationId": "gen-loc-25",
@@ -5022,7 +5022,7 @@
   {
     "id": "arch-185",
     "title": "The family at Chicago depot",
-    "src": "/photos/arch-185.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-185.jpg",
     "width": 941,
     "height": 628,
     "locationId": "gen-loc-13",
@@ -5047,7 +5047,7 @@
   {
     "id": "arch-186",
     "title": "Edith — swimming hole",
-    "src": "/photos/arch-186.jpg",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/arch-186.jpg",
     "width": 941,
     "height": 743,
     "locationId": "gen-loc-14",

@@ -5,12 +5,17 @@
     "shortName": "Klara",
     "fullName": "Klara Maria Kowalski",
     "maidenName": "Wiśniewska",
-    "nicknames": ["Babcia"],
-    "alternateNames": ["Klara Kowalska", "Klara Wisniewska"],
+    "nicknames": [
+      "Babcia"
+    ],
+    "alternateNames": [
+      "Klara Kowalska",
+      "Klara Wisniewska"
+    ],
     "relation": "Great-grandmother",
     "gender": "f",
     "lifespan": "1898–1972",
-    "avatarSrc": "/photos/avatar-klara.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-klara.jpg",
     "photoCount": 6,
     "suggestedMatchPhotoId": "county-fair-1937"
   },
@@ -20,12 +25,16 @@
     "shortName": "Sarah",
     "fullName": "Sarah Anne Whitfield",
     "maidenName": "Kowalski",
-    "nicknames": ["Sally"],
-    "alternateNames": ["Sarah Kowalski"],
+    "nicknames": [
+      "Sally"
+    ],
+    "alternateNames": [
+      "Sarah Kowalski"
+    ],
     "relation": "Grandmother",
     "gender": "f",
     "lifespan": "b. 1931",
-    "avatarSrc": "/photos/avatar-sarah.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-sarah.jpg",
     "photoCount": 14
   },
   {
@@ -34,8 +43,12 @@
     "shortName": "Ruth",
     "fullName": "Ruth Adaeze Okafor",
     "maidenName": "Eze",
-    "nicknames": ["Mama Ruth"],
-    "alternateNames": ["Ruth Eze"],
+    "nicknames": [
+      "Mama Ruth"
+    ],
+    "alternateNames": [
+      "Ruth Eze"
+    ],
     "relation": "Grandmother",
     "gender": "f",
     "lifespan": "b. 1934",
@@ -46,12 +59,16 @@
     "name": "Tom Whitfield",
     "shortName": "Tom",
     "fullName": "Thomas James Whitfield",
-    "nicknames": ["Tommy"],
-    "alternateNames": ["Thomas Whitfield"],
+    "nicknames": [
+      "Tommy"
+    ],
+    "alternateNames": [
+      "Thomas Whitfield"
+    ],
     "relation": "Grandfather",
     "gender": "m",
     "lifespan": "1928–2009",
-    "avatarSrc": "/photos/avatar-tom.jpg",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-tom.jpg",
     "photoCount": 8
   },
   {
@@ -60,8 +77,13 @@
     "shortName": "Eleanor",
     "fullName": "Eleanor Grace Whitfield-Hayes",
     "maidenName": "Whitfield",
-    "nicknames": ["Ellie"],
-    "alternateNames": ["Eleanor Whitfield", "Eleanor Hayes"],
+    "nicknames": [
+      "Ellie"
+    ],
+    "alternateNames": [
+      "Eleanor Whitfield",
+      "Eleanor Hayes"
+    ],
     "relation": "Aunt · Archive admin",
     "gender": "f",
     "photoCount": 9
@@ -83,7 +105,9 @@
     "name": "Susan Whitfield",
     "shortName": "Susan",
     "fullName": "Susan Claire Whitfield",
-    "nicknames": ["Susie"],
+    "nicknames": [
+      "Susie"
+    ],
     "alternateNames": [],
     "relation": "Mother",
     "gender": "f",
@@ -94,7 +118,9 @@
     "name": "Daniel Okafor",
     "shortName": "Daniel",
     "fullName": "Daniel Chinedu Okafor",
-    "nicknames": ["Dan"],
+    "nicknames": [
+      "Dan"
+    ],
     "alternateNames": [],
     "relation": "Father",
     "gender": "m",
@@ -105,8 +131,12 @@
     "name": "Margaret Whitfield",
     "shortName": "Margaret",
     "fullName": "Margaret Rose Whitfield",
-    "nicknames": ["Maggie"],
-    "alternateNames": ["Margaret Okafor"],
+    "nicknames": [
+      "Maggie"
+    ],
+    "alternateNames": [
+      "Margaret Okafor"
+    ],
     "relation": "You",
     "gender": "f",
     "photoCount": 4
@@ -116,7 +146,9 @@
     "name": "James Okafor",
     "shortName": "James",
     "fullName": "James Daniel Okafor",
-    "nicknames": ["Jamie"],
+    "nicknames": [
+      "Jamie"
+    ],
     "alternateNames": [],
     "relation": "Brother",
     "gender": "m",
@@ -128,7 +160,9 @@
     "name": "David Hayes",
     "shortName": "David",
     "fullName": "David Thomas Hayes",
-    "nicknames": ["Davy"],
+    "nicknames": [
+      "Davy"
+    ],
     "alternateNames": [],
     "relation": "Cousin",
     "gender": "m",
