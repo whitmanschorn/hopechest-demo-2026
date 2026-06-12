@@ -13,6 +13,7 @@ export { feed } from "./feed";
 export { members, invites, currentMemberId } from "./family";
 export { currentIssue, pastIssues } from "./newsletter";
 export { exchanges, fallbackExchange } from "./ask-script";
+export { suggestMentions, type MentionSuggestion } from "./kinship";
 
 export function getPhoto(id: string): Photo {
   const photo = photos.find((p) => p.id === id);

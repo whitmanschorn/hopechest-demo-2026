@@ -39,10 +39,10 @@ export const albums: Album[] = [
     photoIds: ["family-reunion-1968", "tom-fishing-1972"],
   },
   {
-    id: "smart-grandma-sarah",
-    title: "Grandma Sarah Through the Years",
+    id: "smart-sarah",
+    title: "Sarah Through the Years",
     kind: "smart",
-    rule: "Everyone tagged: Grandma S. — sorted oldest first",
+    rule: "Everyone tagged: Sarah Whitfield — sorted oldest first",
     coverPhotoId: "klara-and-sarah-1933",
     photoIds: [
       "klara-and-sarah-1933",

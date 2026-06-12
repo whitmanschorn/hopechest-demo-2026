@@ -32,12 +32,12 @@ export const exchanges: ScriptedExchange[] = [
       },
       {
         kind: "text",
-        text: "You've actually seen this photo twice before without knowing it: Susan photographed it in Grandma's album in 2022, and Eleanor snapped it at Thanksgiving in 2024. Hopechest recognized both as copies of the same print, which Eleanor has since scanned. A note in Sarah's baby book confirms it's the only picture of the two of them together.",
+        text: "You've actually seen this photo twice before without knowing it: Susan photographed it in Sarah's album in 2022, and Eleanor snapped it at Thanksgiving in 2024. Hopechest recognized both as copies of the same print, which Eleanor has since scanned. A note in Sarah's baby book confirms it's the only picture of the two of them together.",
       },
       { kind: "source", documentId: "sarahs-baby-book" },
       {
         kind: "people",
-        personIds: ["great-grandmother-klara", "grandma-sarah"],
+        personIds: ["klara", "sarah"],
       },
     ],
   },
@@ -57,7 +57,7 @@ export const exchanges: ScriptedExchange[] = [
         caption: "Klara, studio portrait, c. 1925",
       },
       { kind: "source", documentId: "immigration-record-1912" },
-      { kind: "people", personIds: ["great-grandmother-klara"] },
+      { kind: "people", personIds: ["klara"] },
     ],
   },
   {

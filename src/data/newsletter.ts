@@ -5,7 +5,7 @@ export const currentIssue: NewsletterIssue = {
   title: "The Kowalski–Whitfield Chronicle",
   month: "June 2026",
   intro:
-    "A big month for the chest: the photo we never thought we'd see clearly again, a fishing-day print resurfaces, and Grandma Sarah's timeline grows to three decades.",
+    "A big month for the chest: the photo we never thought we'd see clearly again, a fishing-day print resurfaces, and Sarah's timeline grows to three decades.",
   photoIds: [
     "klara-and-sarah-1933",
     "tom-fishing-1972",

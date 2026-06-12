@@ -52,8 +52,19 @@ export default async function PersonView({
         <div>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-walnut sm:text-4xl">
             {person.name}
+            {person.maidenName ? (
+              <span className="ml-2 align-middle font-display text-xl font-normal italic text-ink-soft">
+                née {person.maidenName}
+              </span>
+            ) : null}
           </h1>
           <p className="mt-1 text-[15px] text-ink-soft">
+            {person.fullName}
+            {person.nicknames?.length
+              ? ` · known as “${person.nicknames.join("”, “")}”`
+              : ""}
+          </p>
+          <p className="mt-0.5 text-[15px] text-ink-soft">
             {person.relation}
             {person.lifespan ? ` · ${person.lifespan}` : ""}
             {tagged.length > 0
@@ -64,7 +75,7 @@ export default async function PersonView({
         </div>
       </div>
 
-      {person.id === "great-grandmother-klara" ? (
+      {person.id === "klara" ? (
         <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl bg-cream p-4 ring-1 ring-hairline">
           <PeopleIcon className="size-5 shrink-0 text-sepia" />
           <p className="min-w-48 flex-1 text-sm leading-6 text-ink">

@@ -33,8 +33,13 @@ export default function People() {
             >
               <InitialsAvatar person={person} size="xl" />
               <span className="mt-3 font-display text-lg font-semibold tracking-tight text-walnut">
-                {person.shortName}
+                {person.name}
               </span>
+              {person.maidenName ? (
+                <span className="text-xs italic text-ink-soft">
+                  née {person.maidenName}
+                </span>
+              ) : null}
               <span className="text-sm text-ink-soft">{person.relation}</span>
               <span className="mt-2 text-xs text-ink-soft">
                 {person.lifespan ? `${person.lifespan} · ` : ""}

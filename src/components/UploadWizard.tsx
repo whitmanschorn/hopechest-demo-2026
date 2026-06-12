@@ -80,7 +80,7 @@ export function UploadWizard() {
           <p className="mt-1 text-sm leading-6 text-ink-soft">
             Faded sepia, scratches, and vignetting detected — and{" "}
             <span className="font-medium text-ink">
-              2 faces recognized: Great Grandmother K. and Grandma S.
+              2 faces recognized: Klara Kowalski and Sarah Whitfield
             </span>{" "}
             Preview the restoration:
           </p>

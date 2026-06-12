@@ -1,8 +1,19 @@
 export interface Person {
   id: string;
+  /** Everyday display name, e.g. "Sarah Whitfield". */
   name: string;
   shortName: string;
+  /** Full legal name, e.g. "Sarah Anne Whitfield". */
+  fullName: string;
+  /** Family name at birth, when it differs from the current surname. */
+  maidenName?: string;
+  /** What the family actually calls them; resolvable in @mentions. */
+  nicknames?: string[];
+  /** Relationship to the signed-in member (Margaret). */
   relation: string;
+  gender: "f" | "m";
+  /** Family-tree edges; ids of this person's parents that exist in the chest. */
+  parentIds?: string[];
   lifespan?: string;
   avatarSrc?: string;
   photoCount: number;
@@ -25,6 +36,17 @@ export interface PhotoCapture {
   note?: string;
 }
 
+/**
+ * A provenance fact about a photo. `deduced` facts were inferred by
+ * Hopechest from clues in other photos (same people, clothing, cars,
+ * buildings); `clue` says how. Non-deduced facts come from the family.
+ */
+export interface PhotoFact {
+  value: string;
+  deduced?: boolean;
+  clue?: string;
+}
+
 export interface Photo {
   id: string;
   title: string;
@@ -34,6 +56,13 @@ export interface Photo {
   era?: string;
   location?: string;
   description?: string;
+  /** Who added this version to the chest, and when. */
+  contributedById: string;
+  contributedWhen: string;
+  /** Who took the original photo, if known or deducible. */
+  photographer?: PhotoFact;
+  takenWhen?: PhotoFact;
+  takenWhere?: PhotoFact;
   faceTags: FaceTag[];
   captures: PhotoCapture[];
   restoration?: { restoredSrc: string; summary: string };

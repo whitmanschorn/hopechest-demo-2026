@@ -33,9 +33,9 @@ export const feed: FeedItem[] = [
   {
     kind: "person-milestone",
     id: "feed-milestone-sarah",
-    personId: "grandma-sarah",
+    personId: "sarah",
     when: "Last week",
-    blurb: "Grandma S. now appears in 14 photos spanning 31 years.",
+    blurb: "Sarah Whitfield now appears in 14 photos spanning 31 years.",
   },
   {
     kind: "photo-added",
@@ -55,7 +55,7 @@ export const feed: FeedItem[] = [
   {
     kind: "person-milestone",
     id: "feed-milestone-klara",
-    personId: "great-grandmother-klara",
+    personId: "klara",
     when: "3 weeks ago",
     blurb: "A new face match suggests Klara appears in the 1937 county fair photo.",
   },

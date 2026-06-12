@@ -5,6 +5,7 @@ import { Badge } from "@/components/Badge";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { FaceTagOverlay } from "@/components/FaceTagOverlay";
 import { PersonChip } from "@/components/PersonChip";
+import { PhotoDetails } from "@/components/PhotoDetails";
 import { ProvenanceCard } from "@/components/ProvenanceCard";
 import { ChevronLeftIcon, RestoreIcon } from "@/components/icons";
 import { albumsForPhoto, getPerson, getPhoto, photos } from "@/data";
@@ -75,6 +76,8 @@ export default async function PhotoView({
               </p>
             ) : null}
           </div>
+
+          <PhotoDetails photo={photo} />
 
           {albums.length > 0 ? (
             <div className="flex flex-wrap items-center gap-2">
