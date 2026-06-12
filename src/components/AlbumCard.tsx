@@ -5,6 +5,13 @@ import { Img } from "./Img";
 import { SparkleIcon } from "./icons";
 import { getPhoto, type Album } from "@/data";
 
+/** "2026-05-28" -> "May 2026" (created/updated stamps are month-grained in the UI). */
+function monthYear(iso: string): string {
+  const [y, m] = iso.split("-").map(Number);
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return `${months[(m ?? 1) - 1]} ${y}`;
+}
+
 export function AlbumCard({ album }: { album: Album }) {
   const cover = getPhoto(album.coverPhotoId);
   return (
@@ -32,7 +39,10 @@ export function AlbumCard({ album }: { album: Album }) {
           {album.title}
         </span>
         <span className="block text-sm text-ink-soft">
-          {album.subtitle ?? album.rule} · {album.photoIds.length} photos
+          {album.subtitle ?? album.rule} · {album.photoCount} photos
+        </span>
+        <span className="mt-1 block text-xs text-ink-soft/80">
+          Created {monthYear(album.createdAt)} · Updated {monthYear(album.updatedAt)}
         </span>
       </span>
     </Link>

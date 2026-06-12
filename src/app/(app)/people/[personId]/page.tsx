@@ -5,7 +5,14 @@ import { Img } from "@/components/Img";
 import { InitialsAvatar } from "@/components/InitialsAvatar";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { ChevronLeftIcon, PeopleIcon } from "@/components/icons";
-import { getPerson, getPhoto, people, photosForPerson } from "@/data";
+import {
+  currentMemberId,
+  describeRelationshipTo,
+  getPerson,
+  getPhoto,
+  people,
+  photosForPerson,
+} from "@/data";
 
 export const dynamicParams = false;
 
@@ -31,13 +38,23 @@ export default async function PersonView({
   const person = getPerson(personId);
   const tagged = photosForPerson(personId);
   const years =
-    tagged.length > 1
-      ? `${tagged[0].era ?? ""} – ${tagged[tagged.length - 1].era ?? ""}`.replaceAll(
-          "c. ",
-          "",
-        )
+    tagged.length > 1 && tagged[0].date.year && tagged[tagged.length - 1].date.year
+      ? `${tagged[0].date.year}–${tagged[tagged.length - 1].date.year}`
       : null;
-  const suggestion = getPhoto("county-fair-1937");
+
+  const isMe = person.id === currentMemberId;
+  const relationship = isMe ? null : describeRelationshipTo(currentMemberId, person.id);
+  const suggestion = person.suggestedMatchPhotoId
+    ? getPhoto(person.suggestedMatchPhotoId)
+    : null;
+
+  // Identity history: every name the family knows them by.
+  const aka: { label: string; value: string }[] = [];
+  if (person.fullName !== person.name) aka.push({ label: "Full name", value: person.fullName });
+  if (person.maidenName) aka.push({ label: "Born", value: `${person.name.split(" ")[0]} ${person.maidenName}` });
+  if (person.nicknames?.length) aka.push({ label: "Nicknames", value: person.nicknames.join(", ") });
+  if (person.alternateNames?.length) aka.push({ label: "Also recorded as", value: person.alternateNames.join(", ") });
+
   return (
     <>
       <Link
@@ -47,7 +64,7 @@ export default async function PersonView({
         <ChevronLeftIcon className="size-4" />
         All people
       </Link>
-      <div className="mb-7 flex items-center gap-5">
+      <div className="mb-6 flex items-center gap-5">
         <InitialsAvatar person={person} size="xl" />
         <div>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-walnut sm:text-4xl">
@@ -59,12 +76,6 @@ export default async function PersonView({
             ) : null}
           </h1>
           <p className="mt-1 text-[15px] text-ink-soft">
-            {person.fullName}
-            {person.nicknames?.length
-              ? ` · known as “${person.nicknames.join("”, “")}”`
-              : ""}
-          </p>
-          <p className="mt-0.5 text-[15px] text-ink-soft">
             {person.relation}
             {person.lifespan ? ` · ${person.lifespan}` : ""}
             {tagged.length > 0
@@ -72,15 +83,32 @@ export default async function PersonView({
               : ""}
             {years ? ` spanning ${years}` : ""}
           </p>
+          {relationship ? (
+            <p className="mt-1 text-[15px] font-medium text-sepia">{relationship}.</p>
+          ) : isMe ? (
+            <p className="mt-1 text-[15px] font-medium text-sepia">This is you.</p>
+          ) : null}
         </div>
       </div>
 
-      {person.id === "klara" ? (
+      {/* Identity history */}
+      {aka.length > 0 ? (
+        <dl className="mb-6 grid gap-x-6 gap-y-2 rounded-xl bg-cream px-5 py-4 ring-1 ring-hairline sm:grid-cols-2">
+          {aka.map((row) => (
+            <div key={row.label} className="flex flex-col">
+              <dt className="text-xs uppercase tracking-wide text-ink-soft">{row.label}</dt>
+              <dd className="text-[15px] text-ink">{row.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
+
+      {suggestion ? (
         <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl bg-cream p-4 ring-1 ring-hairline">
           <PeopleIcon className="size-5 shrink-0 text-sepia" />
           <p className="min-w-48 flex-1 text-sm leading-6 text-ink">
-            <span className="font-medium">Is this also Klara?</span> Hopechest
-            found a possible match in the 1937 county fair photo.
+            <span className="font-medium">Is this also {person.shortName}?</span>{" "}
+            Hopechest found a possible match in another photo.
           </p>
           <Link
             href={`/photos/${suggestion.id}`}

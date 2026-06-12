@@ -1,0 +1,58 @@
+[
+  {
+    "id": "summers-at-the-lake",
+    "title": "Summers at the Lake",
+    "kind": "standard",
+    "subtitle": "Kangaroo Lake, 1958–1974",
+    "coverPhotoId": "lake-house-summer-1958",
+    "createdAt": "2026-02-03",
+    "updatedAt": "2026-05-28"
+  },
+  {
+    "id": "wedding-1950",
+    "title": "Sarah & Tom's Wedding",
+    "kind": "standard",
+    "subtitle": "St. Mary's, June 1950",
+    "coverPhotoId": "wedding-day-1950",
+    "createdAt": "2026-02-10",
+    "updatedAt": "2026-05-12"
+  },
+  {
+    "id": "holiday-gatherings",
+    "title": "Holiday Gatherings",
+    "kind": "standard",
+    "subtitle": "Christmases and Thanksgivings",
+    "coverPhotoId": "christmas-morning-1955",
+    "createdAt": "2026-02-18",
+    "updatedAt": "2026-04-22"
+  },
+  {
+    "id": "family-reunions",
+    "title": "Family Reunions",
+    "kind": "standard",
+    "subtitle": "Everyone, every few years",
+    "coverPhotoId": "family-reunion-1968",
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-06-02"
+  },
+  {
+    "id": "smart-sarah",
+    "title": "Sarah Through the Years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Sarah Whitfield — sorted oldest first",
+    "smartQuery": { "taggedPersonId": "sarah", "sort": "oldest" },
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-01-20",
+    "updatedAt": "2026-06-08"
+  },
+  {
+    "id": "smart-kowalski-farm",
+    "title": "The Kowalski Farm",
+    "kind": "smart",
+    "rule": "Location: Kowalski farm, Door County",
+    "smartQuery": { "locationId": "kowalski-farm" },
+    "coverPhotoId": "kowalski-farmhouse-1928",
+    "createdAt": "2026-01-20",
+    "updatedAt": "2026-06-01"
+  }
+]

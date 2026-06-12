@@ -158,3 +158,12 @@ export function CameraIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function MapPinIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 21s6.5-5.4 6.5-10.5a6.5 6.5 0 0 0-13 0C5.5 15.6 12 21 12 21Z" />
+      <circle cx="12" cy="10.5" r="2.4" />
+    </svg>
+  );
+}

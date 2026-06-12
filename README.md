@@ -21,8 +21,11 @@ family roles, and the auto-drafted newsletter.
 
 ## Stack
 
-- Next.js (App Router, TypeScript, Tailwind v4) — zero extra runtime deps
-- All routes statically prerendered; mock data lives in `src/data/`
+- Next.js (App Router, TypeScript, Tailwind v4); maps via Leaflet + OpenStreetMap
+- All routes statically prerendered. Data lives in a JSON-backed mock database
+  (`src/data/json/*` tables + `src/data/db/*` repositories) designed so a later
+  move to Postgres is mechanical — pages import `@/data`, never raw tables
+- Kinship is a pure, unit-tested resolver (`src/data/kinship.ts`); run `npm test`
 - Photos are public-domain Library of Congress FSA/OWI images
   (`public/photos/CREDITS.md`); the fictional family is assembled from them
 

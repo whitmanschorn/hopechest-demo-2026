@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { AlbumCard } from "@/components/AlbumCard";
 import { FeedItemCard } from "@/components/FeedItemCard";
+import { OnThisDay } from "@/components/OnThisDay";
 import { SectionHeader, SubHeader } from "@/components/SectionHeader";
 import { AskIcon } from "@/components/icons";
 import { albums, currentMemberId, feed, getPerson } from "@/data";
@@ -30,6 +31,7 @@ export default function Home() {
       />
       <div className="grid items-start gap-8 lg:grid-cols-[1fr_minmax(16rem,20rem)]">
         <div className="flex flex-col gap-3">
+          <OnThisDay />
           {feed.map((item) => (
             <FeedItemCard key={item.id} item={item} />
           ))}

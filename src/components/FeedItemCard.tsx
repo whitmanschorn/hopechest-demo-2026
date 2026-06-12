@@ -58,7 +58,7 @@ function PhotoStrip({ photoId, label }: { photoId: string; label?: string }) {
           {photo.title}
         </span>
         <span className="block text-xs text-ink-soft">
-          {label ?? photo.era}
+          {label ?? photo.date.display}
         </span>
       </span>
     </Link>

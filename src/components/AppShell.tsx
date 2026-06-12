@@ -11,6 +11,7 @@ import {
   FamilyIcon,
   HomeIcon,
   MailIcon,
+  MapPinIcon,
   PeopleIcon,
   UploadIcon,
 } from "./icons";
@@ -25,6 +26,7 @@ const PRIMARY_NAV = [
 ] as const;
 
 const SECONDARY_NAV = [
+  { href: "/map", label: "Map", Icon: MapPinIcon },
   { href: "/documents", label: "Documents", Icon: DocumentIcon },
   { href: "/family", label: "Family", Icon: FamilyIcon },
   { href: "/newsletter", label: "Newsletter", Icon: MailIcon },
