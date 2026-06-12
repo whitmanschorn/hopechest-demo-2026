@@ -5,13 +5,18 @@
     "shortName": "Klara",
     "fullName": "Klara Maria Kowalski",
     "maidenName": "Wiśniewska",
-    "nicknames": ["Babcia"],
-    "alternateNames": ["Klara Kowalska", "Klara Wisniewska"],
+    "nicknames": [
+      "Babcia"
+    ],
+    "alternateNames": [
+      "Klara Kowalska",
+      "Klara Wisniewska"
+    ],
     "relation": "Great-grandmother",
     "gender": "f",
     "lifespan": "1898–1972",
     "avatarSrc": "/photos/avatar-klara.jpg",
-    "photoCount": 6,
+    "photoCount": 13,
     "suggestedMatchPhotoId": "county-fair-1937"
   },
   {
@@ -20,13 +25,17 @@
     "shortName": "Sarah",
     "fullName": "Sarah Anne Whitfield",
     "maidenName": "Kowalski",
-    "nicknames": ["Sally"],
-    "alternateNames": ["Sarah Kowalski"],
+    "nicknames": [
+      "Sally"
+    ],
+    "alternateNames": [
+      "Sarah Kowalski"
+    ],
     "relation": "Grandmother",
     "gender": "f",
     "lifespan": "b. 1931",
     "avatarSrc": "/photos/avatar-sarah.jpg",
-    "photoCount": 14
+    "photoCount": 19
   },
   {
     "id": "ruth",
@@ -34,25 +43,33 @@
     "shortName": "Ruth",
     "fullName": "Ruth Adaeze Okafor",
     "maidenName": "Eze",
-    "nicknames": ["Mama Ruth"],
-    "alternateNames": ["Ruth Eze"],
+    "nicknames": [
+      "Mama Ruth"
+    ],
+    "alternateNames": [
+      "Ruth Eze"
+    ],
     "relation": "Grandmother",
     "gender": "f",
     "lifespan": "b. 1934",
-    "photoCount": 0
+    "photoCount": 9
   },
   {
     "id": "tom",
     "name": "Tom Whitfield",
     "shortName": "Tom",
     "fullName": "Thomas James Whitfield",
-    "nicknames": ["Tommy"],
-    "alternateNames": ["Thomas Whitfield"],
+    "nicknames": [
+      "Tommy"
+    ],
+    "alternateNames": [
+      "Thomas Whitfield"
+    ],
     "relation": "Grandfather",
     "gender": "m",
     "lifespan": "1928–2009",
     "avatarSrc": "/photos/avatar-tom.jpg",
-    "photoCount": 8
+    "photoCount": 14
   },
   {
     "id": "eleanor",
@@ -60,11 +77,16 @@
     "shortName": "Eleanor",
     "fullName": "Eleanor Grace Whitfield-Hayes",
     "maidenName": "Whitfield",
-    "nicknames": ["Ellie"],
-    "alternateNames": ["Eleanor Whitfield", "Eleanor Hayes"],
+    "nicknames": [
+      "Ellie"
+    ],
+    "alternateNames": [
+      "Eleanor Whitfield",
+      "Eleanor Hayes"
+    ],
     "relation": "Aunt · Archive admin",
     "gender": "f",
-    "photoCount": 9
+    "photoCount": 11
   },
   {
     "id": "mark-hayes",
@@ -76,62 +98,528 @@
     "relation": "Uncle",
     "gender": "m",
     "lifespan": "b. 1950",
-    "photoCount": 0
+    "photoCount": 12
   },
   {
     "id": "susan",
     "name": "Susan Whitfield",
     "shortName": "Susan",
     "fullName": "Susan Claire Whitfield",
-    "nicknames": ["Susie"],
+    "nicknames": [
+      "Susie"
+    ],
     "alternateNames": [],
     "relation": "Mother",
     "gender": "f",
-    "photoCount": 11
+    "photoCount": 10
   },
   {
     "id": "daniel",
     "name": "Daniel Okafor",
     "shortName": "Daniel",
     "fullName": "Daniel Chinedu Okafor",
-    "nicknames": ["Dan"],
+    "nicknames": [
+      "Dan"
+    ],
     "alternateNames": [],
     "relation": "Father",
     "gender": "m",
-    "photoCount": 0
+    "photoCount": 8
   },
   {
     "id": "margaret",
     "name": "Margaret Whitfield",
     "shortName": "Margaret",
     "fullName": "Margaret Rose Whitfield",
-    "nicknames": ["Maggie"],
-    "alternateNames": ["Margaret Okafor"],
+    "nicknames": [
+      "Maggie"
+    ],
+    "alternateNames": [
+      "Margaret Okafor"
+    ],
     "relation": "You",
     "gender": "f",
-    "photoCount": 4
+    "photoCount": 8
   },
   {
     "id": "james",
     "name": "James Okafor",
     "shortName": "James",
     "fullName": "James Daniel Okafor",
-    "nicknames": ["Jamie"],
+    "nicknames": [
+      "Jamie"
+    ],
     "alternateNames": [],
     "relation": "Brother",
     "gender": "m",
     "lifespan": "b. 1994",
-    "photoCount": 0
+    "photoCount": 6
   },
   {
     "id": "david",
     "name": "David Hayes",
     "shortName": "David",
     "fullName": "David Thomas Hayes",
-    "nicknames": ["Davy"],
+    "nicknames": [
+      "Davy"
+    ],
     "alternateNames": [],
     "relation": "Cousin",
     "gender": "m",
-    "photoCount": 3
+    "photoCount": 9
+  },
+  {
+    "id": "jozef",
+    "name": "Józef Kowalski",
+    "shortName": "Józef",
+    "fullName": "Józef Antoni Kowalski",
+    "nicknames": [
+      "Dziadek"
+    ],
+    "alternateNames": [
+      "Joseph Kowalski"
+    ],
+    "relation": "Great-grandfather",
+    "gender": "m",
+    "lifespan": "1895–1969",
+    "photoCount": 14
+  },
+  {
+    "id": "walter-whitfield",
+    "name": "Walter Whitfield",
+    "shortName": "Walter",
+    "fullName": "Walter James Whitfield",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Great-grandfather",
+    "gender": "m",
+    "lifespan": "1900–1974",
+    "photoCount": 9
+  },
+  {
+    "id": "edith-whitfield",
+    "name": "Edith Whitfield",
+    "shortName": "Edith",
+    "fullName": "Edith Mae Whitfield",
+    "nicknames": [
+      "Nana Edith"
+    ],
+    "alternateNames": [],
+    "relation": "Great-grandmother",
+    "gender": "f",
+    "lifespan": "1903–1981",
+    "photoCount": 8
+  },
+  {
+    "id": "rose-whitfield",
+    "name": "Rose Whitfield",
+    "shortName": "Rose",
+    "fullName": "Rose Eleanor Whitfield",
+    "nicknames": [
+      "Aunt Rose"
+    ],
+    "alternateNames": [],
+    "relation": "Great-aunt",
+    "gender": "f",
+    "lifespan": "1925–2012",
+    "photoCount": 9
+  },
+  {
+    "id": "emeka-okafor",
+    "name": "Emeka Okafor",
+    "shortName": "Emeka",
+    "fullName": "Emeka Chukwu Okafor",
+    "nicknames": [],
+    "alternateNames": [
+      "Michael Okafor"
+    ],
+    "relation": "Grandfather",
+    "gender": "m",
+    "lifespan": "1930–2008",
+    "photoCount": 7
+  },
+  {
+    "id": "ada-okafor",
+    "name": "Ada Okafor",
+    "shortName": "Ada",
+    "fullName": "Ada Ngozi Okafor",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Aunt",
+    "gender": "f",
+    "lifespan": "b. 1960",
+    "photoCount": 9
+  },
+  {
+    "id": "chidi-okafor",
+    "name": "Chidi Okafor",
+    "shortName": "Chidi",
+    "fullName": "Chidi Emmanuel Okafor",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Uncle",
+    "gender": "m",
+    "lifespan": "b. 1963",
+    "photoCount": 7
+  },
+  {
+    "id": "grace-hayes",
+    "name": "Grace Hayes",
+    "shortName": "Grace",
+    "fullName": "Grace Eleanor Hayes",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "f",
+    "lifespan": "b. 1983",
+    "photoCount": 5
+  },
+  {
+    "id": "lauren-hayes",
+    "name": "Lauren Bauer",
+    "shortName": "Lauren",
+    "fullName": "Lauren Kate Bauer",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin's wife",
+    "gender": "f",
+    "lifespan": "b. 1982",
+    "photoCount": 8
+  },
+  {
+    "id": "noah-hayes",
+    "name": "Noah Hayes",
+    "shortName": "Noah",
+    "fullName": "Noah David Hayes",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "First cousin once removed",
+    "gender": "m",
+    "lifespan": "b. 2010",
+    "photoCount": 1
+  },
+  {
+    "id": "ella-hayes",
+    "name": "Ella Hayes",
+    "shortName": "Ella",
+    "fullName": "Ella Rose Hayes",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "First cousin once removed",
+    "gender": "f",
+    "lifespan": "b. 2013",
+    "photoCount": 1
+  },
+  {
+    "id": "kin-1",
+    "name": "Henry Kessler",
+    "shortName": "Henry",
+    "fullName": "Henry Henry Kessler",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1963",
+    "photoCount": 8
+  },
+  {
+    "id": "kin-2",
+    "name": "Clara Lewandowski",
+    "shortName": "Clara",
+    "fullName": "Clara Louise Lewandowski",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "f",
+    "lifespan": "b. 1960",
+    "photoCount": 9
+  },
+  {
+    "id": "kin-3",
+    "name": "Gary Hoffman",
+    "shortName": "Gary",
+    "fullName": "Gary James Hoffman",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1980",
+    "photoCount": 5
+  },
+  {
+    "id": "kin-4",
+    "name": "Kenneth Hansen",
+    "shortName": "Kenneth",
+    "fullName": "Kenneth Grace Hansen",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "1925–2001",
+    "photoCount": 8
+  },
+  {
+    "id": "kin-5",
+    "name": "Bruce Kessler",
+    "shortName": "Bruce",
+    "fullName": "Bruce Edward Kessler",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "m",
+    "lifespan": "b. 1989",
+    "photoCount": 7
+  },
+  {
+    "id": "kin-6",
+    "name": "Diane Vogel",
+    "shortName": "Diane",
+    "fullName": "Diane Allen Vogel",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "f",
+    "lifespan": "b. 1986",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-7",
+    "name": "Anna Okafor",
+    "shortName": "Anna",
+    "fullName": "Anna John Okafor",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "f",
+    "lifespan": "b. 1991",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-8",
+    "name": "Allen Pierson",
+    "shortName": "Allen",
+    "fullName": "Allen Frank Pierson",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1988",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-9",
+    "name": "Albert Okafor",
+    "shortName": "Albert",
+    "fullName": "Albert Faye Okafor",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "m",
+    "lifespan": "b. 1993",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-10",
+    "name": "Hazel Dahl",
+    "shortName": "Hazel",
+    "fullName": "Hazel Allen Dahl",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "f",
+    "lifespan": "b. 1992",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-11",
+    "name": "Richard Okafor",
+    "shortName": "Richard",
+    "fullName": "Richard Rose Okafor",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "m",
+    "lifespan": "b. 1997",
+    "photoCount": 8
+  },
+  {
+    "id": "kin-12",
+    "name": "Esther Hoffman",
+    "shortName": "Esther",
+    "fullName": "Esther Mae Hoffman",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Niece / Nephew",
+    "gender": "f",
+    "lifespan": "b. 2008",
+    "photoCount": 1
+  },
+  {
+    "id": "kin-13",
+    "name": "George Hoffman",
+    "shortName": "George",
+    "fullName": "George Lee Hoffman",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Niece / Nephew",
+    "gender": "m",
+    "lifespan": "b. 2011",
+    "photoCount": 2
+  },
+  {
+    "id": "kin-14",
+    "name": "Nancy Hansen",
+    "shortName": "Nancy",
+    "fullName": "Nancy Louise Hansen",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Aunt / Uncle",
+    "gender": "f",
+    "lifespan": "b. 1953",
+    "photoCount": 10
+  },
+  {
+    "id": "kin-15",
+    "name": "Theodore Adeyemi",
+    "shortName": "Theodore",
+    "fullName": "Theodore James Adeyemi",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1952",
+    "photoCount": 8
+  },
+  {
+    "id": "kin-16",
+    "name": "Betty Hansen",
+    "shortName": "Betty",
+    "fullName": "Betty Ruth Hansen",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Aunt / Uncle",
+    "gender": "f",
+    "lifespan": "b. 1953",
+    "photoCount": 10
+  },
+  {
+    "id": "kin-17",
+    "name": "Karen Hansen",
+    "shortName": "Karen",
+    "fullName": "Karen Claire Hansen",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Aunt / Uncle",
+    "gender": "f",
+    "lifespan": "b. 1956",
+    "photoCount": 10
+  },
+  {
+    "id": "kin-18",
+    "name": "Paul Okonkwo",
+    "shortName": "Paul",
+    "fullName": "Paul Rose Okonkwo",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1953",
+    "photoCount": 9
+  },
+  {
+    "id": "kin-19",
+    "name": "Helen Adeyemi",
+    "shortName": "Helen",
+    "fullName": "Helen Faye Adeyemi",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "f",
+    "lifespan": "b. 1984",
+    "photoCount": 5
+  },
+  {
+    "id": "kin-20",
+    "name": "Joseph Bauer",
+    "shortName": "Joseph",
+    "fullName": "Joseph Paul Bauer",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1981",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-21",
+    "name": "Janet Adeyemi",
+    "shortName": "Janet",
+    "fullName": "Janet Allen Adeyemi",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "f",
+    "lifespan": "b. 1986",
+    "photoCount": 7
+  },
+  {
+    "id": "kin-22",
+    "name": "Carol Okonkwo",
+    "shortName": "Carol",
+    "fullName": "Carol Rose Okonkwo",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "f",
+    "lifespan": "b. 1986",
+    "photoCount": 9
+  },
+  {
+    "id": "kin-23",
+    "name": "Harold Andersen",
+    "shortName": "Harold",
+    "fullName": "Harold Frank Andersen",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "m",
+    "lifespan": "b. 1983",
+    "photoCount": 8
+  },
+  {
+    "id": "kin-24",
+    "name": "Vernon Okonkwo",
+    "shortName": "Vernon",
+    "fullName": "Vernon Dean Okonkwo",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "m",
+    "lifespan": "b. 1990",
+    "photoCount": 6
+  },
+  {
+    "id": "kin-25",
+    "name": "Patricia Okonkwo",
+    "shortName": "Patricia",
+    "fullName": "Patricia Henry Okonkwo",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Relative by marriage",
+    "gender": "f",
+    "lifespan": "b. 1991",
+    "photoCount": 7
+  },
+  {
+    "id": "kin-26",
+    "name": "Bonnie Bauer",
+    "shortName": "Bonnie",
+    "fullName": "Bonnie Lee Bauer",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Niece / Nephew",
+    "gender": "f",
+    "lifespan": "b. 2012",
+    "photoCount": 0
   }
 ]

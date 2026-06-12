@@ -1,17 +1,377 @@
 [
-  { "fromId": "klara", "toId": "sarah", "type": "parent" },
-  { "fromId": "sarah", "toId": "eleanor", "type": "parent" },
-  { "fromId": "tom", "toId": "eleanor", "type": "parent" },
-  { "fromId": "sarah", "toId": "susan", "type": "parent" },
-  { "fromId": "tom", "toId": "susan", "type": "parent" },
-  { "fromId": "ruth", "toId": "daniel", "type": "parent" },
-  { "fromId": "susan", "toId": "margaret", "type": "parent" },
-  { "fromId": "daniel", "toId": "margaret", "type": "parent" },
-  { "fromId": "susan", "toId": "james", "type": "parent" },
-  { "fromId": "daniel", "toId": "james", "type": "parent" },
-  { "fromId": "eleanor", "toId": "david", "type": "parent" },
-  { "fromId": "mark-hayes", "toId": "david", "type": "parent" },
-  { "fromId": "sarah", "toId": "tom", "type": "spouse" },
-  { "fromId": "susan", "toId": "daniel", "type": "spouse" },
-  { "fromId": "eleanor", "toId": "mark-hayes", "type": "spouse" }
+  {
+    "fromId": "klara",
+    "toId": "sarah",
+    "type": "parent"
+  },
+  {
+    "fromId": "sarah",
+    "toId": "eleanor",
+    "type": "parent"
+  },
+  {
+    "fromId": "tom",
+    "toId": "eleanor",
+    "type": "parent"
+  },
+  {
+    "fromId": "sarah",
+    "toId": "susan",
+    "type": "parent"
+  },
+  {
+    "fromId": "tom",
+    "toId": "susan",
+    "type": "parent"
+  },
+  {
+    "fromId": "ruth",
+    "toId": "daniel",
+    "type": "parent"
+  },
+  {
+    "fromId": "susan",
+    "toId": "margaret",
+    "type": "parent"
+  },
+  {
+    "fromId": "daniel",
+    "toId": "margaret",
+    "type": "parent"
+  },
+  {
+    "fromId": "susan",
+    "toId": "james",
+    "type": "parent"
+  },
+  {
+    "fromId": "daniel",
+    "toId": "james",
+    "type": "parent"
+  },
+  {
+    "fromId": "eleanor",
+    "toId": "david",
+    "type": "parent"
+  },
+  {
+    "fromId": "mark-hayes",
+    "toId": "david",
+    "type": "parent"
+  },
+  {
+    "fromId": "sarah",
+    "toId": "tom",
+    "type": "spouse"
+  },
+  {
+    "fromId": "susan",
+    "toId": "daniel",
+    "type": "spouse"
+  },
+  {
+    "fromId": "eleanor",
+    "toId": "mark-hayes",
+    "type": "spouse"
+  },
+  {
+    "fromId": "klara",
+    "toId": "jozef",
+    "type": "spouse"
+  },
+  {
+    "fromId": "jozef",
+    "toId": "sarah",
+    "type": "parent"
+  },
+  {
+    "fromId": "walter-whitfield",
+    "toId": "edith-whitfield",
+    "type": "spouse"
+  },
+  {
+    "fromId": "walter-whitfield",
+    "toId": "tom",
+    "type": "parent"
+  },
+  {
+    "fromId": "edith-whitfield",
+    "toId": "tom",
+    "type": "parent"
+  },
+  {
+    "fromId": "walter-whitfield",
+    "toId": "rose-whitfield",
+    "type": "parent"
+  },
+  {
+    "fromId": "edith-whitfield",
+    "toId": "rose-whitfield",
+    "type": "parent"
+  },
+  {
+    "fromId": "ruth",
+    "toId": "emeka-okafor",
+    "type": "spouse"
+  },
+  {
+    "fromId": "emeka-okafor",
+    "toId": "daniel",
+    "type": "parent"
+  },
+  {
+    "fromId": "ruth",
+    "toId": "ada-okafor",
+    "type": "parent"
+  },
+  {
+    "fromId": "emeka-okafor",
+    "toId": "ada-okafor",
+    "type": "parent"
+  },
+  {
+    "fromId": "ruth",
+    "toId": "chidi-okafor",
+    "type": "parent"
+  },
+  {
+    "fromId": "emeka-okafor",
+    "toId": "chidi-okafor",
+    "type": "parent"
+  },
+  {
+    "fromId": "eleanor",
+    "toId": "grace-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "mark-hayes",
+    "toId": "grace-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "david",
+    "toId": "lauren-hayes",
+    "type": "spouse"
+  },
+  {
+    "fromId": "david",
+    "toId": "noah-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "lauren-hayes",
+    "toId": "noah-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "david",
+    "toId": "ella-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "lauren-hayes",
+    "toId": "ella-hayes",
+    "type": "parent"
+  },
+  {
+    "fromId": "ada-okafor",
+    "toId": "kin-1",
+    "type": "spouse"
+  },
+  {
+    "fromId": "chidi-okafor",
+    "toId": "kin-2",
+    "type": "spouse"
+  },
+  {
+    "fromId": "grace-hayes",
+    "toId": "kin-3",
+    "type": "spouse"
+  },
+  {
+    "fromId": "rose-whitfield",
+    "toId": "kin-4",
+    "type": "spouse"
+  },
+  {
+    "fromId": "ada-okafor",
+    "toId": "kin-5",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-1",
+    "toId": "kin-5",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-5",
+    "toId": "kin-6",
+    "type": "spouse"
+  },
+  {
+    "fromId": "chidi-okafor",
+    "toId": "kin-7",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-2",
+    "toId": "kin-7",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-7",
+    "toId": "kin-8",
+    "type": "spouse"
+  },
+  {
+    "fromId": "chidi-okafor",
+    "toId": "kin-9",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-2",
+    "toId": "kin-9",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-9",
+    "toId": "kin-10",
+    "type": "spouse"
+  },
+  {
+    "fromId": "chidi-okafor",
+    "toId": "kin-11",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-2",
+    "toId": "kin-11",
+    "type": "parent"
+  },
+  {
+    "fromId": "grace-hayes",
+    "toId": "kin-12",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-3",
+    "toId": "kin-12",
+    "type": "parent"
+  },
+  {
+    "fromId": "grace-hayes",
+    "toId": "kin-13",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-3",
+    "toId": "kin-13",
+    "type": "parent"
+  },
+  {
+    "fromId": "rose-whitfield",
+    "toId": "kin-14",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-4",
+    "toId": "kin-14",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-14",
+    "toId": "kin-15",
+    "type": "spouse"
+  },
+  {
+    "fromId": "rose-whitfield",
+    "toId": "kin-16",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-4",
+    "toId": "kin-16",
+    "type": "parent"
+  },
+  {
+    "fromId": "rose-whitfield",
+    "toId": "kin-17",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-4",
+    "toId": "kin-17",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-17",
+    "toId": "kin-18",
+    "type": "spouse"
+  },
+  {
+    "fromId": "kin-14",
+    "toId": "kin-19",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-15",
+    "toId": "kin-19",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-19",
+    "toId": "kin-20",
+    "type": "spouse"
+  },
+  {
+    "fromId": "kin-14",
+    "toId": "kin-21",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-15",
+    "toId": "kin-21",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-17",
+    "toId": "kin-22",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-18",
+    "toId": "kin-22",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-22",
+    "toId": "kin-23",
+    "type": "spouse"
+  },
+  {
+    "fromId": "kin-17",
+    "toId": "kin-24",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-18",
+    "toId": "kin-24",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-24",
+    "toId": "kin-25",
+    "type": "spouse"
+  },
+  {
+    "fromId": "kin-19",
+    "toId": "kin-26",
+    "type": "parent"
+  },
+  {
+    "fromId": "kin-20",
+    "toId": "kin-26",
+    "type": "parent"
+  }
 ]

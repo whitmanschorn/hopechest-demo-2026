@@ -1,24 +1,4072 @@
 [
-  { "photoId": "klara-and-sarah-1933", "personId": "klara", "box": { "x": 17, "y": 8, "w": 25, "h": 22 }, "confidence": 0.97 },
-  { "photoId": "klara-and-sarah-1933", "personId": "sarah", "box": { "x": 47, "y": 26, "w": 21, "h": 19 }, "confidence": 0.93 },
-  { "photoId": "klara-portrait-1925", "personId": "klara", "box": { "x": 27, "y": 12, "w": 28, "h": 20 }, "confidence": 0.99 },
-  { "photoId": "klara-garden-1948", "personId": "klara", "box": { "x": 36, "y": 18, "w": 26, "h": 26 }, "confidence": 0.95 },
-  { "photoId": "sarah-school-portrait-1940", "personId": "sarah", "box": { "x": 28, "y": 32, "w": 18, "h": 16 }, "confidence": 0.98 },
-  { "photoId": "front-porch-1941", "personId": "sarah", "box": { "x": 40, "y": 48, "w": 14, "h": 12 }, "confidence": 0.84 },
-  { "photoId": "front-porch-1941", "personId": "klara", "box": { "x": 52, "y": 21, "w": 14, "h": 12 }, "confidence": 0.9 },
-  { "photoId": "sarah-and-friends-1944", "personId": "sarah", "box": { "x": 24, "y": 18, "w": 16, "h": 22 }, "confidence": 0.92 },
-  { "photoId": "tom-army-portrait-1946", "personId": "tom", "box": { "x": 36, "y": 8, "w": 30, "h": 24 }, "confidence": 0.99 },
-  { "photoId": "sunday-best-1947", "personId": "sarah", "box": { "x": 30, "y": 20, "w": 16, "h": 22 }, "confidence": 0.9 },
-  { "photoId": "sunday-best-1947", "personId": "tom", "box": { "x": 54, "y": 16, "w": 16, "h": 24 }, "confidence": 0.87 },
-  { "photoId": "first-car-1949", "personId": "tom", "box": { "x": 44, "y": 20, "w": 18, "h": 12 }, "confidence": 0.91 },
-  { "photoId": "wedding-day-1950", "personId": "sarah", "box": { "x": 40, "y": 24, "w": 14, "h": 18 }, "confidence": 0.98 },
-  { "photoId": "wedding-day-1950", "personId": "tom", "box": { "x": 56, "y": 20, "w": 14, "h": 20 }, "confidence": 0.97 },
-  { "photoId": "eleanor-baby-1953", "personId": "sarah", "box": { "x": 33, "y": 36, "w": 16, "h": 11 }, "confidence": 0.94 },
-  { "photoId": "eleanor-baby-1953", "personId": "eleanor", "box": { "x": 42, "y": 45, "w": 13, "h": 9 }, "confidence": 0.76 },
-  { "photoId": "susan-baby-1956", "personId": "susan", "box": { "x": 42, "y": 42, "w": 14, "h": 14 }, "confidence": 0.82 },
-  { "photoId": "family-picnic-1962", "personId": "eleanor", "box": { "x": 56, "y": 32, "w": 10, "h": 14 }, "confidence": 0.8 },
-  { "photoId": "family-picnic-1962", "personId": "susan", "box": { "x": 33, "y": 30, "w": 10, "h": 12 }, "confidence": 0.78 },
-  { "photoId": "thanksgiving-1964", "personId": "klara", "box": { "x": 26, "y": 32, "w": 12, "h": 8 }, "confidence": 0.85 },
-  { "photoId": "thanksgiving-1964", "personId": "sarah", "box": { "x": 40, "y": 36, "w": 11, "h": 7 }, "confidence": 0.9 },
-  { "photoId": "tom-fishing-1972", "personId": "tom", "box": { "x": 32, "y": 40, "w": 14, "h": 12 }, "confidence": 0.96 }
+  {
+    "photoId": "klara-and-sarah-1933",
+    "personId": "klara",
+    "box": {
+      "x": 17,
+      "y": 8,
+      "w": 25,
+      "h": 22
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "klara-and-sarah-1933",
+    "personId": "sarah",
+    "box": {
+      "x": 47,
+      "y": 26,
+      "w": 21,
+      "h": 19
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "klara-portrait-1925",
+    "personId": "klara",
+    "box": {
+      "x": 27,
+      "y": 12,
+      "w": 28,
+      "h": 20
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "klara-garden-1948",
+    "personId": "klara",
+    "box": {
+      "x": 36,
+      "y": 18,
+      "w": 26,
+      "h": 26
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "sarah-school-portrait-1940",
+    "personId": "sarah",
+    "box": {
+      "x": 28,
+      "y": 32,
+      "w": 18,
+      "h": 16
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "front-porch-1941",
+    "personId": "sarah",
+    "box": {
+      "x": 40,
+      "y": 48,
+      "w": 14,
+      "h": 12
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "front-porch-1941",
+    "personId": "klara",
+    "box": {
+      "x": 52,
+      "y": 21,
+      "w": 14,
+      "h": 12
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "sarah-and-friends-1944",
+    "personId": "sarah",
+    "box": {
+      "x": 24,
+      "y": 18,
+      "w": 16,
+      "h": 22
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "tom-army-portrait-1946",
+    "personId": "tom",
+    "box": {
+      "x": 36,
+      "y": 8,
+      "w": 30,
+      "h": 24
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "sunday-best-1947",
+    "personId": "sarah",
+    "box": {
+      "x": 30,
+      "y": 20,
+      "w": 16,
+      "h": 22
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "sunday-best-1947",
+    "personId": "tom",
+    "box": {
+      "x": 54,
+      "y": 16,
+      "w": 16,
+      "h": 24
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "first-car-1949",
+    "personId": "tom",
+    "box": {
+      "x": 44,
+      "y": 20,
+      "w": 18,
+      "h": 12
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "wedding-day-1950",
+    "personId": "sarah",
+    "box": {
+      "x": 40,
+      "y": 24,
+      "w": 14,
+      "h": 18
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "wedding-day-1950",
+    "personId": "tom",
+    "box": {
+      "x": 56,
+      "y": 20,
+      "w": 14,
+      "h": 20
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "eleanor-baby-1953",
+    "personId": "sarah",
+    "box": {
+      "x": 33,
+      "y": 36,
+      "w": 16,
+      "h": 11
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "eleanor-baby-1953",
+    "personId": "eleanor",
+    "box": {
+      "x": 42,
+      "y": 45,
+      "w": 13,
+      "h": 9
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "susan-baby-1956",
+    "personId": "susan",
+    "box": {
+      "x": 42,
+      "y": 42,
+      "w": 14,
+      "h": 14
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "family-picnic-1962",
+    "personId": "eleanor",
+    "box": {
+      "x": 56,
+      "y": 32,
+      "w": 10,
+      "h": 14
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "family-picnic-1962",
+    "personId": "susan",
+    "box": {
+      "x": 33,
+      "y": 30,
+      "w": 10,
+      "h": 12
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "thanksgiving-1964",
+    "personId": "klara",
+    "box": {
+      "x": 26,
+      "y": 32,
+      "w": 12,
+      "h": 8
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "thanksgiving-1964",
+    "personId": "sarah",
+    "box": {
+      "x": 40,
+      "y": 36,
+      "w": 11,
+      "h": 7
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "tom-fishing-1972",
+    "personId": "tom",
+    "box": {
+      "x": 32,
+      "y": 40,
+      "w": 14,
+      "h": 12
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-001",
+    "personId": "klara",
+    "box": {
+      "x": 20,
+      "y": 45,
+      "w": 18,
+      "h": 21
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-001",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 40,
+      "y": 21,
+      "w": 21,
+      "h": 21
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-002",
+    "personId": "sarah",
+    "box": {
+      "x": 51,
+      "y": 34,
+      "w": 23,
+      "h": 22
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-002",
+    "personId": "kin-4",
+    "box": {
+      "x": 16,
+      "y": 44,
+      "w": 23,
+      "h": 19
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-003",
+    "personId": "ruth",
+    "box": {
+      "x": 17,
+      "y": 36,
+      "w": 24,
+      "h": 22
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-003",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 23,
+      "y": 43,
+      "w": 12,
+      "h": 17
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-004",
+    "personId": "tom",
+    "box": {
+      "x": 17,
+      "y": 27,
+      "w": 21,
+      "h": 14
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-004",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 33,
+      "y": 23,
+      "w": 21,
+      "h": 15
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-005",
+    "personId": "eleanor",
+    "box": {
+      "x": 50,
+      "y": 12,
+      "w": 25,
+      "h": 22
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-005",
+    "personId": "kin-10",
+    "box": {
+      "x": 45,
+      "y": 32,
+      "w": 18,
+      "h": 17
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-005",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 28,
+      "y": 39,
+      "w": 12,
+      "h": 18
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-006",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 18,
+      "y": 38,
+      "w": 20,
+      "h": 12
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-006",
+    "personId": "kin-1",
+    "box": {
+      "x": 40,
+      "y": 18,
+      "w": 16,
+      "h": 14
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-007",
+    "personId": "susan",
+    "box": {
+      "x": 32,
+      "y": 20,
+      "w": 19,
+      "h": 22
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-007",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 16,
+      "y": 26,
+      "w": 19,
+      "h": 20
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-007",
+    "personId": "kin-1",
+    "box": {
+      "x": 24,
+      "y": 44,
+      "w": 13,
+      "h": 13
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-008",
+    "personId": "daniel",
+    "box": {
+      "x": 39,
+      "y": 29,
+      "w": 26,
+      "h": 21
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-008",
+    "personId": "ruth",
+    "box": {
+      "x": 35,
+      "y": 16,
+      "w": 14,
+      "h": 20
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-009",
+    "personId": "margaret",
+    "box": {
+      "x": 20,
+      "y": 35,
+      "w": 18,
+      "h": 22
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-010",
+    "personId": "james",
+    "box": {
+      "x": 30,
+      "y": 25,
+      "w": 15,
+      "h": 12
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-011",
+    "personId": "david",
+    "box": {
+      "x": 17,
+      "y": 32,
+      "w": 21,
+      "h": 17
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-011",
+    "personId": "kin-14",
+    "box": {
+      "x": 20,
+      "y": 22,
+      "w": 26,
+      "h": 12
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-011",
+    "personId": "kin-8",
+    "box": {
+      "x": 24,
+      "y": 45,
+      "w": 15,
+      "h": 13
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-012",
+    "personId": "jozef",
+    "box": {
+      "x": 26,
+      "y": 42,
+      "w": 21,
+      "h": 15
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-013",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 43,
+      "y": 27,
+      "w": 22,
+      "h": 22
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-013",
+    "personId": "klara",
+    "box": {
+      "x": 29,
+      "y": 15,
+      "w": 14,
+      "h": 16
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-014",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 47,
+      "y": 33,
+      "w": 19,
+      "h": 22
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-014",
+    "personId": "tom",
+    "box": {
+      "x": 27,
+      "y": 11,
+      "w": 14,
+      "h": 14
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-015",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 44,
+      "y": 22,
+      "w": 18,
+      "h": 21
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-016",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 8,
+      "y": 28,
+      "w": 17,
+      "h": 16
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-016",
+    "personId": "eleanor",
+    "box": {
+      "x": 21,
+      "y": 21,
+      "w": 13,
+      "h": 17
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-017",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 10,
+      "y": 35,
+      "w": 26,
+      "h": 14
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-018",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 9,
+      "y": 20,
+      "w": 18,
+      "h": 21
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-018",
+    "personId": "kin-1",
+    "box": {
+      "x": 41,
+      "y": 36,
+      "w": 14,
+      "h": 16
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-019",
+    "personId": "grace-hayes",
+    "box": {
+      "x": 40,
+      "y": 16,
+      "w": 25,
+      "h": 15
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-019",
+    "personId": "kin-9",
+    "box": {
+      "x": 13,
+      "y": 22,
+      "w": 23,
+      "h": 21
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-020",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 33,
+      "y": 10,
+      "w": 15,
+      "h": 12
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-020",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 17,
+      "y": 27,
+      "w": 24,
+      "h": 21
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-021",
+    "personId": "kin-1",
+    "box": {
+      "x": 55,
+      "y": 42,
+      "w": 22,
+      "h": 18
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-022",
+    "personId": "kin-2",
+    "box": {
+      "x": 19,
+      "y": 13,
+      "w": 12,
+      "h": 19
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-023",
+    "personId": "kin-3",
+    "box": {
+      "x": 34,
+      "y": 42,
+      "w": 17,
+      "h": 16
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-023",
+    "personId": "kin-15",
+    "box": {
+      "x": 16,
+      "y": 30,
+      "w": 26,
+      "h": 12
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-024",
+    "personId": "kin-4",
+    "box": {
+      "x": 39,
+      "y": 29,
+      "w": 12,
+      "h": 20
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-025",
+    "personId": "kin-5",
+    "box": {
+      "x": 52,
+      "y": 26,
+      "w": 13,
+      "h": 12
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-025",
+    "personId": "eleanor",
+    "box": {
+      "x": 30,
+      "y": 40,
+      "w": 20,
+      "h": 18
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-026",
+    "personId": "kin-6",
+    "box": {
+      "x": 40,
+      "y": 17,
+      "w": 26,
+      "h": 20
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-027",
+    "personId": "kin-7",
+    "box": {
+      "x": 50,
+      "y": 14,
+      "w": 16,
+      "h": 13
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-027",
+    "personId": "kin-23",
+    "box": {
+      "x": 35,
+      "y": 44,
+      "w": 24,
+      "h": 22
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-027",
+    "personId": "james",
+    "box": {
+      "x": 8,
+      "y": 29,
+      "w": 21,
+      "h": 20
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-028",
+    "personId": "kin-8",
+    "box": {
+      "x": 50,
+      "y": 37,
+      "w": 21,
+      "h": 19
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-028",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 33,
+      "y": 41,
+      "w": 23,
+      "h": 13
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-029",
+    "personId": "kin-9",
+    "box": {
+      "x": 14,
+      "y": 29,
+      "w": 22,
+      "h": 14
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-029",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 44,
+      "y": 15,
+      "w": 14,
+      "h": 22
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-029",
+    "personId": "susan",
+    "box": {
+      "x": 55,
+      "y": 15,
+      "w": 21,
+      "h": 20
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-030",
+    "personId": "kin-10",
+    "box": {
+      "x": 21,
+      "y": 43,
+      "w": 21,
+      "h": 15
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-030",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 53,
+      "y": 23,
+      "w": 18,
+      "h": 17
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-030",
+    "personId": "kin-21",
+    "box": {
+      "x": 17,
+      "y": 15,
+      "w": 18,
+      "h": 18
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-031",
+    "personId": "kin-11",
+    "box": {
+      "x": 36,
+      "y": 29,
+      "w": 17,
+      "h": 22
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-032",
+    "personId": "kin-14",
+    "box": {
+      "x": 14,
+      "y": 45,
+      "w": 12,
+      "h": 16
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-032",
+    "personId": "david",
+    "box": {
+      "x": 54,
+      "y": 10,
+      "w": 12,
+      "h": 15
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-033",
+    "personId": "kin-15",
+    "box": {
+      "x": 49,
+      "y": 31,
+      "w": 20,
+      "h": 17
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-034",
+    "personId": "kin-16",
+    "box": {
+      "x": 29,
+      "y": 45,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-035",
+    "personId": "kin-17",
+    "box": {
+      "x": 23,
+      "y": 30,
+      "w": 13,
+      "h": 14
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-036",
+    "personId": "kin-18",
+    "box": {
+      "x": 35,
+      "y": 45,
+      "w": 18,
+      "h": 14
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-036",
+    "personId": "kin-24",
+    "box": {
+      "x": 25,
+      "y": 18,
+      "w": 25,
+      "h": 20
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-037",
+    "personId": "kin-19",
+    "box": {
+      "x": 41,
+      "y": 26,
+      "w": 24,
+      "h": 21
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-037",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 35,
+      "y": 15,
+      "w": 25,
+      "h": 20
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-038",
+    "personId": "kin-20",
+    "box": {
+      "x": 11,
+      "y": 32,
+      "w": 15,
+      "h": 14
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-039",
+    "personId": "kin-21",
+    "box": {
+      "x": 15,
+      "y": 39,
+      "w": 13,
+      "h": 22
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-039",
+    "personId": "kin-14",
+    "box": {
+      "x": 16,
+      "y": 39,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-040",
+    "personId": "kin-22",
+    "box": {
+      "x": 31,
+      "y": 37,
+      "w": 19,
+      "h": 20
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-041",
+    "personId": "kin-23",
+    "box": {
+      "x": 50,
+      "y": 11,
+      "w": 22,
+      "h": 20
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-041",
+    "personId": "kin-18",
+    "box": {
+      "x": 17,
+      "y": 9,
+      "w": 20,
+      "h": 21
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-042",
+    "personId": "kin-24",
+    "box": {
+      "x": 41,
+      "y": 17,
+      "w": 12,
+      "h": 18
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-043",
+    "personId": "kin-25",
+    "box": {
+      "x": 15,
+      "y": 25,
+      "w": 17,
+      "h": 20
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-043",
+    "personId": "kin-3",
+    "box": {
+      "x": 49,
+      "y": 32,
+      "w": 25,
+      "h": 18
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-043",
+    "personId": "kin-23",
+    "box": {
+      "x": 19,
+      "y": 34,
+      "w": 16,
+      "h": 22
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-044",
+    "personId": "klara",
+    "box": {
+      "x": 24,
+      "y": 45,
+      "w": 17,
+      "h": 14
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-044",
+    "personId": "jozef",
+    "box": {
+      "x": 41,
+      "y": 9,
+      "w": 18,
+      "h": 17
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-045",
+    "personId": "sarah",
+    "box": {
+      "x": 46,
+      "y": 37,
+      "w": 24,
+      "h": 14
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-046",
+    "personId": "ruth",
+    "box": {
+      "x": 36,
+      "y": 41,
+      "w": 25,
+      "h": 18
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-047",
+    "personId": "tom",
+    "box": {
+      "x": 11,
+      "y": 33,
+      "w": 21,
+      "h": 18
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-047",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 15,
+      "y": 18,
+      "w": 18,
+      "h": 16
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-048",
+    "personId": "eleanor",
+    "box": {
+      "x": 16,
+      "y": 23,
+      "w": 12,
+      "h": 15
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-049",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 48,
+      "y": 43,
+      "w": 15,
+      "h": 15
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-050",
+    "personId": "susan",
+    "box": {
+      "x": 23,
+      "y": 41,
+      "w": 19,
+      "h": 17
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-050",
+    "personId": "kin-23",
+    "box": {
+      "x": 29,
+      "y": 20,
+      "w": 13,
+      "h": 16
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-050",
+    "personId": "ruth",
+    "box": {
+      "x": 20,
+      "y": 10,
+      "w": 18,
+      "h": 16
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-051",
+    "personId": "daniel",
+    "box": {
+      "x": 23,
+      "y": 8,
+      "w": 19,
+      "h": 20
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-051",
+    "personId": "kin-18",
+    "box": {
+      "x": 46,
+      "y": 31,
+      "w": 21,
+      "h": 14
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-051",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 27,
+      "y": 9,
+      "w": 22,
+      "h": 22
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-052",
+    "personId": "margaret",
+    "box": {
+      "x": 10,
+      "y": 24,
+      "w": 13,
+      "h": 17
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-052",
+    "personId": "kin-18",
+    "box": {
+      "x": 23,
+      "y": 24,
+      "w": 16,
+      "h": 19
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-052",
+    "personId": "kin-11",
+    "box": {
+      "x": 55,
+      "y": 9,
+      "w": 14,
+      "h": 21
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-053",
+    "personId": "james",
+    "box": {
+      "x": 47,
+      "y": 28,
+      "w": 14,
+      "h": 18
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-054",
+    "personId": "david",
+    "box": {
+      "x": 21,
+      "y": 33,
+      "w": 20,
+      "h": 16
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-054",
+    "personId": "sarah",
+    "box": {
+      "x": 12,
+      "y": 9,
+      "w": 23,
+      "h": 20
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-055",
+    "personId": "jozef",
+    "box": {
+      "x": 22,
+      "y": 31,
+      "w": 17,
+      "h": 17
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-055",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 30,
+      "y": 9,
+      "w": 21,
+      "h": 18
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-056",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 8,
+      "y": 35,
+      "w": 21,
+      "h": 12
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-056",
+    "personId": "jozef",
+    "box": {
+      "x": 24,
+      "y": 39,
+      "w": 14,
+      "h": 22
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-057",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 49,
+      "y": 44,
+      "w": 17,
+      "h": 15
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-057",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 29,
+      "y": 39,
+      "w": 17,
+      "h": 17
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-058",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 17,
+      "y": 34,
+      "w": 14,
+      "h": 15
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-058",
+    "personId": "jozef",
+    "box": {
+      "x": 33,
+      "y": 10,
+      "w": 18,
+      "h": 12
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-059",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 47,
+      "y": 42,
+      "w": 19,
+      "h": 16
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-059",
+    "personId": "kin-25",
+    "box": {
+      "x": 27,
+      "y": 17,
+      "w": 16,
+      "h": 16
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-060",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 23,
+      "y": 24,
+      "w": 22,
+      "h": 18
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-060",
+    "personId": "tom",
+    "box": {
+      "x": 53,
+      "y": 37,
+      "w": 24,
+      "h": 14
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-060",
+    "personId": "kin-16",
+    "box": {
+      "x": 14,
+      "y": 39,
+      "w": 23,
+      "h": 15
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-061",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 23,
+      "y": 11,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-061",
+    "personId": "kin-14",
+    "box": {
+      "x": 22,
+      "y": 11,
+      "w": 14,
+      "h": 16
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-062",
+    "personId": "grace-hayes",
+    "box": {
+      "x": 21,
+      "y": 29,
+      "w": 18,
+      "h": 21
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-063",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 36,
+      "y": 37,
+      "w": 18,
+      "h": 14
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-063",
+    "personId": "kin-22",
+    "box": {
+      "x": 8,
+      "y": 13,
+      "w": 14,
+      "h": 21
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-064",
+    "personId": "kin-1",
+    "box": {
+      "x": 17,
+      "y": 40,
+      "w": 12,
+      "h": 15
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-064",
+    "personId": "jozef",
+    "box": {
+      "x": 55,
+      "y": 43,
+      "w": 26,
+      "h": 14
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-064",
+    "personId": "tom",
+    "box": {
+      "x": 32,
+      "y": 22,
+      "w": 21,
+      "h": 18
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-065",
+    "personId": "kin-2",
+    "box": {
+      "x": 35,
+      "y": 31,
+      "w": 22,
+      "h": 14
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-066",
+    "personId": "kin-3",
+    "box": {
+      "x": 27,
+      "y": 32,
+      "w": 13,
+      "h": 17
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-067",
+    "personId": "kin-4",
+    "box": {
+      "x": 16,
+      "y": 23,
+      "w": 14,
+      "h": 13
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-067",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 31,
+      "y": 8,
+      "w": 26,
+      "h": 12
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-068",
+    "personId": "kin-5",
+    "box": {
+      "x": 39,
+      "y": 31,
+      "w": 12,
+      "h": 20
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-068",
+    "personId": "kin-11",
+    "box": {
+      "x": 17,
+      "y": 39,
+      "w": 26,
+      "h": 13
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-068",
+    "personId": "kin-20",
+    "box": {
+      "x": 24,
+      "y": 9,
+      "w": 16,
+      "h": 20
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-069",
+    "personId": "kin-6",
+    "box": {
+      "x": 55,
+      "y": 25,
+      "w": 15,
+      "h": 17
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-069",
+    "personId": "kin-16",
+    "box": {
+      "x": 48,
+      "y": 44,
+      "w": 23,
+      "h": 13
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-069",
+    "personId": "kin-13",
+    "box": {
+      "x": 17,
+      "y": 34,
+      "w": 17,
+      "h": 21
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-070",
+    "personId": "kin-7",
+    "box": {
+      "x": 8,
+      "y": 20,
+      "w": 26,
+      "h": 20
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-071",
+    "personId": "kin-8",
+    "box": {
+      "x": 11,
+      "y": 39,
+      "w": 19,
+      "h": 17
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-071",
+    "personId": "daniel",
+    "box": {
+      "x": 53,
+      "y": 25,
+      "w": 20,
+      "h": 18
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-072",
+    "personId": "kin-9",
+    "box": {
+      "x": 41,
+      "y": 32,
+      "w": 20,
+      "h": 16
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-073",
+    "personId": "kin-10",
+    "box": {
+      "x": 50,
+      "y": 9,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-074",
+    "personId": "kin-11",
+    "box": {
+      "x": 42,
+      "y": 39,
+      "w": 23,
+      "h": 15
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-074",
+    "personId": "kin-15",
+    "box": {
+      "x": 10,
+      "y": 15,
+      "w": 24,
+      "h": 16
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-075",
+    "personId": "kin-14",
+    "box": {
+      "x": 48,
+      "y": 33,
+      "w": 14,
+      "h": 22
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-076",
+    "personId": "kin-15",
+    "box": {
+      "x": 40,
+      "y": 17,
+      "w": 23,
+      "h": 21
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-076",
+    "personId": "kin-4",
+    "box": {
+      "x": 55,
+      "y": 30,
+      "w": 25,
+      "h": 16
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-076",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 36,
+      "y": 32,
+      "w": 23,
+      "h": 16
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-077",
+    "personId": "kin-16",
+    "box": {
+      "x": 40,
+      "y": 35,
+      "w": 24,
+      "h": 16
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-077",
+    "personId": "kin-17",
+    "box": {
+      "x": 41,
+      "y": 21,
+      "w": 13,
+      "h": 21
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-078",
+    "personId": "kin-17",
+    "box": {
+      "x": 26,
+      "y": 14,
+      "w": 15,
+      "h": 22
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-079",
+    "personId": "kin-18",
+    "box": {
+      "x": 24,
+      "y": 9,
+      "w": 14,
+      "h": 16
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-079",
+    "personId": "kin-19",
+    "box": {
+      "x": 15,
+      "y": 45,
+      "w": 22,
+      "h": 16
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-079",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 55,
+      "y": 17,
+      "w": 20,
+      "h": 14
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-080",
+    "personId": "kin-19",
+    "box": {
+      "x": 11,
+      "y": 19,
+      "w": 25,
+      "h": 15
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-080",
+    "personId": "david",
+    "box": {
+      "x": 26,
+      "y": 12,
+      "w": 22,
+      "h": 15
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-081",
+    "personId": "kin-20",
+    "box": {
+      "x": 15,
+      "y": 21,
+      "w": 14,
+      "h": 18
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-081",
+    "personId": "david",
+    "box": {
+      "x": 35,
+      "y": 9,
+      "w": 23,
+      "h": 17
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-082",
+    "personId": "kin-21",
+    "box": {
+      "x": 23,
+      "y": 40,
+      "w": 26,
+      "h": 12
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-083",
+    "personId": "kin-22",
+    "box": {
+      "x": 37,
+      "y": 19,
+      "w": 24,
+      "h": 16
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-083",
+    "personId": "kin-23",
+    "box": {
+      "x": 54,
+      "y": 24,
+      "w": 15,
+      "h": 21
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-083",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 11,
+      "y": 25,
+      "w": 17,
+      "h": 13
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-084",
+    "personId": "kin-23",
+    "box": {
+      "x": 37,
+      "y": 21,
+      "w": 21,
+      "h": 16
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-084",
+    "personId": "ruth",
+    "box": {
+      "x": 22,
+      "y": 19,
+      "w": 20,
+      "h": 21
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-084",
+    "personId": "kin-11",
+    "box": {
+      "x": 51,
+      "y": 45,
+      "w": 19,
+      "h": 22
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-085",
+    "personId": "kin-24",
+    "box": {
+      "x": 36,
+      "y": 40,
+      "w": 12,
+      "h": 16
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-086",
+    "personId": "kin-25",
+    "box": {
+      "x": 50,
+      "y": 42,
+      "w": 15,
+      "h": 21
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-086",
+    "personId": "kin-9",
+    "box": {
+      "x": 9,
+      "y": 41,
+      "w": 25,
+      "h": 13
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-087",
+    "personId": "klara",
+    "box": {
+      "x": 33,
+      "y": 19,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-087",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 44,
+      "y": 29,
+      "w": 17,
+      "h": 19
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-087",
+    "personId": "ruth",
+    "box": {
+      "x": 14,
+      "y": 11,
+      "w": 12,
+      "h": 20
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-088",
+    "personId": "sarah",
+    "box": {
+      "x": 15,
+      "y": 31,
+      "w": 21,
+      "h": 13
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-088",
+    "personId": "kin-16",
+    "box": {
+      "x": 16,
+      "y": 23,
+      "w": 24,
+      "h": 15
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-088",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 29,
+      "y": 22,
+      "w": 14,
+      "h": 19
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-089",
+    "personId": "ruth",
+    "box": {
+      "x": 52,
+      "y": 32,
+      "w": 14,
+      "h": 16
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-089",
+    "personId": "kin-20",
+    "box": {
+      "x": 38,
+      "y": 32,
+      "w": 21,
+      "h": 20
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-090",
+    "personId": "tom",
+    "box": {
+      "x": 8,
+      "y": 16,
+      "w": 13,
+      "h": 16
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-091",
+    "personId": "eleanor",
+    "box": {
+      "x": 22,
+      "y": 30,
+      "w": 17,
+      "h": 13
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-091",
+    "personId": "kin-17",
+    "box": {
+      "x": 40,
+      "y": 16,
+      "w": 25,
+      "h": 17
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-092",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 23,
+      "y": 19,
+      "w": 23,
+      "h": 21
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-092",
+    "personId": "daniel",
+    "box": {
+      "x": 29,
+      "y": 36,
+      "w": 16,
+      "h": 22
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-093",
+    "personId": "susan",
+    "box": {
+      "x": 10,
+      "y": 11,
+      "w": 15,
+      "h": 17
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-093",
+    "personId": "kin-2",
+    "box": {
+      "x": 9,
+      "y": 33,
+      "w": 25,
+      "h": 18
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-094",
+    "personId": "daniel",
+    "box": {
+      "x": 36,
+      "y": 41,
+      "w": 16,
+      "h": 21
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-094",
+    "personId": "kin-5",
+    "box": {
+      "x": 19,
+      "y": 17,
+      "w": 12,
+      "h": 18
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-094",
+    "personId": "kin-10",
+    "box": {
+      "x": 51,
+      "y": 40,
+      "w": 13,
+      "h": 15
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-095",
+    "personId": "margaret",
+    "box": {
+      "x": 8,
+      "y": 41,
+      "w": 15,
+      "h": 16
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-095",
+    "personId": "kin-2",
+    "box": {
+      "x": 41,
+      "y": 10,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-096",
+    "personId": "james",
+    "box": {
+      "x": 23,
+      "y": 38,
+      "w": 20,
+      "h": 21
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-096",
+    "personId": "grace-hayes",
+    "box": {
+      "x": 21,
+      "y": 23,
+      "w": 15,
+      "h": 18
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-096",
+    "personId": "kin-22",
+    "box": {
+      "x": 23,
+      "y": 11,
+      "w": 22,
+      "h": 20
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-097",
+    "personId": "david",
+    "box": {
+      "x": 39,
+      "y": 44,
+      "w": 21,
+      "h": 12
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-098",
+    "personId": "jozef",
+    "box": {
+      "x": 52,
+      "y": 13,
+      "w": 23,
+      "h": 21
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-099",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 36,
+      "y": 20,
+      "w": 17,
+      "h": 20
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-099",
+    "personId": "jozef",
+    "box": {
+      "x": 11,
+      "y": 35,
+      "w": 26,
+      "h": 16
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-100",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 40,
+      "y": 30,
+      "w": 25,
+      "h": 21
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-100",
+    "personId": "kin-4",
+    "box": {
+      "x": 45,
+      "y": 15,
+      "w": 16,
+      "h": 16
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-101",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 41,
+      "y": 37,
+      "w": 26,
+      "h": 14
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-102",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 54,
+      "y": 29,
+      "w": 21,
+      "h": 14
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-103",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 44,
+      "y": 19,
+      "w": 19,
+      "h": 17
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-103",
+    "personId": "kin-6",
+    "box": {
+      "x": 25,
+      "y": 38,
+      "w": 16,
+      "h": 12
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-104",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 34,
+      "y": 15,
+      "w": 23,
+      "h": 20
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-104",
+    "personId": "susan",
+    "box": {
+      "x": 29,
+      "y": 34,
+      "w": 24,
+      "h": 17
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-105",
+    "personId": "grace-hayes",
+    "box": {
+      "x": 51,
+      "y": 33,
+      "w": 26,
+      "h": 18
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-105",
+    "personId": "kin-24",
+    "box": {
+      "x": 37,
+      "y": 39,
+      "w": 17,
+      "h": 12
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-106",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 10,
+      "y": 26,
+      "w": 20,
+      "h": 14
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-107",
+    "personId": "kin-1",
+    "box": {
+      "x": 51,
+      "y": 20,
+      "w": 12,
+      "h": 16
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-108",
+    "personId": "kin-2",
+    "box": {
+      "x": 46,
+      "y": 28,
+      "w": 16,
+      "h": 15
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-108",
+    "personId": "sarah",
+    "box": {
+      "x": 54,
+      "y": 29,
+      "w": 21,
+      "h": 17
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-108",
+    "personId": "kin-13",
+    "box": {
+      "x": 8,
+      "y": 36,
+      "w": 14,
+      "h": 12
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-109",
+    "personId": "kin-3",
+    "box": {
+      "x": 13,
+      "y": 32,
+      "w": 26,
+      "h": 15
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-110",
+    "personId": "kin-4",
+    "box": {
+      "x": 49,
+      "y": 29,
+      "w": 17,
+      "h": 18
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-110",
+    "personId": "jozef",
+    "box": {
+      "x": 14,
+      "y": 43,
+      "w": 13,
+      "h": 20
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-111",
+    "personId": "kin-5",
+    "box": {
+      "x": 25,
+      "y": 20,
+      "w": 17,
+      "h": 18
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-112",
+    "personId": "kin-6",
+    "box": {
+      "x": 38,
+      "y": 42,
+      "w": 17,
+      "h": 21
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-112",
+    "personId": "kin-7",
+    "box": {
+      "x": 41,
+      "y": 11,
+      "w": 14,
+      "h": 20
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-113",
+    "personId": "kin-7",
+    "box": {
+      "x": 36,
+      "y": 27,
+      "w": 23,
+      "h": 16
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-113",
+    "personId": "margaret",
+    "box": {
+      "x": 17,
+      "y": 34,
+      "w": 22,
+      "h": 18
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-114",
+    "personId": "kin-8",
+    "box": {
+      "x": 50,
+      "y": 35,
+      "w": 12,
+      "h": 16
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-114",
+    "personId": "kin-22",
+    "box": {
+      "x": 23,
+      "y": 16,
+      "w": 26,
+      "h": 13
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-114",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 36,
+      "y": 30,
+      "w": 20,
+      "h": 16
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-115",
+    "personId": "kin-9",
+    "box": {
+      "x": 45,
+      "y": 31,
+      "w": 16,
+      "h": 19
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-116",
+    "personId": "kin-10",
+    "box": {
+      "x": 36,
+      "y": 39,
+      "w": 22,
+      "h": 22
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-116",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 33,
+      "y": 27,
+      "w": 18,
+      "h": 20
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-117",
+    "personId": "kin-11",
+    "box": {
+      "x": 28,
+      "y": 9,
+      "w": 24,
+      "h": 21
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-118",
+    "personId": "kin-14",
+    "box": {
+      "x": 34,
+      "y": 22,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-119",
+    "personId": "kin-15",
+    "box": {
+      "x": 20,
+      "y": 37,
+      "w": 17,
+      "h": 19
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-119",
+    "personId": "kin-22",
+    "box": {
+      "x": 13,
+      "y": 27,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-119",
+    "personId": "kin-16",
+    "box": {
+      "x": 34,
+      "y": 23,
+      "w": 14,
+      "h": 13
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-120",
+    "personId": "kin-16",
+    "box": {
+      "x": 26,
+      "y": 27,
+      "w": 25,
+      "h": 18
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-121",
+    "personId": "kin-17",
+    "box": {
+      "x": 23,
+      "y": 14,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-121",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 34,
+      "y": 39,
+      "w": 17,
+      "h": 20
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-121",
+    "personId": "kin-8",
+    "box": {
+      "x": 31,
+      "y": 42,
+      "w": 14,
+      "h": 17
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-122",
+    "personId": "kin-18",
+    "box": {
+      "x": 46,
+      "y": 19,
+      "w": 22,
+      "h": 14
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-122",
+    "personId": "kin-15",
+    "box": {
+      "x": 54,
+      "y": 33,
+      "w": 12,
+      "h": 22
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-123",
+    "personId": "kin-19",
+    "box": {
+      "x": 31,
+      "y": 28,
+      "w": 12,
+      "h": 19
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-123",
+    "personId": "margaret",
+    "box": {
+      "x": 27,
+      "y": 36,
+      "w": 13,
+      "h": 12
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-124",
+    "personId": "kin-20",
+    "box": {
+      "x": 55,
+      "y": 34,
+      "w": 26,
+      "h": 16
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-124",
+    "personId": "kin-2",
+    "box": {
+      "x": 38,
+      "y": 11,
+      "w": 12,
+      "h": 21
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-125",
+    "personId": "kin-21",
+    "box": {
+      "x": 38,
+      "y": 28,
+      "w": 18,
+      "h": 12
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-125",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 44,
+      "y": 31,
+      "w": 15,
+      "h": 12
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-125",
+    "personId": "kin-25",
+    "box": {
+      "x": 33,
+      "y": 39,
+      "w": 19,
+      "h": 21
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-126",
+    "personId": "kin-22",
+    "box": {
+      "x": 17,
+      "y": 29,
+      "w": 16,
+      "h": 16
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-126",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 55,
+      "y": 27,
+      "w": 15,
+      "h": 18
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-127",
+    "personId": "kin-23",
+    "box": {
+      "x": 25,
+      "y": 31,
+      "w": 15,
+      "h": 19
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-127",
+    "personId": "kin-18",
+    "box": {
+      "x": 8,
+      "y": 9,
+      "w": 22,
+      "h": 17
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-127",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 52,
+      "y": 39,
+      "w": 15,
+      "h": 22
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-128",
+    "personId": "kin-24",
+    "box": {
+      "x": 22,
+      "y": 22,
+      "w": 25,
+      "h": 15
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-129",
+    "personId": "kin-25",
+    "box": {
+      "x": 43,
+      "y": 31,
+      "w": 16,
+      "h": 14
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-130",
+    "personId": "klara",
+    "box": {
+      "x": 9,
+      "y": 42,
+      "w": 19,
+      "h": 20
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-130",
+    "personId": "sarah",
+    "box": {
+      "x": 35,
+      "y": 35,
+      "w": 12,
+      "h": 16
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-130",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 40,
+      "y": 37,
+      "w": 17,
+      "h": 15
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-131",
+    "personId": "sarah",
+    "box": {
+      "x": 31,
+      "y": 45,
+      "w": 12,
+      "h": 17
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-131",
+    "personId": "kin-2",
+    "box": {
+      "x": 36,
+      "y": 18,
+      "w": 13,
+      "h": 22
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-132",
+    "personId": "ruth",
+    "box": {
+      "x": 52,
+      "y": 20,
+      "w": 21,
+      "h": 22
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-132",
+    "personId": "eleanor",
+    "box": {
+      "x": 15,
+      "y": 23,
+      "w": 16,
+      "h": 13
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-132",
+    "personId": "kin-14",
+    "box": {
+      "x": 17,
+      "y": 33,
+      "w": 24,
+      "h": 15
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-133",
+    "personId": "tom",
+    "box": {
+      "x": 45,
+      "y": 8,
+      "w": 16,
+      "h": 17
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-133",
+    "personId": "eleanor",
+    "box": {
+      "x": 34,
+      "y": 18,
+      "w": 15,
+      "h": 14
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-134",
+    "personId": "eleanor",
+    "box": {
+      "x": 42,
+      "y": 21,
+      "w": 13,
+      "h": 22
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-135",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 53,
+      "y": 36,
+      "w": 22,
+      "h": 19
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-135",
+    "personId": "sarah",
+    "box": {
+      "x": 20,
+      "y": 42,
+      "w": 18,
+      "h": 21
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-136",
+    "personId": "susan",
+    "box": {
+      "x": 23,
+      "y": 18,
+      "w": 13,
+      "h": 14
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-136",
+    "personId": "kin-4",
+    "box": {
+      "x": 10,
+      "y": 31,
+      "w": 23,
+      "h": 17
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-137",
+    "personId": "daniel",
+    "box": {
+      "x": 42,
+      "y": 21,
+      "w": 23,
+      "h": 16
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-137",
+    "personId": "kin-16",
+    "box": {
+      "x": 29,
+      "y": 29,
+      "w": 23,
+      "h": 20
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-138",
+    "personId": "margaret",
+    "box": {
+      "x": 30,
+      "y": 13,
+      "w": 18,
+      "h": 14
+    },
+    "confidence": 0.91
+  },
+  {
+    "photoId": "arch-138",
+    "personId": "sarah",
+    "box": {
+      "x": 10,
+      "y": 36,
+      "w": 14,
+      "h": 14
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-139",
+    "personId": "james",
+    "box": {
+      "x": 12,
+      "y": 16,
+      "w": 19,
+      "h": 15
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-139",
+    "personId": "kin-25",
+    "box": {
+      "x": 30,
+      "y": 37,
+      "w": 15,
+      "h": 14
+    },
+    "confidence": 0.89
+  },
+  {
+    "photoId": "arch-140",
+    "personId": "david",
+    "box": {
+      "x": 41,
+      "y": 12,
+      "w": 16,
+      "h": 12
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-140",
+    "personId": "kin-16",
+    "box": {
+      "x": 10,
+      "y": 25,
+      "w": 26,
+      "h": 18
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-141",
+    "personId": "jozef",
+    "box": {
+      "x": 35,
+      "y": 35,
+      "w": 17,
+      "h": 15
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-141",
+    "personId": "klara",
+    "box": {
+      "x": 20,
+      "y": 41,
+      "w": 20,
+      "h": 21
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-141",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 19,
+      "y": 9,
+      "w": 20,
+      "h": 15
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-142",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 43,
+      "y": 38,
+      "w": 15,
+      "h": 18
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-142",
+    "personId": "jozef",
+    "box": {
+      "x": 32,
+      "y": 41,
+      "w": 21,
+      "h": 21
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-142",
+    "personId": "klara",
+    "box": {
+      "x": 53,
+      "y": 15,
+      "w": 21,
+      "h": 12
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-143",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 15,
+      "y": 15,
+      "w": 24,
+      "h": 15
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-144",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 43,
+      "y": 33,
+      "w": 20,
+      "h": 15
+    },
+    "confidence": 0.97
+  },
+  {
+    "photoId": "arch-145",
+    "personId": "emeka-okafor",
+    "box": {
+      "x": 36,
+      "y": 22,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-145",
+    "personId": "kin-5",
+    "box": {
+      "x": 31,
+      "y": 22,
+      "w": 16,
+      "h": 20
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-146",
+    "personId": "ada-okafor",
+    "box": {
+      "x": 47,
+      "y": 25,
+      "w": 15,
+      "h": 14
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-146",
+    "personId": "jozef",
+    "box": {
+      "x": 54,
+      "y": 10,
+      "w": 22,
+      "h": 16
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-146",
+    "personId": "sarah",
+    "box": {
+      "x": 17,
+      "y": 12,
+      "w": 15,
+      "h": 18
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-147",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 26,
+      "y": 22,
+      "w": 14,
+      "h": 17
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-148",
+    "personId": "grace-hayes",
+    "box": {
+      "x": 44,
+      "y": 33,
+      "w": 13,
+      "h": 21
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-148",
+    "personId": "kin-12",
+    "box": {
+      "x": 26,
+      "y": 8,
+      "w": 26,
+      "h": 18
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-149",
+    "personId": "lauren-hayes",
+    "box": {
+      "x": 29,
+      "y": 34,
+      "w": 21,
+      "h": 17
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-150",
+    "personId": "kin-1",
+    "box": {
+      "x": 53,
+      "y": 28,
+      "w": 22,
+      "h": 13
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-150",
+    "personId": "daniel",
+    "box": {
+      "x": 27,
+      "y": 24,
+      "w": 26,
+      "h": 19
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-151",
+    "personId": "kin-2",
+    "box": {
+      "x": 18,
+      "y": 9,
+      "w": 17,
+      "h": 18
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-151",
+    "personId": "kin-21",
+    "box": {
+      "x": 43,
+      "y": 34,
+      "w": 20,
+      "h": 13
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-152",
+    "personId": "kin-3",
+    "box": {
+      "x": 14,
+      "y": 44,
+      "w": 26,
+      "h": 18
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-152",
+    "personId": "kin-6",
+    "box": {
+      "x": 41,
+      "y": 23,
+      "w": 23,
+      "h": 17
+    },
+    "confidence": 0.85
+  },
+  {
+    "photoId": "arch-153",
+    "personId": "kin-4",
+    "box": {
+      "x": 42,
+      "y": 22,
+      "w": 23,
+      "h": 20
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-154",
+    "personId": "kin-5",
+    "box": {
+      "x": 55,
+      "y": 16,
+      "w": 13,
+      "h": 16
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-154",
+    "personId": "rose-whitfield",
+    "box": {
+      "x": 50,
+      "y": 21,
+      "w": 21,
+      "h": 15
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-154",
+    "personId": "susan",
+    "box": {
+      "x": 35,
+      "y": 26,
+      "w": 17,
+      "h": 14
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-155",
+    "personId": "kin-6",
+    "box": {
+      "x": 36,
+      "y": 41,
+      "w": 26,
+      "h": 13
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-156",
+    "personId": "kin-7",
+    "box": {
+      "x": 10,
+      "y": 44,
+      "w": 14,
+      "h": 21
+    },
+    "confidence": 0.95
+  },
+  {
+    "photoId": "arch-156",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 33,
+      "y": 39,
+      "w": 15,
+      "h": 20
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-156",
+    "personId": "chidi-okafor",
+    "box": {
+      "x": 16,
+      "y": 29,
+      "w": 14,
+      "h": 19
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-157",
+    "personId": "kin-8",
+    "box": {
+      "x": 37,
+      "y": 21,
+      "w": 13,
+      "h": 20
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-158",
+    "personId": "kin-9",
+    "box": {
+      "x": 22,
+      "y": 16,
+      "w": 14,
+      "h": 14
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-158",
+    "personId": "kin-21",
+    "box": {
+      "x": 18,
+      "y": 30,
+      "w": 19,
+      "h": 20
+    },
+    "confidence": 0.8
+  },
+  {
+    "photoId": "arch-159",
+    "personId": "kin-10",
+    "box": {
+      "x": 24,
+      "y": 34,
+      "w": 14,
+      "h": 18
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-159",
+    "personId": "david",
+    "box": {
+      "x": 53,
+      "y": 15,
+      "w": 24,
+      "h": 22
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-160",
+    "personId": "kin-11",
+    "box": {
+      "x": 27,
+      "y": 41,
+      "w": 21,
+      "h": 12
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-160",
+    "personId": "kin-1",
+    "box": {
+      "x": 47,
+      "y": 42,
+      "w": 17,
+      "h": 13
+    },
+    "confidence": 0.81
+  },
+  {
+    "photoId": "arch-160",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 50,
+      "y": 11,
+      "w": 22,
+      "h": 13
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-161",
+    "personId": "kin-14",
+    "box": {
+      "x": 24,
+      "y": 38,
+      "w": 26,
+      "h": 15
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-161",
+    "personId": "margaret",
+    "box": {
+      "x": 52,
+      "y": 30,
+      "w": 20,
+      "h": 18
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-162",
+    "personId": "kin-15",
+    "box": {
+      "x": 31,
+      "y": 21,
+      "w": 13,
+      "h": 22
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-162",
+    "personId": "kin-2",
+    "box": {
+      "x": 49,
+      "y": 33,
+      "w": 19,
+      "h": 13
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-163",
+    "personId": "kin-16",
+    "box": {
+      "x": 33,
+      "y": 40,
+      "w": 13,
+      "h": 21
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-164",
+    "personId": "kin-17",
+    "box": {
+      "x": 27,
+      "y": 20,
+      "w": 26,
+      "h": 22
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-164",
+    "personId": "kin-7",
+    "box": {
+      "x": 24,
+      "y": 11,
+      "w": 12,
+      "h": 19
+    },
+    "confidence": 0.98
+  },
+  {
+    "photoId": "arch-164",
+    "personId": "kin-22",
+    "box": {
+      "x": 17,
+      "y": 17,
+      "w": 23,
+      "h": 12
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-165",
+    "personId": "kin-18",
+    "box": {
+      "x": 38,
+      "y": 26,
+      "w": 12,
+      "h": 12
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-166",
+    "personId": "kin-19",
+    "box": {
+      "x": 34,
+      "y": 9,
+      "w": 15,
+      "h": 20
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-166",
+    "personId": "kin-17",
+    "box": {
+      "x": 20,
+      "y": 13,
+      "w": 21,
+      "h": 15
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-167",
+    "personId": "kin-20",
+    "box": {
+      "x": 52,
+      "y": 27,
+      "w": 14,
+      "h": 17
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-168",
+    "personId": "kin-21",
+    "box": {
+      "x": 39,
+      "y": 17,
+      "w": 24,
+      "h": 15
+    },
+    "confidence": 0.93
+  },
+  {
+    "photoId": "arch-169",
+    "personId": "kin-22",
+    "box": {
+      "x": 36,
+      "y": 32,
+      "w": 26,
+      "h": 22
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-170",
+    "personId": "kin-23",
+    "box": {
+      "x": 19,
+      "y": 12,
+      "w": 19,
+      "h": 19
+    },
+    "confidence": 0.88
+  },
+  {
+    "photoId": "arch-170",
+    "personId": "kin-15",
+    "box": {
+      "x": 47,
+      "y": 13,
+      "w": 22,
+      "h": 18
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-171",
+    "personId": "kin-24",
+    "box": {
+      "x": 33,
+      "y": 19,
+      "w": 13,
+      "h": 21
+    },
+    "confidence": 0.74
+  },
+  {
+    "photoId": "arch-172",
+    "personId": "kin-25",
+    "box": {
+      "x": 36,
+      "y": 22,
+      "w": 20,
+      "h": 17
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-172",
+    "personId": "kin-14",
+    "box": {
+      "x": 15,
+      "y": 19,
+      "w": 13,
+      "h": 18
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-173",
+    "personId": "klara",
+    "box": {
+      "x": 31,
+      "y": 27,
+      "w": 26,
+      "h": 12
+    },
+    "confidence": 0.76
+  },
+  {
+    "photoId": "arch-173",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 52,
+      "y": 45,
+      "w": 13,
+      "h": 22
+    },
+    "confidence": 0.87
+  },
+  {
+    "photoId": "arch-173",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 36,
+      "y": 19,
+      "w": 23,
+      "h": 19
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-174",
+    "personId": "sarah",
+    "box": {
+      "x": 14,
+      "y": 41,
+      "w": 25,
+      "h": 16
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-174",
+    "personId": "kin-17",
+    "box": {
+      "x": 30,
+      "y": 25,
+      "w": 16,
+      "h": 20
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-175",
+    "personId": "ruth",
+    "box": {
+      "x": 27,
+      "y": 16,
+      "w": 22,
+      "h": 21
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-175",
+    "personId": "kin-14",
+    "box": {
+      "x": 14,
+      "y": 25,
+      "w": 20,
+      "h": 15
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-175",
+    "personId": "kin-17",
+    "box": {
+      "x": 44,
+      "y": 22,
+      "w": 26,
+      "h": 16
+    },
+    "confidence": 0.78
+  },
+  {
+    "photoId": "arch-176",
+    "personId": "tom",
+    "box": {
+      "x": 47,
+      "y": 21,
+      "w": 20,
+      "h": 12
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-177",
+    "personId": "eleanor",
+    "box": {
+      "x": 19,
+      "y": 31,
+      "w": 20,
+      "h": 14
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-177",
+    "personId": "ella-hayes",
+    "box": {
+      "x": 35,
+      "y": 38,
+      "w": 24,
+      "h": 14
+    },
+    "confidence": 0.9
+  },
+  {
+    "photoId": "arch-177",
+    "personId": "kin-11",
+    "box": {
+      "x": 12,
+      "y": 18,
+      "w": 13,
+      "h": 12
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-178",
+    "personId": "mark-hayes",
+    "box": {
+      "x": 24,
+      "y": 9,
+      "w": 12,
+      "h": 19
+    },
+    "confidence": 0.72
+  },
+  {
+    "photoId": "arch-179",
+    "personId": "susan",
+    "box": {
+      "x": 52,
+      "y": 38,
+      "w": 15,
+      "h": 12
+    },
+    "confidence": 0.79
+  },
+  {
+    "photoId": "arch-179",
+    "personId": "tom",
+    "box": {
+      "x": 18,
+      "y": 8,
+      "w": 22,
+      "h": 17
+    },
+    "confidence": 0.77
+  },
+  {
+    "photoId": "arch-179",
+    "personId": "kin-17",
+    "box": {
+      "x": 53,
+      "y": 44,
+      "w": 12,
+      "h": 15
+    },
+    "confidence": 0.84
+  },
+  {
+    "photoId": "arch-180",
+    "personId": "daniel",
+    "box": {
+      "x": 46,
+      "y": 42,
+      "w": 14,
+      "h": 17
+    },
+    "confidence": 0.83
+  },
+  {
+    "photoId": "arch-180",
+    "personId": "kin-18",
+    "box": {
+      "x": 10,
+      "y": 16,
+      "w": 15,
+      "h": 18
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-180",
+    "personId": "jozef",
+    "box": {
+      "x": 49,
+      "y": 26,
+      "w": 19,
+      "h": 19
+    },
+    "confidence": 0.92
+  },
+  {
+    "photoId": "arch-181",
+    "personId": "margaret",
+    "box": {
+      "x": 25,
+      "y": 9,
+      "w": 21,
+      "h": 19
+    },
+    "confidence": 0.94
+  },
+  {
+    "photoId": "arch-181",
+    "personId": "noah-hayes",
+    "box": {
+      "x": 16,
+      "y": 17,
+      "w": 23,
+      "h": 13
+    },
+    "confidence": 0.99
+  },
+  {
+    "photoId": "arch-181",
+    "personId": "kin-5",
+    "box": {
+      "x": 33,
+      "y": 38,
+      "w": 20,
+      "h": 14
+    },
+    "confidence": 0.96
+  },
+  {
+    "photoId": "arch-182",
+    "personId": "james",
+    "box": {
+      "x": 32,
+      "y": 35,
+      "w": 22,
+      "h": 21
+    },
+    "confidence": 0.82
+  },
+  {
+    "photoId": "arch-183",
+    "personId": "david",
+    "box": {
+      "x": 47,
+      "y": 25,
+      "w": 26,
+      "h": 22
+    },
+    "confidence": 0.75
+  },
+  {
+    "photoId": "arch-184",
+    "personId": "jozef",
+    "box": {
+      "x": 32,
+      "y": 21,
+      "w": 20,
+      "h": 19
+    },
+    "confidence": 0.86
+  },
+  {
+    "photoId": "arch-185",
+    "personId": "walter-whitfield",
+    "box": {
+      "x": 21,
+      "y": 23,
+      "w": 24,
+      "h": 21
+    },
+    "confidence": 0.73
+  },
+  {
+    "photoId": "arch-186",
+    "personId": "edith-whitfield",
+    "box": {
+      "x": 48,
+      "y": 15,
+      "w": 21,
+      "h": 21
+    },
+    "confidence": 0.77
+  }
 ]

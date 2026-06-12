@@ -9,9 +9,25 @@
     "description": "The only known photograph of Klara Kowalski with Sarah as a toddler. The original print stayed in Sarah's baby book for ninety years; two family copies were captured before Eleanor scanned the original.",
     "contributedById": "eleanor",
     "contributedWhen": "April 2024",
-    "photographer": { "value": "Mr. Andersen, a neighbor", "clue": "Named in Sarah's baby book entry for July 14th" },
-    "takenWhere": { "value": "Kowalski farmhouse, Door County", "deduced": true, "clue": "Bedframe and wallpaper match two other prints from the farmhouse" },
-    "date": { "year": 1933, "month": 7, "day": 14, "iso": "1933-07-14", "precision": "day", "display": "July 14, 1933", "deduced": true, "clue": "Sarah's age, and the baby-book entry dated July 14th" },
+    "photographer": {
+      "value": "Mr. Andersen, a neighbor",
+      "clue": "Named in Sarah's baby book entry for July 14th"
+    },
+    "takenWhere": {
+      "value": "Kowalski farmhouse, Door County",
+      "deduced": true,
+      "clue": "Bedframe and wallpaper match two other prints from the farmhouse"
+    },
+    "date": {
+      "year": 1933,
+      "month": 7,
+      "day": 14,
+      "iso": "1933-07-14",
+      "precision": "day",
+      "display": "July 14, 1933",
+      "deduced": true,
+      "clue": "Sarah's age, and the baby-book entry dated July 14th"
+    },
     "restoration": {
       "restoredSrc": "/photos/klara-and-sarah-1933-restored.jpg",
       "summary": "Removed sepia fading, surface scratches, and edge vignetting. Recovered detail in both faces."
@@ -26,9 +42,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "eleanor",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Kowalski farmhouse porch", "deduced": true, "clue": "Clapboard siding matches the 1941 porch photo" },
-    "date": { "year": 1955, "precision": "circa", "display": "c. 1955", "deduced": true, "clue": "Klara's cardigan also appears in the 1964 Thanksgiving photo" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Kowalski farmhouse porch",
+      "deduced": true,
+      "clue": "Clapboard siding matches the 1941 porch photo"
+    },
+    "date": {
+      "year": 1955,
+      "precision": "circa",
+      "display": "c. 1955",
+      "deduced": true,
+      "clue": "Klara's cardigan also appears in the 1964 Thanksgiving photo"
+    }
   },
   {
     "id": "kowalski-farmhouse-1928",
@@ -39,9 +67,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "susan",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "Likely Klara", "deduced": true, "clue": "She owned the family's only camera until 1946" },
-    "takenWhere": { "value": "Kowalski farm, Door County" },
-    "date": { "year": 1928, "precision": "year", "display": "1928", "deduced": true, "clue": "The windmill was taken down in 1929 per Klara's letters" }
+    "photographer": {
+      "value": "Likely Klara",
+      "deduced": true,
+      "clue": "She owned the family's only camera until 1946"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm, Door County"
+    },
+    "date": {
+      "year": 1928,
+      "precision": "year",
+      "display": "1928",
+      "deduced": true,
+      "clue": "The windmill was taken down in 1929 per Klara's letters"
+    }
   },
   {
     "id": "farm-harvest-1935",
@@ -52,9 +92,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "susan",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "North field, Kowalski farm", "deduced": true, "clue": "Treeline matches the farmhouse photo horizon" },
-    "date": { "year": 1935, "precision": "year", "display": "Harvest 1935", "deduced": true, "clue": "The combine model and the truck's plates date the season" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "North field, Kowalski farm",
+      "deduced": true,
+      "clue": "Treeline matches the farmhouse photo horizon"
+    },
+    "date": {
+      "year": 1935,
+      "precision": "year",
+      "display": "Harvest 1935",
+      "deduced": true,
+      "clue": "The combine model and the truck's plates date the season"
+    }
   },
   {
     "id": "klara-garden-1948",
@@ -65,9 +117,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "susan",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Likely Sarah", "deduced": true, "clue": "Sarah wrote 'I took this of Mama in the beans' on a matching print" },
-    "takenWhere": { "value": "Kitchen garden, Kowalski farm" },
-    "date": { "year": 1948, "precision": "year", "display": "Summer 1948", "deduced": true, "clue": "Same season as the bean rows in Klara's July 1948 letter" }
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Sarah wrote 'I took this of Mama in the beans' on a matching print"
+    },
+    "takenWhere": {
+      "value": "Kitchen garden, Kowalski farm"
+    },
+    "date": {
+      "year": 1948,
+      "precision": "year",
+      "display": "Summer 1948",
+      "deduced": true,
+      "clue": "Same season as the bean rows in Klara's July 1948 letter"
+    }
   },
   {
     "id": "county-fair-1937",
@@ -78,9 +142,20 @@
     "locationId": "door-county-fair",
     "contributedById": "david",
     "contributedWhen": "April 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Door County Fairgrounds" },
-    "date": { "year": 1937, "month": 8, "precision": "month", "display": "August 1937", "deduced": true, "clue": "Fair-week bunting matches the 1937 county program" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Door County Fairgrounds"
+    },
+    "date": {
+      "year": 1937,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1937",
+      "deduced": true,
+      "clue": "Fair-week bunting matches the 1937 county program"
+    }
   },
   {
     "id": "sarah-school-portrait-1940",
@@ -91,9 +166,21 @@
     "locationId": "sturgeon-bay-school",
     "contributedById": "margaret",
     "contributedWhen": "March 2026",
-    "photographer": { "value": "Miss Holloway, her teacher", "clue": "Stamped on the back of the print" },
-    "takenWhere": { "value": "Sturgeon Bay grade school" },
-    "date": { "year": 1940, "month": 10, "precision": "month", "display": "October 1940", "deduced": true, "clue": "Same classroom and dress as the class photo dated October 1940" }
+    "photographer": {
+      "value": "Miss Holloway, her teacher",
+      "clue": "Stamped on the back of the print"
+    },
+    "takenWhere": {
+      "value": "Sturgeon Bay grade school"
+    },
+    "date": {
+      "year": 1940,
+      "month": 10,
+      "precision": "month",
+      "display": "October 1940",
+      "deduced": true,
+      "clue": "Same classroom and dress as the class photo dated October 1940"
+    }
   },
   {
     "id": "front-porch-1941",
@@ -104,9 +191,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "eleanor",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Front porch, Kowalski farmhouse", "deduced": true, "clue": "Porch spindles match the 1928 farmhouse photo" },
-    "date": { "year": 1941, "precision": "year", "display": "Summer 1941", "deduced": true, "clue": "Sarah's height between the 1940 and 1944 photos" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Front porch, Kowalski farmhouse",
+      "deduced": true,
+      "clue": "Porch spindles match the 1928 farmhouse photo"
+    },
+    "date": {
+      "year": 1941,
+      "precision": "year",
+      "display": "Summer 1941",
+      "deduced": true,
+      "clue": "Sarah's height between the 1940 and 1944 photos"
+    }
   },
   {
     "id": "sarah-and-friends-1944",
@@ -117,9 +216,21 @@
     "locationId": "sturgeon-bay-store",
     "contributedById": "margaret",
     "contributedWhen": "March 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Outside the general store, Sturgeon Bay", "deduced": true, "clue": "Step and pump-post match a dated postcard of the store" },
-    "date": { "year": 1944, "precision": "year", "display": "Summer 1944", "deduced": true, "clue": "The Pierson girls moved away in spring 1945" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Outside the general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Step and pump-post match a dated postcard of the store"
+    },
+    "date": {
+      "year": 1944,
+      "precision": "year",
+      "display": "Summer 1944",
+      "deduced": true,
+      "clue": "The Pierson girls moved away in spring 1945"
+    }
   },
   {
     "id": "tom-army-portrait-1946",
@@ -130,9 +241,19 @@
     "locationId": "fort-belvoir",
     "contributedById": "david",
     "contributedWhen": "April 2026",
-    "photographer": { "value": "Army photographer, Fort Belvoir", "clue": "Unit stamp on the reverse" },
-    "takenWhere": { "value": "Fort Belvoir, Virginia" },
-    "date": { "year": 1946, "month": 1, "precision": "month", "display": "January 1946" }
+    "photographer": {
+      "value": "Army photographer, Fort Belvoir",
+      "clue": "Unit stamp on the reverse"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir, Virginia"
+    },
+    "date": {
+      "year": 1946,
+      "month": 1,
+      "precision": "month",
+      "display": "January 1946"
+    }
   },
   {
     "id": "sunday-best-1947",
@@ -143,9 +264,21 @@
     "locationId": "eddies-tavern",
     "contributedById": "susan",
     "contributedWhen": "March 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Eddie's tavern, Sturgeon Bay", "deduced": true, "clue": "Booth and wall calendar match another print from Eddie's" },
-    "date": { "year": 1947, "precision": "year", "display": "1947", "deduced": true, "clue": "Sarah wears the same coat in a print dated Christmas 1947" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Eddie's tavern, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Booth and wall calendar match another print from Eddie's"
+    },
+    "date": {
+      "year": 1947,
+      "precision": "year",
+      "display": "1947",
+      "deduced": true,
+      "clue": "Sarah wears the same coat in a print dated Christmas 1947"
+    }
   },
   {
     "id": "first-car-1949",
@@ -156,9 +289,24 @@
     "locationId": "whitfield-place",
     "contributedById": "david",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Likely Sarah", "deduced": true, "clue": "Tom and Sarah were inseparable that summer; her shadow is in the frame" },
-    "takenWhere": { "value": "Whitfield place, Sturgeon Bay" },
-    "date": { "year": 1949, "month": 6, "day": 12, "iso": "1949-06-12", "precision": "day", "display": "June 12, 1949", "deduced": true, "clue": "Stamped on the print border by the drugstore that developed the roll" }
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Tom and Sarah were inseparable that summer; her shadow is in the frame"
+    },
+    "takenWhere": {
+      "value": "Whitfield place, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1949,
+      "month": 6,
+      "day": 12,
+      "iso": "1949-06-12",
+      "precision": "day",
+      "display": "June 12, 1949",
+      "deduced": true,
+      "clue": "Stamped on the print border by the drugstore that developed the roll"
+    }
   },
   {
     "id": "wedding-day-1950",
@@ -169,9 +317,22 @@
     "locationId": "st-marys",
     "contributedById": "eleanor",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Vandersteen Studio, Green Bay", "clue": "Embossed studio mark on the print" },
-    "takenWhere": { "value": "St. Mary's, Sturgeon Bay" },
-    "date": { "year": 1950, "month": 6, "day": 10, "iso": "1950-06-10", "precision": "day", "display": "June 10, 1950", "clue": "Date on the marriage record" }
+    "photographer": {
+      "value": "Vandersteen Studio, Green Bay",
+      "clue": "Embossed studio mark on the print"
+    },
+    "takenWhere": {
+      "value": "St. Mary's, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1950,
+      "month": 6,
+      "day": 10,
+      "iso": "1950-06-10",
+      "precision": "day",
+      "display": "June 10, 1950",
+      "clue": "Date on the marriage record"
+    }
   },
   {
     "id": "eleanor-baby-1953",
@@ -182,9 +343,23 @@
     "locationId": "town-park",
     "contributedById": "eleanor",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "Likely Tom", "deduced": true, "clue": "He's missing from every photo of this picnic — someone held the camera" },
-    "takenWhere": { "value": "Town park, Sturgeon Bay", "deduced": true, "clue": "Hammock and oaks match two other prints from the same outing" },
-    "date": { "year": 1953, "precision": "year", "display": "Summer 1953", "deduced": true, "clue": "Eleanor's age — she was born in March 1953" }
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "He's missing from every photo of this picnic — someone held the camera"
+    },
+    "takenWhere": {
+      "value": "Town park, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Hammock and oaks match two other prints from the same outing"
+    },
+    "date": {
+      "year": 1953,
+      "precision": "year",
+      "display": "Summer 1953",
+      "deduced": true,
+      "clue": "Eleanor's age — she was born in March 1953"
+    }
   },
   {
     "id": "christmas-morning-1955",
@@ -195,9 +370,20 @@
     "locationId": "main-street-sturgeon-bay",
     "contributedById": "susan",
     "contributedWhen": "April 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Main Street, Sturgeon Bay" },
-    "date": { "year": 1955, "month": 12, "precision": "month", "display": "December 1955", "deduced": true, "clue": "The food store's tree lot — signage matches a print dated that month" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Main Street, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1955,
+      "month": 12,
+      "precision": "month",
+      "display": "December 1955",
+      "deduced": true,
+      "clue": "The food store's tree lot — signage matches a print dated that month"
+    }
   },
   {
     "id": "susan-baby-1956",
@@ -209,9 +395,19 @@
     "description": "The nursery at St. Vincent's, Green Bay.",
     "contributedById": "susan",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "St. Vincent's nursery staff" },
-    "takenWhere": { "value": "St. Vincent's hospital, Green Bay" },
-    "date": { "year": 1956, "month": 4, "precision": "month", "display": "April 1956", "clue": "Susan's birth week, per her baby bracelet in the bassinet tag" }
+    "photographer": {
+      "value": "St. Vincent's nursery staff"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's hospital, Green Bay"
+    },
+    "date": {
+      "year": 1956,
+      "month": 4,
+      "precision": "month",
+      "display": "April 1956",
+      "clue": "Susan's birth week, per her baby bracelet in the bassinet tag"
+    }
   },
   {
     "id": "lake-house-summer-1958",
@@ -222,9 +418,21 @@
     "locationId": "kangaroo-lake",
     "contributedById": "margaret",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Likely Tom", "deduced": true, "clue": "Taken on the family's Brownie — same lens flaw as his fishing prints" },
-    "takenWhere": { "value": "Kangaroo Lake, Door County" },
-    "date": { "year": 1958, "precision": "year", "display": "Summer 1958", "deduced": true, "clue": "The third cottage was built in spring 1958" }
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "Taken on the family's Brownie — same lens flaw as his fishing prints"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake, Door County"
+    },
+    "date": {
+      "year": 1958,
+      "precision": "year",
+      "display": "Summer 1958",
+      "deduced": true,
+      "clue": "The third cottage was built in spring 1958"
+    }
   },
   {
     "id": "lake-swimmers-1960",
@@ -235,9 +443,22 @@
     "locationId": "kangaroo-lake",
     "contributedById": "margaret",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Kangaroo Lake bathing beach" },
-    "date": { "year": 1960, "month": 6, "day": 12, "iso": "1960-06-12", "precision": "day", "display": "June 12, 1960", "deduced": true, "clue": "Pier flags and lifeguard chair match the dated 1960 town beach program" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake bathing beach"
+    },
+    "date": {
+      "year": 1960,
+      "month": 6,
+      "day": 12,
+      "iso": "1960-06-12",
+      "precision": "day",
+      "display": "June 12, 1960",
+      "deduced": true,
+      "clue": "Pier flags and lifeguard chair match the dated 1960 town beach program"
+    }
   },
   {
     "id": "family-picnic-1962",
@@ -248,9 +469,26 @@
     "locationId": "kangaroo-lake",
     "contributedById": "eleanor",
     "contributedWhen": "March 2026",
-    "photographer": { "value": "Likely Tom", "deduced": true, "clue": "Absent from the frame; his Buick is parked at the left edge" },
-    "takenWhere": { "value": "Picnic grove, Kangaroo Lake", "deduced": true, "clue": "Same tables as the 1968 reunion photos" },
-    "date": { "year": 1962, "month": 7, "day": 4, "iso": "1962-07-04", "precision": "day", "display": "July 4, 1962", "deduced": true, "clue": "Eleanor's and Susan's ages, and the holiday tablecloth" }
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "Absent from the frame; his Buick is parked at the left edge"
+    },
+    "takenWhere": {
+      "value": "Picnic grove, Kangaroo Lake",
+      "deduced": true,
+      "clue": "Same tables as the 1968 reunion photos"
+    },
+    "date": {
+      "year": 1962,
+      "month": 7,
+      "day": 4,
+      "iso": "1962-07-04",
+      "precision": "day",
+      "display": "July 4, 1962",
+      "deduced": true,
+      "clue": "Eleanor's and Susan's ages, and the holiday tablecloth"
+    }
   },
   {
     "id": "thanksgiving-1964",
@@ -261,9 +499,25 @@
     "locationId": "kowalski-farm",
     "contributedById": "eleanor",
     "contributedWhen": "February 2026",
-    "photographer": { "value": "Likely Eleanor, age 11", "deduced": true, "clue": "Taken low, from the doorway — the kids' table" },
-    "takenWhere": { "value": "Dining room, Kowalski farmhouse", "deduced": true, "clue": "Wallpaper matches the 1933 print of Klara and Sarah" },
-    "date": { "year": 1964, "month": 11, "day": 26, "iso": "1964-11-26", "precision": "day", "display": "November 26, 1964", "clue": "The wall calendar in the frame is open to Thanksgiving Day, November 1964" }
+    "photographer": {
+      "value": "Likely Eleanor, age 11",
+      "deduced": true,
+      "clue": "Taken low, from the doorway — the kids' table"
+    },
+    "takenWhere": {
+      "value": "Dining room, Kowalski farmhouse",
+      "deduced": true,
+      "clue": "Wallpaper matches the 1933 print of Klara and Sarah"
+    },
+    "date": {
+      "year": 1964,
+      "month": 11,
+      "day": 26,
+      "iso": "1964-11-26",
+      "precision": "day",
+      "display": "November 26, 1964",
+      "clue": "The wall calendar in the frame is open to Thanksgiving Day, November 1964"
+    }
   },
   {
     "id": "family-reunion-1968",
@@ -274,9 +528,21 @@
     "locationId": "kowalski-farm",
     "contributedById": "susan",
     "contributedWhen": "May 2026",
-    "photographer": { "value": "Unknown" },
-    "takenWhere": { "value": "Front lawn, Kowalski farm", "deduced": true, "clue": "Farmhouse gable matches the 1928 photo" },
-    "date": { "year": 1968, "precision": "year", "display": "Summer 1968", "deduced": true, "clue": "The elm by the porch — lost in 1969 — is still standing" }
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Front lawn, Kowalski farm",
+      "deduced": true,
+      "clue": "Farmhouse gable matches the 1928 photo"
+    },
+    "date": {
+      "year": 1968,
+      "precision": "year",
+      "display": "Summer 1968",
+      "deduced": true,
+      "clue": "The elm by the porch — lost in 1969 — is still standing"
+    }
   },
   {
     "id": "tom-fishing-1972",
@@ -287,8 +553,4523 @@
     "locationId": "kangaroo-lake",
     "contributedById": "david",
     "contributedWhen": "June 2026",
-    "photographer": { "value": "Likely Sarah", "deduced": true, "clue": "Her handwriting dates the print: 'the boys, off again'" },
-    "takenWhere": { "value": "Kangaroo Lake landing", "deduced": true, "clue": "Same shoreline as the 1960 bathing-beach photo" },
-    "date": { "year": 1972, "month": 6, "day": 12, "iso": "1972-06-12", "precision": "day", "display": "June 12, 1972", "deduced": true, "clue": "The wagon's plates and David's height in a print from the same roll" }
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Her handwriting dates the print: 'the boys, off again'"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake landing",
+      "deduced": true,
+      "clue": "Same shoreline as the 1960 bathing-beach photo"
+    },
+    "date": {
+      "year": 1972,
+      "month": 6,
+      "day": 12,
+      "iso": "1972-06-12",
+      "precision": "day",
+      "display": "June 12, 1972",
+      "deduced": true,
+      "clue": "The wagon's plates and David's height in a print from the same roll"
+    }
+  },
+  {
+    "id": "arch-001",
+    "title": "Klara — mother and child",
+    "src": "/photos/arch-001.jpg",
+    "width": 951,
+    "height": 632,
+    "locationId": "kangaroo-lake",
+    "description": "Klara was scanned — one of David's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1914,
+      "month": 2,
+      "precision": "month",
+      "display": "February 1914"
+    }
+  },
+  {
+    "id": "arch-002",
+    "title": "The family at Kowalski farm",
+    "src": "/photos/arch-002.jpg",
+    "width": 917,
+    "height": 678,
+    "locationId": "kowalski-farm",
+    "contributedById": "eleanor",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm"
+    },
+    "date": {
+      "year": 1945,
+      "month": 1,
+      "day": 9,
+      "iso": "1945-01-09",
+      "precision": "day",
+      "display": "January 9, 1945"
+    }
+  },
+  {
+    "id": "arch-003",
+    "title": "Ruth, 1987",
+    "src": "/photos/arch-003.jpg",
+    "width": 850,
+    "height": 839,
+    "locationId": "gen-loc-16",
+    "description": "Ruth turned up — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely Ruth",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery"
+    },
+    "date": {
+      "year": 1987,
+      "precision": "year",
+      "display": "1987"
+    }
+  },
+  {
+    "id": "arch-004",
+    "title": "Tom — mother and child",
+    "src": "/photos/arch-004.jpg",
+    "width": 721,
+    "height": 958,
+    "locationId": "gen-loc-23",
+    "contributedById": "eleanor",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1943,
+      "month": 9,
+      "precision": "month",
+      "display": "September 1943"
+    }
+  },
+  {
+    "id": "arch-005",
+    "title": "Eleanor — mother and child",
+    "src": "/photos/arch-005.jpg",
+    "width": 860,
+    "height": 709,
+    "locationId": "green-bay",
+    "contributedById": "susan",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay"
+    },
+    "date": {
+      "year": 2016,
+      "month": 8,
+      "precision": "month",
+      "display": "August 2016"
+    }
+  },
+  {
+    "id": "arch-006",
+    "title": "Mark, c. 1970",
+    "src": "/photos/arch-006.jpg",
+    "width": 930,
+    "height": 698,
+    "locationId": "gen-loc-1",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse"
+    },
+    "date": {
+      "year": 1970,
+      "precision": "circa",
+      "display": "c. 1970"
+    }
+  },
+  {
+    "id": "arch-007",
+    "title": "Susan at Green Bay town hall",
+    "src": "/photos/arch-007.jpg",
+    "width": 696,
+    "height": 933,
+    "locationId": "gen-loc-2",
+    "description": "Susan surfaced — one of Margaret's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay town hall"
+    },
+    "date": {
+      "year": 1976,
+      "precision": "circa",
+      "display": "c. 1976"
+    }
+  },
+  {
+    "id": "arch-008",
+    "title": "The family at Ellison Bay fairgrounds",
+    "src": "/photos/arch-008.jpg",
+    "width": 690,
+    "height": 931,
+    "locationId": "gen-loc-12",
+    "description": "Daniel was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "Likely Daniel",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds"
+    },
+    "date": {
+      "year": 1960,
+      "precision": "year",
+      "display": "1960"
+    }
+  },
+  {
+    "id": "arch-009",
+    "title": "The family at Green Bay homestead",
+    "src": "/photos/arch-009.jpg",
+    "width": 677,
+    "height": 817,
+    "locationId": "gen-loc-6",
+    "description": "Margaret was scanned — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "April 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "month": 11,
+      "day": 12,
+      "iso": "2007-11-12",
+      "precision": "day",
+      "display": "November 12, 2007"
+    }
+  },
+  {
+    "id": "arch-010",
+    "title": "James — family on porch",
+    "src": "/photos/arch-010.jpg",
+    "width": 953,
+    "height": 642,
+    "locationId": "st-marys",
+    "description": "James was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "August 2026",
+    "photographer": {
+      "value": "Likely James",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church"
+    },
+    "date": {
+      "year": 2012,
+      "month": 3,
+      "precision": "month",
+      "display": "March 2012"
+    }
+  },
+  {
+    "id": "arch-011",
+    "title": "David, 1990",
+    "src": "/photos/arch-011.jpg",
+    "width": 947,
+    "height": 639,
+    "locationId": "gen-loc-1",
+    "description": "David came to light — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-012",
+    "title": "Józef — family on porch",
+    "src": "/photos/arch-012.jpg",
+    "width": 955,
+    "height": 645,
+    "locationId": "gen-loc-4",
+    "contributedById": "eleanor",
+    "contributedWhen": "October 2025",
+    "photographer": {
+      "value": "Likely Józef",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sister Bay depot"
+    },
+    "date": {
+      "year": 1909,
+      "month": 3,
+      "precision": "month",
+      "display": "March 1909"
+    }
+  },
+  {
+    "id": "arch-013",
+    "title": "Walter — family on porch",
+    "src": "/photos/arch-013.jpg",
+    "width": 956,
+    "height": 641,
+    "locationId": "town-park",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely Walter",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sunset Park"
+    },
+    "date": {
+      "year": 1906,
+      "precision": "year",
+      "display": "1906"
+    }
+  },
+  {
+    "id": "arch-014",
+    "title": "Edith — family on porch",
+    "src": "/photos/arch-014.jpg",
+    "width": 949,
+    "height": 640,
+    "locationId": "gen-loc-6",
+    "description": "Edith came to light — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Likely Edith",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead"
+    },
+    "date": {
+      "year": 1940,
+      "month": 5,
+      "precision": "month",
+      "display": "May 1940"
+    }
+  },
+  {
+    "id": "arch-015",
+    "title": "The family at Brussels homestead",
+    "src": "/photos/arch-015.jpg",
+    "width": 952,
+    "height": 636,
+    "locationId": "gen-loc-19",
+    "description": "Rose was rediscovered — one of Eleanor's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "February 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Brussels homestead"
+    },
+    "date": {
+      "year": 1954,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1954"
+    }
+  },
+  {
+    "id": "arch-016",
+    "title": "The family at The general store, Sturgeon Bay",
+    "src": "/photos/arch-016.jpg",
+    "width": 963,
+    "height": 719,
+    "locationId": "sturgeon-bay-store",
+    "contributedById": "margaret",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1956,
+      "precision": "year",
+      "display": "1956"
+    }
+  },
+  {
+    "id": "arch-017",
+    "title": "Ada — farm family",
+    "src": "/photos/arch-017.jpg",
+    "width": 925,
+    "height": 696,
+    "locationId": "main-street-sturgeon-bay",
+    "contributedById": "susan",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Main Street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2015,
+      "precision": "year",
+      "display": "2015"
+    }
+  },
+  {
+    "id": "arch-018",
+    "title": "Chidi, August 1965",
+    "src": "/photos/arch-018.jpg",
+    "width": 881,
+    "height": 682,
+    "locationId": "kangaroo-lake",
+    "contributedById": "eleanor",
+    "contributedWhen": "November 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1965,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1965"
+    }
+  },
+  {
+    "id": "arch-019",
+    "title": "Grace, 2004",
+    "src": "/photos/arch-019.jpg",
+    "width": 688,
+    "height": 970,
+    "locationId": "sturgeon-bay-school",
+    "contributedById": "margaret",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sturgeon Bay grade school",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2004,
+      "precision": "year",
+      "display": "2004"
+    }
+  },
+  {
+    "id": "arch-020",
+    "title": "Lauren — farm family",
+    "src": "/photos/arch-020.jpg",
+    "width": 948,
+    "height": 630,
+    "locationId": "gen-loc-7",
+    "contributedById": "eleanor",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Madison park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1989,
+      "precision": "year",
+      "display": "1989"
+    }
+  },
+  {
+    "id": "arch-021",
+    "title": "Henry at Ellison Bay fairgrounds",
+    "src": "/photos/arch-021.jpg",
+    "width": 656,
+    "height": 968,
+    "locationId": "gen-loc-12",
+    "description": "Henry turned up — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-022",
+    "title": "Clara at St. Vincent's Hospital",
+    "src": "/photos/arch-022.jpg",
+    "width": 899,
+    "height": 864,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "susan",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 1962,
+      "precision": "year",
+      "display": "1962"
+    }
+  },
+  {
+    "id": "arch-023",
+    "title": "The family at Brussels homestead",
+    "src": "/photos/arch-023.jpg",
+    "width": 924,
+    "height": 685,
+    "locationId": "gen-loc-19",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Brussels homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2008,
+      "precision": "year",
+      "display": "2008"
+    }
+  },
+  {
+    "id": "arch-024",
+    "title": "Kenneth, April 1979",
+    "src": "/photos/arch-024.jpg",
+    "width": 957,
+    "height": 691,
+    "locationId": "gen-loc-20",
+    "description": "Kenneth was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "October 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1979,
+      "month": 4,
+      "precision": "month",
+      "display": "April 1979"
+    }
+  },
+  {
+    "id": "arch-025",
+    "title": "Bruce — wheat harvest",
+    "src": "/photos/arch-025.jpg",
+    "width": 926,
+    "height": 683,
+    "locationId": "sturgeon-bay-store",
+    "contributedById": "susan",
+    "contributedWhen": "January 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1998,
+      "precision": "year",
+      "display": "1998"
+    }
+  },
+  {
+    "id": "arch-026",
+    "title": "Diane, 1994",
+    "src": "/photos/arch-026.jpg",
+    "width": 930,
+    "height": 687,
+    "locationId": "gen-loc-12",
+    "contributedById": "susan",
+    "contributedWhen": "September 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1994,
+      "precision": "year",
+      "display": "1994"
+    }
+  },
+  {
+    "id": "arch-027",
+    "title": "Anna, December 5, 2010",
+    "src": "/photos/arch-027.jpg",
+    "width": 936,
+    "height": 685,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "Likely Anna",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 2010,
+      "month": 12,
+      "day": 5,
+      "iso": "2010-12-05",
+      "precision": "day",
+      "display": "December 5, 2010"
+    }
+  },
+  {
+    "id": "arch-028",
+    "title": "Allen — wheat harvest",
+    "src": "/photos/arch-028.jpg",
+    "width": 951,
+    "height": 642,
+    "locationId": "gen-loc-15",
+    "contributedById": "david",
+    "contributedWhen": "September 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Brussels main street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1997,
+      "month": 1,
+      "day": 12,
+      "iso": "1997-01-12",
+      "precision": "day",
+      "display": "January 12, 1997"
+    }
+  },
+  {
+    "id": "arch-029",
+    "title": "Albert at St. Mary's Catholic Church",
+    "src": "/photos/arch-029.jpg",
+    "width": 927,
+    "height": 688,
+    "locationId": "st-marys",
+    "description": "Albert surfaced — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2004,
+      "month": 1,
+      "precision": "month",
+      "display": "January 2004"
+    }
+  },
+  {
+    "id": "arch-030",
+    "title": "Hazel — wheat harvest",
+    "src": "/photos/arch-030.jpg",
+    "width": 935,
+    "height": 737,
+    "locationId": "gen-loc-4",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Sister Bay depot"
+    },
+    "date": {
+      "year": 2001,
+      "precision": "year",
+      "display": "2001"
+    }
+  },
+  {
+    "id": "arch-031",
+    "title": "Richard at Milwaukee depot",
+    "src": "/photos/arch-031.jpg",
+    "width": 923,
+    "height": 690,
+    "locationId": "gen-loc-24",
+    "description": "Richard came to light — one of David's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Milwaukee depot",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "month": 8,
+      "precision": "month",
+      "display": "August 2007"
+    }
+  },
+  {
+    "id": "arch-032",
+    "title": "Nancy at Green Bay town hall",
+    "src": "/photos/arch-032.jpg",
+    "width": 868,
+    "height": 650,
+    "locationId": "gen-loc-2",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay town hall"
+    },
+    "date": {
+      "year": 1981,
+      "precision": "circa",
+      "display": "c. 1981"
+    }
+  },
+  {
+    "id": "arch-033",
+    "title": "Theodore — cornfield farmer",
+    "src": "/photos/arch-033.jpg",
+    "width": 681,
+    "height": 934,
+    "locationId": "gen-loc-23",
+    "description": "Theodore came to light — one of Margaret's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse"
+    },
+    "date": {
+      "year": 1995,
+      "precision": "circa",
+      "display": "c. 1995"
+    }
+  },
+  {
+    "id": "arch-034",
+    "title": "The family at Jacksonport church",
+    "src": "/photos/arch-034.jpg",
+    "width": 700,
+    "height": 936,
+    "locationId": "gen-loc-20",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "Likely Betty",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church"
+    },
+    "date": {
+      "year": 1989,
+      "precision": "circa",
+      "display": "c. 1989"
+    }
+  },
+  {
+    "id": "arch-035",
+    "title": "The family at Kangaroo Lake cottages",
+    "src": "/photos/arch-035.jpg",
+    "width": 924,
+    "height": 713,
+    "locationId": "kangaroo-lake",
+    "contributedById": "susan",
+    "contributedWhen": "August 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1993,
+      "precision": "year",
+      "display": "1993"
+    }
+  },
+  {
+    "id": "arch-036",
+    "title": "Paul — cornfield farmer",
+    "src": "/photos/arch-036.jpg",
+    "width": 680,
+    "height": 918,
+    "locationId": "gen-loc-6",
+    "contributedById": "susan",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1996,
+      "precision": "year",
+      "display": "1996"
+    }
+  },
+  {
+    "id": "arch-037",
+    "title": "Helen, c. 1998",
+    "src": "/photos/arch-037.jpg",
+    "width": 936,
+    "height": 699,
+    "locationId": "kangaroo-lake",
+    "description": "Helen was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1998,
+      "precision": "circa",
+      "display": "c. 1998"
+    }
+  },
+  {
+    "id": "arch-038",
+    "title": "Joseph at Kowalski farm",
+    "src": "/photos/arch-038.jpg",
+    "width": 930,
+    "height": 696,
+    "locationId": "kowalski-farm",
+    "contributedById": "margaret",
+    "contributedWhen": "October 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm"
+    },
+    "date": {
+      "year": 1988,
+      "precision": "year",
+      "display": "1988"
+    }
+  },
+  {
+    "id": "arch-039",
+    "title": "Janet at Brussels homestead",
+    "src": "/photos/arch-039.jpg",
+    "width": 939,
+    "height": 702,
+    "locationId": "gen-loc-19",
+    "description": "Janet turned up — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "April 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Brussels homestead"
+    },
+    "date": {
+      "year": 2015,
+      "precision": "year",
+      "display": "2015"
+    }
+  },
+  {
+    "id": "arch-040",
+    "title": "Carol at Green Bay",
+    "src": "/photos/arch-040.jpg",
+    "width": 993,
+    "height": 701,
+    "locationId": "green-bay",
+    "contributedById": "susan",
+    "contributedWhen": "September 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2010,
+      "precision": "year",
+      "display": "2010"
+    }
+  },
+  {
+    "id": "arch-041",
+    "title": "Harold at The general store, Sturgeon Bay",
+    "src": "/photos/arch-041.jpg",
+    "width": 940,
+    "height": 709,
+    "locationId": "sturgeon-bay-store",
+    "description": "Harold was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2025",
+    "photographer": {
+      "value": "Likely Harold",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1983,
+      "precision": "year",
+      "display": "1983"
+    }
+  },
+  {
+    "id": "arch-042",
+    "title": "Vernon, May 2006",
+    "src": "/photos/arch-042.jpg",
+    "width": 717,
+    "height": 939,
+    "locationId": "gen-loc-16",
+    "description": "Vernon was scanned — one of David's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely Vernon",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2006,
+      "month": 5,
+      "precision": "month",
+      "display": "May 2006"
+    }
+  },
+  {
+    "id": "arch-043",
+    "title": "Patricia at Main Street",
+    "src": "/photos/arch-043.jpg",
+    "width": 964,
+    "height": 683,
+    "locationId": "main-street-sturgeon-bay",
+    "description": "Patricia was rediscovered — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Main Street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1991,
+      "precision": "year",
+      "display": "1991"
+    }
+  },
+  {
+    "id": "arch-044",
+    "title": "The family at Minneapolis lake landing",
+    "src": "/photos/arch-044.jpg",
+    "width": 679,
+    "height": 917,
+    "locationId": "gen-loc-8",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 1907,
+      "month": 4,
+      "precision": "month",
+      "display": "April 1907"
+    }
+  },
+  {
+    "id": "arch-045",
+    "title": "Sarah at Chicago cemetery",
+    "src": "/photos/arch-045.jpg",
+    "width": 704,
+    "height": 931,
+    "locationId": "gen-loc-16",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1962,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1962"
+    }
+  },
+  {
+    "id": "arch-046",
+    "title": "Ruth — school children",
+    "src": "/photos/arch-046.jpg",
+    "width": 893,
+    "height": 814,
+    "locationId": "gen-loc-18",
+    "description": "Ruth turned up — one of Susan's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Egg Harbor homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "precision": "circa",
+      "display": "c. 2007"
+    }
+  },
+  {
+    "id": "arch-047",
+    "title": "Tom at Minneapolis lake landing",
+    "src": "/photos/arch-047.jpg",
+    "width": 831,
+    "height": 787,
+    "locationId": "gen-loc-8",
+    "contributedById": "susan",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 1948,
+      "precision": "year",
+      "display": "1948"
+    }
+  },
+  {
+    "id": "arch-048",
+    "title": "Eleanor — children playing",
+    "src": "/photos/arch-048.jpg",
+    "width": 946,
+    "height": 630,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "susan",
+    "contributedWhen": "November 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1962,
+      "precision": "year",
+      "display": "1962"
+    }
+  },
+  {
+    "id": "arch-049",
+    "title": "Mark — children playing",
+    "src": "/photos/arch-049.jpg",
+    "width": 925,
+    "height": 619,
+    "locationId": "gen-loc-23",
+    "contributedById": "susan",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "Likely Mark",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse"
+    },
+    "date": {
+      "year": 1984,
+      "precision": "circa",
+      "display": "c. 1984"
+    }
+  },
+  {
+    "id": "arch-050",
+    "title": "The family at Madison park",
+    "src": "/photos/arch-050.jpg",
+    "width": 637,
+    "height": 947,
+    "locationId": "gen-loc-7",
+    "description": "Susan came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1987,
+      "month": 1,
+      "day": 15,
+      "iso": "1987-01-15",
+      "precision": "day",
+      "display": "January 15, 1987"
+    }
+  },
+  {
+    "id": "arch-051",
+    "title": "Daniel at Green Bay homestead",
+    "src": "/photos/arch-051.jpg",
+    "width": 883,
+    "height": 681,
+    "locationId": "gen-loc-6",
+    "description": "Daniel was scanned — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "December 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1987,
+      "month": 1,
+      "day": 8,
+      "iso": "1987-01-08",
+      "precision": "day",
+      "display": "January 8, 1987"
+    }
+  },
+  {
+    "id": "arch-052",
+    "title": "Margaret at Madison fairgrounds",
+    "src": "/photos/arch-052.jpg",
+    "width": 993,
+    "height": 787,
+    "locationId": "gen-loc-9",
+    "description": "Margaret came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "Likely Margaret",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison fairgrounds"
+    },
+    "date": {
+      "year": 2013,
+      "precision": "year",
+      "display": "2013"
+    }
+  },
+  {
+    "id": "arch-053",
+    "title": "The family at Eddie's tavern",
+    "src": "/photos/arch-053.jpg",
+    "width": 930,
+    "height": 628,
+    "locationId": "eddies-tavern",
+    "description": "James was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Eddie's tavern",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2008,
+      "precision": "year",
+      "display": "2008"
+    }
+  },
+  {
+    "id": "arch-054",
+    "title": "David at Madison general store",
+    "src": "/photos/arch-054.jpg",
+    "width": 966,
+    "height": 646,
+    "locationId": "gen-loc-3",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison general store"
+    },
+    "date": {
+      "year": 2005,
+      "month": 10,
+      "precision": "month",
+      "display": "October 2005"
+    }
+  },
+  {
+    "id": "arch-055",
+    "title": "The family at The Whitfield place",
+    "src": "/photos/arch-055.jpg",
+    "width": 963,
+    "height": 640,
+    "locationId": "whitfield-place",
+    "description": "Józef came to light — one of David's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "The Whitfield place"
+    },
+    "date": {
+      "year": 1942,
+      "precision": "year",
+      "display": "1942"
+    }
+  },
+  {
+    "id": "arch-056",
+    "title": "Walter at The Whitfield place",
+    "src": "/photos/arch-056.jpg",
+    "width": 943,
+    "height": 670,
+    "locationId": "whitfield-place",
+    "contributedById": "david",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Likely Walter",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "The Whitfield place"
+    },
+    "date": {
+      "year": 1910,
+      "month": 6,
+      "precision": "month",
+      "display": "June 1910"
+    }
+  },
+  {
+    "id": "arch-057",
+    "title": "The family at The general store, Sturgeon Bay",
+    "src": "/photos/arch-057.jpg",
+    "width": 951,
+    "height": 640,
+    "locationId": "sturgeon-bay-store",
+    "description": "Edith was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "October 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1949,
+      "precision": "year",
+      "display": "1949"
+    }
+  },
+  {
+    "id": "arch-058",
+    "title": "Rose — family picnic",
+    "src": "/photos/arch-058.jpg",
+    "width": 954,
+    "height": 639,
+    "locationId": "sturgeon-bay-school",
+    "description": "Rose was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Likely Rose",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sturgeon Bay grade school"
+    },
+    "date": {
+      "year": 1928,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1928"
+    }
+  },
+  {
+    "id": "arch-059",
+    "title": "Emeka — family picnic",
+    "src": "/photos/arch-059.jpg",
+    "width": 951,
+    "height": 644,
+    "locationId": "kangaroo-lake",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages"
+    },
+    "date": {
+      "year": 2000,
+      "precision": "year",
+      "display": "2000"
+    }
+  },
+  {
+    "id": "arch-060",
+    "title": "The family at Main Street",
+    "src": "/photos/arch-060.jpg",
+    "width": 569,
+    "height": 829,
+    "locationId": "main-street-sturgeon-bay",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Main Street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1967,
+      "precision": "circa",
+      "display": "c. 1967"
+    }
+  },
+  {
+    "id": "arch-061",
+    "title": "The family at Minneapolis lake landing",
+    "src": "/photos/arch-061.jpg",
+    "width": 965,
+    "height": 705,
+    "locationId": "gen-loc-8",
+    "contributedById": "eleanor",
+    "contributedWhen": "October 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-062",
+    "title": "Grace at St. Vincent's Hospital",
+    "src": "/photos/arch-062.jpg",
+    "width": 929,
+    "height": 722,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "margaret",
+    "contributedWhen": "November 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-063",
+    "title": "The family at Minneapolis lake landing",
+    "src": "/photos/arch-063.jpg",
+    "width": 953,
+    "height": 682,
+    "locationId": "gen-loc-8",
+    "description": "Lauren turned up — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "August 2026",
+    "photographer": {
+      "value": "Likely Lauren",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 1987,
+      "precision": "circa",
+      "display": "c. 1987"
+    }
+  },
+  {
+    "id": "arch-064",
+    "title": "Henry — country church",
+    "src": "/photos/arch-064.jpg",
+    "width": 976,
+    "height": 779,
+    "locationId": "gen-loc-17",
+    "description": "Henry turned up — one of Margaret's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Casco fairgrounds"
+    },
+    "date": {
+      "year": 1969,
+      "precision": "circa",
+      "display": "c. 1969"
+    }
+  },
+  {
+    "id": "arch-065",
+    "title": "Clara, 1987",
+    "src": "/photos/arch-065.jpg",
+    "width": 694,
+    "height": 929,
+    "locationId": "gen-loc-1",
+    "description": "Clara turned up — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1987,
+      "precision": "year",
+      "display": "1987"
+    }
+  },
+  {
+    "id": "arch-066",
+    "title": "The family at Green Bay",
+    "src": "/photos/arch-066.jpg",
+    "width": 924,
+    "height": 685,
+    "locationId": "green-bay",
+    "contributedById": "david",
+    "contributedWhen": "September 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1983,
+      "precision": "year",
+      "display": "1983"
+    }
+  },
+  {
+    "id": "arch-067",
+    "title": "The family at The general store, Sturgeon Bay",
+    "src": "/photos/arch-067.jpg",
+    "width": 712,
+    "height": 904,
+    "locationId": "sturgeon-bay-store",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1943,
+      "precision": "year",
+      "display": "1943"
+    }
+  },
+  {
+    "id": "arch-068",
+    "title": "Bruce at Fort Belvoir",
+    "src": "/photos/arch-068.jpg",
+    "width": 689,
+    "height": 925,
+    "locationId": "fort-belvoir",
+    "description": "Bruce was scanned — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2015,
+      "month": 5,
+      "precision": "month",
+      "display": "May 2015"
+    }
+  },
+  {
+    "id": "arch-069",
+    "title": "The family at Jacksonport church",
+    "src": "/photos/arch-069.jpg",
+    "width": 931,
+    "height": 690,
+    "locationId": "gen-loc-20",
+    "description": "Diane came to light — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "April 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2013,
+      "precision": "year",
+      "display": "2013"
+    }
+  },
+  {
+    "id": "arch-070",
+    "title": "Anna at Madison park",
+    "src": "/photos/arch-070.jpg",
+    "width": 928,
+    "height": 686,
+    "locationId": "gen-loc-7",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Madison park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1994,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1994"
+    }
+  },
+  {
+    "id": "arch-071",
+    "title": "The family at Green Bay",
+    "src": "/photos/arch-071.jpg",
+    "width": 938,
+    "height": 678,
+    "locationId": "green-bay",
+    "description": "Allen came to light — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay"
+    },
+    "date": {
+      "year": 1992,
+      "month": 11,
+      "day": 9,
+      "iso": "1992-11-09",
+      "precision": "day",
+      "display": "November 9, 1992"
+    }
+  },
+  {
+    "id": "arch-072",
+    "title": "Albert, c. 2010",
+    "src": "/photos/arch-072.jpg",
+    "width": 906,
+    "height": 870,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "eleanor",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 2010,
+      "precision": "circa",
+      "display": "c. 2010"
+    }
+  },
+  {
+    "id": "arch-073",
+    "title": "Hazel, December 2001",
+    "src": "/photos/arch-073.jpg",
+    "width": 955,
+    "height": 754,
+    "locationId": "gen-loc-20",
+    "description": "Hazel came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2001,
+      "month": 12,
+      "precision": "month",
+      "display": "December 2001"
+    }
+  },
+  {
+    "id": "arch-074",
+    "title": "Richard, November 2, 2004",
+    "src": "/photos/arch-074.jpg",
+    "width": 941,
+    "height": 627,
+    "locationId": "gen-loc-10",
+    "description": "Richard came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "May 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Carlsville general store"
+    },
+    "date": {
+      "year": 2004,
+      "month": 11,
+      "day": 2,
+      "iso": "2004-11-02",
+      "precision": "day",
+      "display": "November 2, 2004"
+    }
+  },
+  {
+    "id": "arch-075",
+    "title": "Nancy, August 20, 1959",
+    "src": "/photos/arch-075.jpg",
+    "width": 913,
+    "height": 680,
+    "locationId": "town-park",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Sunset Park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1959,
+      "month": 8,
+      "day": 20,
+      "iso": "1959-08-20",
+      "precision": "day",
+      "display": "August 20, 1959"
+    }
+  },
+  {
+    "id": "arch-076",
+    "title": "Theodore — main street town",
+    "src": "/photos/arch-076.jpg",
+    "width": 949,
+    "height": 748,
+    "locationId": "gen-loc-22",
+    "description": "Theodore came to light — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1994,
+      "month": 2,
+      "precision": "month",
+      "display": "February 1994"
+    }
+  },
+  {
+    "id": "arch-077",
+    "title": "The family at Minneapolis main street",
+    "src": "/photos/arch-077.jpg",
+    "width": 843,
+    "height": 798,
+    "locationId": "gen-loc-5",
+    "contributedById": "susan",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "Likely Betty",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis main street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "month": 5,
+      "precision": "month",
+      "display": "May 2007"
+    }
+  },
+  {
+    "id": "arch-078",
+    "title": "Karen at Green Bay homestead",
+    "src": "/photos/arch-078.jpg",
+    "width": 929,
+    "height": 644,
+    "locationId": "gen-loc-6",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead"
+    },
+    "date": {
+      "year": 1974,
+      "month": 12,
+      "day": 20,
+      "iso": "1974-12-20",
+      "precision": "day",
+      "display": "December 20, 1974"
+    }
+  },
+  {
+    "id": "arch-079",
+    "title": "Paul — main street town",
+    "src": "/photos/arch-079.jpg",
+    "width": 944,
+    "height": 744,
+    "locationId": "gen-loc-21",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2024",
+    "photographer": {
+      "value": "Likely Paul",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison lake landing"
+    },
+    "date": {
+      "year": 2007,
+      "month": 8,
+      "precision": "month",
+      "display": "August 2007"
+    }
+  },
+  {
+    "id": "arch-080",
+    "title": "The family at Jacksonport church",
+    "src": "/photos/arch-080.jpg",
+    "width": 915,
+    "height": 682,
+    "locationId": "gen-loc-20",
+    "description": "Helen was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2013,
+      "month": 11,
+      "precision": "month",
+      "display": "November 2013"
+    }
+  },
+  {
+    "id": "arch-081",
+    "title": "Joseph, March 2, 1986",
+    "src": "/photos/arch-081.jpg",
+    "width": 922,
+    "height": 884,
+    "locationId": "st-vincents-green-bay",
+    "description": "Joseph came to light — one of Susan's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 1986,
+      "month": 3,
+      "day": 2,
+      "iso": "1986-03-02",
+      "precision": "day",
+      "display": "March 2, 1986"
+    }
+  },
+  {
+    "id": "arch-082",
+    "title": "Janet — fishing river",
+    "src": "/photos/arch-082.jpg",
+    "width": 942,
+    "height": 904,
+    "locationId": "gen-loc-3",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2025",
+    "photographer": {
+      "value": "Likely Janet",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2003,
+      "precision": "year",
+      "display": "2003"
+    }
+  },
+  {
+    "id": "arch-083",
+    "title": "Carol, November 2008",
+    "src": "/photos/arch-083.jpg",
+    "width": 863,
+    "height": 827,
+    "locationId": "gen-loc-10",
+    "contributedById": "susan",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Carlsville general store"
+    },
+    "date": {
+      "year": 2008,
+      "month": 11,
+      "precision": "month",
+      "display": "November 2008"
+    }
+  },
+  {
+    "id": "arch-084",
+    "title": "The family at Egg Harbor homestead",
+    "src": "/photos/arch-084.jpg",
+    "width": 930,
+    "height": 726,
+    "locationId": "gen-loc-18",
+    "contributedById": "eleanor",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Egg Harbor homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2015,
+      "precision": "circa",
+      "display": "c. 2015"
+    }
+  },
+  {
+    "id": "arch-085",
+    "title": "Vernon at Sister Bay depot",
+    "src": "/photos/arch-085.jpg",
+    "width": 956,
+    "height": 668,
+    "locationId": "gen-loc-4",
+    "description": "Vernon turned up — one of Susan's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Sister Bay depot"
+    },
+    "date": {
+      "year": 1996,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1996"
+    }
+  },
+  {
+    "id": "arch-086",
+    "title": "Patricia, June 1999",
+    "src": "/photos/arch-086.jpg",
+    "width": 958,
+    "height": 645,
+    "locationId": "gen-loc-21",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Madison lake landing"
+    },
+    "date": {
+      "year": 1999,
+      "month": 6,
+      "precision": "month",
+      "display": "June 1999"
+    }
+  },
+  {
+    "id": "arch-087",
+    "title": "Klara, 1947",
+    "src": "/photos/arch-087.jpg",
+    "width": 951,
+    "height": 644,
+    "locationId": "gen-loc-2",
+    "description": "Klara was rediscovered — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay town hall",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1947,
+      "precision": "year",
+      "display": "1947"
+    }
+  },
+  {
+    "id": "arch-088",
+    "title": "Sarah at Port of Baltimore",
+    "src": "/photos/arch-088.jpg",
+    "width": 907,
+    "height": 672,
+    "locationId": "port-of-baltimore",
+    "description": "Sarah was rediscovered — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "November 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Port of Baltimore",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1970,
+      "precision": "year",
+      "display": "1970"
+    }
+  },
+  {
+    "id": "arch-089",
+    "title": "Ruth, October 2005",
+    "src": "/photos/arch-089.jpg",
+    "width": 953,
+    "height": 692,
+    "locationId": "gen-loc-25",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Milwaukee general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2005,
+      "month": 10,
+      "precision": "month",
+      "display": "October 2005"
+    }
+  },
+  {
+    "id": "arch-090",
+    "title": "Tom at Green Bay schoolhouse",
+    "src": "/photos/arch-090.jpg",
+    "width": 896,
+    "height": 873,
+    "locationId": "gen-loc-1",
+    "contributedById": "david",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1930,
+      "month": 3,
+      "day": 23,
+      "iso": "1930-03-23",
+      "precision": "day",
+      "display": "March 23, 1930"
+    }
+  },
+  {
+    "id": "arch-091",
+    "title": "Eleanor — christmas tree",
+    "src": "/photos/arch-091.jpg",
+    "width": 835,
+    "height": 765,
+    "locationId": "green-bay",
+    "description": "Eleanor came to light — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1958,
+      "precision": "circa",
+      "display": "c. 1958"
+    }
+  },
+  {
+    "id": "arch-092",
+    "title": "Mark — christmas tree",
+    "src": "/photos/arch-092.jpg",
+    "width": 834,
+    "height": 890,
+    "locationId": "gen-loc-25",
+    "description": "Mark surfaced — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Milwaukee general store"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-093",
+    "title": "Susan — christmas tree",
+    "src": "/photos/arch-093.jpg",
+    "width": 921,
+    "height": 689,
+    "locationId": "gen-loc-5",
+    "description": "Susan came to light — one of David's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis main street"
+    },
+    "date": {
+      "year": 1974,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1974"
+    }
+  },
+  {
+    "id": "arch-094",
+    "title": "Daniel — christmas tree",
+    "src": "/photos/arch-094.jpg",
+    "width": 932,
+    "height": 690,
+    "locationId": "gen-loc-21",
+    "contributedById": "susan",
+    "contributedWhen": "July 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Madison lake landing"
+    },
+    "date": {
+      "year": 2008,
+      "precision": "circa",
+      "display": "c. 2008"
+    }
+  },
+  {
+    "id": "arch-095",
+    "title": "Margaret at Chicago depot",
+    "src": "/photos/arch-095.jpg",
+    "width": 913,
+    "height": 683,
+    "locationId": "gen-loc-13",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Chicago depot",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2006,
+      "precision": "year",
+      "display": "2006"
+    }
+  },
+  {
+    "id": "arch-096",
+    "title": "James — vegetable garden",
+    "src": "/photos/arch-096.jpg",
+    "width": 912,
+    "height": 725,
+    "locationId": "gen-loc-17",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Casco fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2009,
+      "month": 9,
+      "day": 10,
+      "iso": "2009-09-10",
+      "precision": "day",
+      "display": "September 10, 2009"
+    }
+  },
+  {
+    "id": "arch-097",
+    "title": "The family at Ellison Bay fairgrounds",
+    "src": "/photos/arch-097.jpg",
+    "width": 789,
+    "height": 993,
+    "locationId": "gen-loc-12",
+    "description": "David came to light — one of David's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Likely David",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds"
+    },
+    "date": {
+      "year": 1993,
+      "precision": "year",
+      "display": "1993"
+    }
+  },
+  {
+    "id": "arch-098",
+    "title": "The family at Port of Baltimore",
+    "src": "/photos/arch-098.jpg",
+    "width": 979,
+    "height": 729,
+    "locationId": "port-of-baltimore",
+    "contributedById": "susan",
+    "contributedWhen": "April 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Port of Baltimore",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1926,
+      "month": 1,
+      "precision": "month",
+      "display": "January 1926"
+    }
+  },
+  {
+    "id": "arch-099",
+    "title": "Walter at Fort Belvoir",
+    "src": "/photos/arch-099.jpg",
+    "width": 959,
+    "height": 650,
+    "locationId": "fort-belvoir",
+    "description": "Walter turned up — one of Margaret's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1926,
+      "precision": "year",
+      "display": "1926"
+    }
+  },
+  {
+    "id": "arch-100",
+    "title": "The family at Chicago park",
+    "src": "/photos/arch-100.jpg",
+    "width": 683,
+    "height": 914,
+    "locationId": "gen-loc-14",
+    "description": "Edith came to light — one of David's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely Edith",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1972,
+      "precision": "year",
+      "display": "1972"
+    }
+  },
+  {
+    "id": "arch-101",
+    "title": "Rose — vegetable garden",
+    "src": "/photos/arch-101.jpg",
+    "width": 684,
+    "height": 893,
+    "locationId": "gen-loc-12",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1991,
+      "precision": "year",
+      "display": "1991"
+    }
+  },
+  {
+    "id": "arch-102",
+    "title": "The family at Main Street",
+    "src": "/photos/arch-102.jpg",
+    "width": 967,
+    "height": 735,
+    "locationId": "main-street-sturgeon-bay",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Main Street"
+    },
+    "date": {
+      "year": 1948,
+      "precision": "year",
+      "display": "1948"
+    }
+  },
+  {
+    "id": "arch-103",
+    "title": "Ada at Green Bay homestead",
+    "src": "/photos/arch-103.jpg",
+    "width": 695,
+    "height": 937,
+    "locationId": "gen-loc-6",
+    "description": "Ada was rediscovered — one of Eleanor's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "April 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead"
+    },
+    "date": {
+      "year": 2007,
+      "precision": "year",
+      "display": "2007"
+    }
+  },
+  {
+    "id": "arch-104",
+    "title": "Chidi at Minneapolis main street",
+    "src": "/photos/arch-104.jpg",
+    "width": 692,
+    "height": 933,
+    "locationId": "gen-loc-5",
+    "contributedById": "david",
+    "contributedWhen": "August 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Minneapolis main street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2015,
+      "month": 1,
+      "day": 26,
+      "iso": "2015-01-26",
+      "precision": "day",
+      "display": "January 26, 2015"
+    }
+  },
+  {
+    "id": "arch-105",
+    "title": "Grace, April 2002",
+    "src": "/photos/arch-105.jpg",
+    "width": 914,
+    "height": 668,
+    "locationId": "green-bay",
+    "contributedById": "susan",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay"
+    },
+    "date": {
+      "year": 2002,
+      "month": 4,
+      "precision": "month",
+      "display": "April 2002"
+    }
+  },
+  {
+    "id": "arch-106",
+    "title": "Lauren at Chicago park",
+    "src": "/photos/arch-106.jpg",
+    "width": 732,
+    "height": 923,
+    "locationId": "gen-loc-14",
+    "contributedById": "margaret",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Chicago park"
+    },
+    "date": {
+      "year": 2012,
+      "month": 8,
+      "precision": "month",
+      "display": "August 2012"
+    }
+  },
+  {
+    "id": "arch-107",
+    "title": "Henry — farm kitchen",
+    "src": "/photos/arch-107.jpg",
+    "width": 931,
+    "height": 693,
+    "locationId": "gen-loc-13",
+    "contributedById": "david",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago depot",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1976,
+      "precision": "year",
+      "display": "1976"
+    }
+  },
+  {
+    "id": "arch-108",
+    "title": "Clara, 2016",
+    "src": "/photos/arch-108.jpg",
+    "width": 692,
+    "height": 930,
+    "locationId": "gen-loc-3",
+    "contributedById": "eleanor",
+    "contributedWhen": "January 2026",
+    "photographer": {
+      "value": "Likely Clara",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2016,
+      "precision": "year",
+      "display": "2016"
+    }
+  },
+  {
+    "id": "arch-109",
+    "title": "Gary — farm kitchen",
+    "src": "/photos/arch-109.jpg",
+    "width": 687,
+    "height": 921,
+    "locationId": "gen-loc-8",
+    "description": "Gary surfaced — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1987,
+      "precision": "year",
+      "display": "1987"
+    }
+  },
+  {
+    "id": "arch-110",
+    "title": "Kenneth, 1941",
+    "src": "/photos/arch-110.jpg",
+    "width": 870,
+    "height": 671,
+    "locationId": "gen-loc-3",
+    "description": "Kenneth came to light — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "Likely Kenneth",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison general store"
+    },
+    "date": {
+      "year": 1941,
+      "precision": "year",
+      "display": "1941"
+    }
+  },
+  {
+    "id": "arch-111",
+    "title": "Bruce at Minneapolis lake landing",
+    "src": "/photos/arch-111.jpg",
+    "width": 769,
+    "height": 809,
+    "locationId": "gen-loc-8",
+    "contributedById": "margaret",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 2014,
+      "precision": "circa",
+      "display": "c. 2014"
+    }
+  },
+  {
+    "id": "arch-112",
+    "title": "Diane at St. Vincent's Hospital",
+    "src": "/photos/arch-112.jpg",
+    "width": 800,
+    "height": 804,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "margaret",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital"
+    },
+    "date": {
+      "year": 2007,
+      "month": 4,
+      "precision": "month",
+      "display": "April 2007"
+    }
+  },
+  {
+    "id": "arch-113",
+    "title": "Anna at Chicago cemetery",
+    "src": "/photos/arch-113.jpg",
+    "width": 832,
+    "height": 837,
+    "locationId": "gen-loc-16",
+    "contributedById": "eleanor",
+    "contributedWhen": "November 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2001,
+      "precision": "circa",
+      "display": "c. 2001"
+    }
+  },
+  {
+    "id": "arch-114",
+    "title": "Allen at Madison general store",
+    "src": "/photos/arch-114.jpg",
+    "width": 831,
+    "height": 835,
+    "locationId": "gen-loc-3",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Madison general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1993,
+      "precision": "year",
+      "display": "1993"
+    }
+  },
+  {
+    "id": "arch-115",
+    "title": "Albert at Madison lake landing",
+    "src": "/photos/arch-115.jpg",
+    "width": 755,
+    "height": 813,
+    "locationId": "gen-loc-21",
+    "contributedById": "susan",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Madison lake landing",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2012,
+      "precision": "circa",
+      "display": "c. 2012"
+    }
+  },
+  {
+    "id": "arch-116",
+    "title": "The family at Kowalski farm",
+    "src": "/photos/arch-116.jpg",
+    "width": 814,
+    "height": 775,
+    "locationId": "kowalski-farm",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1996,
+      "month": 9,
+      "precision": "month",
+      "display": "September 1996"
+    }
+  },
+  {
+    "id": "arch-117",
+    "title": "Richard, March 6, 1998",
+    "src": "/photos/arch-117.jpg",
+    "width": 740,
+    "height": 817,
+    "locationId": "gen-loc-26",
+    "description": "Richard came to light — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "August 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Institute depot"
+    },
+    "date": {
+      "year": 1998,
+      "month": 3,
+      "day": 6,
+      "iso": "1998-03-06",
+      "precision": "day",
+      "display": "March 6, 1998"
+    }
+  },
+  {
+    "id": "arch-118",
+    "title": "Nancy at Eddie's tavern",
+    "src": "/photos/arch-118.jpg",
+    "width": 694,
+    "height": 782,
+    "locationId": "eddies-tavern",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Eddie's tavern",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1997,
+      "precision": "year",
+      "display": "1997"
+    }
+  },
+  {
+    "id": "arch-119",
+    "title": "The family at Green Bay homestead",
+    "src": "/photos/arch-119.jpg",
+    "width": 844,
+    "height": 706,
+    "locationId": "gen-loc-6",
+    "description": "Theodore surfaced — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "Likely Theodore",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2006,
+      "precision": "circa",
+      "display": "c. 2006"
+    }
+  },
+  {
+    "id": "arch-120",
+    "title": "Betty — man portrait",
+    "src": "/photos/arch-120.jpg",
+    "width": 850,
+    "height": 843,
+    "locationId": "gen-loc-16",
+    "contributedById": "susan",
+    "contributedWhen": "September 2024",
+    "photographer": {
+      "value": "Likely Betty",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery"
+    },
+    "date": {
+      "year": 2004,
+      "precision": "year",
+      "display": "2004"
+    }
+  },
+  {
+    "id": "arch-121",
+    "title": "Karen — man portrait",
+    "src": "/photos/arch-121.jpg",
+    "width": 843,
+    "height": 843,
+    "locationId": "gen-loc-17",
+    "contributedById": "margaret",
+    "contributedWhen": "October 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Casco fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1993,
+      "precision": "year",
+      "display": "1993"
+    }
+  },
+  {
+    "id": "arch-122",
+    "title": "Paul at Madison fairgrounds",
+    "src": "/photos/arch-122.jpg",
+    "width": 861,
+    "height": 854,
+    "locationId": "gen-loc-9",
+    "description": "Paul turned up — one of Susan's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "December 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Madison fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1958,
+      "month": 7,
+      "precision": "month",
+      "display": "July 1958"
+    }
+  },
+  {
+    "id": "arch-123",
+    "title": "The family at Milwaukee general store",
+    "src": "/photos/arch-123.jpg",
+    "width": 661,
+    "height": 869,
+    "locationId": "gen-loc-25",
+    "description": "Helen turned up — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "January 2025",
+    "photographer": {
+      "value": "Likely Helen",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Milwaukee general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1999,
+      "month": 4,
+      "precision": "month",
+      "display": "April 1999"
+    }
+  },
+  {
+    "id": "arch-124",
+    "title": "The family at Madison general store",
+    "src": "/photos/arch-124.jpg",
+    "width": 961,
+    "height": 769,
+    "locationId": "gen-loc-3",
+    "description": "Joseph was rediscovered — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison general store"
+    },
+    "date": {
+      "year": 1983,
+      "month": 2,
+      "precision": "month",
+      "display": "February 1983"
+    }
+  },
+  {
+    "id": "arch-125",
+    "title": "Janet — man portrait",
+    "src": "/photos/arch-125.jpg",
+    "width": 762,
+    "height": 947,
+    "locationId": "gen-loc-7",
+    "description": "Janet was scanned — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "October 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Madison park"
+    },
+    "date": {
+      "year": 2010,
+      "month": 4,
+      "precision": "month",
+      "display": "April 2010"
+    }
+  },
+  {
+    "id": "arch-126",
+    "title": "Carol — man portrait",
+    "src": "/photos/arch-126.jpg",
+    "width": 993,
+    "height": 611,
+    "locationId": "main-street-sturgeon-bay",
+    "contributedById": "david",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Main Street"
+    },
+    "date": {
+      "year": 1987,
+      "month": 8,
+      "day": 14,
+      "iso": "1987-08-14",
+      "precision": "day",
+      "display": "August 14, 1987"
+    }
+  },
+  {
+    "id": "arch-127",
+    "title": "The family at Green Bay orchard",
+    "src": "/photos/arch-127.jpg",
+    "width": 993,
+    "height": 605,
+    "locationId": "gen-loc-11",
+    "description": "Harold came to light — one of Susan's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Green Bay orchard"
+    },
+    "date": {
+      "year": 1990,
+      "precision": "year",
+      "display": "1990"
+    }
+  },
+  {
+    "id": "arch-128",
+    "title": "The family at Door County Fairgrounds",
+    "src": "/photos/arch-128.jpg",
+    "width": 935,
+    "height": 738,
+    "locationId": "door-county-fair",
+    "contributedById": "david",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Door County Fairgrounds",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2006,
+      "precision": "circa",
+      "display": "c. 2006"
+    }
+  },
+  {
+    "id": "arch-129",
+    "title": "Patricia, March 1999",
+    "src": "/photos/arch-129.jpg",
+    "width": 929,
+    "height": 750,
+    "locationId": "gen-loc-6",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1999,
+      "month": 3,
+      "precision": "month",
+      "display": "March 1999"
+    }
+  },
+  {
+    "id": "arch-130",
+    "title": "Klara — general store",
+    "src": "/photos/arch-130.jpg",
+    "width": 950,
+    "height": 751,
+    "locationId": "gen-loc-4",
+    "contributedById": "susan",
+    "contributedWhen": "January 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sister Bay depot",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1954,
+      "precision": "circa",
+      "display": "c. 1954"
+    }
+  },
+  {
+    "id": "arch-131",
+    "title": "Sarah, 1998",
+    "src": "/photos/arch-131.jpg",
+    "width": 927,
+    "height": 731,
+    "locationId": "gen-loc-10",
+    "contributedById": "margaret",
+    "contributedWhen": "April 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Carlsville general store"
+    },
+    "date": {
+      "year": 1998,
+      "precision": "year",
+      "display": "1998"
+    }
+  },
+  {
+    "id": "arch-132",
+    "title": "The family at Minneapolis schoolhouse",
+    "src": "/photos/arch-132.jpg",
+    "width": 914,
+    "height": 670,
+    "locationId": "gen-loc-23",
+    "contributedById": "margaret",
+    "contributedWhen": "February 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1969,
+      "month": 1,
+      "precision": "month",
+      "display": "January 1969"
+    }
+  },
+  {
+    "id": "arch-133",
+    "title": "The family at Minneapolis lake landing",
+    "src": "/photos/arch-133.jpg",
+    "width": 960,
+    "height": 642,
+    "locationId": "gen-loc-8",
+    "description": "Tom was rediscovered — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1953,
+      "precision": "year",
+      "display": "1953"
+    }
+  },
+  {
+    "id": "arch-134",
+    "title": "Eleanor at Madison general store",
+    "src": "/photos/arch-134.jpg",
+    "width": 923,
+    "height": 689,
+    "locationId": "gen-loc-3",
+    "description": "Eleanor came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "August 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Madison general store"
+    },
+    "date": {
+      "year": 1969,
+      "precision": "circa",
+      "display": "c. 1969"
+    }
+  },
+  {
+    "id": "arch-135",
+    "title": "The family at St. Mary's Catholic Church",
+    "src": "/photos/arch-135.jpg",
+    "width": 961,
+    "height": 759,
+    "locationId": "st-marys",
+    "contributedById": "david",
+    "contributedWhen": "January 2024",
+    "photographer": {
+      "value": "Likely Mark",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1984,
+      "month": 9,
+      "day": 8,
+      "iso": "1984-09-08",
+      "precision": "day",
+      "display": "September 8, 1984"
+    }
+  },
+  {
+    "id": "arch-136",
+    "title": "The family at Green Bay schoolhouse",
+    "src": "/photos/arch-136.jpg",
+    "width": 945,
+    "height": 683,
+    "locationId": "gen-loc-1",
+    "description": "Susan was rediscovered — one of Susan's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse"
+    },
+    "date": {
+      "year": 1976,
+      "month": 6,
+      "precision": "month",
+      "display": "June 1976"
+    }
+  },
+  {
+    "id": "arch-137",
+    "title": "Daniel — old automobile",
+    "src": "/photos/arch-137.jpg",
+    "width": 959,
+    "height": 644,
+    "locationId": "town-park",
+    "contributedById": "margaret",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Sunset Park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1964,
+      "month": 5,
+      "precision": "month",
+      "display": "May 1964"
+    }
+  },
+  {
+    "id": "arch-138",
+    "title": "Margaret at Minneapolis lake landing",
+    "src": "/photos/arch-138.jpg",
+    "width": 964,
+    "height": 647,
+    "locationId": "gen-loc-8",
+    "description": "Margaret was scanned — one of Margaret's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 2014,
+      "precision": "year",
+      "display": "2014"
+    }
+  },
+  {
+    "id": "arch-139",
+    "title": "The family at Madison lake landing",
+    "src": "/photos/arch-139.jpg",
+    "width": 919,
+    "height": 684,
+    "locationId": "gen-loc-21",
+    "contributedById": "eleanor",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Madison lake landing",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2005,
+      "precision": "circa",
+      "display": "c. 2005"
+    }
+  },
+  {
+    "id": "arch-140",
+    "title": "David, September 1983",
+    "src": "/photos/arch-140.jpg",
+    "width": 927,
+    "height": 700,
+    "locationId": "green-bay",
+    "description": "David was scanned — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "January 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Green Bay"
+    },
+    "date": {
+      "year": 1983,
+      "month": 9,
+      "precision": "month",
+      "display": "September 1983"
+    }
+  },
+  {
+    "id": "arch-141",
+    "title": "The family at Door County Fairgrounds",
+    "src": "/photos/arch-141.jpg",
+    "width": 928,
+    "height": 705,
+    "locationId": "door-county-fair",
+    "description": "Józef came to light — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Door County Fairgrounds"
+    },
+    "date": {
+      "year": 1936,
+      "month": 6,
+      "precision": "month",
+      "display": "June 1936"
+    }
+  },
+  {
+    "id": "arch-142",
+    "title": "Walter at Minneapolis lake landing",
+    "src": "/photos/arch-142.jpg",
+    "width": 929,
+    "height": 689,
+    "locationId": "gen-loc-8",
+    "contributedById": "margaret",
+    "contributedWhen": "July 2025",
+    "photographer": {
+      "value": "Likely Walter",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing"
+    },
+    "date": {
+      "year": 1917,
+      "precision": "year",
+      "display": "1917"
+    }
+  },
+  {
+    "id": "arch-143",
+    "title": "Edith — old automobile",
+    "src": "/photos/arch-143.jpg",
+    "width": 934,
+    "height": 694,
+    "locationId": "town-park",
+    "description": "Edith came to light — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely Edith",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Sunset Park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1965,
+      "month": 6,
+      "day": 13,
+      "iso": "1965-06-13",
+      "precision": "day",
+      "display": "June 13, 1965"
+    }
+  },
+  {
+    "id": "arch-144",
+    "title": "Rose — old automobile",
+    "src": "/photos/arch-144.jpg",
+    "width": 950,
+    "height": 708,
+    "locationId": "gen-loc-14",
+    "description": "Rose turned up — one of David's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "August 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2002,
+      "precision": "year",
+      "display": "2002"
+    }
+  },
+  {
+    "id": "arch-145",
+    "title": "The family at St. Mary's Catholic Church",
+    "src": "/photos/arch-145.jpg",
+    "width": 903,
+    "height": 864,
+    "locationId": "st-marys",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church"
+    },
+    "date": {
+      "year": 2008,
+      "month": 4,
+      "precision": "month",
+      "display": "April 2008"
+    }
+  },
+  {
+    "id": "arch-146",
+    "title": "Ada — train depot",
+    "src": "/photos/arch-146.jpg",
+    "width": 921,
+    "height": 793,
+    "locationId": "gen-loc-20",
+    "description": "Ada surfaced — one of Susan's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "November 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1967,
+      "month": 10,
+      "precision": "month",
+      "display": "October 1967"
+    }
+  },
+  {
+    "id": "arch-147",
+    "title": "The family at The Whitfield place",
+    "src": "/photos/arch-147.jpg",
+    "width": 923,
+    "height": 693,
+    "locationId": "whitfield-place",
+    "contributedById": "david",
+    "contributedWhen": "July 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "The Whitfield place",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1973,
+      "month": 10,
+      "precision": "month",
+      "display": "October 1973"
+    }
+  },
+  {
+    "id": "arch-148",
+    "title": "Grace at Sunset Park",
+    "src": "/photos/arch-148.jpg",
+    "width": 939,
+    "height": 695,
+    "locationId": "town-park",
+    "contributedById": "david",
+    "contributedWhen": "September 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Sunset Park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2009,
+      "precision": "circa",
+      "display": "c. 2009"
+    }
+  },
+  {
+    "id": "arch-149",
+    "title": "Lauren at Ellison Bay fairgrounds",
+    "src": "/photos/arch-149.jpg",
+    "width": 643,
+    "height": 892,
+    "locationId": "gen-loc-12",
+    "contributedById": "margaret",
+    "contributedWhen": "December 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds"
+    },
+    "date": {
+      "year": 1993,
+      "month": 10,
+      "day": 15,
+      "iso": "1993-10-15",
+      "precision": "day",
+      "display": "October 15, 1993"
+    }
+  },
+  {
+    "id": "arch-150",
+    "title": "Henry at Minneapolis main street",
+    "src": "/photos/arch-150.jpg",
+    "width": 956,
+    "height": 642,
+    "locationId": "gen-loc-5",
+    "description": "Henry was rediscovered — one of Susan's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "November 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Minneapolis main street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2001,
+      "month": 6,
+      "precision": "month",
+      "display": "June 2001"
+    }
+  },
+  {
+    "id": "arch-151",
+    "title": "Clara, July 6, 1993",
+    "src": "/photos/arch-151.jpg",
+    "width": 938,
+    "height": 738,
+    "locationId": "gen-loc-11",
+    "contributedById": "eleanor",
+    "contributedWhen": "April 2025",
+    "photographer": {
+      "value": "Likely Clara",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Green Bay orchard",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1993,
+      "month": 7,
+      "day": 6,
+      "iso": "1993-07-06",
+      "precision": "day",
+      "display": "July 6, 1993"
+    }
+  },
+  {
+    "id": "arch-152",
+    "title": "Gary — barn livestock",
+    "src": "/photos/arch-152.jpg",
+    "width": 931,
+    "height": 731,
+    "locationId": "st-marys",
+    "contributedById": "margaret",
+    "contributedWhen": "July 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "precision": "circa",
+      "display": "c. 2007"
+    }
+  },
+  {
+    "id": "arch-153",
+    "title": "Kenneth at Minneapolis schoolhouse",
+    "src": "/photos/arch-153.jpg",
+    "width": 937,
+    "height": 740,
+    "locationId": "gen-loc-23",
+    "description": "Kenneth was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1932,
+      "precision": "year",
+      "display": "1932"
+    }
+  },
+  {
+    "id": "arch-154",
+    "title": "Bruce at St. Mary's Catholic Church",
+    "src": "/photos/arch-154.jpg",
+    "width": 958,
+    "height": 644,
+    "locationId": "st-marys",
+    "contributedById": "margaret",
+    "contributedWhen": "November 2024",
+    "photographer": {
+      "value": "Likely Bruce",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church"
+    },
+    "date": {
+      "year": 1995,
+      "precision": "year",
+      "display": "1995"
+    }
+  },
+  {
+    "id": "arch-155",
+    "title": "Diane, 2013",
+    "src": "/photos/arch-155.jpg",
+    "width": 955,
+    "height": 638,
+    "locationId": "sturgeon-bay-store",
+    "description": "Diane was scanned — one of Susan's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2013,
+      "precision": "year",
+      "display": "2013"
+    }
+  },
+  {
+    "id": "arch-156",
+    "title": "Anna — county fair",
+    "src": "/photos/arch-156.jpg",
+    "width": 916,
+    "height": 714,
+    "locationId": "port-of-baltimore",
+    "contributedById": "david",
+    "contributedWhen": "April 2024",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Port of Baltimore",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2012,
+      "precision": "year",
+      "display": "2012"
+    }
+  },
+  {
+    "id": "arch-157",
+    "title": "Allen at Egg Harbor homestead",
+    "src": "/photos/arch-157.jpg",
+    "width": 914,
+    "height": 724,
+    "locationId": "gen-loc-18",
+    "description": "Allen surfaced — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Egg Harbor homestead"
+    },
+    "date": {
+      "year": 1991,
+      "precision": "year",
+      "display": "1991"
+    }
+  },
+  {
+    "id": "arch-158",
+    "title": "The family at Chicago schoolhouse",
+    "src": "/photos/arch-158.jpg",
+    "width": 913,
+    "height": 675,
+    "locationId": "gen-loc-22",
+    "description": "Albert turned up — one of Margaret's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "July 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2005,
+      "precision": "year",
+      "display": "2005"
+    }
+  },
+  {
+    "id": "arch-159",
+    "title": "Hazel — county fair",
+    "src": "/photos/arch-159.jpg",
+    "width": 725,
+    "height": 904,
+    "locationId": "kangaroo-lake",
+    "contributedById": "susan",
+    "contributedWhen": "May 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake cottages"
+    },
+    "date": {
+      "year": 2003,
+      "precision": "year",
+      "display": "2003"
+    }
+  },
+  {
+    "id": "arch-160",
+    "title": "Richard, c. 2009",
+    "src": "/photos/arch-160.jpg",
+    "width": 728,
+    "height": 954,
+    "locationId": "st-marys",
+    "contributedById": "margaret",
+    "contributedWhen": "December 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Mary's Catholic Church",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2009,
+      "precision": "circa",
+      "display": "c. 2009"
+    }
+  },
+  {
+    "id": "arch-161",
+    "title": "The family at Casco fairgrounds",
+    "src": "/photos/arch-161.jpg",
+    "width": 921,
+    "height": 729,
+    "locationId": "gen-loc-17",
+    "description": "Nancy came to light — one of Susan's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "November 2026",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Casco fairgrounds"
+    },
+    "date": {
+      "year": 1993,
+      "precision": "year",
+      "display": "1993"
+    }
+  },
+  {
+    "id": "arch-162",
+    "title": "Theodore, December 22, 1966",
+    "src": "/photos/arch-162.jpg",
+    "width": 918,
+    "height": 709,
+    "locationId": "gen-loc-12",
+    "description": "Theodore was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "susan",
+    "contributedWhen": "June 2025",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Ellison Bay fairgrounds"
+    },
+    "date": {
+      "year": 1966,
+      "month": 12,
+      "day": 22,
+      "iso": "1966-12-22",
+      "precision": "day",
+      "display": "December 22, 1966"
+    }
+  },
+  {
+    "id": "arch-163",
+    "title": "Betty — parade street",
+    "src": "/photos/arch-163.jpg",
+    "width": 923,
+    "height": 640,
+    "locationId": "fort-belvoir",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2003,
+      "month": 4,
+      "precision": "month",
+      "display": "April 2003"
+    }
+  },
+  {
+    "id": "arch-164",
+    "title": "Karen — parade street",
+    "src": "/photos/arch-164.jpg",
+    "width": 960,
+    "height": 640,
+    "locationId": "gen-loc-18",
+    "contributedById": "susan",
+    "contributedWhen": "February 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Egg Harbor homestead"
+    },
+    "date": {
+      "year": 2012,
+      "precision": "year",
+      "display": "2012"
+    }
+  },
+  {
+    "id": "arch-165",
+    "title": "The family at Green Bay town hall",
+    "src": "/photos/arch-165.jpg",
+    "width": 741,
+    "height": 972,
+    "locationId": "gen-loc-2",
+    "description": "Paul was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay town hall",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1977,
+      "month": 9,
+      "precision": "month",
+      "display": "September 1977"
+    }
+  },
+  {
+    "id": "arch-166",
+    "title": "Helen, 2002",
+    "src": "/photos/arch-166.jpg",
+    "width": 968,
+    "height": 736,
+    "locationId": "gen-loc-13",
+    "contributedById": "margaret",
+    "contributedWhen": "November 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Chicago depot"
+    },
+    "date": {
+      "year": 2002,
+      "precision": "year",
+      "display": "2002"
+    }
+  },
+  {
+    "id": "arch-167",
+    "title": "Joseph, 2009",
+    "src": "/photos/arch-167.jpg",
+    "width": 968,
+    "height": 644,
+    "locationId": "sturgeon-bay-store",
+    "description": "Joseph was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "The general store, Sturgeon Bay"
+    },
+    "date": {
+      "year": 2009,
+      "precision": "year",
+      "display": "2009"
+    }
+  },
+  {
+    "id": "arch-168",
+    "title": "Janet at Port of Baltimore",
+    "src": "/photos/arch-168.jpg",
+    "width": 963,
+    "height": 668,
+    "locationId": "port-of-baltimore",
+    "description": "Janet came to light — one of David's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2024",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Port of Baltimore"
+    },
+    "date": {
+      "year": 1989,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1989"
+    }
+  },
+  {
+    "id": "arch-169",
+    "title": "Carol at Chicago cemetery",
+    "src": "/photos/arch-169.jpg",
+    "width": 917,
+    "height": 686,
+    "locationId": "gen-loc-16",
+    "description": "Carol was rediscovered — one of Margaret's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery"
+    },
+    "date": {
+      "year": 1998,
+      "month": 12,
+      "precision": "month",
+      "display": "December 1998"
+    }
+  },
+  {
+    "id": "arch-170",
+    "title": "The family at Fort Belvoir",
+    "src": "/photos/arch-170.jpg",
+    "width": 963,
+    "height": 635,
+    "locationId": "fort-belvoir",
+    "contributedById": "david",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir"
+    },
+    "date": {
+      "year": 1990,
+      "month": 2,
+      "precision": "month",
+      "display": "February 1990"
+    }
+  },
+  {
+    "id": "arch-171",
+    "title": "The family at Jacksonport church",
+    "src": "/photos/arch-171.jpg",
+    "width": 944,
+    "height": 632,
+    "locationId": "gen-loc-20",
+    "contributedById": "david",
+    "contributedWhen": "February 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church"
+    },
+    "date": {
+      "year": 2008,
+      "precision": "year",
+      "display": "2008"
+    }
+  },
+  {
+    "id": "arch-172",
+    "title": "The family at Kowalski farm",
+    "src": "/photos/arch-172.jpg",
+    "width": 946,
+    "height": 630,
+    "locationId": "kowalski-farm",
+    "description": "Patricia was scanned — one of Eleanor's finds for the chest.",
+    "contributedById": "margaret",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1991,
+      "precision": "circa",
+      "display": "c. 1991"
+    }
+  },
+  {
+    "id": "arch-173",
+    "title": "Klara at Jacksonport church",
+    "src": "/photos/arch-173.jpg",
+    "width": 958,
+    "height": 638,
+    "locationId": "gen-loc-20",
+    "contributedById": "susan",
+    "contributedWhen": "December 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Jacksonport church"
+    },
+    "date": {
+      "year": 1923,
+      "precision": "year",
+      "display": "1923"
+    }
+  },
+  {
+    "id": "arch-174",
+    "title": "Sarah — baseball game",
+    "src": "/photos/arch-174.jpg",
+    "width": 947,
+    "height": 631,
+    "locationId": "st-vincents-green-bay",
+    "contributedById": "margaret",
+    "contributedWhen": "October 2024",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's Hospital",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1970,
+      "month": 8,
+      "day": 11,
+      "iso": "1970-08-11",
+      "precision": "day",
+      "display": "August 11, 1970"
+    }
+  },
+  {
+    "id": "arch-175",
+    "title": "Ruth — baseball game",
+    "src": "/photos/arch-175.jpg",
+    "width": 948,
+    "height": 632,
+    "locationId": "gen-loc-15",
+    "description": "Ruth surfaced — one of Eleanor's finds for the chest.",
+    "contributedById": "david",
+    "contributedWhen": "March 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Brussels main street",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1963,
+      "precision": "year",
+      "display": "1963"
+    }
+  },
+  {
+    "id": "arch-176",
+    "title": "The family at Minneapolis schoolhouse",
+    "src": "/photos/arch-176.jpg",
+    "width": 908,
+    "height": 676,
+    "locationId": "gen-loc-23",
+    "description": "Tom surfaced — one of Margaret's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1938,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1938"
+    }
+  },
+  {
+    "id": "arch-177",
+    "title": "Eleanor — baseball game",
+    "src": "/photos/arch-177.jpg",
+    "width": 643,
+    "height": 859,
+    "locationId": "gen-loc-6",
+    "contributedById": "margaret",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Green Bay homestead"
+    },
+    "date": {
+      "year": 2013,
+      "month": 12,
+      "precision": "month",
+      "display": "December 2013"
+    }
+  },
+  {
+    "id": "arch-178",
+    "title": "Mark, 1984",
+    "src": "/photos/arch-178.jpg",
+    "width": 947,
+    "height": 632,
+    "locationId": "gen-loc-8",
+    "contributedById": "eleanor",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely Mark",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Minneapolis lake landing",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1984,
+      "precision": "year",
+      "display": "1984"
+    }
+  },
+  {
+    "id": "arch-179",
+    "title": "Susan — swimming hole",
+    "src": "/photos/arch-179.jpg",
+    "width": 626,
+    "height": 939,
+    "locationId": "gen-loc-14",
+    "contributedById": "susan",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely a relative",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago park"
+    },
+    "date": {
+      "year": 1967,
+      "month": 11,
+      "precision": "month",
+      "display": "November 1967"
+    }
+  },
+  {
+    "id": "arch-180",
+    "title": "The family at Green Bay schoolhouse",
+    "src": "/photos/arch-180.jpg",
+    "width": 632,
+    "height": 954,
+    "locationId": "gen-loc-1",
+    "contributedById": "susan",
+    "contributedWhen": "August 2025",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Green Bay schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1957,
+      "month": 7,
+      "day": 5,
+      "iso": "1957-07-05",
+      "precision": "day",
+      "display": "July 5, 1957"
+    }
+  },
+  {
+    "id": "arch-181",
+    "title": "Margaret at Minneapolis schoolhouse",
+    "src": "/photos/arch-181.jpg",
+    "width": 950,
+    "height": 631,
+    "locationId": "gen-loc-23",
+    "contributedById": "margaret",
+    "contributedWhen": "January 2025",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Minneapolis schoolhouse",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2010,
+      "month": 2,
+      "day": 25,
+      "iso": "2010-02-25",
+      "precision": "day",
+      "display": "February 25, 2010"
+    }
+  },
+  {
+    "id": "arch-182",
+    "title": "James, 2007",
+    "src": "/photos/arch-182.jpg",
+    "width": 640,
+    "height": 961,
+    "locationId": "gen-loc-16",
+    "contributedById": "margaret",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Chicago cemetery",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 2007,
+      "precision": "year",
+      "display": "2007"
+    }
+  },
+  {
+    "id": "arch-183",
+    "title": "David at Fort Belvoir",
+    "src": "/photos/arch-183.jpg",
+    "width": 916,
+    "height": 680,
+    "locationId": "fort-belvoir",
+    "contributedById": "susan",
+    "contributedWhen": "May 2024",
+    "photographer": {
+      "value": "Family snapshot"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir"
+    },
+    "date": {
+      "year": 2010,
+      "month": 8,
+      "precision": "month",
+      "display": "August 2010"
+    }
+  },
+  {
+    "id": "arch-184",
+    "title": "Józef, December 25, 1966",
+    "src": "/photos/arch-184.jpg",
+    "width": 963,
+    "height": 734,
+    "locationId": "gen-loc-25",
+    "description": "Józef surfaced — one of David's finds for the chest.",
+    "contributedById": "eleanor",
+    "contributedWhen": "September 2025",
+    "photographer": {
+      "value": "A travelling studio"
+    },
+    "takenWhere": {
+      "value": "Milwaukee general store",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1966,
+      "month": 12,
+      "day": 25,
+      "iso": "1966-12-25",
+      "precision": "day",
+      "display": "December 25, 1966"
+    }
+  },
+  {
+    "id": "arch-185",
+    "title": "The family at Chicago depot",
+    "src": "/photos/arch-185.jpg",
+    "width": 941,
+    "height": 628,
+    "locationId": "gen-loc-13",
+    "contributedById": "david",
+    "contributedWhen": "November 2025",
+    "photographer": {
+      "value": "Likely the photographer next door",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago depot",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1947,
+      "precision": "year",
+      "display": "1947"
+    }
+  },
+  {
+    "id": "arch-186",
+    "title": "Edith — swimming hole",
+    "src": "/photos/arch-186.jpg",
+    "width": 941,
+    "height": 743,
+    "locationId": "gen-loc-14",
+    "contributedById": "david",
+    "contributedWhen": "June 2024",
+    "photographer": {
+      "value": "Likely Edith",
+      "deduced": true,
+      "clue": "Framing and film stock match other prints from the same roll"
+    },
+    "takenWhere": {
+      "value": "Chicago park",
+      "deduced": true,
+      "clue": "Background matches another print placed here"
+    },
+    "date": {
+      "year": 1957,
+      "month": 5,
+      "day": 6,
+      "iso": "1957-05-06",
+      "precision": "day",
+      "display": "May 6, 1957"
+    }
   }
 ]
