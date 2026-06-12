@@ -5,7 +5,7 @@ export const currentIssue: NewsletterIssue = {
   title: "The Kowalski–Whitfield Chronicle",
   month: "June 2026",
   intro:
-    "A big month for the chest: the photo we never thought we'd see clearly again, a record walleye resurfaces, and Grandma Sarah's timeline grows to three decades.",
+    "A big month for the chest: the photo we never thought we'd see clearly again, a fishing-day print resurfaces, and Grandma Sarah's timeline grows to three decades.",
   photoIds: [
     "klara-and-sarah-1933",
     "tom-fishing-1972",
@@ -19,7 +19,7 @@ export const currentIssue: NewsletterIssue = {
     },
     {
       heading: "From the tackle box",
-      body: "David found a 1972 print of Tom and his record walleye tucked inside the old tackle box. It joined Summers at the Lake.",
+      body: "David found a 1972 print of the family loading up the fishing poles, tucked inside the old tackle box. It joined Summers at the Lake.",
       photoId: "tom-fishing-1972",
     },
     {

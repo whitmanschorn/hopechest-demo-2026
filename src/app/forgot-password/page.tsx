@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+import { ChestIcon, MailIcon } from "@/components/icons";
+
+export const metadata: Metadata = { title: "Reset password" };
+
+export default function ForgotPassword() {
+  return (
+    <main className="flex flex-1 flex-col items-center justify-center px-6 py-12">
+      <div className="w-full max-w-sm">
+        <Link href="/" className="mb-7 flex items-center justify-center gap-2">
+          <ChestIcon className="size-7 text-sepia" />
+          <span className="font-display text-2xl font-semibold tracking-tight text-walnut">
+            Hopechest
+          </span>
+        </Link>
+        <div className="rounded-2xl bg-cream p-7 text-center shadow-xl shadow-walnut/10 ring-1 ring-hairline">
+          <span className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-sepia/10">
+            <MailIcon className="size-6 text-sepia" />
+          </span>
+          <h1 className="font-display text-2xl font-semibold tracking-tight text-walnut">
+            Check your email
+          </h1>
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
+            If an account exists for that address, we&rsquo;ve sent a link to
+            reset your password. It expires in one hour.
+          </p>
+          <Link
+            href="/"
+            className="mt-6 inline-flex h-11 items-center justify-center rounded-full border border-sepia/40 px-6 text-sm font-medium text-sepia transition-colors hover:bg-sepia/10"
+          >
+            Back to sign in
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}

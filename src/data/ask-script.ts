@@ -68,22 +68,22 @@ export const exchanges: ScriptedExchange[] = [
     answer: [
       {
         kind: "text",
-        text: "The Whitfields spent every summer from 1958 onward at the lake house on Kangaroo Lake. Here are the highlights — including Tom's record walleye.",
+        text: "The Whitfields spent every summer from 1958 onward at the cottages on Kangaroo Lake. Here are the highlights — including the famous fishing-trip sendoff.",
       },
       {
         kind: "photo",
         photoId: "lake-house-summer-1958",
-        caption: "The lake house, 1958",
+        caption: "The cottages at Kangaroo Lake, 1958",
       },
       {
         kind: "photo",
         photoId: "lake-swimmers-1960",
-        caption: "Swimmers off the dock, 1960",
+        caption: "The pier and bathing beach, 1960",
       },
       {
         kind: "photo",
         photoId: "tom-fishing-1972",
-        caption: "Tom's record walleye, 1972",
+        caption: "Loading the fishing poles, 1972",
       },
     ],
   },
