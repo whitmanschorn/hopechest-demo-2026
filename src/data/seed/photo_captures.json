@@ -1,0 +1,20 @@
+[
+  {
+    "id": "capture-susan-2022",
+    "photoId": "klara-and-sarah-1933",
+    "capturedById": "susan",
+    "capturedAt": "November 2022",
+    "device": "Pixel 6 · Mom's album, page 3",
+    "framing": "album-page",
+    "note": "Snapped at Mom's kitchen table while leafing through her album."
+  },
+  {
+    "id": "capture-eleanor-2024",
+    "photoId": "klara-and-sarah-1933",
+    "capturedById": "eleanor",
+    "capturedAt": "March 2024",
+    "device": "iPhone 14 · Thanksgiving at Eleanor's",
+    "framing": "table-warm",
+    "note": "Taken when the baby book came out after dinner."
+  }
+]

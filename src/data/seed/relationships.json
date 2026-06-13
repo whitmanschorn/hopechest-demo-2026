@@ -1,0 +1,17 @@
+[
+  { "fromId": "klara", "toId": "sarah", "type": "parent" },
+  { "fromId": "sarah", "toId": "eleanor", "type": "parent" },
+  { "fromId": "tom", "toId": "eleanor", "type": "parent" },
+  { "fromId": "sarah", "toId": "susan", "type": "parent" },
+  { "fromId": "tom", "toId": "susan", "type": "parent" },
+  { "fromId": "ruth", "toId": "daniel", "type": "parent" },
+  { "fromId": "susan", "toId": "margaret", "type": "parent" },
+  { "fromId": "daniel", "toId": "margaret", "type": "parent" },
+  { "fromId": "susan", "toId": "james", "type": "parent" },
+  { "fromId": "daniel", "toId": "james", "type": "parent" },
+  { "fromId": "eleanor", "toId": "david", "type": "parent" },
+  { "fromId": "mark-hayes", "toId": "david", "type": "parent" },
+  { "fromId": "sarah", "toId": "tom", "type": "spouse" },
+  { "fromId": "susan", "toId": "daniel", "type": "spouse" },
+  { "fromId": "eleanor", "toId": "mark-hayes", "type": "spouse" }
+]

@@ -1,0 +1,366 @@
+[
+  {
+    "id": "kowalski-farm",
+    "label": "Kowalski farm",
+    "street": "County Rd E",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9281,
+    "lng": -87.2734
+  },
+  {
+    "id": "kangaroo-lake",
+    "label": "Kangaroo Lake cottages",
+    "city": "Baileys Harbor",
+    "state": "WI",
+    "country": "USA",
+    "lat": 45.0747,
+    "lng": -87.1656
+  },
+  {
+    "id": "st-marys",
+    "label": "St. Mary's Catholic Church",
+    "street": "Michigan St",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8341,
+    "lng": -87.3773
+  },
+  {
+    "id": "door-county-fair",
+    "label": "Door County Fairgrounds",
+    "street": "S 14th Ave",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8259,
+    "lng": -87.3681
+  },
+  {
+    "id": "sturgeon-bay-school",
+    "label": "Sturgeon Bay grade school",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8347,
+    "lng": -87.3712
+  },
+  {
+    "id": "sturgeon-bay-store",
+    "label": "The general store, Sturgeon Bay",
+    "street": "N 3rd Ave",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8352,
+    "lng": -87.3769
+  },
+  {
+    "id": "eddies-tavern",
+    "label": "Eddie's tavern",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8338,
+    "lng": -87.3745
+  },
+  {
+    "id": "whitfield-place",
+    "label": "The Whitfield place",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8401,
+    "lng": -87.3829
+  },
+  {
+    "id": "town-park",
+    "label": "Sunset Park",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8369,
+    "lng": -87.3881
+  },
+  {
+    "id": "main-street-sturgeon-bay",
+    "label": "Main Street",
+    "city": "Sturgeon Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8344,
+    "lng": -87.3771
+  },
+  {
+    "id": "st-vincents-green-bay",
+    "label": "St. Vincent's Hospital",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.5126,
+    "lng": -88.0125
+  },
+  {
+    "id": "green-bay",
+    "label": "Green Bay",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.5133,
+    "lng": -88.0158
+  },
+  {
+    "id": "fort-belvoir",
+    "label": "Fort Belvoir",
+    "city": "Fort Belvoir",
+    "state": "VA",
+    "country": "USA",
+    "lat": 38.7123,
+    "lng": -77.1461
+  },
+  {
+    "id": "port-of-baltimore",
+    "label": "Port of Baltimore",
+    "city": "Baltimore",
+    "state": "MD",
+    "country": "USA",
+    "lat": 39.2667,
+    "lng": -76.58
+  },
+  {
+    "id": "gen-loc-1",
+    "label": "Green Bay schoolhouse",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.5252,
+    "lng": -88.0484
+  },
+  {
+    "id": "gen-loc-2",
+    "label": "Green Bay town hall",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.5081,
+    "lng": -88.0484
+  },
+  {
+    "id": "gen-loc-3",
+    "label": "Madison general store",
+    "city": "Madison",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.0325,
+    "lng": -89.4398
+  },
+  {
+    "id": "gen-loc-4",
+    "label": "Sister Bay depot",
+    "city": "Sister Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9312,
+    "lng": -87.2689
+  },
+  {
+    "id": "gen-loc-5",
+    "label": "Minneapolis main street",
+    "city": "Minneapolis",
+    "state": "MN",
+    "country": "USA",
+    "lat": 44.9872,
+    "lng": -93.2813
+  },
+  {
+    "id": "gen-loc-6",
+    "label": "Green Bay homestead",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.5502,
+    "lng": -88.0005
+  },
+  {
+    "id": "gen-loc-7",
+    "label": "Madison park",
+    "city": "Madison",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.0677,
+    "lng": -89.3786
+  },
+  {
+    "id": "gen-loc-8",
+    "label": "Minneapolis lake landing",
+    "city": "Minneapolis",
+    "state": "MN",
+    "country": "USA",
+    "lat": 44.9656,
+    "lng": -93.2681
+  },
+  {
+    "id": "gen-loc-9",
+    "label": "Madison fairgrounds",
+    "city": "Madison",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.0961,
+    "lng": -89.3699
+  },
+  {
+    "id": "gen-loc-10",
+    "label": "Carlsville general store",
+    "city": "Carlsville",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9076,
+    "lng": -87.2629
+  },
+  {
+    "id": "gen-loc-11",
+    "label": "Green Bay orchard",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.499,
+    "lng": -88.0209
+  },
+  {
+    "id": "gen-loc-12",
+    "label": "Ellison Bay fairgrounds",
+    "city": "Ellison Bay",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9383,
+    "lng": -87.311
+  },
+  {
+    "id": "gen-loc-13",
+    "label": "Chicago depot",
+    "city": "Chicago",
+    "state": "IL",
+    "country": "USA",
+    "lat": 41.8739,
+    "lng": -87.6214
+  },
+  {
+    "id": "gen-loc-14",
+    "label": "Chicago park",
+    "city": "Chicago",
+    "state": "IL",
+    "country": "USA",
+    "lat": 41.8954,
+    "lng": -87.608
+  },
+  {
+    "id": "gen-loc-15",
+    "label": "Brussels main street",
+    "city": "Brussels",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9231,
+    "lng": -87.3084
+  },
+  {
+    "id": "gen-loc-16",
+    "label": "Chicago cemetery",
+    "city": "Chicago",
+    "state": "IL",
+    "country": "USA",
+    "lat": 41.9092,
+    "lng": -87.6163
+  },
+  {
+    "id": "gen-loc-17",
+    "label": "Casco fairgrounds",
+    "city": "Casco",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8852,
+    "lng": -87.3071
+  },
+  {
+    "id": "gen-loc-18",
+    "label": "Egg Harbor homestead",
+    "city": "Egg Harbor",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9186,
+    "lng": -87.2946
+  },
+  {
+    "id": "gen-loc-19",
+    "label": "Brussels homestead",
+    "city": "Brussels",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.8904,
+    "lng": -87.3019
+  },
+  {
+    "id": "gen-loc-20",
+    "label": "Jacksonport church",
+    "city": "Jacksonport",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9352,
+    "lng": -87.2647
+  },
+  {
+    "id": "gen-loc-21",
+    "label": "Madison lake landing",
+    "city": "Madison",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.0735,
+    "lng": -89.3994
+  },
+  {
+    "id": "gen-loc-22",
+    "label": "Chicago schoolhouse",
+    "city": "Chicago",
+    "state": "IL",
+    "country": "USA",
+    "lat": 41.8415,
+    "lng": -87.6667
+  },
+  {
+    "id": "gen-loc-23",
+    "label": "Minneapolis schoolhouse",
+    "city": "Minneapolis",
+    "state": "MN",
+    "country": "USA",
+    "lat": 44.9689,
+    "lng": -93.2566
+  },
+  {
+    "id": "gen-loc-24",
+    "label": "Milwaukee depot",
+    "city": "Milwaukee",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.063,
+    "lng": -87.9322
+  },
+  {
+    "id": "gen-loc-25",
+    "label": "Milwaukee general store",
+    "city": "Milwaukee",
+    "state": "WI",
+    "country": "USA",
+    "lat": 43.0183,
+    "lng": -87.924
+  },
+  {
+    "id": "gen-loc-26",
+    "label": "Institute depot",
+    "city": "Institute",
+    "state": "WI",
+    "country": "USA",
+    "lat": 44.9023,
+    "lng": -87.3202
+  }
+]

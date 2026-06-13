@@ -30,3 +30,196 @@ committed here. They depict no real members of the fictional demo family.
 `klara-and-sarah-1933.jpg` is an artificially aged derivative of
 `klara-and-sarah-1933-restored.jpg` (same source scan) used to demo
 photo restoration. Avatars are crops of the photos above.
+
+## Additional archive images (v1.1 seed)
+
+Public-domain Library of Congress FSA/OWI images, fetched once for
+the expanded demo dataset. They depict no real members of the
+fictional family.
+
+- `arch-001.jpg` — Colored mother and child, Little Rock, Arkansas (1935-01-01) — https://www.loc.gov/item/2017729940/
+- `arch-002.jpg` — Mother and child. Yakima County, Washington (1941-01-01) — https://www.loc.gov/item/2017815689/
+- `arch-003.jpg` — Nacogdoches County, Texas. Mother and child (1943-01-01) — https://www.loc.gov/item/2017852285/
+- `arch-004.jpg` — Mother and child. Kempton, West Virginia (1939-01-01) — https://www.loc.gov/item/2017762850/
+- `arch-005.jpg` — Mexican mother and child. Crystal City, Texas (1939-01-01) — https://www.loc.gov/item/2017782365/
+- `arch-006.jpg` — Mexican mother and child. San Antonio, Texas (1939-01-01) — https://www.loc.gov/item/2017782491/
+- `arch-007.jpg` — Mexican mother and child. San Antonio, Texas (1939-01-01) — https://www.loc.gov/item/2017782623/
+- `arch-008.jpg` — Mother and child. Williams County, North Dakota (1937-01-01) — https://www.loc.gov/item/2017780985/
+- `arch-009.jpg` — The Shorts family on their front porch. Aliquippa, Pennsylvania (1938-01-01) — https://www.loc.gov/item/2017776867/
+- `arch-010.jpg` — Sharecropper family on front porch, New Madrid County, Missouri (1938-01-01) — https://www.loc.gov/item/2017736704/
+- `arch-011.jpg` — Family of sharecropper on front porch, Southeast Missouri Farms (1938-01-01) — https://www.loc.gov/item/2017736522/
+- `arch-012.jpg` — Sharecropper family on front porch of cabin, Southeast Missouri Farms (1938-01-01) — https://www.loc.gov/item/2017736903/
+- `arch-013.jpg` — Front porch of Mexican family living around corral, San Antonio, Texas (1939-01-01) — https://www.loc.gov/item/2017739366/
+- `arch-014.jpg` — Sharecropper family on front porch of cabin, New Madrid County, Missouri (1938-01-01) — https://www.loc.gov/item/2017736537/
+- `arch-015.jpg` — Family on front porch of houseboat on river in Charleston, West Virginia (1938-01-01) — https://www.loc.gov/item/2017752492/
+- `arch-016.jpg` — Negro tenant farmer and his family on front porch of their home in Wagoner County, Oklahoma (1939) — https://www.loc.gov/item/2017783675/
+- `arch-017.jpg` — Farm family at dinner. Fairfield Bench Farms, Montana (1939-01-01) — https://www.loc.gov/item/2017777605/
+- `arch-018.jpg` — Farm family at dinner. Fairfield Bench Farms, Montana (1939-01-01) — https://www.loc.gov/item/2017777606/
+- `arch-019.jpg` — Farm family, Johnson, Vermont (1937-01-01) — https://www.loc.gov/item/2017722459/
+- `arch-020.jpg` — The Pope family, Irwinville Farms, Georgia (1938-01-01) — https://www.loc.gov/item/2017717210/
+- `arch-021.jpg` — Homesteaders with family, Scioto Farms, Ohio (1938-01-01) — https://www.loc.gov/item/2017723337/
+- `arch-022.jpg` — [Dimotakis family farm, Manteca, California] (1935-01-01) — https://www.loc.gov/item/2017771082/
+- `arch-023.jpg` — Mormon farm family. Snowville, Utah (1940-01-01) — https://www.loc.gov/item/2017787444/
+- `arch-024.jpg` — Farm family. Meeker County, Minnesota (1940-01-01) — https://www.loc.gov/item/2017810889/
+- `arch-025.jpg` — Harvesting wheat. Queen Anne County, Maryland (1937-01-01) — https://www.loc.gov/item/2017776022/
+- `arch-026.jpg` — Harvesting wheat. Queen Anne County, Maryland (1937-01-01) — https://www.loc.gov/item/2017776023/
+- `arch-027.jpg` — Harvesting wheat. Queen Anne County, Maryland (1937-01-01) — https://www.loc.gov/item/2017776030/
+- `arch-028.jpg` — Harvest hand, wheat harvest, Walla Walla County, Washington (1941-01-01) — https://www.loc.gov/item/2017744131/
+- `arch-029.jpg` — Wheat harvest near Middletown, Maryland (1941-01-01) — https://www.loc.gov/item/2017764771/
+- `arch-030.jpg` — Wheat harvest near Middletown, Maryland (1941-01-01) — https://www.loc.gov/item/2017764776/
+- `arch-031.jpg` — Wheat harvest. Monroe County, Indiana (1941-01-01) — https://www.loc.gov/item/2017812464/
+- `arch-032.jpg` — Harvesting wheat near Ritzville, Washington (1936-01-01) — https://www.loc.gov/item/2017760946/
+- `arch-033.jpg` — Farmer of Spanish extraction in cornfield. Concho, Arizona (1940-01-01) — https://www.loc.gov/item/2017787984/
+- `arch-034.jpg` — Farmer cutting weeds along edge of cornfield. Richland County, Wisconsin (1941-01-01) — https://www.loc.gov/item/2017812757/
+- `arch-035.jpg` — [Untitled photo, possibly related to: Greenfield (vicinity), Connecticut. Farmer in a cornfield] (1941-01-01) — https://www.loc.gov/item/2017820678/
+- `arch-036.jpg` — William Gaynor, FSA (Farm Security Administration) dairy farmer, in his cornfield near Fairfield, Vermont (1941-01-01) — https://www.loc.gov/item/2017796079/
+- `arch-037.jpg` — Adams County, North Dakota. Stock farmer George P. Moeller spreading manure in his cornfield (1942-01-01) — https://www.loc.gov/item/2017814422/
+- `arch-038.jpg` — [Untitled photo, possibly related to: Adams County, North Dakota. Stock farmer, George P. Moeller, spreading manure on his cornfield] (1942-01-01) — https://www.loc.gov/item/2017814367/
+- `arch-039.jpg` — [Untitled photo, possibly related to: Adams County, North Dakota. Stock farmer, George P. Moeller, spreading manure on his cornfield] (1942-01-01) — https://www.loc.gov/item/2017814409/
+- `arch-040.jpg` — Children leaving high school (1935-01-01) — https://www.loc.gov/item/2017759174/
+- `arch-041.jpg` — Negro children in rural school. Creek County, Oklahoma (1940) — https://www.loc.gov/item/2017785202/
+- `arch-042.jpg` — Nursery school children. Robstown camp, Texas (1942-01-01) — https://www.loc.gov/item/2017775408/
+- `arch-043.jpg` — Dunklin County, Missouri. Children leaving school (1942-01-01) — https://www.loc.gov/item/2017835165/
+- `arch-044.jpg` — Dunklin County, Missouri. Children leaving school (1942-01-01) — https://www.loc.gov/item/2017835171/
+- `arch-045.jpg` — Dunklin County, Missouri. Children leaving school (1942-01-01) — https://www.loc.gov/item/2017835187/
+- `arch-046.jpg` — Questa, New Mexico. Grade school children (1943-01-01) — https://www.loc.gov/item/2017846133/
+- `arch-047.jpg` — Questa, New Mexico. Grade school children (1943-01-01) — https://www.loc.gov/item/2017846134/
+- `arch-048.jpg` — Children playing, Washington, D.C. (1937-01-01) — https://www.loc.gov/item/2017716890/
+- `arch-049.jpg` — Children at play, Granger Homesteads (1936-01-01) — https://www.loc.gov/item/2017715642/
+- `arch-050.jpg` — Children playing at Greenbelt, Maryland (1938-01-01) — https://www.loc.gov/item/2017752168/
+- `arch-051.jpg` — Clifford Shorts' children playing. Aliquippa, Pennsylvania (1938-01-01) — https://www.loc.gov/item/2017776868/
+- `arch-052.jpg` — Washington, D.C. Children at play (1935-01-01) — https://www.loc.gov/item/2017714036/
+- `arch-053.jpg` — White children playing in Georgetown, Washington, D.C. (1935-01-01) — https://www.loc.gov/item/2017713966/
+- `arch-054.jpg` — Children playing on the street, Aliquippa, Pennsylvania (1938-01-01) — https://www.loc.gov/item/2017723739/
+- `arch-055.jpg` — Children playing on the street, Chicago, Illinois (1941-01-01) — https://www.loc.gov/item/2017729592/
+- `arch-056.jpg` — Family picnic. Vincennes, Indiana (1941-01-01) — https://www.loc.gov/item/2017746705/
+- `arch-057.jpg` — A family picnic on the Fourth of July at Vale, Oregon (1941-01-01) — https://www.loc.gov/item/2017743882/
+- `arch-058.jpg` — A family picnic on the Fourth of July at Vale, Oregon (1941-01-01) — https://www.loc.gov/item/2017743883/
+- `arch-059.jpg` — [Untitled photo, possibly related to: A family picnic on the Fourth of July at Vale, Oregon] (1941-01-01) — https://www.loc.gov/item/2017743881/
+- `arch-060.jpg` — Sicilians are returning to a normal way of life. This family is enjoying a picnic on the beach (1943-01-01) — https://www.loc.gov/item/2017863694/
+- `arch-061.jpg` — Farm families living at the FSA (Farm Security Administration) migratory farm labor camp mobile unit picnic on Sunday. Athena, Oregon (1941-01-01) — https://www.loc.gov/item/2017790062/
+- `arch-062.jpg` — Project families, guests and schoolchildren leaving auditorium for picnic after May Day-Health Day program at Ashwood Plantations, South Carolina (1939-01-01) — https://www.loc.gov/item/2017800904/
+- `arch-063.jpg` — [Untitled photo, possibly related to: Farm families living at the FSA (Farm Security Administration) migratory farm labor camp mobile unit picnic on Sunday. Athena, Oregon] (1941-01-01) — https://www.loc.gov/item/2017790053/
+- `arch-064.jpg` — Country church. Alabama (1936-01-01) — https://www.loc.gov/item/2017762358/
+- `arch-065.jpg` — Country church. Dane County, Wisconsin (1941-01-01) — https://www.loc.gov/item/2017812753/
+- `arch-066.jpg` — Country church. Monona County, Iowa (1940-01-01) — https://www.loc.gov/item/2017810153/
+- `arch-067.jpg` — Country church. Essex County, Virginia (1941-01-01) — https://www.loc.gov/item/2017812137/
+- `arch-068.jpg` — Country church. King William County, Virginia (1941-01-01) — https://www.loc.gov/item/2017812153/
+- `arch-069.jpg` — Church in farming country near Waterloo, Iowa (1941-01-01) — https://www.loc.gov/item/2017824169/
+- `arch-070.jpg` — Country church and cornfield. Monona County, Iowa (1940-01-01) — https://www.loc.gov/item/2017810142/
+- `arch-071.jpg` — Country church on Highway 83. Norton County, Kansas (1941-01-01) — https://www.loc.gov/item/2017788726/
+- `arch-072.jpg` — Farmers. Main street in Oklahoma town. Drought region (1936-01-01) — https://www.loc.gov/item/2017763092/
+- `arch-073.jpg` — Main street and town center. Escalante, Utah (1936-01-01) — https://www.loc.gov/item/2017759445/
+- `arch-074.jpg` — Main street, Rice, Minnesota (1939-01-01) — https://www.loc.gov/item/2017718353/
+- `arch-075.jpg` — Main street of Bourne, ghost mining town. Oregon (1941-01-01) — https://www.loc.gov/item/2017789244/
+- `arch-076.jpg` — Main street of Cambria, Wyoming. Ghost mining town (1937-01-01) — https://www.loc.gov/item/2017781004/
+- `arch-077.jpg` — Main street of old mining town. Leadville, Colorado (1941-01-01) — https://www.loc.gov/item/2017808440/
+- `arch-078.jpg` — Main street, Hamilton, Montana (1939-01-01) — https://www.loc.gov/item/2017725275/
+- `arch-079.jpg` — Main street looking toward center of town. Woodstock, Vermont (1940-01-01) — https://www.loc.gov/item/2017802577/
+- `arch-080.jpg` — Fishing in Hooksett River, New Hampshire (1937-01-01) — https://www.loc.gov/item/2017764942/
+- `arch-081.jpg` — Custer County, Idaho. Fishing in the Salmon River (1942-01-01) — https://www.loc.gov/item/2017819807/
+- `arch-082.jpg` — Custer County, Idaho. Fishing in the Salmon River (1942-01-01) — https://www.loc.gov/item/2017819810/
+- `arch-083.jpg` — Custer County, Idaho. Fishing in the Salmon River (1942-01-01) — https://www.loc.gov/item/2017819814/
+- `arch-084.jpg` — Custer County, Idaho. Fishing in the Salmon River (1942-01-01) — https://www.loc.gov/item/2017819774/
+- `arch-085.jpg` — Fishing along the Ohio River, Louisvillle, Kentucky (1940-01-01) — https://www.loc.gov/item/2017756799/
+- `arch-086.jpg` — Fishing along the Ohio River, Louisvillle, Kentucky (1940-01-01) — https://www.loc.gov/item/2017756801/
+- `arch-087.jpg` — Fishing along the Ohio River, Louisvillle, Kentucky (1940-01-01) — https://www.loc.gov/item/2017756803/
+- `arch-088.jpg` — Buying Christmas trees in shopping district of Greenbelt, Maryland (1941-01-01) — https://www.loc.gov/item/2017775044/
+- `arch-089.jpg` — Christmas trees for sale at the market. Providence, Rhode Island (1940-01-01) — https://www.loc.gov/item/2017793023/
+- `arch-090.jpg` — New York, New York. Martinetti grandchild and her Christmas tree (1942-01-01) — https://www.loc.gov/item/2017841838/
+- `arch-091.jpg` — New York, New York. Martinetti grandchild and her Christmas tree (1942-01-01) — https://www.loc.gov/item/2017841841/
+- `arch-092.jpg` — New York, New York. Martinetti grandchild and her Christmas tree (1942-01-01) — https://www.loc.gov/item/2017841859/
+- `arch-093.jpg` — Christmas trees for sale at the market in Providence, Rhode Island (1940-01-01) — https://www.loc.gov/item/2017793022/
+- `arch-094.jpg` — Christmas trees for sale at a gas station. Woonsocket, Rhode Island (1940-01-01) — https://www.loc.gov/item/2017793038/
+- `arch-095.jpg` — Christmas trees for sale near the freight terminal in Providence, Rhode Island (1940-01-01) — https://www.loc.gov/item/2017793085/
+- `arch-096.jpg` — [Fort Kent, Maine (vicinity). Vegetable garden on the Gagnon farm] (1942-01-01) — https://www.loc.gov/item/2017823548/
+- `arch-097.jpg` — Gardens at labor homes add to incomes. Tulare migrant camp. Visalia, California (1940-01-01) — https://www.loc.gov/item/2017774697/
+- `arch-098.jpg` — Fort Kent, Maine (vicinity). Vegetable garden on the [Leonard] Gagnon farm (1942-01-01) — https://www.loc.gov/item/2017823619/
+- `arch-099.jpg` — Home of steelworker who gets vegetables from his own garden. Midlands, Pennsylvania (1938-01-01) — https://www.loc.gov/item/2017723782/
+- `arch-100.jpg` — Vegetable garden in back of labor home. Tulare migrant camp. Visalia, California (1940-01-01) — https://www.loc.gov/item/2017774704/
+- `arch-101.jpg` — Hill farmer with armful of vegetables from his garden patch. Ross County, Ohio (1940-01-01) — https://www.loc.gov/item/2017810857/
+- `arch-102.jpg` — Mr. John Thomas and his daughter Louise working in their home vegetable garden. Flint River Farms, Georgia (1939) — https://www.loc.gov/item/2017800804/
+- `arch-103.jpg` — Hill farmer with an armful of vegetables from his garden patch. Ross County, Ohio (1940-01-01) — https://www.loc.gov/item/2017810890/
+- `arch-104.jpg` — Kitchen, typical farm home. Sabine Farms, Marshall, Texas (1939-01-01) — https://www.loc.gov/item/2017783133/
+- `arch-105.jpg` — Community canning kitchen. Wolf Creek Farms, Georgia (1935-01-01) — https://www.loc.gov/item/2017758999/
+- `arch-106.jpg` — Kitchen in new home in Southeast Missouri Farms (1938-01-01) — https://www.loc.gov/item/2017781280/
+- `arch-107.jpg` — Dog sleeping under kitchen table in farm kitchen. Cavalier County, North Dakota (1940-01-01) — https://www.loc.gov/item/2017810896/
+- `arch-108.jpg` — Mrs. Hersch in kitchen of farm unit. Red River Valley Farms, North Dakota (1940-01-01) — https://www.loc.gov/item/2017810899/
+- `arch-109.jpg` — Southeast Missouri Farms. Kitchen of home of new farm unit. La Forge project, Missouri (1938-01-01) — https://www.loc.gov/item/2017781114/
+- `arch-110.jpg` — Mrs. Carrol in her kitchen at Irwinville Farms, Georgia (1938-01-01) — https://www.loc.gov/item/2017762500/
+- `arch-111.jpg` — Canning beans in farm kitchen near Bristol, Vermont (1940-01-01) — https://www.loc.gov/item/2017764714/
+- `arch-112.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867362/
+- `arch-113.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867365/
+- `arch-114.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867366/
+- `arch-115.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867367/
+- `arch-116.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867371/
+- `arch-117.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867378/
+- `arch-118.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867379/
+- `arch-119.jpg` — Portrait of a woman training to operate buses and taxicabs (1942-01-01) — https://www.loc.gov/item/2017867386/
+- `arch-120.jpg` — Daniel Field, Georgia. Air Service Command. Portrait of an enlisted man (1943-01-01) — https://www.loc.gov/item/2017859939/
+- `arch-121.jpg` — Daniel Field, Georgia. Air Service Command. Portrait of an enlisted man (1943-01-01) — https://www.loc.gov/item/2017859955/
+- `arch-122.jpg` — Daniel Field, Georgia. Air Service Command. Portrait of an enlisted man (1943-01-01) — https://www.loc.gov/item/2017859956/
+- `arch-123.jpg` — [Untitled photo, possibly related to: Vernon County, Wisconsin. Robert and a hired man discussing news in the parlor after dinner] (1942-01-01) — https://www.loc.gov/item/2017767088/
+- `arch-124.jpg` — Latter Day Saints portrait group. These people, man and wife, are both eighty-five years old. Converts to Mormonism from South Africa. She was the first schoolteacher in Escalante. They are dressed in their Sunday clothes (1936-01-01) — https://www.loc.gov/item/2017759451/
+- `arch-125.jpg` — Parris Island. Marine Corps gliders. Portrait of a man who lives his work. A Marine Corps lieutenant training as a glider pilot sprints for his motorless airplane for another flight at Page Field, Parris Island, South Carolina (1942-01-01) — https://www.loc.gov/item/2017692507/
+- `arch-126.jpg` — America's youth builds and flies model planes on miniature flying fields. A member of the San Antonio Gas Model Club, which does its weekly flying at Kelly Field in the city of San Antonio in the southwestern U.S. state of Texas, proudly displays his amphibian model airplane, which has a six foot (1.8 meters) wing spread. When an earlier model crashed there was nothing left but one good wing. This young model enthusiast decided to build a new plane around it. He built an amphibian and turned out a perfect flying job. The plane is made of balsa wood covered with silk and waterproofing material. Like millions of other young Americans who make model building their hobby, this young man will be called upon to put his practical experience in aeronautics to use in the air-minded post war world (1944-01-01) — https://www.loc.gov/item/2017877195/
+- `arch-127.jpg` — America's petroleum industries pour out fuel and lubricants for the United Nations. A geologist, employed by one of the important U.S. oil companies, surveys, with the help of his "rod man" standing on the ridge in the background, a section of land to detect the presence of a possible oil deposit under the ground. "Hit or miss" methods of drilling for oil were discarded long ago in the United States. Today careful preliminary surveys and test borings precede the sinking of most oil wells. Geology experts of the important oil companies are able as a rule to read the surface of the ground accurately for the detection of oil deposits. The industry's efficient methods of finding oil have resulted in the enormous amounts of oil produced. According to a U.S. oil company official, the predictable U.S. oil total for the year 1944 will be 1,601,250,000 barrels, a great part of which will supply the armed forces of the United Nations (1944-01-01) — https://www.loc.gov/item/2017877164/
+- `arch-128.jpg` — Chicago, Illinois. Provident Hospital. Newborn babies (1942-01-01) — https://www.loc.gov/item/2017829138/
+- `arch-129.jpg` — Mississippi general store front (1936-01-01) — https://www.loc.gov/item/2017762262/
+- `arch-130.jpg` — Mississippi general store front (1936-01-01) — https://www.loc.gov/item/2017762269/
+- `arch-131.jpg` — General store. Jarreau, Louisiana (1938-01-01) — https://www.loc.gov/item/2017781754/
+- `arch-132.jpg` — General store. Ophir, Colorado (1940-01-01) — https://www.loc.gov/item/2017787670/
+- `arch-133.jpg` — General store. Diascond, Virginia (1937-01-01) — https://www.loc.gov/item/2017769305/
+- `arch-134.jpg` — General store. Lamoille, Iowa (1939-01-01) — https://www.loc.gov/item/2017779301/
+- `arch-135.jpg` — General store. Missiquoi, VT. (1941-01-01) — https://www.loc.gov/item/2017796749/
+- `arch-136.jpg` — General store. Concho, Arizona (1940-01-01) — https://www.loc.gov/item/2017788035/
+- `arch-137.jpg` — Old automobile with various potted flowers, Mexican district, San Antonio, Texas (1939-01-01) — https://www.loc.gov/item/2017739304/
+- `arch-138.jpg` — Privy made of old automobile bodies, Nueces Bay, Corpus Christi, Texas. Migrant camp (1939-01-01) — https://www.loc.gov/item/2017739106/
+- `arch-139.jpg` — Shed made of slabs and parts of an old automobile. Pie Town, New Mexico (1940-01-01) — https://www.loc.gov/item/2017786873/
+- `arch-140.jpg` — Privy and wrecked automobile in backyard of Mexican home. Old automobile parts are saved for use in construction of fences, sheds and houses. Crystal City, Texas (1939-01-01) — https://www.loc.gov/item/2017782414/
+- `arch-141.jpg` — Shed for young goats. The shed is made from old automobile parts. Crystal City, Texas. Mexican section (1939-01-01) — https://www.loc.gov/item/2017782426/
+- `arch-142.jpg` — Shoes, made of old automobile tires, of Henry Mitchell, FSA (Farm Security Administration) client. Greene County, Georgia (1939-01-01) — https://www.loc.gov/item/2017801080/
+- `arch-143.jpg` — Hen house on farm of Faro Caudill. Notice the old automobile door which has been utilized. Pie Town, New Mexico (1940-01-01) — https://www.loc.gov/item/2017786775/
+- `arch-144.jpg` — Children of agricultural day laborer sitting on an old automobile seat cushion. On Poteau Creek near Spiro, Oklahoma, Sequoyah County (1939-01-01) — https://www.loc.gov/item/2017783654/
+- `arch-145.jpg` — Isleta, New Mexico. The depot. Horizontal arms on pole indicate a "red beard," that is a message is to be picked up by the train crew of the Atchison, Topeka and Santa Fe Railroad (1943-01-01) — https://www.loc.gov/item/2017848623/
+- `arch-146.jpg` — Freight train operations on the Chicago and Northwestern Railroad between Chicago and Clinton, Iowa. There is not much to do when the men arrive in Clinton. Clarence Averill and Engineer Johnson spend some time hanging out at the recreation room in the depot frequented by many railroad workers (1943-01-01) — https://www.loc.gov/item/2017842428/
+- `arch-147.jpg` — Barn with farmer and livestock. Lakeview Project, Arkansas (1938-01-01) — https://www.loc.gov/item/2017781873/
+- `arch-148.jpg` — Barn and livestock in snowstorm near Barnard. Windsor County, Vermont (1940-01-01) — https://www.loc.gov/item/2017802556/
+- `arch-149.jpg` — Table showing commission rates, livestock auction barn, San Augustine, Texas (1939-01-01) — https://www.loc.gov/item/2017739731/
+- `arch-150.jpg` — Straw barn built by Lloyd Sampson for his chickens and livestock near Armstrong, Iowa (1936-01-01) — https://www.loc.gov/item/2017735240/
+- `arch-151.jpg` — [Untitled photo, possibly related to: Barn with farmer and livestock. Lakeview Project, Arkansas] (1938-01-01) — https://www.loc.gov/item/2017781872/
+- `arch-152.jpg` — [Untitled photo, possibly related to: Barn with farmer and livestock. Lakeview Project, Arkansas] (1938-01-01) — https://www.loc.gov/item/2017781885/
+- `arch-153.jpg` — New barn and livestock belonging to white tenant purchase family, Crowell. Near Isola, Mississippi Delta (1939-01-01) — https://www.loc.gov/item/2017801766/
+- `arch-154.jpg` — Taking horses to the barn, Roy Merriot farm near Estherville, Iowa (1936-01-01) — https://www.loc.gov/item/2017735239/
+- `arch-155.jpg` — Judges' stand, county fair (1938-01-01) — https://www.loc.gov/item/2017732602/
+- `arch-156.jpg` — Exhibit. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817773/
+- `arch-157.jpg` — Sign. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817776/
+- `arch-158.jpg` — Boys. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817782/
+- `arch-159.jpg` — Exhibit. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817794/
+- `arch-160.jpg` — Exhibit. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817795/
+- `arch-161.jpg` — Exhibit. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817796/
+- `arch-162.jpg` — Exhibit. Imperial County Fair, California (1942-01-01) — https://www.loc.gov/item/2017817798/
+- `arch-163.jpg` — High school band parading up Montana Street, Butte, Montana (1939-01-01) — https://www.loc.gov/item/2017725000/
+- `arch-164.jpg` — Street cleaners follow the parade, Charro Days, Brownsville, Texas (1942-01-01) — https://www.loc.gov/item/2017727465/
+- `arch-165.jpg` — Street parade at night during cotton carnival ball. Memphis, Tennessee (1940-01-01) — https://www.loc.gov/item/2017803024/
+- `arch-166.jpg` — Float in night street parade during cotton carnival. Memphis, Tennessee (1940-01-01) — https://www.loc.gov/item/2017803025/
+- `arch-167.jpg` — Street scene during the Fourth of July parade at Vale, Oregon (1941-01-01) — https://www.loc.gov/item/2017743952/
+- `arch-168.jpg` — Street scene after the Fourth of July parade at Vale, Oregon (1941-01-01) — https://www.loc.gov/item/2017743970/
+- `arch-169.jpg` — Street scene. Beginning of the Fourth of July parade at Vale, Oregon (1941-01-01) — https://www.loc.gov/item/2017789865/
+- `arch-170.jpg` — People standing on street corner waiting for parade, National Rice Festival, Crowley, Louisiana (1938-01-01) — https://www.loc.gov/item/2017737833/
+- `arch-171.jpg` — Baseball game, Atlanta, Georgia (1939-01-01) — https://www.loc.gov/item/2017754053/
+- `arch-172.jpg` — Baseball game, Huntingdon, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729751/
+- `arch-173.jpg` — Baseball game, Huntingdon, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729755/
+- `arch-174.jpg` — Baseball game, Huntingdon, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729756/
+- `arch-175.jpg` — Baseball game, Huntingdon, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729757/
+- `arch-176.jpg` — Baseball game. Greenhills, Ohio (1939-01-01) — https://www.loc.gov/item/2017809812/
+- `arch-177.jpg` — Nyssa, Oregon. Baseball game (1942-01-01) — https://www.loc.gov/item/2017819389/
+- `arch-178.jpg` — Watching a baseball game, Atlanta, Georgia (1939-01-01) — https://www.loc.gov/item/2017754051/
+- `arch-179.jpg` — Swimming hole, Pine Grove Mills, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729763/
+- `arch-180.jpg` — Swimming hole, Pine Grove Mills, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729764/
+- `arch-181.jpg` — Swimming hole, Pine Grove Mills, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729765/
+- `arch-182.jpg` — Swimming hole, Pine Grove Mills, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017729766/
+- `arch-183.jpg` — Swimming hole. Pine Grove Mills, Pennsylvania (1941-01-01) — https://www.loc.gov/item/2017764765/
+- `arch-184.jpg` — Old swimming hole up South Fork, Breathitt. County, Kentucky (1940-01-01) — https://www.loc.gov/item/2017805136/
+- `arch-185.jpg` — Swimming hole at the Dyess Colony, Mississippi County, Arkansas (1935-01-01) — https://www.loc.gov/item/2017720694/
+- `arch-186.jpg` — [Untitled photo, possibly related to: Swimming hole. Pine Grove Mills, Pennsylvania] (1941-01-01) — https://www.loc.gov/item/2017768518/

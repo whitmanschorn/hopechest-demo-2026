@@ -39,9 +39,7 @@ export function PhotoCard({
         <span className="block truncate text-sm font-medium text-ink">
           {caption ?? photo.title}
         </span>
-        {photo.era ? (
-          <span className="block text-xs text-ink-soft">{photo.era}</span>
-        ) : null}
+        <span className="block text-xs text-ink-soft">{photo.date.display}</span>
       </span>
     </Link>
   );

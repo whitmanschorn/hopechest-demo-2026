@@ -68,7 +68,18 @@ export default async function PhotoView({
               {photo.title}
             </h1>
             <p className="mt-1 text-sm text-ink-soft">
-              {[photo.era, photo.location].filter(Boolean).join(" · ")}
+              {photo.date.display}
+              {photo.location ? (
+                <>
+                  {" · "}
+                  <Link
+                    href={`/locations/${photo.location.id}`}
+                    className="underline decoration-hairline underline-offset-2 transition-colors hover:text-sepia"
+                  >
+                    {photo.location.label}
+                  </Link>
+                </>
+              ) : null}
             </p>
             {photo.description ? (
               <p className="mt-3 text-[15px] leading-7 text-ink">

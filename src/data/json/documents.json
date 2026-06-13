@@ -1,0 +1,167 @@
+[
+  {
+    "id": "sarahs-baby-book",
+    "title": "Sarah's baby book, 1931–1935",
+    "kind": "record",
+    "scanSrc": "/photos/doc-baby-book.jpg",
+    "excerpt": "“July 14th — Mama Klara held Sarah still long enough for Mr. Andersen to try his new camera. The only picture we have of the two of them together.”",
+    "year": "1933",
+    "uploadedById": "eleanor",
+    "locationId": "kowalski-farm"
+  },
+  {
+    "id": "immigration-record-1912",
+    "title": "Klara's immigration record",
+    "kind": "record",
+    "scanSrc": "/photos/doc-immigration.jpg",
+    "excerpt": "Kowalska, Klara — age 14, arrived Port of Baltimore aboard the SS Rhein, June 1912, bound for Green Bay, Wisconsin.",
+    "year": "1912",
+    "uploadedById": "eleanor",
+    "locationId": "port-of-baltimore"
+  },
+  {
+    "id": "klara-letter-1946",
+    "title": "Letter from Klara to Sarah",
+    "kind": "letter",
+    "scanSrc": "/photos/doc-letter.jpg",
+    "excerpt": "“The cherries came in early this year. Your father says the porch needs painting but I told him it can wait until you visit…”",
+    "year": "1946",
+    "uploadedById": "susan",
+    "locationId": "kowalski-farm"
+  },
+  {
+    "id": "recipe-pierogi",
+    "title": "Klara's pierogi recipe card",
+    "kind": "recipe",
+    "excerpt": "“Flour, two eggs, sour cream — never water. Brown butter at the end, always more than you think.”",
+    "year": "c. 1950",
+    "uploadedById": "margaret",
+    "locationId": "kowalski-farm"
+  },
+  {
+    "id": "telegram-1945",
+    "title": "Telegram — Tom coming home",
+    "kind": "telegram",
+    "excerpt": "ARRIVING GREEN BAY STATION DEC 21 STOP HOME FOR CHRISTMAS STOP LOVE TOM",
+    "year": "1945",
+    "uploadedById": "david",
+    "locationId": "green-bay"
+  },
+  {
+    "id": "gen-doc-1",
+    "title": "A letter from Madison",
+    "kind": "letter",
+    "excerpt": "\"Dearest Lauren, the winter has been long but the stove keeps us warm. Write when you can…\"",
+    "year": "1986",
+    "uploadedById": "eleanor",
+    "locationId": "gen-loc-9"
+  },
+  {
+    "id": "gen-doc-2",
+    "title": "Paul's record",
+    "kind": "record",
+    "excerpt": "Paul Rose Okonkwo — recorded in the parish register, b. 1953.",
+    "year": "1966",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-10"
+  },
+  {
+    "id": "gen-doc-3",
+    "title": "Recipe — David Hayes",
+    "kind": "recipe",
+    "excerpt": "\"Two cups flour, a knob of butter, and patience. Bake till golden.\"",
+    "year": "1980",
+    "uploadedById": "david",
+    "locationId": "gen-loc-12"
+  },
+  {
+    "id": "gen-doc-4",
+    "title": "Susan's telegram",
+    "kind": "telegram",
+    "excerpt": "ARRIVING SATURDAY STOP TELL SUSAN STOP ALL WELL STOP",
+    "year": "1984",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-12"
+  },
+  {
+    "id": "gen-doc-5",
+    "title": "Letter — Vernon Okonkwo",
+    "kind": "letter",
+    "excerpt": "\"Dearest Vernon, the winter has been long but the stove keeps us warm. Write when you can…\"",
+    "year": "1993",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-5"
+  },
+  {
+    "id": "gen-doc-6",
+    "title": "A record from Madison",
+    "kind": "record",
+    "excerpt": "Ada Ngozi Okafor — recorded in the parish register, b. 1960.",
+    "year": "1965",
+    "uploadedById": "david",
+    "locationId": "gen-loc-9"
+  },
+  {
+    "id": "gen-doc-7",
+    "title": "Rose's recipe",
+    "kind": "recipe",
+    "excerpt": "\"Two cups flour, a knob of butter, and patience. Never rush the dough.\"",
+    "year": "1961",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-13"
+  },
+  {
+    "id": "gen-doc-8",
+    "title": "A telegram from Sturgeon Bay",
+    "kind": "telegram",
+    "excerpt": "ARRIVING SATURDAY STOP TELL ROSE STOP ALL WELL STOP",
+    "year": "1967",
+    "uploadedById": "margaret",
+    "locationId": "kowalski-farm"
+  },
+  {
+    "id": "gen-doc-9",
+    "title": "A letter from Brussels",
+    "kind": "letter",
+    "excerpt": "\"Dearest Susan, the winter has been long but the stove keeps us warm. Write when you can…\"",
+    "year": "1989",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-19"
+  },
+  {
+    "id": "gen-doc-10",
+    "title": "Record — Betty Hansen",
+    "kind": "record",
+    "excerpt": "Betty Ruth Hansen — recorded in the parish register, b. 1953.",
+    "year": "1973",
+    "uploadedById": "susan",
+    "locationId": "gen-loc-17"
+  },
+  {
+    "id": "gen-doc-11",
+    "title": "Karen's recipe",
+    "kind": "recipe",
+    "excerpt": "\"Two cups flour, a knob of butter, and patience. Never rush the dough.\"",
+    "year": "1982",
+    "uploadedById": "eleanor",
+    "locationId": "gen-loc-19"
+  },
+  {
+    "id": "gen-doc-12",
+    "title": "A telegram from Sturgeon Bay",
+    "kind": "telegram",
+    "excerpt": "ARRIVING SATURDAY STOP TELL PAUL STOP ALL WELL STOP",
+    "year": "1968",
+    "uploadedById": "david",
+    "locationId": "kowalski-farm"
+  },
+  {
+    "id": "gen-doc-13",
+    "title": "Janet's letter",
+    "kind": "letter",
+    "excerpt": "\"Dearest Janet, the winter has been long but the stove keeps us warm. Write when you can…\"",
+    "year": "1992",
+    "uploadedById": "eleanor",
+    "locationId": "gen-loc-5"
+  }
+]

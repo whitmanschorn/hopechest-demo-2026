@@ -1,0 +1,1437 @@
+[
+  {
+    "albumId": "summers-at-the-lake",
+    "photoId": "lake-house-summer-1958",
+    "position": 0
+  },
+  {
+    "albumId": "summers-at-the-lake",
+    "photoId": "lake-swimmers-1960",
+    "position": 1
+  },
+  {
+    "albumId": "summers-at-the-lake",
+    "photoId": "family-picnic-1962",
+    "position": 2
+  },
+  {
+    "albumId": "summers-at-the-lake",
+    "photoId": "tom-fishing-1972",
+    "position": 3
+  },
+  {
+    "albumId": "wedding-1950",
+    "photoId": "wedding-day-1950",
+    "position": 0
+  },
+  {
+    "albumId": "wedding-1950",
+    "photoId": "sunday-best-1947",
+    "position": 1
+  },
+  {
+    "albumId": "wedding-1950",
+    "photoId": "first-car-1949",
+    "position": 2
+  },
+  {
+    "albumId": "holiday-gatherings",
+    "photoId": "christmas-morning-1955",
+    "position": 0
+  },
+  {
+    "albumId": "holiday-gatherings",
+    "photoId": "thanksgiving-1964",
+    "position": 1
+  },
+  {
+    "albumId": "family-reunions",
+    "photoId": "family-reunion-1968",
+    "position": 0
+  },
+  {
+    "albumId": "family-reunions",
+    "photoId": "tom-fishing-1972",
+    "position": 1
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "klara-and-sarah-1933",
+    "position": 0
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "sarah-school-portrait-1940",
+    "position": 1
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "front-porch-1941",
+    "position": 2
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "sarah-and-friends-1944",
+    "position": 3
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "sunday-best-1947",
+    "position": 4
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "wedding-day-1950",
+    "position": 5
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "eleanor-baby-1953",
+    "position": 6
+  },
+  {
+    "albumId": "smart-sarah",
+    "photoId": "thanksgiving-1964",
+    "position": 7
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "klara-portrait-1925",
+    "position": 0
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "kowalski-farmhouse-1928",
+    "position": 1
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "klara-and-sarah-1933",
+    "position": 2
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "farm-harvest-1935",
+    "position": 3
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "front-porch-1941",
+    "position": 4
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "klara-garden-1948",
+    "position": 5
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "thanksgiving-1964",
+    "position": 6
+  },
+  {
+    "albumId": "smart-kowalski-farm",
+    "photoId": "family-reunion-1968",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "klara-and-sarah-1933",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "sarah-school-portrait-1940",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "front-porch-1941",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "sarah-and-friends-1944",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "sunday-best-1947",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "wedding-day-1950",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "eleanor-baby-1953",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "thanksgiving-1964",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-002",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-045",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-054",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-088",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-108",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-1",
+    "photoId": "arch-130",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "tom-army-portrait-1946",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "sunday-best-1947",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "first-car-1949",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "wedding-day-1950",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "tom-fishing-1972",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-004",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-014",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-047",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-060",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-064",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-090",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-133",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-176",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-2",
+    "photoId": "arch-179",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-012",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-044",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-055",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-056",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-058",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-064",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-098",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-099",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-110",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-141",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-142",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-146",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-180",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-3",
+    "photoId": "arch-184",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "klara-and-sarah-1933",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "klara-portrait-1925",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "klara-garden-1948",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "front-porch-1941",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "thanksgiving-1964",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-001",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-013",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-044",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-087",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-130",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-141",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-142",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-4",
+    "photoId": "arch-173",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-006",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-007",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-049",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-051",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-092",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-114",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-121",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-126",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-135",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-156",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-160",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-5",
+    "photoId": "arch-178",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "eleanor-baby-1953",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "family-picnic-1962",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-005",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-016",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-025",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-048",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-091",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-132",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-133",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-134",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-6",
+    "photoId": "arch-177",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "susan-baby-1956",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "family-picnic-1962",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-007",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-029",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-050",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-093",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-104",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-136",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-154",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-7",
+    "photoId": "arch-179",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-011",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-032",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-039",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-061",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-075",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-118",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-132",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-161",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-172",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-8",
+    "photoId": "arch-175",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "klara-and-sarah-1933",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "klara-portrait-1925",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "kowalski-farmhouse-1928",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "farm-harvest-1935",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "klara-garden-1948",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "front-porch-1941",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "thanksgiving-1964",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "family-reunion-1968",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "arch-002",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "arch-038",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "arch-116",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-9",
+    "photoId": "arch-172",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "lake-house-summer-1958",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "lake-swimmers-1960",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "family-picnic-1962",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "tom-fishing-1972",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-001",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-018",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-035",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-037",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-059",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-10",
+    "photoId": "arch-159",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-044",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-047",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-061",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-063",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-109",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-111",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-133",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-138",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-142",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-11",
+    "photoId": "arch-178",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "susan-baby-1956",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-022",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-027",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-048",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-062",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-072",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-081",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-112",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-12",
+    "photoId": "arch-174",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-009",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-014",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-036",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-051",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-078",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-103",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-119",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-129",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-13",
+    "photoId": "arch-177",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "wedding-day-1950",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-010",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-029",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-135",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-145",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-152",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-154",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-14",
+    "photoId": "arch-160",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "klara-and-sarah-1933",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "farm-harvest-1935",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "county-fair-1937",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "arch-090",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "arch-141",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "arch-153",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-15",
+    "photoId": "arch-176",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "klara-garden-1948",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "sarah-school-portrait-1940",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "front-porch-1941",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "sarah-and-friends-1944",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "tom-army-portrait-1946",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "sunday-best-1947",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "first-car-1949",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-002",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-004",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-014",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-047",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-055",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-057",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-16",
+    "photoId": "arch-067",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "klara-portrait-1925",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "wedding-day-1950",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "eleanor-baby-1953",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "christmas-morning-1955",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "susan-baby-1956",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "lake-house-summer-1958",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-015",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-016",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-075",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-091",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-122",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-130",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-133",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-17",
+    "photoId": "arch-180",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "lake-swimmers-1960",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "family-picnic-1962",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "thanksgiving-1964",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "family-reunion-1968",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-008",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-018",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-022",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-045",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-048",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-060",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-064",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-132",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-134",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-18",
+    "photoId": "arch-137",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "tom-fishing-1972",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-006",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-007",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-024",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-078",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-088",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-093",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-100",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-107",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-136",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-147",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-165",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-19",
+    "photoId": "arch-174",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-001",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-002",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-003",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-004",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-005",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-006",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-007",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-008",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-040",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-041",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-042",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-043",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-044",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-20",
+    "photoId": "arch-045",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-017",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-018",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-019",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-020",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-021",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-022",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-023",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-024",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-025",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-026",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-027",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-028",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-029",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-21",
+    "photoId": "arch-030",
+    "position": 13
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-072",
+    "position": 0
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-073",
+    "position": 1
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-074",
+    "position": 2
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-075",
+    "position": 3
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-076",
+    "position": 4
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-077",
+    "position": 5
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-078",
+    "position": 6
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-079",
+    "position": 7
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-129",
+    "position": 8
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-130",
+    "position": 9
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-131",
+    "position": 10
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-132",
+    "position": 11
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-133",
+    "position": 12
+  },
+  {
+    "albumId": "gen-album-22",
+    "photoId": "arch-134",
+    "position": 13
+  }
+]

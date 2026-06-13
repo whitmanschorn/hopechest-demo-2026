@@ -1,11 +1,64 @@
 import type { Metadata } from "next";
 
 import { AlbumCard } from "@/components/AlbumCard";
+import { AlbumCreators, type SmartFacet } from "@/components/AlbumCreators";
 import { SectionHeader, SubHeader } from "@/components/SectionHeader";
 import { SparkleIcon } from "@/components/icons";
-import { albums } from "@/data";
+import { albums, locationsWithCounts, people, photos, photosForPerson } from "@/data";
 
 export const metadata: Metadata = { title: "Albums" };
+
+/** Real facets the smart-album wizard can interpret a description into. */
+function buildFacets(): SmartFacet[] {
+  const facets: SmartFacet[] = [];
+
+  for (const person of people) {
+    const ps = photosForPerson(person.id);
+    if (ps.length < 2) continue;
+    facets.push({
+      id: `person-${person.id}`,
+      kind: "person",
+      rule: `Everyone tagged: ${person.name}`,
+      terms: [...person.name.toLowerCase().split(/\s+/), ...(person.nicknames ?? []).map((n) => n.toLowerCase())],
+      count: ps.length,
+      sampleSrcs: ps.slice(0, 4).map((p) => p.src),
+    });
+  }
+
+  for (const { location, count, coverPhotoId } of locationsWithCounts()) {
+    if (count < 2) continue;
+    void coverPhotoId;
+    const samples = photos.filter((p) => p.locationId === location.id).slice(0, 4).map((p) => p.src);
+    facets.push({
+      id: `loc-${location.id}`,
+      kind: "location",
+      rule: `Taken at ${location.label}`,
+      terms: [...location.label.toLowerCase().split(/\s+/), ...(location.city ? [location.city.toLowerCase()] : [])],
+      count,
+      sampleSrcs: samples,
+    });
+  }
+
+  const byDecade = new Map<number, typeof photos>();
+  for (const p of photos) {
+    if (!p.date.year) continue;
+    const decade = Math.floor(p.date.year / 10) * 10;
+    (byDecade.get(decade) ?? byDecade.set(decade, []).get(decade)!).push(p);
+  }
+  for (const [decade, ps] of [...byDecade].sort((a, b) => a[0] - b[0])) {
+    if (ps.length < 2) continue;
+    facets.push({
+      id: `decade-${decade}`,
+      kind: "decade",
+      rule: `Taken in the ${decade}s`,
+      terms: [`${decade}`, `${decade}s`],
+      count: ps.length,
+      sampleSrcs: ps.slice(0, 4).map((p) => p.src),
+    });
+  }
+
+  return facets;
+}
 
 export default function Albums() {
   const standard = albums.filter((a) => a.kind === "standard");
@@ -16,6 +69,7 @@ export default function Albums() {
         title="Albums"
         subtitle="Collections the family curates — and ones Hopechest builds on its own."
       />
+      <AlbumCreators facets={buildFacets()} />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {standard.map((album) => (
           <AlbumCard key={album.id} album={album} />

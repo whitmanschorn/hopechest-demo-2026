@@ -1,0 +1,22 @@
+[
+  {
+    "personId": "eleanor",
+    "role": "Admin",
+    "joined": "January 2026"
+  },
+  {
+    "personId": "susan",
+    "role": "Contributor",
+    "joined": "January 2026"
+  },
+  {
+    "personId": "margaret",
+    "role": "Contributor",
+    "joined": "February 2026"
+  },
+  {
+    "personId": "david",
+    "role": "Viewer",
+    "joined": "March 2026"
+  }
+]

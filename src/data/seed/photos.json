@@ -1,0 +1,577 @@
+[
+  {
+    "id": "klara-and-sarah-1933",
+    "title": "Klara holding Sarah",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-and-sarah-1933.jpg",
+    "width": 730,
+    "height": 934,
+    "locationId": "kowalski-farm",
+    "description": "The only known photograph of Klara Kowalski with Sarah as a toddler. The original print stayed in Sarah's baby book for ninety years; two family copies were captured before Eleanor scanned the original.",
+    "contributedById": "eleanor",
+    "contributedWhen": "April 2024",
+    "photographer": {
+      "value": "Mr. Andersen, a neighbor",
+      "clue": "Named in Sarah's baby book entry for July 14th"
+    },
+    "takenWhere": {
+      "value": "Kowalski farmhouse, Door County",
+      "deduced": true,
+      "clue": "Bedframe and wallpaper match two other prints from the farmhouse"
+    },
+    "date": {
+      "year": 1933,
+      "month": 7,
+      "day": 14,
+      "iso": "1933-07-14",
+      "precision": "day",
+      "display": "July 14, 1933",
+      "deduced": true,
+      "clue": "Sarah's age, and the baby-book entry dated July 14th"
+    },
+    "restoration": {
+      "restoredSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-and-sarah-1933-restored.jpg",
+      "summary": "Removed sepia fading, surface scratches, and edge vignetting. Recovered detail in both faces."
+    }
+  },
+  {
+    "id": "klara-portrait-1925",
+    "title": "Klara on the farmhouse porch",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-portrait-1925.jpg",
+    "width": 643,
+    "height": 958,
+    "locationId": "kowalski-farm",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Kowalski farmhouse porch",
+      "deduced": true,
+      "clue": "Clapboard siding matches the 1941 porch photo"
+    },
+    "date": {
+      "year": 1955,
+      "precision": "circa",
+      "display": "c. 1955",
+      "deduced": true,
+      "clue": "Klara's cardigan also appears in the 1964 Thanksgiving photo"
+    }
+  },
+  {
+    "id": "kowalski-farmhouse-1928",
+    "title": "The Kowalski farmhouse",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/kowalski-farmhouse-1928.jpg",
+    "width": 919,
+    "height": 686,
+    "locationId": "kowalski-farm",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely Klara",
+      "deduced": true,
+      "clue": "She owned the family's only camera until 1946"
+    },
+    "takenWhere": {
+      "value": "Kowalski farm, Door County"
+    },
+    "date": {
+      "year": 1928,
+      "precision": "year",
+      "display": "1928",
+      "deduced": true,
+      "clue": "The windmill was taken down in 1929 per Klara's letters"
+    }
+  },
+  {
+    "id": "farm-harvest-1935",
+    "title": "Harvest on the farm",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/farm-harvest-1935.jpg",
+    "width": 868,
+    "height": 650,
+    "locationId": "kowalski-farm",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "North field, Kowalski farm",
+      "deduced": true,
+      "clue": "Treeline matches the farmhouse photo horizon"
+    },
+    "date": {
+      "year": 1935,
+      "precision": "year",
+      "display": "Harvest 1935",
+      "deduced": true,
+      "clue": "The combine model and the truck's plates date the season"
+    }
+  },
+  {
+    "id": "klara-garden-1948",
+    "title": "Klara picking beans",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/klara-garden-1948.jpg",
+    "width": 856,
+    "height": 853,
+    "locationId": "kowalski-farm",
+    "contributedById": "susan",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Sarah wrote 'I took this of Mama in the beans' on a matching print"
+    },
+    "takenWhere": {
+      "value": "Kitchen garden, Kowalski farm"
+    },
+    "date": {
+      "year": 1948,
+      "precision": "year",
+      "display": "Summer 1948",
+      "deduced": true,
+      "clue": "Same season as the bean rows in Klara's July 1948 letter"
+    }
+  },
+  {
+    "id": "county-fair-1937",
+    "title": "The judges' stand, county fair",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/county-fair-1937.jpg",
+    "width": 955,
+    "height": 638,
+    "locationId": "door-county-fair",
+    "contributedById": "david",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Door County Fairgrounds"
+    },
+    "date": {
+      "year": 1937,
+      "month": 8,
+      "precision": "month",
+      "display": "August 1937",
+      "deduced": true,
+      "clue": "Fair-week bunting matches the 1937 county program"
+    }
+  },
+  {
+    "id": "sarah-school-portrait-1940",
+    "title": "Sarah at her desk, third grade",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sarah-school-portrait-1940.jpg",
+    "width": 753,
+    "height": 798,
+    "locationId": "sturgeon-bay-school",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Miss Holloway, her teacher",
+      "clue": "Stamped on the back of the print"
+    },
+    "takenWhere": {
+      "value": "Sturgeon Bay grade school"
+    },
+    "date": {
+      "year": 1940,
+      "month": 10,
+      "precision": "month",
+      "display": "October 1940",
+      "deduced": true,
+      "clue": "Same classroom and dress as the class photo dated October 1940"
+    }
+  },
+  {
+    "id": "front-porch-1941",
+    "title": "Front porch, summer evening",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/front-porch-1941.jpg",
+    "width": 677,
+    "height": 817,
+    "locationId": "kowalski-farm",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Front porch, Kowalski farmhouse",
+      "deduced": true,
+      "clue": "Porch spindles match the 1928 farmhouse photo"
+    },
+    "date": {
+      "year": 1941,
+      "precision": "year",
+      "display": "Summer 1941",
+      "deduced": true,
+      "clue": "Sarah's height between the 1940 and 1944 photos"
+    }
+  },
+  {
+    "id": "sarah-and-friends-1944",
+    "title": "Sarah and the Pierson girls",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sarah-and-friends-1944.jpg",
+    "width": 915,
+    "height": 680,
+    "locationId": "sturgeon-bay-store",
+    "contributedById": "margaret",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Outside the general store, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Step and pump-post match a dated postcard of the store"
+    },
+    "date": {
+      "year": 1944,
+      "precision": "year",
+      "display": "Summer 1944",
+      "deduced": true,
+      "clue": "The Pierson girls moved away in spring 1945"
+    }
+  },
+  {
+    "id": "tom-army-portrait-1946",
+    "title": "Tom in uniform",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/tom-army-portrait-1946.jpg",
+    "width": 686,
+    "height": 932,
+    "locationId": "fort-belvoir",
+    "contributedById": "david",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Army photographer, Fort Belvoir",
+      "clue": "Unit stamp on the reverse"
+    },
+    "takenWhere": {
+      "value": "Fort Belvoir, Virginia"
+    },
+    "date": {
+      "year": 1946,
+      "month": 1,
+      "precision": "month",
+      "display": "January 1946"
+    }
+  },
+  {
+    "id": "sunday-best-1947",
+    "title": "Out on the town",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/sunday-best-1947.jpg",
+    "width": 872,
+    "height": 691,
+    "locationId": "eddies-tavern",
+    "contributedById": "susan",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Eddie's tavern, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Booth and wall calendar match another print from Eddie's"
+    },
+    "date": {
+      "year": 1947,
+      "precision": "year",
+      "display": "1947",
+      "deduced": true,
+      "clue": "Sarah wears the same coat in a print dated Christmas 1947"
+    }
+  },
+  {
+    "id": "first-car-1949",
+    "title": "Tom and the old Ford",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/first-car-1949.jpg",
+    "width": 636,
+    "height": 955,
+    "locationId": "whitfield-place",
+    "contributedById": "david",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Tom and Sarah were inseparable that summer; her shadow is in the frame"
+    },
+    "takenWhere": {
+      "value": "Whitfield place, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1949,
+      "month": 6,
+      "day": 12,
+      "iso": "1949-06-12",
+      "precision": "day",
+      "display": "June 12, 1949",
+      "deduced": true,
+      "clue": "Stamped on the print border by the drugstore that developed the roll"
+    }
+  },
+  {
+    "id": "wedding-day-1950",
+    "title": "Rice on the church steps",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/wedding-day-1950.jpg",
+    "width": 831,
+    "height": 711,
+    "locationId": "st-marys",
+    "contributedById": "eleanor",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Vandersteen Studio, Green Bay",
+      "clue": "Embossed studio mark on the print"
+    },
+    "takenWhere": {
+      "value": "St. Mary's, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1950,
+      "month": 6,
+      "day": 10,
+      "iso": "1950-06-10",
+      "precision": "day",
+      "display": "June 10, 1950",
+      "clue": "Date on the marriage record"
+    }
+  },
+  {
+    "id": "eleanor-baby-1953",
+    "title": "Feeding baby Eleanor",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/eleanor-baby-1953.jpg",
+    "width": 636,
+    "height": 944,
+    "locationId": "town-park",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "He's missing from every photo of this picnic — someone held the camera"
+    },
+    "takenWhere": {
+      "value": "Town park, Sturgeon Bay",
+      "deduced": true,
+      "clue": "Hammock and oaks match two other prints from the same outing"
+    },
+    "date": {
+      "year": 1953,
+      "precision": "year",
+      "display": "Summer 1953",
+      "deduced": true,
+      "clue": "Eleanor's age — she was born in March 1953"
+    }
+  },
+  {
+    "id": "christmas-morning-1955",
+    "title": "Picking out the tree",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/christmas-morning-1955.jpg",
+    "width": 907,
+    "height": 672,
+    "locationId": "main-street-sturgeon-bay",
+    "contributedById": "susan",
+    "contributedWhen": "April 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Main Street, Sturgeon Bay"
+    },
+    "date": {
+      "year": 1955,
+      "month": 12,
+      "precision": "month",
+      "display": "December 1955",
+      "deduced": true,
+      "clue": "The food store's tree lot — signage matches a print dated that month"
+    }
+  },
+  {
+    "id": "susan-baby-1956",
+    "title": "Susan, two days old",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/susan-baby-1956.jpg",
+    "width": 864,
+    "height": 858,
+    "locationId": "st-vincents-green-bay",
+    "description": "The nursery at St. Vincent's, Green Bay.",
+    "contributedById": "susan",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "St. Vincent's nursery staff"
+    },
+    "takenWhere": {
+      "value": "St. Vincent's hospital, Green Bay"
+    },
+    "date": {
+      "year": 1956,
+      "month": 4,
+      "precision": "month",
+      "display": "April 1956",
+      "clue": "Susan's birth week, per her baby bracelet in the bassinet tag"
+    }
+  },
+  {
+    "id": "lake-house-summer-1958",
+    "title": "The cottages at Kangaroo Lake",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/lake-house-summer-1958.jpg",
+    "width": 930,
+    "height": 697,
+    "locationId": "kangaroo-lake",
+    "contributedById": "margaret",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "Taken on the family's Brownie — same lens flaw as his fishing prints"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake, Door County"
+    },
+    "date": {
+      "year": 1958,
+      "precision": "year",
+      "display": "Summer 1958",
+      "deduced": true,
+      "clue": "The third cottage was built in spring 1958"
+    }
+  },
+  {
+    "id": "lake-swimmers-1960",
+    "title": "The pier and bathing beach",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/lake-swimmers-1960.jpg",
+    "width": 943,
+    "height": 630,
+    "locationId": "kangaroo-lake",
+    "contributedById": "margaret",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake bathing beach"
+    },
+    "date": {
+      "year": 1960,
+      "month": 6,
+      "day": 12,
+      "iso": "1960-06-12",
+      "precision": "day",
+      "display": "June 12, 1960",
+      "deduced": true,
+      "clue": "Pier flags and lifeguard chair match the dated 1960 town beach program"
+    }
+  },
+  {
+    "id": "family-picnic-1962",
+    "title": "Fourth of July picnic",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/family-picnic-1962.jpg",
+    "width": 943,
+    "height": 670,
+    "locationId": "kangaroo-lake",
+    "contributedById": "eleanor",
+    "contributedWhen": "March 2026",
+    "photographer": {
+      "value": "Likely Tom",
+      "deduced": true,
+      "clue": "Absent from the frame; his Buick is parked at the left edge"
+    },
+    "takenWhere": {
+      "value": "Picnic grove, Kangaroo Lake",
+      "deduced": true,
+      "clue": "Same tables as the 1968 reunion photos"
+    },
+    "date": {
+      "year": 1962,
+      "month": 7,
+      "day": 4,
+      "iso": "1962-07-04",
+      "precision": "day",
+      "display": "July 4, 1962",
+      "deduced": true,
+      "clue": "Eleanor's and Susan's ages, and the holiday tablecloth"
+    }
+  },
+  {
+    "id": "thanksgiving-1964",
+    "title": "Thanksgiving at the farm",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/thanksgiving-1964.jpg",
+    "width": 549,
+    "height": 928,
+    "locationId": "kowalski-farm",
+    "contributedById": "eleanor",
+    "contributedWhen": "February 2026",
+    "photographer": {
+      "value": "Likely Eleanor, age 11",
+      "deduced": true,
+      "clue": "Taken low, from the doorway — the kids' table"
+    },
+    "takenWhere": {
+      "value": "Dining room, Kowalski farmhouse",
+      "deduced": true,
+      "clue": "Wallpaper matches the 1933 print of Klara and Sarah"
+    },
+    "date": {
+      "year": 1964,
+      "month": 11,
+      "day": 26,
+      "iso": "1964-11-26",
+      "precision": "day",
+      "display": "November 26, 1964",
+      "clue": "The wall calendar in the frame is open to Thanksgiving Day, November 1964"
+    }
+  },
+  {
+    "id": "family-reunion-1968",
+    "title": "The big reunion",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/family-reunion-1968.jpg",
+    "width": 738,
+    "height": 743,
+    "locationId": "kowalski-farm",
+    "contributedById": "susan",
+    "contributedWhen": "May 2026",
+    "photographer": {
+      "value": "Unknown"
+    },
+    "takenWhere": {
+      "value": "Front lawn, Kowalski farm",
+      "deduced": true,
+      "clue": "Farmhouse gable matches the 1928 photo"
+    },
+    "date": {
+      "year": 1968,
+      "precision": "year",
+      "display": "Summer 1968",
+      "deduced": true,
+      "clue": "The elm by the porch — lost in 1969 — is still standing"
+    }
+  },
+  {
+    "id": "tom-fishing-1972",
+    "title": "Loading the fishing poles",
+    "src": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/tom-fishing-1972.jpg",
+    "width": 814,
+    "height": 827,
+    "locationId": "kangaroo-lake",
+    "contributedById": "david",
+    "contributedWhen": "June 2026",
+    "photographer": {
+      "value": "Likely Sarah",
+      "deduced": true,
+      "clue": "Her handwriting dates the print: 'the boys, off again'"
+    },
+    "takenWhere": {
+      "value": "Kangaroo Lake landing",
+      "deduced": true,
+      "clue": "Same shoreline as the 1960 bathing-beach photo"
+    },
+    "date": {
+      "year": 1972,
+      "month": 6,
+      "day": 12,
+      "iso": "1972-06-12",
+      "precision": "day",
+      "display": "June 12, 1972",
+      "deduced": true,
+      "clue": "The wagon's plates and David's height in a print from the same roll"
+    }
+  }
+]

@@ -1,0 +1,321 @@
+[
+  {
+    "id": "summers-at-the-lake",
+    "title": "Summers at the Lake",
+    "kind": "standard",
+    "subtitle": "Kangaroo Lake, 1958–1974",
+    "coverPhotoId": "lake-house-summer-1958",
+    "createdAt": "2026-02-03",
+    "updatedAt": "2026-05-28"
+  },
+  {
+    "id": "wedding-1950",
+    "title": "Sarah & Tom's Wedding",
+    "kind": "standard",
+    "subtitle": "St. Mary's, June 1950",
+    "coverPhotoId": "wedding-day-1950",
+    "createdAt": "2026-02-10",
+    "updatedAt": "2026-05-12"
+  },
+  {
+    "id": "holiday-gatherings",
+    "title": "Holiday Gatherings",
+    "kind": "standard",
+    "subtitle": "Christmases and Thanksgivings",
+    "coverPhotoId": "christmas-morning-1955",
+    "createdAt": "2026-02-18",
+    "updatedAt": "2026-04-22"
+  },
+  {
+    "id": "family-reunions",
+    "title": "Family Reunions",
+    "kind": "standard",
+    "subtitle": "Everyone, every few years",
+    "coverPhotoId": "family-reunion-1968",
+    "createdAt": "2026-03-01",
+    "updatedAt": "2026-06-02"
+  },
+  {
+    "id": "smart-sarah",
+    "title": "Sarah Through the Years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Sarah Whitfield — sorted oldest first",
+    "smartQuery": {
+      "taggedPersonId": "sarah",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-01-20",
+    "updatedAt": "2026-06-08"
+  },
+  {
+    "id": "smart-kowalski-farm",
+    "title": "The Kowalski Farm",
+    "kind": "smart",
+    "rule": "Location: Kowalski farm, Door County",
+    "smartQuery": {
+      "locationId": "kowalski-farm"
+    },
+    "coverPhotoId": "kowalski-farmhouse-1928",
+    "createdAt": "2026-01-20",
+    "updatedAt": "2026-06-01"
+  },
+  {
+    "id": "gen-album-1",
+    "title": "Sarah through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Sarah Whitfield",
+    "smartQuery": {
+      "taggedPersonId": "sarah",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-10-02",
+    "updatedAt": "2026-06-18"
+  },
+  {
+    "id": "gen-album-2",
+    "title": "Tom through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Tom Whitfield",
+    "smartQuery": {
+      "taggedPersonId": "tom",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "tom-army-portrait-1946",
+    "createdAt": "2026-07-10",
+    "updatedAt": "2026-07-10"
+  },
+  {
+    "id": "gen-album-3",
+    "title": "Józef through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Józef Kowalski",
+    "smartQuery": {
+      "taggedPersonId": "jozef",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "arch-012",
+    "createdAt": "2026-06-24",
+    "updatedAt": "2026-07-22"
+  },
+  {
+    "id": "gen-album-4",
+    "title": "Klara through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Klara Kowalski",
+    "smartQuery": {
+      "taggedPersonId": "klara",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-10-03",
+    "updatedAt": "2026-05-07"
+  },
+  {
+    "id": "gen-album-5",
+    "title": "Mark through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Mark Hayes",
+    "smartQuery": {
+      "taggedPersonId": "mark-hayes",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "arch-006",
+    "createdAt": "2026-05-16",
+    "updatedAt": "2026-05-12"
+  },
+  {
+    "id": "gen-album-6",
+    "title": "Eleanor through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Eleanor Whitfield-Hayes",
+    "smartQuery": {
+      "taggedPersonId": "eleanor",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "eleanor-baby-1953",
+    "createdAt": "2026-06-24",
+    "updatedAt": "2026-07-14"
+  },
+  {
+    "id": "gen-album-7",
+    "title": "Susan through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Susan Whitfield",
+    "smartQuery": {
+      "taggedPersonId": "susan",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "susan-baby-1956",
+    "createdAt": "2026-01-28",
+    "updatedAt": "2026-05-17"
+  },
+  {
+    "id": "gen-album-8",
+    "title": "Nancy through the years",
+    "kind": "smart",
+    "rule": "Everyone tagged: Nancy Hansen",
+    "smartQuery": {
+      "taggedPersonId": "kin-14",
+      "sort": "oldest"
+    },
+    "coverPhotoId": "arch-011",
+    "createdAt": "2026-03-19",
+    "updatedAt": "2026-01-07"
+  },
+  {
+    "id": "gen-album-9",
+    "title": "Kowalski farm",
+    "kind": "smart",
+    "rule": "Taken at Kowalski farm",
+    "smartQuery": {
+      "locationId": "kowalski-farm"
+    },
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-08-28",
+    "updatedAt": "2026-11-20"
+  },
+  {
+    "id": "gen-album-10",
+    "title": "Kangaroo Lake cottages",
+    "kind": "smart",
+    "rule": "Taken at Kangaroo Lake cottages",
+    "smartQuery": {
+      "locationId": "kangaroo-lake"
+    },
+    "coverPhotoId": "lake-house-summer-1958",
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-03"
+  },
+  {
+    "id": "gen-album-11",
+    "title": "Minneapolis lake landing",
+    "kind": "smart",
+    "rule": "Taken at Minneapolis lake landing",
+    "smartQuery": {
+      "locationId": "gen-loc-8"
+    },
+    "coverPhotoId": "arch-044",
+    "createdAt": "2026-09-10",
+    "updatedAt": "2026-05-22"
+  },
+  {
+    "id": "gen-album-12",
+    "title": "St. Vincent's Hospital",
+    "kind": "smart",
+    "rule": "Taken at St. Vincent's Hospital",
+    "smartQuery": {
+      "locationId": "st-vincents-green-bay"
+    },
+    "coverPhotoId": "susan-baby-1956",
+    "createdAt": "2026-05-09",
+    "updatedAt": "2026-12-21"
+  },
+  {
+    "id": "gen-album-13",
+    "title": "Green Bay homestead",
+    "kind": "smart",
+    "rule": "Taken at Green Bay homestead",
+    "smartQuery": {
+      "locationId": "gen-loc-6"
+    },
+    "coverPhotoId": "arch-009",
+    "createdAt": "2026-05-16",
+    "updatedAt": "2026-09-17"
+  },
+  {
+    "id": "gen-album-14",
+    "title": "St. Mary's Catholic Church",
+    "kind": "smart",
+    "rule": "Taken at St. Mary's Catholic Church",
+    "smartQuery": {
+      "locationId": "st-marys"
+    },
+    "coverPhotoId": "wedding-day-1950",
+    "createdAt": "2026-07-20",
+    "updatedAt": "2026-10-10"
+  },
+  {
+    "id": "gen-album-15",
+    "title": "The 1930s",
+    "kind": "smart",
+    "subtitle": "Everything from the 1930s",
+    "rule": "Taken in the 1930s",
+    "smartQuery": {},
+    "coverPhotoId": "klara-and-sarah-1933",
+    "createdAt": "2026-10-26",
+    "updatedAt": "2026-12-03"
+  },
+  {
+    "id": "gen-album-16",
+    "title": "The 1940s",
+    "kind": "smart",
+    "subtitle": "Everything from the 1940s",
+    "rule": "Taken in the 1940s",
+    "smartQuery": {},
+    "coverPhotoId": "klara-garden-1948",
+    "createdAt": "2026-05-06",
+    "updatedAt": "2026-04-15"
+  },
+  {
+    "id": "gen-album-17",
+    "title": "The 1950s",
+    "kind": "smart",
+    "subtitle": "Everything from the 1950s",
+    "rule": "Taken in the 1950s",
+    "smartQuery": {},
+    "coverPhotoId": "klara-portrait-1925",
+    "createdAt": "2026-04-20",
+    "updatedAt": "2026-08-08"
+  },
+  {
+    "id": "gen-album-18",
+    "title": "The 1960s",
+    "kind": "smart",
+    "subtitle": "Everything from the 1960s",
+    "rule": "Taken in the 1960s",
+    "smartQuery": {},
+    "coverPhotoId": "lake-swimmers-1960",
+    "createdAt": "2026-11-08",
+    "updatedAt": "2026-08-19"
+  },
+  {
+    "id": "gen-album-19",
+    "title": "The 1970s",
+    "kind": "smart",
+    "subtitle": "Everything from the 1970s",
+    "rule": "Taken in the 1970s",
+    "smartQuery": {},
+    "coverPhotoId": "tom-fishing-1972",
+    "createdAt": "2026-08-18",
+    "updatedAt": "2026-01-07"
+  },
+  {
+    "id": "gen-album-20",
+    "title": "The little ones",
+    "kind": "standard",
+    "subtitle": "Babies, school days, and play",
+    "coverPhotoId": "arch-001",
+    "createdAt": "2026-02-27",
+    "updatedAt": "2026-09-13"
+  },
+  {
+    "id": "gen-album-21",
+    "title": "Life on the land",
+    "kind": "standard",
+    "subtitle": "Farms, harvests, and chores",
+    "coverPhotoId": "arch-017",
+    "createdAt": "2026-01-13",
+    "updatedAt": "2026-07-03"
+  },
+  {
+    "id": "gen-album-22",
+    "title": "Town & travel",
+    "kind": "standard",
+    "subtitle": "Main streets, depots, and stores",
+    "coverPhotoId": "arch-072",
+    "createdAt": "2026-09-10",
+    "updatedAt": "2026-01-06"
+  }
+]

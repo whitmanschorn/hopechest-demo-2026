@@ -1,0 +1,16 @@
+[
+  { "id": "kowalski-farm", "label": "Kowalski farm", "street": "County Rd E", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.9281, "lng": -87.2734 },
+  { "id": "kangaroo-lake", "label": "Kangaroo Lake cottages", "city": "Baileys Harbor", "state": "WI", "country": "USA", "lat": 45.0747, "lng": -87.1656 },
+  { "id": "st-marys", "label": "St. Mary's Catholic Church", "street": "Michigan St", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8341, "lng": -87.3773 },
+  { "id": "door-county-fair", "label": "Door County Fairgrounds", "street": "S 14th Ave", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8259, "lng": -87.3681 },
+  { "id": "sturgeon-bay-school", "label": "Sturgeon Bay grade school", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8347, "lng": -87.3712 },
+  { "id": "sturgeon-bay-store", "label": "The general store, Sturgeon Bay", "street": "N 3rd Ave", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8352, "lng": -87.3769 },
+  { "id": "eddies-tavern", "label": "Eddie's tavern", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8338, "lng": -87.3745 },
+  { "id": "whitfield-place", "label": "The Whitfield place", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8401, "lng": -87.3829 },
+  { "id": "town-park", "label": "Sunset Park", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8369, "lng": -87.3881 },
+  { "id": "main-street-sturgeon-bay", "label": "Main Street", "city": "Sturgeon Bay", "state": "WI", "country": "USA", "lat": 44.8344, "lng": -87.3771 },
+  { "id": "st-vincents-green-bay", "label": "St. Vincent's Hospital", "city": "Green Bay", "state": "WI", "country": "USA", "lat": 44.5126, "lng": -88.0125 },
+  { "id": "green-bay", "label": "Green Bay", "city": "Green Bay", "state": "WI", "country": "USA", "lat": 44.5133, "lng": -88.0158 },
+  { "id": "fort-belvoir", "label": "Fort Belvoir", "city": "Fort Belvoir", "state": "VA", "country": "USA", "lat": 38.7123, "lng": -77.1461 },
+  { "id": "port-of-baltimore", "label": "Port of Baltimore", "city": "Baltimore", "state": "MD", "country": "USA", "lat": 39.2667, "lng": -76.58 }
+]

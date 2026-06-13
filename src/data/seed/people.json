@@ -1,0 +1,171 @@
+[
+  {
+    "id": "klara",
+    "name": "Klara Kowalski",
+    "shortName": "Klara",
+    "fullName": "Klara Maria Kowalski",
+    "maidenName": "Wiśniewska",
+    "nicknames": [
+      "Babcia"
+    ],
+    "alternateNames": [
+      "Klara Kowalska",
+      "Klara Wisniewska"
+    ],
+    "relation": "Great-grandmother",
+    "gender": "f",
+    "lifespan": "1898–1972",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-klara.jpg",
+    "photoCount": 6,
+    "suggestedMatchPhotoId": "county-fair-1937"
+  },
+  {
+    "id": "sarah",
+    "name": "Sarah Whitfield",
+    "shortName": "Sarah",
+    "fullName": "Sarah Anne Whitfield",
+    "maidenName": "Kowalski",
+    "nicknames": [
+      "Sally"
+    ],
+    "alternateNames": [
+      "Sarah Kowalski"
+    ],
+    "relation": "Grandmother",
+    "gender": "f",
+    "lifespan": "b. 1931",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-sarah.jpg",
+    "photoCount": 14
+  },
+  {
+    "id": "ruth",
+    "name": "Ruth Okafor",
+    "shortName": "Ruth",
+    "fullName": "Ruth Adaeze Okafor",
+    "maidenName": "Eze",
+    "nicknames": [
+      "Mama Ruth"
+    ],
+    "alternateNames": [
+      "Ruth Eze"
+    ],
+    "relation": "Grandmother",
+    "gender": "f",
+    "lifespan": "b. 1934",
+    "photoCount": 0
+  },
+  {
+    "id": "tom",
+    "name": "Tom Whitfield",
+    "shortName": "Tom",
+    "fullName": "Thomas James Whitfield",
+    "nicknames": [
+      "Tommy"
+    ],
+    "alternateNames": [
+      "Thomas Whitfield"
+    ],
+    "relation": "Grandfather",
+    "gender": "m",
+    "lifespan": "1928–2009",
+    "avatarSrc": "https://qf5yi4hzhll8f8yn.public.blob.vercel-storage.com/photos/avatar-tom.jpg",
+    "photoCount": 8
+  },
+  {
+    "id": "eleanor",
+    "name": "Eleanor Whitfield-Hayes",
+    "shortName": "Eleanor",
+    "fullName": "Eleanor Grace Whitfield-Hayes",
+    "maidenName": "Whitfield",
+    "nicknames": [
+      "Ellie"
+    ],
+    "alternateNames": [
+      "Eleanor Whitfield",
+      "Eleanor Hayes"
+    ],
+    "relation": "Aunt · Archive admin",
+    "gender": "f",
+    "photoCount": 9
+  },
+  {
+    "id": "mark-hayes",
+    "name": "Mark Hayes",
+    "shortName": "Mark",
+    "fullName": "Mark Allen Hayes",
+    "nicknames": [],
+    "alternateNames": [],
+    "relation": "Uncle",
+    "gender": "m",
+    "lifespan": "b. 1950",
+    "photoCount": 0
+  },
+  {
+    "id": "susan",
+    "name": "Susan Whitfield",
+    "shortName": "Susan",
+    "fullName": "Susan Claire Whitfield",
+    "nicknames": [
+      "Susie"
+    ],
+    "alternateNames": [],
+    "relation": "Mother",
+    "gender": "f",
+    "photoCount": 11
+  },
+  {
+    "id": "daniel",
+    "name": "Daniel Okafor",
+    "shortName": "Daniel",
+    "fullName": "Daniel Chinedu Okafor",
+    "nicknames": [
+      "Dan"
+    ],
+    "alternateNames": [],
+    "relation": "Father",
+    "gender": "m",
+    "photoCount": 0
+  },
+  {
+    "id": "margaret",
+    "name": "Margaret Whitfield",
+    "shortName": "Margaret",
+    "fullName": "Margaret Rose Whitfield",
+    "nicknames": [
+      "Maggie"
+    ],
+    "alternateNames": [
+      "Margaret Okafor"
+    ],
+    "relation": "You",
+    "gender": "f",
+    "photoCount": 4
+  },
+  {
+    "id": "james",
+    "name": "James Okafor",
+    "shortName": "James",
+    "fullName": "James Daniel Okafor",
+    "nicknames": [
+      "Jamie"
+    ],
+    "alternateNames": [],
+    "relation": "Brother",
+    "gender": "m",
+    "lifespan": "b. 1994",
+    "photoCount": 0
+  },
+  {
+    "id": "david",
+    "name": "David Hayes",
+    "shortName": "David",
+    "fullName": "David Thomas Hayes",
+    "nicknames": [
+      "Davy"
+    ],
+    "alternateNames": [],
+    "relation": "Cousin",
+    "gender": "m",
+    "photoCount": 3
+  }
+]

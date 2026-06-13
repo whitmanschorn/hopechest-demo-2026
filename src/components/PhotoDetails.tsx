@@ -30,11 +30,9 @@ function FactRow({ label, fact }: { label: string; fact: PhotoFact }) {
 
 export function PhotoDetails({ photo }: { photo: Photo }) {
   const contributor = getPerson(photo.contributedById);
-  const hasDeduced = [
-    photo.photographer,
-    photo.takenWhen,
-    photo.takenWhere,
-  ].some((f) => f?.deduced);
+  const hasDeduced =
+    photo.date.deduced ||
+    [photo.photographer, photo.takenWhere].some((f) => f?.deduced);
   return (
     <section className="overflow-hidden rounded-xl bg-cream ring-1 ring-hairline">
       <h2 className="flex items-center gap-2 px-4 pt-4 font-display text-lg font-semibold tracking-tight text-walnut">
@@ -64,9 +62,10 @@ export function PhotoDetails({ photo }: { photo: Photo }) {
         {photo.photographer ? (
           <FactRow label="Taken by" fact={photo.photographer} />
         ) : null}
-        {photo.takenWhen ? (
-          <FactRow label="When" fact={photo.takenWhen} />
-        ) : null}
+        <FactRow
+          label="When"
+          fact={{ value: photo.date.display, deduced: photo.date.deduced, clue: photo.date.clue }}
+        />
         {photo.takenWhere ? (
           <FactRow label="Where" fact={photo.takenWhere} />
         ) : null}
