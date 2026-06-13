@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c-hero-1",
+    "photoId": "klara-and-sarah-1933",
+    "parentId": null,
+    "authorId": "susan",
+    "body": "I had no idea this print still existed. Mama would have cried to see it this clear.",
+    "when": "3 days ago"
+  },
+  {
+    "id": "c-hero-2",
+    "photoId": "klara-and-sarah-1933",
+    "parentId": null,
+    "authorId": "eleanor",
+    "body": "Scanned it the night I found it in the baby book. Look at the way Klara is holding her.",
+    "when": "2 days ago"
+  },
+  {
+    "id": "c-hero-2a",
+    "photoId": "klara-and-sarah-1933",
+    "parentId": "c-hero-2",
+    "authorId": "margaret",
+    "body": "Grandma Sarah looks exactly like Mom did at that age. Uncanny.",
+    "when": "2 days ago"
+  },
+  {
+    "id": "c-hero-2b",
+    "photoId": "klara-and-sarah-1933",
+    "parentId": "c-hero-2",
+    "authorId": "david",
+    "body": "Wait — this is the only photo of the two of them together? That gave me chills.",
+    "when": "yesterday"
+  },
+  {
+    "id": "c-hero-3",
+    "photoId": "klara-and-sarah-1933",
+    "parentId": null,
+    "authorId": "ruth",
+    "body": "What a treasure to keep for the grandchildren. Thank you for sharing it.",
+    "when": "yesterday"
+  }
+]

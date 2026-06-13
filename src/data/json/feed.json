@@ -1,5 +1,52 @@
 [
   {
+    "kind": "comment-added",
+    "id": "feed-cmt-0",
+    "photoId": "klara-portrait-1925",
+    "byId": "kin-19",
+    "commentId": "cmt-1",
+    "excerpt": "Klara hasn't changed a bit.",
+    "when": "Just now"
+  },
+  {
+    "kind": "comment-added",
+    "id": "feed-cmt-1",
+    "photoId": "klara-portrait-1925",
+    "byId": "kin-26",
+    "commentId": "cmt-4",
+    "excerpt": "Where did you find this one?? Incredible.",
+    "when": "2 hours ago"
+  },
+  {
+    "kind": "comment-added",
+    "id": "feed-cmt-2",
+    "photoId": "kowalski-farmhouse-1928",
+    "byId": "kin-23",
+    "commentId": "cmt-7",
+    "excerpt": "Where did you find this one?? Incredible.",
+    "when": "This morning"
+  },
+  {
+    "kind": "comment-reply",
+    "id": "feed-rep-0",
+    "photoId": "klara-portrait-1925",
+    "byId": "kin-1",
+    "parentAuthorId": "kin-19",
+    "commentId": "cmt-2",
+    "excerpt": "Right? Helen thought so too.",
+    "when": "2 hours ago"
+  },
+  {
+    "kind": "comment-reply",
+    "id": "feed-rep-1",
+    "photoId": "klara-portrait-1925",
+    "byId": "kin-17",
+    "parentAuthorId": "kin-19",
+    "commentId": "cmt-3",
+    "excerpt": "Agreed — one of my favorites now.",
+    "when": "This morning"
+  },
+  {
     "kind": "ask-highlight",
     "id": "feed-ask-klara",
     "question": "Is there a photo of Great Grandmother K. with Grandma S. as a toddler?",

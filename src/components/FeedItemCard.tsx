@@ -5,8 +5,10 @@ import { InitialsAvatar } from "./InitialsAvatar";
 import {
   AskIcon,
   CameraIcon,
+  CommentIcon,
   CopiesIcon,
   PeopleIcon,
+  ReplyIcon,
   RestoreIcon,
 } from "./icons";
 import { getPerson, getPhoto, type FeedItem } from "@/data";
@@ -159,5 +161,43 @@ export function FeedItemCard({ item }: { item: FeedItem }) {
           <PhotoStrip photoId={item.photoId} label="The answer, found in 2 seconds" />
         </Frame>
       );
+    case "comment-added": {
+      const by = getPerson(item.byId);
+      return (
+        <Frame
+          icon={<CommentIcon className="size-4.5" />}
+          when={item.when}
+          headline={
+            <>
+              <strong className="font-medium">{by.shortName}</strong> commented on a
+              photo.
+              <em className="block text-ink-soft">&ldquo;{item.excerpt}&rdquo;</em>
+            </>
+          }
+        >
+          <PhotoStrip photoId={item.photoId} label="Join the conversation" />
+        </Frame>
+      );
+    }
+    case "comment-reply": {
+      const by = getPerson(item.byId);
+      const parent = getPerson(item.parentAuthorId);
+      return (
+        <Frame
+          icon={<ReplyIcon className="size-4.5" />}
+          when={item.when}
+          headline={
+            <>
+              <strong className="font-medium">{by.shortName}</strong> replied to{" "}
+              <strong className="font-medium">{parent.shortName}</strong>&rsquo;s
+              comment.
+              <em className="block text-ink-soft">&ldquo;{item.excerpt}&rdquo;</em>
+            </>
+          }
+        >
+          <PhotoStrip photoId={item.photoId} label="See the thread" />
+        </Frame>
+      );
+    }
   }
 }

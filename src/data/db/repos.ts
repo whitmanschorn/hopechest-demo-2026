@@ -7,6 +7,8 @@
 import {
   albumPhotoRows,
   albumRows,
+  commentRows,
+  config,
   documentRows,
   locationById,
   locationRows,
@@ -15,15 +17,18 @@ import {
   photoCaptureRows,
   photoPersonRows,
   photoRows,
+  reactionRows,
 } from "./load";
 import type {
   Album,
+  Comment,
   FaceTag,
   FamilyDocument,
   Location,
   Person,
   Photo,
   PhotoCapture,
+  ReactionSummary,
 } from "./schema";
 
 // --- join indexes -----------------------------------------------------------
@@ -132,4 +137,57 @@ export function onThisDay(month: number, day: number): Photo[] {
   return photos
     .filter((p) => p.date.precision === "day" && p.date.month === month && p.date.day === day)
     .sort((a, b) => (b.date.year ?? 0) - (a.date.year ?? 0));
+}
+
+// --- comments & reactions ---------------------------------------------------
+const reactionsByTarget = new Map<string, ReactionSummary[]>();
+{
+  // group raw reactions by target id, then by emoji
+  const byTarget = new Map<string, Map<string, string[]>>();
+  for (const r of reactionRows) {
+    const emojis = byTarget.get(r.targetId) ?? byTarget.set(r.targetId, new Map()).get(r.targetId)!;
+    (emojis.get(r.emoji) ?? emojis.set(r.emoji, []).get(r.emoji)!).push(r.byId);
+  }
+  for (const [targetId, emojis] of byTarget) {
+    reactionsByTarget.set(
+      targetId,
+      [...emojis.entries()]
+        .map(([emoji, byIds]) => ({ emoji, count: byIds.length, byIds, mine: byIds.includes(config.currentMemberId) }))
+        .sort((a, b) => b.count - a.count),
+    );
+  }
+}
+
+const reactionsFor = (targetId: string): ReactionSummary[] => reactionsByTarget.get(targetId) ?? [];
+
+/** Grouped emoji reactions on a photo. */
+export function reactionsForPhoto(photoId: string): ReactionSummary[] {
+  return reactionsFor(photoId);
+}
+
+/** Threaded comments for a photo: top-level oldest-first, each with nested replies. */
+export function commentsForPhoto(photoId: string): Comment[] {
+  const rows = commentRows.filter((c) => c.photoId === photoId);
+  const repliesByParent = new Map<string, Comment[]>();
+  const hydrate = (id: string, photo: string, parentId: string | null, authorId: string, body: string, when: string): Comment => ({
+    id, photoId: photo, parentId, author: getPerson(authorId), body, when,
+    reactions: reactionsFor(id), replies: [],
+  });
+  const all = rows.map((c) => hydrate(c.id, c.photoId, c.parentId, c.authorId, c.body, c.when));
+  const byId = new Map(all.map((c) => [c.id, c]));
+  const roots: Comment[] = [];
+  for (const c of all) {
+    if (c.parentId && byId.has(c.parentId)) {
+      (repliesByParent.get(c.parentId) ?? repliesByParent.set(c.parentId, []).get(c.parentId)!).push(c);
+    } else {
+      roots.push(c);
+    }
+  }
+  for (const c of all) c.replies = repliesByParent.get(c.id) ?? [];
+  return roots;
+}
+
+/** Total comments (including replies) on a photo. */
+export function commentCount(photoId: string): number {
+  return commentRows.filter((c) => c.photoId === photoId).length;
 }

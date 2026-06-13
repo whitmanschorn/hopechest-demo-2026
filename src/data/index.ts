@@ -9,6 +9,7 @@
 export type {
   Album,
   AnswerBlock,
+  Comment,
   FamilyDocument,
   FaceTag,
   FeedItem,
@@ -23,15 +24,19 @@ export type {
   Photo,
   PhotoCapture,
   PhotoFact,
+  ReactionSummary,
   Role,
   ScriptedExchange,
   SmartQuery,
 } from "./db/schema";
+export { REACTION_EMOJI } from "./db/schema";
 
 // repositories: collections, getters, and queries
 export {
   albums,
   albumsForPhoto,
+  commentCount,
+  commentsForPhoto,
   documents,
   getAlbum,
   getDocument,
@@ -46,6 +51,7 @@ export {
   photosForAlbum,
   photosForLocation,
   photosForPerson,
+  reactionsForPhoto,
 } from "./db/repos";
 
 // kinship: resolver-backed relationships and @mention suggestions
