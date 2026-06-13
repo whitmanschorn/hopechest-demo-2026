@@ -1,0 +1,52 @@
+[
+  {
+    "id": "le_klara_birth",
+    "personId": "klara",
+    "kind": "birth",
+    "title": "Born in Kraków, Poland",
+    "date": { "year": 1898, "precision": "year", "display": "1898" },
+    "description": "Klara was born the eldest of four sisters.",
+    "createdById": "eleanor",
+    "createdAt": "2026-01-15T12:00:00.000Z"
+  },
+  {
+    "id": "le_klara_marriage",
+    "personId": "klara",
+    "kind": "marriage",
+    "title": "Married Józef Kowalski",
+    "date": { "year": 1919, "precision": "year", "display": "1919" },
+    "locationId": "st-marys",
+    "description": "The two were wed at St. Mary's, a year before sailing for America.",
+    "createdById": "eleanor",
+    "createdAt": "2026-01-15T12:05:00.000Z"
+  },
+  {
+    "id": "le_klara_immigration",
+    "personId": "klara",
+    "kind": "immigration",
+    "title": "Emigrated to the United States",
+    "date": { "year": 1920, "month": 4, "precision": "month", "display": "April 1920" },
+    "description": "Arrived at Ellis Island and made her way to Door County, Wisconsin.",
+    "createdById": "susan",
+    "createdAt": "2026-02-02T09:30:00.000Z"
+  },
+  {
+    "id": "le_klara_farm",
+    "personId": "klara",
+    "kind": "residence",
+    "title": "Settled at the Kowalski farm",
+    "date": { "year": 1921, "precision": "circa", "display": "circa 1921" },
+    "locationId": "kowalski-farm",
+    "createdById": "susan",
+    "createdAt": "2026-02-02T09:32:00.000Z"
+  },
+  {
+    "id": "le_klara_death",
+    "personId": "klara",
+    "kind": "death",
+    "title": "Passed away in Sturgeon Bay",
+    "date": { "year": 1972, "precision": "year", "display": "1972" },
+    "createdById": "eleanor",
+    "createdAt": "2026-01-15T12:10:00.000Z"
+  }
+]

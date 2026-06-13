@@ -7,11 +7,13 @@
 import albumPhotosJson from "../json/album_photos.json";
 import albumsJson from "../json/albums.json";
 import askScriptJson from "../json/ask_script.json";
+import changelogJson from "../json/changelog.json";
 import commentsJson from "../json/comments.json";
 import configJson from "../json/config.json";
 import documentsJson from "../json/documents.json";
 import feedJson from "../json/feed.json";
 import invitesJson from "../json/invites.json";
+import lifeEventsJson from "../json/life_events.json";
 import reactionsJson from "../json/reactions.json";
 import locationsJson from "../json/locations.json";
 import membersJson from "../json/members.json";
@@ -25,10 +27,12 @@ import {
   REACTION_EMOJI,
   type AlbumPhotoRow,
   type AlbumRow,
+  type ChangelogRow,
   type CommentRow,
   type DocumentRow,
   type FeedItem,
   type InviteRow,
+  type LifeEventRow,
   type LocationRow,
   type MemberRow,
   type NewsletterIssue,
@@ -60,6 +64,19 @@ export const memberRows = as<MemberRow[]>(membersJson);
 export const inviteRows = as<InviteRow[]>(invitesJson);
 export const commentRows = as<CommentRow[]>(commentsJson);
 export const reactionRows = as<ReactionRow[]>(reactionsJson);
+
+// Writable tables: the mutation layer pushes/splices into these *same array
+// instances* (never reassigns), so every reader sees edits within the process.
+// Reads go through the getters below so a future reload could swap the backing
+// store without touching callers.
+export const lifeEventRows = as<LifeEventRow[]>(lifeEventsJson);
+export const changelogRows = as<ChangelogRow[]>(changelogJson);
+export function getLifeEventRows(): LifeEventRow[] {
+  return lifeEventRows;
+}
+export function getChangelogRows(): ChangelogRow[] {
+  return changelogRows;
+}
 
 export const config = as<{ currentMemberId: string; chestName: string; demoToday: string }>(configJson);
 export const newsletter = as<{ currentIssue: NewsletterIssue; pastIssues: PastIssue[] }>(newsletterJson);
@@ -132,6 +149,21 @@ export function checkIntegrity(): string[] {
     has(emojiSet.has(r.emoji), `reaction ${r.id} emoji not in palette: ${r.emoji}`);
     const exists = r.targetType === "photo" ? photoExists(r.targetId) : commentById.has(r.targetId);
     has(exists, `reaction ${r.id} ${r.targetType} target missing: ${r.targetId}`);
+  }
+
+  for (const e of lifeEventRows) {
+    has(personExists(e.personId), `life_event ${e.id} personId missing: ${e.personId}`);
+    has(personExists(e.createdById), `life_event ${e.id} createdById missing: ${e.createdById}`);
+    if (e.locationId) has(locationById.has(e.locationId), `life_event ${e.id} locationId missing: ${e.locationId}`);
+  }
+  for (const c of changelogRows) {
+    has(personExists(c.personId), `changelog ${c.id} personId missing: ${c.personId}`);
+    has(personExists(c.editedById), `changelog ${c.id} editedById missing: ${c.editedById}`);
+    // entityId for life_event entries is intentionally not checked — history
+    // outlives the event it describes (a "(deleted)" entry points at a gone row).
+    if (c.entityType === "person") {
+      has(personExists(c.entityId), `changelog ${c.id} entityId(person) missing: ${c.entityId}`);
+    }
   }
 
   return errors;

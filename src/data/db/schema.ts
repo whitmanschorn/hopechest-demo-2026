@@ -317,3 +317,67 @@ export interface Comment {
   reactions: ReactionSummary[];
   replies: Comment[];
 }
+
+// --- Life events ------------------------------------------------------------
+
+/** The kind of milestone, used for the timeline badge and icon. */
+export type LifeEventKind =
+  | "birth"
+  | "death"
+  | "marriage"
+  | "immigration"
+  | "residence"
+  | "military"
+  | "education"
+  | "work"
+  | "other";
+
+/** A manually-entered milestone in a person's life. */
+export interface LifeEventRow {
+  id: string;
+  personId: string;
+  kind: LifeEventKind;
+  title: string;
+  /** Reuses the fuzzy-date contract, so `formatDate` works unchanged. */
+  date: FuzzyDate;
+  locationId?: string | null;
+  description?: string;
+  /** FK -> person: the member who added the event. */
+  createdById: string;
+  /** ISO timestamp. */
+  createdAt: string;
+}
+
+/** A life event with its `locationId` resolved — what the timeline consumes. */
+export interface LifeEvent extends LifeEventRow {
+  location?: Location;
+}
+
+// --- Change history (Wikipedia-style revisions) -----------------------------
+
+export type ChangelogEntityType = "person" | "life_event";
+
+/**
+ * One logged edit. `before`/`after` are stringified (arrays joined with ", ")
+ * so the log stays schema-agnostic and renders as a simple diff.
+ */
+export interface ChangelogRow {
+  id: string;
+  entityType: ChangelogEntityType;
+  /** personId or lifeEventId. */
+  entityId: string;
+  /** Denormalized: the person whose history page this entry belongs to. */
+  personId: string;
+  /** e.g. "maidenName", "nicknames", "(created)", "(deleted)". */
+  field: string;
+  before: string | null;
+  after: string | null;
+  /** FK -> person: the member who made the edit. */
+  editedById: string;
+  /** ISO timestamp. */
+  editedAt: string;
+  summary?: string;
+}
+
+/** Changelog needs no hydration; the row is the domain object. */
+export type Changelog = ChangelogRow;
