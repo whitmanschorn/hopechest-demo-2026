@@ -195,3 +195,50 @@ export function SmileIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function PencilIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 20h4l10-10a2 2 0 0 0-4-4L4 16v4Z" />
+      <path d="m13.5 6.5 4 4" />
+    </svg>
+  );
+}
+
+export function TrashIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M5 7h14" />
+      <path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7" />
+      <path d="M6.5 7 7.3 19a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4L17.5 7" />
+      <path d="M10 11v5.5M14 11v5.5" />
+    </svg>
+  );
+}
+
+export function PlusIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
+export function HistoryIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M4 12a8 8 0 1 1 2.3 5.7" />
+      <path d="M4 12.5V17h4.5" />
+      <path d="M12 8v4.5l3 1.8" />
+    </svg>
+  );
+}
+
+export function CalendarIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <rect x="4" y="5.5" width="16" height="14" rx="1.5" />
+      <path d="M4 9.5h16M8 4v3M16 4v3" />
+    </svg>
+  );
+}

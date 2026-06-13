@@ -10,6 +10,8 @@ import {
   commentRows,
   config,
   documentRows,
+  getChangelogRows,
+  getLifeEventRows,
   locationById,
   locationRows,
   personById,
@@ -21,9 +23,12 @@ import {
 } from "./load";
 import type {
   Album,
+  Changelog,
   Comment,
   FaceTag,
   FamilyDocument,
+  LifeEvent,
+  LifeEventRow,
   Location,
   Person,
   Photo,
@@ -190,4 +195,35 @@ export function commentsForPhoto(photoId: string): Comment[] {
 /** Total comments (including replies) on a photo. */
 export function commentCount(photoId: string): number {
   return commentRows.filter((c) => c.photoId === photoId).length;
+}
+
+// --- life events & change history -------------------------------------------
+// These read the live mutable stores (getLifeEventRows/getChangelogRows) on
+// every call so edits made through src/data/db/mutations.ts are visible at once.
+
+function hydrateLifeEvent(e: LifeEventRow): LifeEvent {
+  return { ...e, location: e.locationId ? locationById.get(e.locationId) : undefined };
+}
+
+/** A person's life events, oldest-first by best-known year. */
+export function lifeEventsForPerson(personId: string): LifeEvent[] {
+  return getLifeEventRows()
+    .filter((e) => e.personId === personId)
+    .map(hydrateLifeEvent)
+    .sort((a, b) => (a.date.year ?? 0) - (b.date.year ?? 0));
+}
+
+/** A single life event, hydrated. Throws if unknown. */
+export function getLifeEvent(id: string): LifeEvent {
+  const e = getLifeEventRows().find((x) => x.id === id);
+  if (!e) throw new Error(`Unknown life event: ${id}`);
+  return hydrateLifeEvent(e);
+}
+
+/** Revision history for a person (their fields + their life events), newest-first. */
+export function changelogForPerson(personId: string): Changelog[] {
+  return getChangelogRows()
+    .filter((c) => c.personId === personId)
+    .slice()
+    .sort((a, b) => b.editedAt.localeCompare(a.editedAt));
 }

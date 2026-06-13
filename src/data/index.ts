@@ -9,6 +9,8 @@
 export type {
   Album,
   AnswerBlock,
+  Changelog,
+  ChangelogEntityType,
   Comment,
   FamilyDocument,
   FaceTag,
@@ -16,6 +18,9 @@ export type {
   FuzzyDate,
   Gender,
   Invite,
+  LifeEvent,
+  LifeEventKind,
+  LifeEventRow,
   Location,
   Member,
   NewsletterIssue,
@@ -35,14 +40,17 @@ export { REACTION_EMOJI } from "./db/schema";
 export {
   albums,
   albumsForPhoto,
+  changelogForPerson,
   commentCount,
   commentsForPhoto,
   documents,
   getAlbum,
   getDocument,
+  getLifeEvent,
   getLocation,
   getPerson,
   getPhoto,
+  lifeEventsForPerson,
   locations,
   locationsWithCounts,
   onThisDay,
@@ -66,6 +74,9 @@ export type { Relation, RelationKind } from "./kinship";
 
 // integrity check (used by tests; could gate a future Postgres import)
 export { checkIntegrity } from "./db/load";
+
+// fuzzy-date parsing (shared by the add-event form preview and server actions)
+export { parseFuzzyDate } from "./db/fuzzyDate";
 
 // loose singletons / lists
 import { askScript, config, feedRows, inviteRows, memberRows, newsletter } from "./db/load";
