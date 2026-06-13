@@ -6,9 +6,18 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { FaceTagOverlay } from "@/components/FaceTagOverlay";
 import { PersonChip } from "@/components/PersonChip";
 import { PhotoDetails } from "@/components/PhotoDetails";
+import { PhotoComments } from "@/components/PhotoComments";
 import { ProvenanceCard } from "@/components/ProvenanceCard";
 import { ChevronLeftIcon, RestoreIcon } from "@/components/icons";
-import { albumsForPhoto, getPerson, getPhoto, photos } from "@/data";
+import {
+  albumsForPhoto,
+  commentsForPhoto,
+  currentMemberId,
+  getPerson,
+  getPhoto,
+  photos,
+  reactionsForPhoto,
+} from "@/data";
 
 export const dynamicParams = false;
 
@@ -134,6 +143,15 @@ export default async function PhotoView({
           <ProvenanceCard photo={photo} />
         </div>
       ) : null}
+
+      <div className="mt-8 mx-auto max-w-3xl">
+        <PhotoComments
+          photoId={photo.id}
+          me={getPerson(currentMemberId)}
+          initialReactions={reactionsForPhoto(photo.id)}
+          initialComments={commentsForPhoto(photo.id)}
+        />
+      </div>
     </>
   );
 }

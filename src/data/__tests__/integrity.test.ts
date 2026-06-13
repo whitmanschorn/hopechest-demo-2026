@@ -1,10 +1,14 @@
 import {
   albums,
   checkIntegrity,
+  commentsForPhoto,
   describeRelationshipTo,
+  feed,
   onThisDay,
   people,
   photos,
+  reactionsForPhoto,
+  REACTION_EMOJI,
   suggestMentions,
 } from "@/data";
 
@@ -66,4 +70,40 @@ describe("on this day", () => {
 
 test("everyone is in the people table", () => {
   expect(people.length).toBeGreaterThanOrEqual(10);
+});
+
+describe("comments & reactions", () => {
+  const HERO = "klara-and-sarah-1933";
+
+  test("the hero photo has a thread with a nested reply", () => {
+    const thread = commentsForPhoto(HERO);
+    expect(thread.length).toBeGreaterThan(0);
+    const withReplies = thread.find((c) => c.replies.length > 0);
+    expect(withReplies).toBeDefined();
+    // replies point back at their parent
+    expect(withReplies!.replies.every((r) => r.parentId === withReplies!.id)).toBe(true);
+  });
+
+  test("reactions are grouped with counts and use only the palette", () => {
+    const summaries = [
+      ...reactionsForPhoto(HERO),
+      ...commentsForPhoto(HERO).flatMap((c) => c.reactions),
+    ];
+    expect(summaries.length).toBeGreaterThan(0);
+    for (const s of summaries) {
+      expect(REACTION_EMOJI).toContain(s.emoji);
+      expect(s.count).toBe(s.byIds.length);
+    }
+  });
+
+  test("comments are seeded broadly across photos", () => {
+    const withComments = photos.filter((p) => commentsForPhoto(p.id).length > 0);
+    expect(withComments.length).toBeGreaterThan(20);
+  });
+
+  test("the feed includes comment and reply events", () => {
+    const kinds = new Set(feed.map((f) => f.kind));
+    expect(kinds.has("comment-added")).toBe(true);
+    expect(kinds.has("comment-reply")).toBe(true);
+  });
 });

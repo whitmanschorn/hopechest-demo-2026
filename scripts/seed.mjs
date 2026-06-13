@@ -384,13 +384,101 @@ for (const t of photoPeople) counts.set(t.personId, (counts.get(t.personId) ?? 0
 for (const p of people) p.photoCount = counts.get(p.id) ?? 0;
 
 // ===========================================================================
+//  Comments, reactions, and comment feed events
+// ===========================================================================
+const comments = anchor("comments"); // curated hero thread
+const reactions = anchor("reactions"); // curated hero reactions
+let commentN = 0;
+let reactionN = 0;
+const REACTION_EMOJI = ["❤️", "😂", "😮", "🥲", "👍", "🙏", "😢", "🎉"];
+const WHENS = ["2 hours ago", "Yesterday", "2 days ago", "Last week", "2 weeks ago", "Last month"];
+
+const COMMENT_TEMPLATES = [
+  (p) => `Is that ${p.shortName}? I never knew this one existed.`,
+  (p, loc) => (loc ? `Look at the light at ${loc.label} — what a moment.` : `Look at those faces — what a moment.`),
+  (p) => `${p.shortName} hasn't changed a bit.`,
+  (p, loc) => (loc ? `Grandma used to tell stories about ${loc.label}.` : `Grandma used to tell stories about this exact day.`),
+  () => `Where did you find this one?? Incredible.`,
+  (p) => `This belongs on the wall. ${p.shortName} would have loved it.`,
+  () => `I can almost hear them laughing.`,
+  () => `Adding this to the family album for sure.`,
+];
+const REPLY_TEMPLATES = [
+  (a) => `Right? ${a.shortName} thought so too.`,
+  () => `Agreed — one of my favorites now.`,
+  (a) => `${a.shortName}, you should see the one from the same day.`,
+  () => `Same, it gave me chills.`,
+  () => `Thank you for keeping these safe.`,
+];
+
+const personOf = (id) => people.find((p) => p.id === id);
+const commenters = people.filter((p) => MEMBERS.includes(p.id) || meta.get(p.id).deathYear == null).map((p) => p.id);
+const pickCommenter = () => pick(commenters);
+
+function addReactions(targetType, targetId, max) {
+  const n = int(0, max);
+  const used = new Set();
+  for (let i = 0; i < n; i++) {
+    const byId = pickCommenter();
+    if (used.has(byId)) continue; // one reaction per person per target
+    used.add(byId);
+    reactions.push({ id: `rx-${++reactionN}`, targetType, targetId, emoji: pick(REACTION_EMOJI), byId });
+  }
+}
+
+const recentComments = [];
+const recentReplies = [];
+
+for (const ph of photos) {
+  if (ph.id === "klara-and-sarah-1933") continue; // hero photo is curated
+  addReactions("photo", ph.id, 6);
+  if (!chance(0.65)) continue;
+  const loc = locations.find((l) => l.id === ph.locationId);
+  const tag = photoPeople.find((t) => t.photoId === ph.id);
+  const subject = (tag && personOf(tag.personId)) || pick(people);
+  const nTop = int(1, 4);
+  for (let i = 0; i < nTop; i++) {
+    const authorId = pickCommenter();
+    const id = `cmt-${++commentN}`;
+    const body = pick(COMMENT_TEMPLATES)(subject, loc);
+    comments.push({ id, photoId: ph.id, parentId: null, authorId, body, when: pick(WHENS) });
+    addReactions("comment", id, 3);
+    recentComments.push({ id, photoId: ph.id, authorId, body });
+    if (chance(0.4)) {
+      const nRep = int(1, 2);
+      for (let r = 0; r < nRep; r++) {
+        const replierId = pickCommenter();
+        const rid = `cmt-${++commentN}`;
+        const body2 = pick(REPLY_TEMPLATES)(personOf(authorId));
+        comments.push({ id: rid, photoId: ph.id, parentId: id, authorId: replierId, body: body2, when: pick(WHENS) });
+        addReactions("comment", rid, 3);
+        recentReplies.push({ id: rid, photoId: ph.id, authorId: replierId, parentAuthorId: authorId, body: body2 });
+      }
+    }
+  }
+}
+
+// Surface a few of the freshest comments/replies on the Home feed.
+const feed = anchor("feed");
+const FRESH_WHENS = ["Just now", "2 hours ago", "This morning", "Yesterday"];
+const commentFeed = [];
+recentComments.slice(0, 3).forEach((c, i) => {
+  commentFeed.push({ kind: "comment-added", id: `feed-cmt-${i}`, photoId: c.photoId, byId: c.authorId, commentId: c.id, excerpt: c.body, when: FRESH_WHENS[i % FRESH_WHENS.length] });
+});
+recentReplies.slice(0, 2).forEach((c, i) => {
+  commentFeed.push({ kind: "comment-reply", id: `feed-rep-${i}`, photoId: c.photoId, byId: c.authorId, parentAuthorId: c.parentAuthorId, commentId: c.id, excerpt: c.body, when: FRESH_WHENS[(i + 1) % FRESH_WHENS.length] });
+});
+feed.unshift(...commentFeed);
+
+// ===========================================================================
 //  Write tables (narrative/config tables pass through unchanged)
 // ===========================================================================
 const tables = {
   people, relationships, locations,
   photos, photo_people: photoPeople, photo_captures: photoCaptures,
   albums, album_photos: albumPhotos, documents,
-  feed: anchor("feed"), newsletter: anchor("newsletter"), ask_script: anchor("ask_script"),
+  comments, reactions,
+  feed, newsletter: anchor("newsletter"), ask_script: anchor("ask_script"),
   members: anchor("members"), invites: anchor("invites"), config: anchor("config"),
 };
 for (const [name, value] of Object.entries(tables)) {
@@ -406,3 +494,5 @@ console.log(`  photo_people  ${photoPeople.length}`);
 console.log(`  albums        ${albums.length}`);
 console.log(`  album_photos  ${albumPhotos.length}`);
 console.log(`  documents     ${documents.length}`);
+console.log(`  comments      ${comments.length}`);
+console.log(`  reactions     ${reactions.length}`);

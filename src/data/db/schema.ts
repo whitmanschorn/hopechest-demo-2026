@@ -171,12 +171,38 @@ export interface InviteRow {
   sent: string;
 }
 
+/** The fixed reaction palette offered on photos and comments. */
+export const REACTION_EMOJI = ["❤️", "😂", "😮", "🥲", "👍", "🙏", "😢", "🎉"] as const;
+export type ReactionEmoji = (typeof REACTION_EMOJI)[number];
+
+export interface CommentRow {
+  id: string;
+  photoId: string;
+  /** null = top-level comment; otherwise the id of the comment being replied to. */
+  parentId: string | null;
+  authorId: string;
+  body: string;
+  /** Relative timestamp for the demo, e.g. "2 days ago". */
+  when: string;
+}
+
+export interface ReactionRow {
+  id: string;
+  targetType: "photo" | "comment";
+  /** photoId when targetType="photo", commentId when "comment". */
+  targetId: string;
+  emoji: string;
+  byId: string;
+}
+
 export type FeedItem =
   | { kind: "photo-added"; id: string; photoId: string; byId: string; when: string; blurb?: string }
   | { kind: "restoration"; id: string; photoId: string; when: string }
   | { kind: "new-copy-linked"; id: string; photoId: string; byId: string; when: string }
   | { kind: "person-milestone"; id: string; personId: string; when: string; blurb: string }
-  | { kind: "ask-highlight"; id: string; question: string; photoId: string; when: string };
+  | { kind: "ask-highlight"; id: string; question: string; photoId: string; when: string }
+  | { kind: "comment-added"; id: string; photoId: string; byId: string; commentId: string; excerpt: string; when: string }
+  | { kind: "comment-reply"; id: string; photoId: string; byId: string; parentAuthorId: string; commentId: string; excerpt: string; when: string };
 
 export interface NewsletterIssue {
   id: string;
@@ -270,3 +296,24 @@ export interface Album {
 }
 
 export type FamilyDocument = DocumentRow;
+
+/** Reactions of one emoji on a target, grouped for display. */
+export interface ReactionSummary {
+  emoji: string;
+  count: number;
+  byIds: string[];
+  /** True when the signed-in member is among `byIds`. */
+  mine: boolean;
+}
+
+/** A hydrated comment with its author, grouped reactions, and nested replies. */
+export interface Comment {
+  id: string;
+  photoId: string;
+  parentId: string | null;
+  author: Person;
+  body: string;
+  when: string;
+  reactions: ReactionSummary[];
+  replies: Comment[];
+}

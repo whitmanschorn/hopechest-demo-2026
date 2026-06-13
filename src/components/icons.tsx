@@ -167,3 +167,31 @@ export function MapPinIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function CommentIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M5 5.5h14A1.5 1.5 0 0 1 20.5 7v8A1.5 1.5 0 0 1 19 16.5H9l-4 3.5V7A1.5 1.5 0 0 1 6.5 5.5Z" />
+      <path d="M8.5 10h7M8.5 13h4" />
+    </svg>
+  );
+}
+
+export function ReplyIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M9 8 5 12l4 4" />
+      <path d="M5 12h8.5a5.5 5.5 0 0 1 5.5 5.5V18" />
+    </svg>
+  );
+}
+
+export function SmileIcon(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M9 13.5a3.5 3.5 0 0 0 6 0" />
+      <path d="M9 9.5h.01M15 9.5h.01" />
+    </svg>
+  );
+}

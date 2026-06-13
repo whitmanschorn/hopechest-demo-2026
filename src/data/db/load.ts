@@ -7,10 +7,12 @@
 import albumPhotosJson from "../json/album_photos.json";
 import albumsJson from "../json/albums.json";
 import askScriptJson from "../json/ask_script.json";
+import commentsJson from "../json/comments.json";
 import configJson from "../json/config.json";
 import documentsJson from "../json/documents.json";
 import feedJson from "../json/feed.json";
 import invitesJson from "../json/invites.json";
+import reactionsJson from "../json/reactions.json";
 import locationsJson from "../json/locations.json";
 import membersJson from "../json/members.json";
 import newsletterJson from "../json/newsletter.json";
@@ -19,22 +21,25 @@ import photoCapturesJson from "../json/photo_captures.json";
 import photoPeopleJson from "../json/photo_people.json";
 import photosJson from "../json/photos.json";
 import relationshipsJson from "../json/relationships.json";
-import type {
-  AlbumPhotoRow,
-  AlbumRow,
-  DocumentRow,
-  FeedItem,
-  InviteRow,
-  LocationRow,
-  MemberRow,
-  NewsletterIssue,
-  PastIssue,
-  PersonRow,
-  PhotoCaptureRow,
-  PhotoPersonRow,
-  PhotoRow,
-  RelationshipRow,
-  ScriptedExchange,
+import {
+  REACTION_EMOJI,
+  type AlbumPhotoRow,
+  type AlbumRow,
+  type CommentRow,
+  type DocumentRow,
+  type FeedItem,
+  type InviteRow,
+  type LocationRow,
+  type MemberRow,
+  type NewsletterIssue,
+  type PastIssue,
+  type PersonRow,
+  type PhotoCaptureRow,
+  type PhotoPersonRow,
+  type PhotoRow,
+  type ReactionRow,
+  type RelationshipRow,
+  type ScriptedExchange,
 } from "./schema";
 
 // JSON imports infer wide types (e.g. string for our string unions), so cast
@@ -53,6 +58,8 @@ export const documentRows = as<DocumentRow[]>(documentsJson);
 export const feedRows = as<FeedItem[]>(feedJson);
 export const memberRows = as<MemberRow[]>(membersJson);
 export const inviteRows = as<InviteRow[]>(invitesJson);
+export const commentRows = as<CommentRow[]>(commentsJson);
+export const reactionRows = as<ReactionRow[]>(reactionsJson);
 
 export const config = as<{ currentMemberId: string; chestName: string; demoToday: string }>(configJson);
 export const newsletter = as<{ currentIssue: NewsletterIssue; pastIssues: PastIssue[] }>(newsletterJson);
@@ -64,6 +71,7 @@ export const locationById = new Map(locationRows.map((l) => [l.id, l]));
 export const photoById = new Map(photoRows.map((p) => [p.id, p]));
 export const albumById = new Map(albumRows.map((a) => [a.id, a]));
 export const documentById = new Map(documentRows.map((d) => [d.id, d]));
+export const commentById = new Map(commentRows.map((c) => [c.id, c]));
 
 /**
  * Validate every foreign key in the dataset. Cheap and pure — run from a Jest
@@ -108,6 +116,23 @@ export function checkIntegrity(): string[] {
   }
   for (const m of memberRows) has(personExists(m.personId), `member personId missing: ${m.personId}`);
   has(personExists(config.currentMemberId), `config.currentMemberId missing: ${config.currentMemberId}`);
+
+  for (const c of commentRows) {
+    has(photoExists(c.photoId), `comment ${c.id} photoId missing: ${c.photoId}`);
+    has(personExists(c.authorId), `comment ${c.id} authorId missing: ${c.authorId}`);
+    if (c.parentId) {
+      const parent = commentById.get(c.parentId);
+      has(Boolean(parent), `comment ${c.id} parentId missing: ${c.parentId}`);
+      if (parent) has(parent.photoId === c.photoId, `comment ${c.id} replies across photos`);
+    }
+  }
+  const emojiSet = new Set<string>(REACTION_EMOJI);
+  for (const r of reactionRows) {
+    has(personExists(r.byId), `reaction ${r.id} byId missing: ${r.byId}`);
+    has(emojiSet.has(r.emoji), `reaction ${r.id} emoji not in palette: ${r.emoji}`);
+    const exists = r.targetType === "photo" ? photoExists(r.targetId) : commentById.has(r.targetId);
+    has(exists, `reaction ${r.id} ${r.targetType} target missing: ${r.targetId}`);
+  }
 
   return errors;
 }

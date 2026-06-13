@@ -1,0 +1,10 @@
+[
+  { "id": "rx-hero-1", "targetType": "photo", "targetId": "klara-and-sarah-1933", "emoji": "❤️", "byId": "susan" },
+  { "id": "rx-hero-2", "targetType": "photo", "targetId": "klara-and-sarah-1933", "emoji": "❤️", "byId": "margaret" },
+  { "id": "rx-hero-3", "targetType": "photo", "targetId": "klara-and-sarah-1933", "emoji": "🥲", "byId": "eleanor" },
+  { "id": "rx-hero-4", "targetType": "photo", "targetId": "klara-and-sarah-1933", "emoji": "😮", "byId": "david" },
+  { "id": "rx-hero-5", "targetType": "photo", "targetId": "klara-and-sarah-1933", "emoji": "🙏", "byId": "ruth" },
+  { "id": "rx-hero-6", "targetType": "comment", "targetId": "c-hero-2", "emoji": "❤️", "byId": "margaret" },
+  { "id": "rx-hero-7", "targetType": "comment", "targetId": "c-hero-2", "emoji": "🥲", "byId": "susan" },
+  { "id": "rx-hero-8", "targetType": "comment", "targetId": "c-hero-2a", "emoji": "❤️", "byId": "eleanor" }
+]
