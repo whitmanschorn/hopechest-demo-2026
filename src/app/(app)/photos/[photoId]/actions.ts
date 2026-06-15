@@ -2,10 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 
-import { commentRowById, getPhoto } from "@/data";
-import { insertComment, insertFeedItem, toggleReaction } from "@/data/db/mutations";
+import { commentRowById, getPerson, getPhoto } from "@/data";
+import { deletePhotoPersonTag, insertComment, insertFeedItem, insertPhotoPersonTag, toggleReaction } from "@/data/db/mutations";
+import { isValidBox } from "@/data/db/faceTag";
 import { isReactionEmoji } from "@/data/db/reactions";
-import type { CommentRow, FeedItem } from "@/data/db/schema";
+import type { CommentRow, FaceBox, FeedItem } from "@/data/db/schema";
 import { requireCurrentPerson } from "@/lib/auth/session";
 
 export interface ActionResult {
@@ -79,4 +80,34 @@ export async function toggleCommentReaction(commentId: string, emoji: string): P
   const comment = await commentRowById(commentId);
   if (!comment) return { ok: false, errors: ["That comment is gone."] };
   return react({ commentId }, emoji, comment.photoId);
+}
+
+/** Manually tag a person in a photo at the given box (percent coords). */
+export async function tagPerson(photoId: string, personId: string, box: FaceBox): Promise<ActionResult> {
+  let photo;
+  try {
+    photo = await getPhoto(photoId);
+  } catch {
+    return { ok: false, errors: ["That photo no longer exists."] };
+  }
+  try {
+    await getPerson(personId);
+  } catch {
+    return { ok: false, errors: ["That person isn't in the chest."] };
+  }
+  if (!isValidBox(box)) return { ok: false, errors: ["That tag falls outside the photo."] };
+  if (photo.faceTags.some((t) => t.personId === personId)) return { ok: true }; // already tagged
+
+  await requireCurrentPerson();
+  await insertPhotoPersonTag({ photoId, personId, box, confidence: null });
+  revalidatePath(`/photos/${photoId}`);
+  return { ok: true };
+}
+
+/** Remove a person's tag from a photo. */
+export async function untagPerson(photoId: string, personId: string): Promise<ActionResult> {
+  await requireCurrentPerson();
+  await deletePhotoPersonTag(photoId, personId);
+  revalidatePath(`/photos/${photoId}`);
+  return { ok: true };
 }
