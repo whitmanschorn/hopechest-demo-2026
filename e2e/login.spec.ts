@@ -35,6 +35,24 @@ test("the session persists across a reload (cookie was set)", async ({ page }) =
   await expect(page).toHaveURL(/\/home$/);
 });
 
+test("manual path: reading the surfaced OTP and typing it in signs in", async ({ page }) => {
+  await page.goto("/");
+
+  await page.getByTestId("login-phone").fill("+15550000003"); // → Luz
+  // Skip the one-click auto-verify and land on the code step instead.
+  await page.getByTestId("login-manual").click();
+
+  // Read the digits the dev provider surfaced, then type them like a real user.
+  const code = (await page.getByTestId("login-demo-code-value").textContent())?.trim() ?? "";
+  expect(code).toMatch(/^\d{6}$/);
+  await page.getByTestId("login-code").fill(code);
+  await page.getByTestId("login-verify").click();
+
+  await page.waitForURL("**/home");
+  await expect(page).toHaveURL(/\/home$/);
+  await expect(page.getByRole("heading", { name: /welcome back/i })).toBeVisible();
+});
+
 test("an unauthenticated protected page redirects to the login screen", async ({ page }) => {
   await page.goto("/home");
 

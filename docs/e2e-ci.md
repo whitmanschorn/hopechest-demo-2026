@@ -11,6 +11,9 @@ a seeded database — nothing is stubbed:
 
 - one click on a seeded demo number lands on `/home` (the `LoginForm` chains the
   real `requestCode` → `verifyCode`, using the dev provider's surfaced OTP);
+- the **manual** path: "Enter the code manually" → read the surfaced digits from the
+  page → type them into the code field → verify → `/home` (preserves the traditional
+  OTP-entry flow);
 - the session cookie survives a reload;
 - an unauthenticated protected page redirects back to the login screen.
 
