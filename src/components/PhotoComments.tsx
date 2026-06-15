@@ -1,14 +1,16 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useOptimistic, useRef, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 
 import { InitialsAvatar } from "./InitialsAvatar";
 import { CommentIcon, ReplyIcon, SmileIcon } from "./icons";
+import { postComment, toggleCommentReaction, togglePhotoReaction } from "@/app/(app)/photos/[photoId]/actions";
 // Import from the prisma-free schema module so this client component doesn't
 // pull the server data layer (Prisma/pg) into the browser bundle.
 import { REACTION_EMOJI, type Comment, type Person, type ReactionSummary } from "@/data/db/schema";
 
-// --- pure helpers (optimistic, client-only — nothing persists) --------------
+// --- pure helpers: optimistic local state, reconciled with the server below --
 function applyReaction(summaries: ReactionSummary[], emoji: string, meId: string): ReactionSummary[] {
   const next = summaries.map((s) => ({ ...s, byIds: [...s.byIds] }));
   const removeMe = (s: ReactionSummary) => {
@@ -225,6 +227,10 @@ function CommentNode({
 }
 
 // --- the whole social block -------------------------------------------------
+type CommentAction =
+  | { kind: "insert"; node: Comment }
+  | { kind: "react"; commentId: string; emoji: string };
+
 export function PhotoComments({
   photoId,
   me,
@@ -236,9 +242,23 @@ export function PhotoComments({
   initialReactions: ReactionSummary[];
   initialComments: Comment[];
 }) {
-  const [photoReactions, setPhotoReactions] = useState(initialReactions);
-  const [comments, setComments] = useState(initialComments);
+  const router = useRouter();
+  const [, startTransition] = useTransition();
   const nextId = useRef(1);
+
+  // Optimistic state layered over the server props: the local update shows
+  // instantly while the action runs, then router.refresh() re-renders this
+  // component with the persisted rows and useOptimistic falls back to them.
+  const [photoReactions, applyPhotoReaction] = useOptimistic(initialReactions, (state: ReactionSummary[], emoji: string) =>
+    applyReaction(state, emoji, me.id),
+  );
+  const [comments, applyComment] = useOptimistic(initialComments, (state: Comment[], action: CommentAction) =>
+    action.kind === "react"
+      ? mapTree(state, action.commentId, (c) => ({ ...c, reactions: applyReaction(c.reactions, action.emoji, me.id) }))
+      : action.node.parentId
+        ? addReply(state, action.node.parentId, action.node)
+        : [...state, action.node],
+  );
 
   const newComment = (body: string, parentId: string | null): Comment => ({
     id: `local-${nextId.current++}`,
@@ -251,8 +271,26 @@ export function PhotoComments({
     replies: [],
   });
 
+  const reactToPhoto = (emoji: string) =>
+    startTransition(async () => {
+      applyPhotoReaction(emoji);
+      await togglePhotoReaction(photoId, emoji);
+      router.refresh();
+    });
+
   const reactToComment = (commentId: string, emoji: string) =>
-    setComments((cs) => mapTree(cs, commentId, (c) => ({ ...c, reactions: applyReaction(c.reactions, emoji, me.id) })));
+    startTransition(async () => {
+      applyComment({ kind: "react", commentId, emoji });
+      await toggleCommentReaction(commentId, emoji);
+      router.refresh();
+    });
+
+  const submitComment = (body: string, parentId: string | null) =>
+    startTransition(async () => {
+      applyComment({ kind: "insert", node: newComment(body, parentId) });
+      await postComment(photoId, parentId, body);
+      router.refresh();
+    });
 
   return (
     <section className="rounded-xl bg-cream p-5 ring-1 ring-hairline">
@@ -265,15 +303,12 @@ export function PhotoComments({
       {/* photo-level reactions */}
       <div className="mt-3 flex items-center gap-2 border-b border-hairline pb-4">
         <span className="text-sm text-ink-soft">React to this photo:</span>
-        <ReactionBar
-          reactions={photoReactions}
-          onReact={(emoji) => setPhotoReactions((rs) => applyReaction(rs, emoji, me.id))}
-        />
+        <ReactionBar reactions={photoReactions} onReact={reactToPhoto} />
       </div>
 
       {/* new top-level comment */}
       <div className="mt-4">
-        <Composer me={me} placeholder="Add a comment…" onSubmit={(body) => setComments((cs) => [...cs, newComment(body, null)])} />
+        <Composer me={me} placeholder="Add a comment…" onSubmit={(body) => submitComment(body, null)} />
       </div>
 
       {/* thread */}
@@ -286,7 +321,7 @@ export function PhotoComments({
               me={me}
               depth={0}
               onReact={reactToComment}
-              onReply={(parentId, body) => setComments((cs) => addReply(cs, parentId, newComment(body, parentId)))}
+              onReply={(parentId, body) => submitComment(body, parentId)}
             />
           ))}
         </div>

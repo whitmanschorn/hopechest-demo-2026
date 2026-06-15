@@ -6,7 +6,8 @@
  * Single-writer demo: no locking, last-write-wins.
  */
 import { prisma } from "@/lib/prisma";
-import type { ChangelogRow, LifeEventRow, PersonRow } from "./schema";
+import { nextReactionEmoji } from "./reactions";
+import type { ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow } from "./schema";
 
 /** Mutate a person's editable fields. `undefined` in the patch clears the field
  * (→ null for scalars, [] for the array columns). */
@@ -59,6 +60,75 @@ export async function updateLifeEvent(
 /** Remove a life event. No-op if already gone. */
 export async function deleteLifeEvent(id: string): Promise<void> {
   await prisma.lifeEvent.deleteMany({ where: { id } });
+}
+
+// --- comments & reactions ---------------------------------------------------
+
+/** Append a comment (top-level or reply). */
+export async function insertComment(row: CommentRow): Promise<void> {
+  await prisma.comment.create({
+    data: {
+      id: row.id,
+      photoId: row.photoId,
+      parentId: row.parentId,
+      authorId: row.authorId,
+      body: row.body,
+      when: row.when,
+    },
+  });
+}
+
+/**
+ * Toggle one person's reaction on a photo or comment. A person has at most one
+ * reaction per target (see reactions.ts): we read their current one inside the
+ * transaction, clear it, and add back the next emoji — `null` clears it for good
+ * (clicked the same emoji again). `newId` is used only when a row is created.
+ */
+export async function toggleReaction(
+  target: { photoId: string } | { commentId: string },
+  byId: string,
+  clicked: string,
+  newId: string,
+): Promise<void> {
+  const where = "photoId" in target ? { photoId: target.photoId } : { commentId: target.commentId };
+  await prisma.$transaction(async (tx) => {
+    const existing = await tx.reaction.findFirst({ where: { ...where, byId } });
+    const next = nextReactionEmoji(existing?.emoji ?? null, clicked);
+    await tx.reaction.deleteMany({ where: { ...where, byId } });
+    if (next) {
+      await tx.reaction.create({ data: { id: newId, ...where, emoji: next, byId } });
+    }
+  });
+}
+
+const UI_TO_FEED_KIND: Record<FeedItem["kind"], string> = {
+  "photo-added": "photo_added",
+  restoration: "restoration",
+  "new-copy-linked": "new_copy_linked",
+  "person-milestone": "person_milestone",
+  "ask-highlight": "ask_highlight",
+  "comment-added": "comment_added",
+  "comment-reply": "comment_reply",
+};
+
+/** Append a home-feed event. Maps the UI kind back to the stored enum form. */
+export async function insertFeedItem(item: FeedItem): Promise<void> {
+  const optional = item as Partial<Record<"photoId" | "byId" | "personId" | "commentId" | "parentAuthorId" | "blurb" | "question" | "excerpt", string>>;
+  await prisma.feedItem.create({
+    data: {
+      id: item.id,
+      kind: UI_TO_FEED_KIND[item.kind] as never,
+      when: item.when,
+      photoId: optional.photoId ?? null,
+      byId: optional.byId ?? null,
+      personId: optional.personId ?? null,
+      commentId: optional.commentId ?? null,
+      parentAuthorId: optional.parentAuthorId ?? null,
+      blurb: optional.blurb ?? null,
+      question: optional.question ?? null,
+      excerpt: optional.excerpt ?? null,
+    },
+  });
 }
 
 /** Append a changelog entry. */

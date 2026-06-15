@@ -12,6 +12,7 @@ import type {
   Album,
   Changelog,
   Comment,
+  CommentRow,
   FaceTag,
   FamilyDocument,
   LifeEvent,
@@ -221,6 +222,12 @@ export async function commentsForPhoto(photoId: string, meId?: string): Promise<
 /** Total comments (including replies) on a photo. */
 export async function commentCount(photoId: string): Promise<number> {
   return ((await build()).commentRowsByPhoto.get(photoId) ?? []).length;
+}
+
+/** A single raw comment row (un-hydrated), or null. Used to validate a reply's
+ * parent and attribute `comment-reply` feed events. */
+export async function commentRowById(id: string): Promise<CommentRow | null> {
+  return (await loadData()).commentById.get(id) ?? null;
 }
 
 // --- life events & change history -------------------------------------------
