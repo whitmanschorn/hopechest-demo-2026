@@ -8,10 +8,12 @@ import { PersonChip } from "@/components/PersonChip";
 import { PhotoDetails } from "@/components/PhotoDetails";
 import { PhotoComments } from "@/components/PhotoComments";
 import { ProvenanceCard } from "@/components/ProvenanceCard";
+import { TagPeopleModal } from "@/components/TagPeopleModal";
 import { ChevronLeftIcon, RestoreIcon } from "@/components/icons";
 import {
   albumsForPhoto,
   commentsForPhoto,
+  getPeople,
   getPerson,
   getPhoto,
   reactionsForPhoto,
@@ -39,6 +41,7 @@ export default async function PhotoView({
   const faceTagPeople = await Promise.all(
     photo.faceTags.map((tag) => getPerson(tag.personId)),
   );
+  const allPeople = await getPeople();
   return (
     <>
       <Link
@@ -64,6 +67,14 @@ export default async function PhotoView({
                 }
               />
             ))}
+            <TagPeopleModal
+              photoId={photo.id}
+              src={photo.src}
+              width={photo.width}
+              height={photo.height}
+              people={allPeople}
+              initialTags={photo.faceTags.map((t) => ({ personId: t.personId, box: t.box }))}
+            />
           </div>
         </div>
 

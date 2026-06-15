@@ -3,9 +3,11 @@
 import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
-import { Img } from "./Img";
+import { PhotoTagger, type DraftTag } from "./PhotoTagger";
 import { UploadIcon } from "./icons";
 import { uploadPhoto } from "@/app/(app)/upload/actions";
+import { createPerson } from "@/app/(app)/people/actions";
+import type { Person } from "@/data/db/schema";
 
 interface Picked {
   file: File;
@@ -20,15 +22,30 @@ const inputClass =
 /** Real photo upload: pick an image, add a title/date/place, and it's saved to
  * the chest. The image bytes are read client-side to capture dimensions and a
  * preview; the file + fields POST to the `uploadPhoto` server action. */
-export function UploadWizard({ locations }: { locations: { id: string; label: string }[] }) {
+export function UploadWizard({
+  locations,
+  people,
+}: {
+  locations: { id: string; label: string }[];
+  people: Person[];
+}) {
   const router = useRouter();
   const [picked, setPicked] = useState<Picked | null>(null);
   const [title, setTitle] = useState("");
   const [dateInput, setDateInput] = useState("");
   const [locationId, setLocationId] = useState("");
+  const [tags, setTags] = useState<DraftTag[]>([]);
+  const [roster, setRoster] = useState<Person[]>(people);
   const [errors, setErrors] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  async function createAndAppend(input: { name: string; gender: string; relation?: string }): Promise<Person | null> {
+    const result = await createPerson(input);
+    if (!result.ok || !result.person) return null;
+    setRoster((prev) => [...prev, result.person!]);
+    return result.person;
+  }
 
   function onPick(file: File) {
     const previewUrl = URL.createObjectURL(file);
@@ -50,6 +67,7 @@ export function UploadWizard({ locations }: { locations: { id: string; label: st
     data.set("locationId", locationId);
     data.set("width", String(picked.width));
     data.set("height", String(picked.height));
+    data.set("tags", JSON.stringify(tags));
     startTransition(async () => {
       const result = await uploadPhoto(data);
       if (result.ok && result.photoId) {
@@ -94,12 +112,15 @@ export function UploadWizard({ locations }: { locations: { id: string; label: st
 
   return (
     <div className="flex flex-col gap-5 rounded-2xl bg-cream p-6 ring-1 ring-hairline">
-      <Img
+      <PhotoTagger
         src={picked.previewUrl}
-        alt="Selected photo preview"
         width={picked.width}
         height={picked.height}
-        className="mx-auto max-h-72 w-auto rounded-lg ring-1 ring-hairline"
+        people={roster}
+        tags={tags}
+        onAdd={(personId, box) => setTags((prev) => [...prev, { personId, box }])}
+        onRemove={(personId) => setTags((prev) => prev.filter((t) => t.personId !== personId))}
+        onCreatePerson={createAndAppend}
       />
       <label className="block">
         <span className="mb-1.5 block text-sm font-medium text-ink">Title</span>

@@ -5,10 +5,12 @@
  *
  * Single-writer demo: no locking, last-write-wins.
  */
+import type { Prisma } from "@prisma/client";
+
 import { prisma } from "@/lib/prisma";
 import { fuzzyDateToColumns } from "./fuzzyDate";
 import { nextReactionEmoji } from "./reactions";
-import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow, PhotoRow } from "./schema";
+import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow, PhotoPersonRow, PhotoRow } from "./schema";
 
 /** Mutate a person's editable fields. `undefined` in the patch clears the field
  * (→ null for scalars, [] for the array columns). */
@@ -25,6 +27,27 @@ export async function applyPersonPatch(
     }
   }
   await prisma.person.update({ where: { id: personId }, data });
+}
+
+/** Create a person (e.g. someone added while tagging a photo). */
+export async function insertPerson(row: PersonRow): Promise<void> {
+  await prisma.person.create({
+    data: {
+      id: row.id,
+      name: row.name,
+      shortName: row.shortName,
+      fullName: row.fullName,
+      maidenName: row.maidenName ?? null,
+      nicknames: row.nicknames ?? [],
+      alternateNames: row.alternateNames ?? [],
+      relation: row.relation,
+      gender: row.gender,
+      lifespan: row.lifespan ?? null,
+      avatarSrc: row.avatarSrc ?? null,
+      photoCount: row.photoCount,
+      suggestedMatchPhotoId: row.suggestedMatchPhotoId ?? null,
+    },
+  });
 }
 
 /** Append a life event. */
@@ -107,6 +130,58 @@ export async function insertAlbum(row: AlbumRow): Promise<void> {
 /** Add photos to an album (ordered by `position`). */
 export async function insertAlbumPhotos(rows: AlbumPhotoRow[]): Promise<void> {
   await prisma.albumPhoto.createMany({ data: rows });
+}
+
+// --- face tags (people in a photo) ------------------------------------------
+
+/** Recompute the denormalized `photoCount` for each person (mirrors the seed),
+ * so it stays right after tags are added or removed. */
+async function recountPhotos(tx: Prisma.TransactionClient, personIds: string[]): Promise<void> {
+  for (const personId of [...new Set(personIds)]) {
+    const photoCount = await tx.photoPerson.count({ where: { personId } });
+    await tx.person.update({ where: { id: personId }, data: { photoCount } });
+  }
+}
+
+/** Manually tag a person in a photo (confidence stays null — that's how a manual
+ * tag is distinguished from a future ML-detected one). */
+export async function insertPhotoPersonTag(row: PhotoPersonRow): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.photoPerson.create({
+      data: {
+        photoId: row.photoId,
+        personId: row.personId,
+        box: row.box as unknown as object,
+        confidence: row.confidence ?? null,
+      },
+    });
+    await recountPhotos(tx, [row.personId]);
+  });
+}
+
+/** Remove a person's tag from a photo. No-op if already gone. */
+export async function deletePhotoPersonTag(photoId: string, personId: string): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.photoPerson.deleteMany({ where: { photoId, personId } });
+    await recountPhotos(tx, [personId]);
+  });
+}
+
+/** Bulk-tag people in one photo (used by the upload flow). */
+export async function insertPhotoPersonTags(rows: PhotoPersonRow[]): Promise<void> {
+  if (rows.length === 0) return;
+  await prisma.$transaction(async (tx) => {
+    await tx.photoPerson.createMany({
+      data: rows.map((r) => ({
+        photoId: r.photoId,
+        personId: r.personId,
+        box: r.box as unknown as object,
+        confidence: r.confidence ?? null,
+      })),
+      skipDuplicates: true,
+    });
+    await recountPhotos(tx, rows.map((r) => r.personId));
+  });
 }
 
 // --- comments & reactions ---------------------------------------------------

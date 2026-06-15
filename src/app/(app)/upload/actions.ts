@@ -2,10 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 
-import { getLocations } from "@/data";
+import { getLocations, getPeople } from "@/data";
+import { isValidBox } from "@/data/db/faceTag";
 import { parseFuzzyDate } from "@/data/db/fuzzyDate";
-import { insertFeedItem, insertPhoto } from "@/data/db/mutations";
-import type { FuzzyDate } from "@/data/db/schema";
+import { insertFeedItem, insertPhoto, insertPhotoPersonTags } from "@/data/db/mutations";
+import type { FaceBox, FuzzyDate } from "@/data/db/schema";
 import { requireCurrentPerson } from "@/lib/auth/session";
 import { getStorageProvider, isAllowedImage, MAX_UPLOAD_BYTES } from "@/lib/storage/storage-provider";
 
@@ -25,6 +26,30 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 function contributedWhenNow(): string {
   const d = new Date();
   return `${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+/** Parse the client's tag payload into valid {personId, box} entries, dropping
+ * anything malformed or pointing at an unknown person (best-effort — a bad tag
+ * shouldn't sink the whole upload). */
+function parseTags(raw: string, knownPersonIds: Set<string>): { personId: string; box: FaceBox }[] {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw || "[]");
+  } catch {
+    return [];
+  }
+  if (!Array.isArray(parsed)) return [];
+  const seen = new Set<string>();
+  const tags: { personId: string; box: FaceBox }[] = [];
+  for (const t of parsed) {
+    const personId = (t as { personId?: unknown })?.personId;
+    const box = (t as { box?: unknown })?.box as FaceBox | undefined;
+    if (typeof personId !== "string" || !knownPersonIds.has(personId) || seen.has(personId)) continue;
+    if (!box || !isValidBox(box)) continue;
+    seen.add(personId);
+    tags.push({ personId, box });
+  }
+  return tags;
 }
 
 /** Add a photo to the chest: store the image, persist the row, announce it. */
@@ -68,6 +93,10 @@ export async function uploadPhoto(formData: FormData): Promise<UploadResult> {
     date,
     ...(locationId ? { locationId } : {}),
   });
+
+  const knownPersonIds = new Set((await getPeople()).map((p) => p.id));
+  const tags = parseTags(String(formData.get("tags") ?? "[]"), knownPersonIds);
+  await insertPhotoPersonTags(tags.map((t) => ({ photoId: id, personId: t.personId, box: t.box, confidence: null })));
 
   await insertFeedItem({
     kind: "photo-added",
