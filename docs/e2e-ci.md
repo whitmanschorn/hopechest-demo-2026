@@ -1,0 +1,64 @@
+# E2E login testing in CI
+
+PR #6 left "automated per-PR Neon branch + Playwright E2E in CI" as a follow-up.
+This is that, scoped to **login**.
+
+## What runs
+
+`.github/workflows/e2e.yml` runs `e2e/login.spec.ts` (Playwright, Chromium) on every
+pull request and on pushes to `main`. The suite drives the **real** phone +
+one-time-code flow against a seeded database — nothing is stubbed:
+
+- one click on a seeded demo number lands on `/home` (the `LoginForm` chains the
+  real `requestCode` → `verifyCode`, using the dev provider's surfaced OTP);
+- the session cookie survives a reload;
+- an unauthenticated protected page redirects back to the login screen.
+
+## Why a Neon branch (not a Postgres container)
+
+Neon's [recommended CI pattern](https://neon.com/docs/guides/branching-github-actions)
+is an **ephemeral branch per run**: instant copy-on-write off the real database, so
+tests hit the same Postgres version, extensions, and pooled (`-pooler`) endpoint as
+production — and stay isolated. A generic `postgres:` service container would work but
+diverges from the prod wiring (no pooler, different version) and isn't what Neon
+suggests. The workflow creates a branch, migrates + seeds it, then deletes it
+(`if: always()`) so nothing leaks.
+
+The two Neon endpoints map onto the env vars the app already reads:
+
+| Env var (app) | Neon action output | Used by |
+| --- | --- | --- |
+| `POSTGRES_URL_NON_POOLING` | `db_url` (direct) | `prisma migrate deploy`, seed (`prisma.config.ts`) |
+| `POSTGRES_PRISMA_URL` | `db_url_pooled` (pooler) | runtime client (`src/lib/prisma.ts`) |
+
+## One-time setup (required)
+
+The workflow needs Neon credentials. Easiest is the **Neon GitHub integration**
+(Neon console → Project → Integrations → GitHub), which sets these automatically;
+or add them by hand under repo Settings:
+
+- `secrets.NEON_API_KEY` — a Neon API key
+- `vars.NEON_PROJECT_ID` — the Neon project id
+
+Without them the `create-branch` step fails. Fork PRs can't read secrets, so the job
+self-skips on forks (`if:` guard at the top of the job).
+
+## Running it locally
+
+You just need a seeded Postgres. The Playwright config's `webServer` runs
+`next start`, so build once first. Point the Prisma env vars at any local database:
+
+```bash
+export POSTGRES_URL_NON_POOLING="postgresql://postgres@localhost:5432/hopechest"
+export POSTGRES_PRISMA_URL="$POSTGRES_URL_NON_POOLING"
+npm run db:deploy && npm run db:seed
+npm run build
+npm run test:e2e
+```
+
+(Already have a server running? Skip the build and set `PLAYWRIGHT_BASE_URL` to it —
+`reuseExistingServer` picks it up outside CI.)
+
+Seeded demo numbers are `+15550000001`…`+15550000005`. Each test that signs in uses a
+distinct number on purpose: `verifyCode` matches the newest code issued for a phone, so
+two parallel logins on the same number would race.
