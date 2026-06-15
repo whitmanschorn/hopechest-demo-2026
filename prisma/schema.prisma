@@ -1,0 +1,472 @@
+// Hope Chest — Postgres schema (Neon).
+//
+// Mirrors the former JSON "tables" (see src/data/db/schema.ts for the field-name
+// source of truth). Domain string slug ids are preserved as PKs; only the new
+// auth entities use cuid(). @@map keeps the snake_case table names the app and
+// seed already think in.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // Connection URLs live in prisma.config.ts (CLI/migrations) and src/lib/prisma.ts
+  // (runtime adapter) — Prisma 7 no longer accepts url/directUrl here.
+}
+
+// --- enums ------------------------------------------------------------------
+
+enum Gender {
+  f
+  m
+}
+
+enum RelationshipType {
+  parent
+  spouse
+}
+
+enum AlbumKind {
+  standard
+  smart
+}
+
+enum DocumentKind {
+  letter
+  record
+  recipe
+  telegram
+}
+
+enum Role {
+  Admin
+  Contributor
+  Viewer
+}
+
+// hyphenated source values ("photo-added", etc.) — mapped to safe identifiers.
+enum FeedKind {
+  photo_added     @map("photo-added")
+  restoration
+  new_copy_linked @map("new-copy-linked")
+  person_milestone @map("person-milestone")
+  ask_highlight   @map("ask-highlight")
+  comment_added   @map("comment-added")
+  comment_reply   @map("comment-reply")
+}
+
+enum UserStatus {
+  PENDING
+  ACTIVE
+}
+
+enum LifeEventKind {
+  birth
+  death
+  marriage
+  immigration
+  residence
+  military
+  education
+  work
+  other
+}
+
+enum ChangelogEntityType {
+  person
+  life_event
+}
+
+// --- core domain ------------------------------------------------------------
+
+model Person {
+  id                    String   @id
+  name                  String
+  shortName             String
+  fullName              String
+  maidenName            String?
+  nicknames             String[]
+  alternateNames        String[]
+  relation              String
+  gender                Gender
+  lifespan              String?
+  avatarSrc             String?
+  photoCount            Int      @default(0)
+  suggestedMatchPhotoId String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  contributedPhotos Photo[]        @relation("PhotoContributor")
+  faceTags          PhotoPerson[]
+  captures          PhotoCapture[] @relation("CaptureBy")
+  documents         Document[]     @relation("DocUploader")
+  comments          Comment[]      @relation("CommentAuthor")
+  reactions         Reaction[]     @relation("ReactionBy")
+  relationshipsFrom Relationship[] @relation("RelFrom")
+  relationshipsTo   Relationship[] @relation("RelTo")
+  member            Member?
+  lifeEvents        LifeEvent[]    @relation("PersonLifeEvents")
+  lifeEventsCreated LifeEvent[]    @relation("LifeEventCreator")
+  changelog         Changelog[]    @relation("PersonChangelog")
+  changelogEdited   Changelog[]    @relation("ChangelogEditor")
+
+  @@map("people")
+}
+
+model Relationship {
+  fromId String
+  toId   String
+  type   RelationshipType
+
+  from Person @relation("RelFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  to   Person @relation("RelTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@id([fromId, toId, type])
+  @@index([toId])
+  @@map("relationships")
+}
+
+model Location {
+  id      String  @id
+  label   String
+  street  String?
+  city    String?
+  state   String?
+  country String?
+  lat     Float
+  lng     Float
+
+  photos     Photo[]
+  documents  Document[]
+  lifeEvents LifeEvent[]
+
+  @@map("locations")
+}
+
+model Photo {
+  id              String  @id
+  title           String
+  src             String
+  width           Int
+  height          Int
+  description     String?
+  contributedById String
+  contributedWhen String
+  photographer    Json? // PhotoFact { value, deduced?, clue? }
+  takenWhere      Json? // PhotoFact
+  restoration     Json? // { restoredSrc, summary }
+  locationId      String?
+
+  // FuzzyDate, flattened so onThisDay can filter/sort on real columns.
+  dateIso       String?
+  dateYear      Int?
+  dateMonth     Int?
+  dateDay       Int?
+  datePrecision String // "day" | "month" | "year" | "circa"
+  dateDisplay   String
+  dateDeduced   Boolean @default(false)
+  dateClue      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  contributedBy Person        @relation("PhotoContributor", fields: [contributedById], references: [id])
+  location      Location?     @relation(fields: [locationId], references: [id])
+  faceTags      PhotoPerson[]
+  captures      PhotoCapture[]
+  albumPhotos   AlbumPhoto[]
+  comments      Comment[]
+  reactions     Reaction[]
+  coverOfAlbums Album[]       @relation("AlbumCover")
+
+  @@index([dateMonth, dateDay])
+  @@index([locationId])
+  @@index([contributedById])
+  @@map("photos")
+}
+
+model PhotoPerson {
+  photoId    String
+  personId   String
+  box        Json // FaceBox { x, y, w, h }
+  confidence Float?
+
+  photo  Photo  @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  person Person @relation(fields: [personId], references: [id], onDelete: Cascade)
+
+  @@id([photoId, personId])
+  @@index([personId])
+  @@map("photo_people")
+}
+
+model PhotoCapture {
+  id           String  @id
+  photoId      String
+  capturedById String
+  capturedAt   String
+  device       String
+  framing      String // "table-warm" | "album-page"
+  note         String?
+
+  photo      Photo  @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  capturedBy Person @relation("CaptureBy", fields: [capturedById], references: [id])
+
+  @@index([photoId])
+  @@map("photo_captures")
+}
+
+model Album {
+  id           String    @id
+  title        String
+  kind         AlbumKind
+  coverPhotoId String
+  rule         String?
+  subtitle     String?
+  smartQuery   Json? // SmartQuery { taggedPersonId?, locationId?, sort? }
+  createdAt    String // demo ISO date strings, displayed as-is
+  updatedAt    String
+
+  coverPhoto  Photo        @relation("AlbumCover", fields: [coverPhotoId], references: [id])
+  albumPhotos AlbumPhoto[]
+
+  @@map("albums")
+}
+
+model AlbumPhoto {
+  albumId  String
+  photoId  String
+  position Int
+
+  album Album @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  photo Photo @relation(fields: [photoId], references: [id], onDelete: Cascade)
+
+  @@id([albumId, photoId])
+  @@index([photoId])
+  @@map("album_photos")
+}
+
+model Document {
+  id           String       @id
+  title        String
+  kind         DocumentKind
+  scanSrc      String?
+  excerpt      String
+  year         String?
+  uploadedById String
+  locationId   String?
+
+  uploadedBy Person    @relation("DocUploader", fields: [uploadedById], references: [id])
+  location   Location? @relation(fields: [locationId], references: [id])
+
+  @@map("documents")
+}
+
+model Member {
+  personId String @id
+  role     Role
+  joined   String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  person Person @relation(fields: [personId], references: [id])
+  user   User?
+
+  @@map("members")
+}
+
+model Invite {
+  id        String   @id
+  name      String
+  email     String
+  sent      String
+  createdAt DateTime @default(now())
+
+  @@map("invites")
+}
+
+model Comment {
+  id        String    @id
+  photoId   String
+  parentId  String?
+  authorId  String
+  body      String
+  when      String
+  deletedAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  photo     Photo      @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  author    Person     @relation("CommentAuthor", fields: [authorId], references: [id])
+  parent    Comment?   @relation("CommentThread", fields: [parentId], references: [id])
+  replies   Comment[]  @relation("CommentThread")
+  reactions Reaction[]
+
+  @@index([photoId])
+  @@index([parentId])
+  @@map("comments")
+}
+
+model Reaction {
+  id        String   @id
+  photoId   String?
+  commentId String?
+  emoji     String
+  byId      String
+  createdAt DateTime @default(now())
+
+  photo   Photo?   @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  comment Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  by      Person   @relation("ReactionBy", fields: [byId], references: [id])
+
+  // Exactly one of photoId / commentId is set (app-level XOR invariant).
+  // NULLs are distinct in Postgres, so these uniques don't collide across targets.
+  @@unique([photoId, byId, emoji])
+  @@unique([commentId, byId, emoji])
+  @@index([photoId])
+  @@index([commentId])
+  @@map("reactions")
+}
+
+// Denormalized activity stream. FKs are scalar-only (display data the seed/app
+// controls); the `kind` discriminator selects which id/text columns are set.
+model FeedItem {
+  id             String   @id
+  kind           FeedKind
+  when           String
+  photoId        String?
+  byId           String?
+  personId       String?
+  commentId      String?
+  parentAuthorId String?
+  blurb          String?
+  question       String?
+  excerpt        String?
+  createdAt      DateTime @default(now())
+
+  @@index([createdAt])
+  @@map("feed_items")
+}
+
+// --- singletons-as-tables ---------------------------------------------------
+
+model ChestConfig {
+  id        String @id @default("singleton")
+  chestName String
+  demoToday String
+}
+
+// One table for current + past newsletters; `published` distinguishes them.
+// Past issues only populate month/headline; current issues use the full shape.
+model NewsletterIssue {
+  id         String   @id
+  title      String?
+  month      String
+  intro      String?
+  headline   String?
+  photoIds   String[]
+  highlights Json     @default("[]") // { heading, body, photoId? }[]
+  recipients Int?
+  published  Boolean  @default(false)
+  sortIndex  Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  @@map("newsletter_issues")
+}
+
+model ScriptedExchange {
+  id            String  @id
+  prompt        String
+  keywords      String[]
+  thinkingLabel String
+  answer        Json // AnswerBlock[]
+  isFallback    Boolean @default(false)
+  sortIndex     Int     @default(0)
+
+  @@map("scripted_exchanges")
+}
+
+// --- auth -------------------------------------------------------------------
+
+model User {
+  id                 String     @id @default(cuid())
+  phone              String     @unique
+  displayName        String?
+  status             UserStatus @default(PENDING)
+  onboardingComplete Boolean    @default(false)
+  memberId           String?    @unique
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  member   Member?   @relation(fields: [memberId], references: [personId])
+  sessions Session[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model VerificationCode {
+  id         String    @id @default(cuid())
+  phone      String
+  code       String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  attempts   Int       @default(0)
+  createdAt  DateTime  @default(now())
+
+  @@index([phone])
+  @@map("verification_codes")
+}
+
+// --- editable person details: life events + change history ------------------
+
+model LifeEvent {
+  id          String        @id
+  personId    String
+  kind        LifeEventKind
+  title       String
+  date        Json // FuzzyDate
+  locationId  String?
+  description String?
+  createdById String
+  createdAt   String // ISO timestamp (matches LifeEventRow)
+
+  person    Person    @relation("PersonLifeEvents", fields: [personId], references: [id], onDelete: Cascade)
+  location  Location? @relation(fields: [locationId], references: [id])
+  createdBy Person    @relation("LifeEventCreator", fields: [createdById], references: [id])
+
+  @@index([personId])
+  @@map("life_events")
+}
+
+model Changelog {
+  id         String              @id
+  entityType ChangelogEntityType
+  entityId   String
+  personId   String
+  field      String
+  before     String?
+  after      String?
+  editedById String
+  editedAt   String // ISO timestamp
+  summary    String?
+
+  person   Person @relation("PersonChangelog", fields: [personId], references: [id], onDelete: Cascade)
+  editedBy Person @relation("ChangelogEditor", fields: [editedById], references: [id])
+
+  @@index([personId])
+  @@map("changelog")
+}

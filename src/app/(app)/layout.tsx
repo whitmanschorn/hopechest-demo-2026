@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 
 import { AppShell } from "@/components/AppShell";
+import { requireCurrentPerson } from "@/lib/auth/session";
 
-export default function AppLayout({ children }: { children: ReactNode }) {
-  return <AppShell>{children}</AppShell>;
+export default async function AppLayout({ children }: { children: ReactNode }) {
+  const me = await requireCurrentPerson();
+  return <AppShell me={me}>{children}</AppShell>;
 }

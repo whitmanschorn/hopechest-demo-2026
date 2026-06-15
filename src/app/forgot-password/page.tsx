@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { ChestIcon, MailIcon } from "@/components/icons";
 
-export const metadata: Metadata = { title: "Reset password" };
+export const metadata: Metadata = { title: "Trouble signing in" };
 
 export default function ForgotPassword() {
   return (
@@ -20,11 +20,12 @@ export default function ForgotPassword() {
             <MailIcon className="size-6 text-sepia" />
           </span>
           <h1 className="font-display text-2xl font-semibold tracking-tight text-walnut">
-            Check your email
+            No passwords here
           </h1>
           <p className="mt-2 text-sm leading-6 text-ink-soft">
-            If an account exists for that address, we&rsquo;ve sent a link to
-            reset your password. It expires in one hour.
+            Hopechest signs you in with your phone number and a one-time code —
+            there&rsquo;s nothing to reset. Head back and enter your number to
+            get a fresh code.
           </p>
           <Link
             href="/"

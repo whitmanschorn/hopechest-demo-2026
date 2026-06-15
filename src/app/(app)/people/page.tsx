@@ -4,11 +4,20 @@ import Link from "next/link";
 import { InitialsAvatar } from "@/components/InitialsAvatar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PeopleIcon } from "@/components/icons";
-import { people, photosForPerson } from "@/data";
+import { getPeople, photosForPerson } from "@/data";
 
 export const metadata: Metadata = { title: "People" };
 
-export default function People() {
+export default async function People() {
+  const people = await getPeople();
+  const taggedCounts = new Map(
+    await Promise.all(
+      people.map(
+        async (person) =>
+          [person.id, (await photosForPerson(person.id)).length] as const,
+      ),
+    ),
+  );
   return (
     <>
       <SectionHeader
@@ -24,7 +33,7 @@ export default function People() {
       </div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 xl:grid-cols-4">
         {people.map((person) => {
-          const tagged = photosForPerson(person.id).length;
+          const tagged = taggedCounts.get(person.id) ?? 0;
           return (
             <Link
               key={person.id}

@@ -5,13 +5,7 @@ import { MapView } from "@/components/MapView";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ChevronLeftIcon, MapPinIcon } from "@/components/icons";
-import { getLocation, locations, photosForLocation } from "@/data";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return locations.map((l) => ({ locationId: l.id }));
-}
+import { getLocation, photosForLocation } from "@/data";
 
 export async function generateMetadata({
   params,
@@ -19,7 +13,7 @@ export async function generateMetadata({
   params: Promise<{ locationId: string }>;
 }): Promise<Metadata> {
   const { locationId } = await params;
-  return { title: getLocation(locationId).label };
+  return { title: (await getLocation(locationId)).label };
 }
 
 export default async function LocationView({
@@ -28,8 +22,8 @@ export default async function LocationView({
   params: Promise<{ locationId: string }>;
 }) {
   const { locationId } = await params;
-  const location = getLocation(locationId);
-  const photos = photosForLocation(locationId);
+  const location = await getLocation(locationId);
+  const photos = await photosForLocation(locationId);
   const address = [location.street, location.city, location.state, location.country]
     .filter(Boolean)
     .join(", ");

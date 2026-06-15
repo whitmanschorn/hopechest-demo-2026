@@ -4,11 +4,12 @@ import Link from "next/link";
 import { DocumentCard } from "@/components/DocumentCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { AskIcon, UploadIcon } from "@/components/icons";
-import { documents } from "@/data";
+import { getDocuments } from "@/data";
 
 export const metadata: Metadata = { title: "Documents" };
 
-export default function Documents() {
+export default async function Documents() {
+  const documents = await getDocuments();
   return (
     <>
       <SectionHeader

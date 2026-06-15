@@ -12,8 +12,8 @@ function monthYear(iso: string): string {
   return `${months[(m ?? 1) - 1]} ${y}`;
 }
 
-export function AlbumCard({ album }: { album: Album }) {
-  const cover = getPhoto(album.coverPhotoId);
+export async function AlbumCard({ album }: { album: Album }) {
+  const cover = await getPhoto(album.coverPhotoId);
   return (
     <Link
       href={`/albums/${album.id}`}

@@ -9,7 +9,8 @@ import { CalendarIcon, PencilIcon, PlusIcon, TrashIcon } from "@/components/icon
 import { LifeEventForm } from "./LifeEventForm";
 import { addLifeEvent, editLifeEvent, removeLifeEvent } from "@/app/(app)/people/[personId]/actions";
 import type { LifeEventInput } from "@/app/(app)/people/[personId]/actions";
-import { formatDate, type FuzzyDate, type LifeEvent, type LifeEventKind, type Location } from "@/data";
+import { formatDate } from "@/data/db/fuzzyDate";
+import type { FuzzyDate, LifeEvent, LifeEventKind, Location } from "@/data";
 
 const KIND_TONE: Record<LifeEventKind, "brass" | "sepia" | "rosewood" | "plain"> = {
   birth: "brass",

@@ -6,13 +6,24 @@ import { useEffect, useState } from "react";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { Img } from "./Img";
 import { CameraIcon, PeopleIcon, RestoreIcon, UploadIcon } from "./icons";
-import { getPerson, getPhoto } from "@/data";
+import type { Photo } from "@/data";
 
 type Step = "pick" | "detecting" | "restore" | "done";
 
-export function UploadWizard() {
-  const photo = getPhoto("klara-and-sarah-1933");
+/** Demo theater, now fed real data: a sample photo (one with a restoration),
+ * the names of its tagged faces, and who scanned it. */
+export function UploadWizard({
+  photo,
+  scannerName,
+  faceNames,
+}: {
+  photo: Photo;
+  scannerName: string;
+  faceNames: string[];
+}) {
   const [step, setStep] = useState<Step>("pick");
+  const faceCount = faceNames.length || 2;
+  const faceList = faceNames.length > 0 ? faceNames.join(" and ") : "two relatives";
 
   // simulate face detection working
   useEffect(() => {
@@ -60,7 +71,7 @@ export function UploadWizard() {
         </div>
         <div className="flex items-center gap-2.5 text-[15px] text-ink">
           <PeopleIcon className="size-5 text-sepia" />
-          Detecting faces… <span className="font-medium">found 2</span>
+          Detecting faces… <span className="font-medium">found {faceCount}</span>
         </div>
         <p className="text-sm text-ink-soft">
           Checking for matching prints already in the chest…
@@ -80,7 +91,7 @@ export function UploadWizard() {
           <p className="mt-1 text-sm leading-6 text-ink-soft">
             Faded sepia, scratches, and vignetting detected — and{" "}
             <span className="font-medium text-ink">
-              2 faces recognized: Klara Kowalski and Sarah Whitfield
+              {faceCount} faces recognized: {faceList}
             </span>{" "}
             Preview the restoration:
           </p>
@@ -88,7 +99,7 @@ export function UploadWizard() {
         <div className="mx-auto w-full max-w-sm">
           <BeforeAfterSlider
             beforeSrc={photo.src}
-            afterSrc={photo.restoration!.restoredSrc}
+            afterSrc={photo.restoration?.restoredSrc ?? photo.src}
             alt={photo.title}
             width={photo.width}
             height={photo.height}
@@ -114,7 +125,6 @@ export function UploadWizard() {
     );
   }
 
-  const eleanor = getPerson("eleanor");
   return (
     <div className="flex flex-col items-center gap-4 rounded-2xl bg-cream px-6 py-12 text-center ring-1 ring-hairline">
       <span className="flex size-14 items-center justify-center rounded-full bg-brass/15 text-brass">
@@ -124,7 +134,7 @@ export function UploadWizard() {
         Added to your chest
       </h2>
       <p className="max-w-md text-sm leading-6 text-ink-soft">
-        Two faces tagged, linked to the original print {eleanor.shortName}{" "}
+        {faceCount} faces tagged, linked to the original print {scannerName}{" "}
         scanned, and filed into two smart albums — automatically.
       </p>
       <div className="mt-2 flex flex-wrap justify-center gap-3">

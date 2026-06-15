@@ -4,11 +4,19 @@ import Link from "next/link";
 import { Img } from "@/components/Img";
 import { SectionHeader, SubHeader } from "@/components/SectionHeader";
 import { MailIcon } from "@/components/icons";
-import { currentIssue, getPhoto, pastIssues } from "@/data";
+import { getCurrentIssue, getPastIssues, getPhoto } from "@/data";
 
 export const metadata: Metadata = { title: "Newsletter" };
 
-export default function Newsletter() {
+export default async function Newsletter() {
+  const currentIssue = await getCurrentIssue();
+  const pastIssues = await getPastIssues();
+  const highlights = await Promise.all(
+    currentIssue.highlights.map(async (h) => ({
+      h,
+      photo: h.photoId ? await getPhoto(h.photoId) : null,
+    })),
+  );
   return (
     <div className="mx-auto max-w-3xl">
       <SectionHeader
@@ -31,8 +39,7 @@ export default function Newsletter() {
             {currentIssue.intro}
           </p>
           <div className="mt-6 flex flex-col gap-7">
-            {currentIssue.highlights.map((h) => {
-              const photo = h.photoId ? getPhoto(h.photoId) : null;
+            {highlights.map(({ h, photo }) => {
               return (
                 <section
                   key={h.heading}

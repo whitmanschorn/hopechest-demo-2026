@@ -6,13 +6,16 @@ import { FeedItemCard } from "@/components/FeedItemCard";
 import { OnThisDay } from "@/components/OnThisDay";
 import { SectionHeader, SubHeader } from "@/components/SectionHeader";
 import { AskIcon } from "@/components/icons";
-import { albums, currentMemberId, feed, getPerson } from "@/data";
+import { getAlbums, getFeed } from "@/data";
+import { requireCurrentPerson } from "@/lib/auth/session";
 
 export const metadata: Metadata = { title: "Home" };
 
-export default function Home() {
-  const me = getPerson(currentMemberId);
+export default async function Home() {
+  const me = await requireCurrentPerson();
   const firstName = me.name.split(" ")[0];
+  const albums = await getAlbums();
+  const feed = await getFeed();
   const featuredAlbums = albums.filter((a) => a.kind === "smart");
   return (
     <>

@@ -7,21 +7,14 @@ import { PersonHeaderEditor } from "@/components/person/PersonHeaderEditor";
 import { LifeEventsTimeline } from "@/components/person/LifeEventsTimeline";
 import { ChevronLeftIcon, HistoryIcon, PeopleIcon } from "@/components/icons";
 import {
-  currentMemberId,
   describeRelationshipTo,
+  getLocations,
   getPerson,
   getPhoto,
   lifeEventsForPerson,
-  locations,
-  people,
   photosForPerson,
 } from "@/data";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return people.map((p) => ({ personId: p.id }));
-}
+import { requireCurrentPerson } from "@/lib/auth/session";
 
 export async function generateMetadata({
   params,
@@ -29,7 +22,7 @@ export async function generateMetadata({
   params: Promise<{ personId: string }>;
 }): Promise<Metadata> {
   const { personId } = await params;
-  return { title: getPerson(personId).name };
+  return { title: (await getPerson(personId)).name };
 }
 
 export default async function PersonView({
@@ -38,18 +31,20 @@ export default async function PersonView({
   params: Promise<{ personId: string }>;
 }) {
   const { personId } = await params;
-  const person = getPerson(personId);
-  const tagged = photosForPerson(personId);
-  const lifeEvents = lifeEventsForPerson(personId);
+  const me = await requireCurrentPerson();
+  const person = await getPerson(personId);
+  const tagged = await photosForPerson(personId);
+  const lifeEvents = await lifeEventsForPerson(personId);
+  const locations = await getLocations();
   const years =
     tagged.length > 1 && tagged[0].date.year && tagged[tagged.length - 1].date.year
       ? `${tagged[0].date.year}–${tagged[tagged.length - 1].date.year}`
       : null;
 
-  const isMe = person.id === currentMemberId;
-  const relationship = isMe ? null : describeRelationshipTo(currentMemberId, person.id);
+  const isMe = person.id === me.id;
+  const relationship = isMe ? null : await describeRelationshipTo(me.id, person.id);
   const suggestion = person.suggestedMatchPhotoId
-    ? getPhoto(person.suggestedMatchPhotoId)
+    ? await getPhoto(person.suggestedMatchPhotoId)
     : null;
 
   return (

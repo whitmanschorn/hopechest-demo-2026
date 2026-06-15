@@ -4,13 +4,7 @@ import Link from "next/link";
 import { PhotoGrid } from "@/components/PhotoGrid";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ChevronLeftIcon, SparkleIcon } from "@/components/icons";
-import { albums, getAlbum, photosForAlbum } from "@/data";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return albums.map((a) => ({ albumId: a.id }));
-}
+import { getAlbum, photosForAlbum } from "@/data";
 
 export async function generateMetadata({
   params,
@@ -18,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ albumId: string }>;
 }): Promise<Metadata> {
   const { albumId } = await params;
-  return { title: getAlbum(albumId).title };
+  return { title: (await getAlbum(albumId)).title };
 }
 
 export default async function AlbumView({
@@ -27,8 +21,8 @@ export default async function AlbumView({
   params: Promise<{ albumId: string }>;
 }) {
   const { albumId } = await params;
-  const album = getAlbum(albumId);
-  const photos = photosForAlbum(album);
+  const album = await getAlbum(albumId);
+  const photos = await photosForAlbum(album);
   return (
     <>
       <Link

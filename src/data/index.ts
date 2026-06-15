@@ -1,8 +1,7 @@
 /**
  * Public data API. Everything the app needs comes from here; pages and
- * components import from "@/data" and never reach into json/ or db/ directly.
- * Today this is backed by JSON files + in-memory repositories (src/data/db);
- * swapping in Postgres later means changing db/, not this surface.
+ * components import from "@/data" and never reach into db/ or Prisma directly.
+ * Backed by Postgres (Neon) via Prisma — see src/data/db. All reads are async.
  */
 
 // types
@@ -36,66 +35,57 @@ export type {
 } from "./db/schema";
 export { REACTION_EMOJI } from "./db/schema";
 
-// repositories: collections, getters, and queries
+// repositories: collections, getters, and queries (all async)
 export {
-  albums,
   albumsForPhoto,
   changelogForPerson,
   commentCount,
   commentsForPhoto,
-  documents,
   getAlbum,
+  getAlbums,
   getDocument,
+  getDocuments,
   getLifeEvent,
   getLocation,
+  getLocations,
+  getPeople,
   getPerson,
   getPhoto,
+  getPhotos,
   lifeEventsForPerson,
-  locations,
   locationsWithCounts,
   onThisDay,
-  people,
-  photos,
   photosForAlbum,
   photosForLocation,
   photosForPerson,
   reactionsForPhoto,
 } from "./db/repos";
 
+// fuzzy-date helpers (prisma-free, safe for client components)
+export { formatDate, parseFuzzyDate } from "./db/fuzzyDate";
+
 // kinship: resolver-backed relationships and @mention suggestions
 export {
   describeRelationshipTo,
-  graph as familyGraph,
+  familyGraph,
   relationshipTo,
   suggestMentions,
   type MentionSuggestion,
 } from "./db/mentions";
 export type { Relation, RelationKind } from "./kinship";
 
-// integrity check (used by tests; could gate a future Postgres import)
-export { checkIntegrity } from "./db/load";
-
-// fuzzy-date parsing (shared by the add-event form preview and server actions)
-export { parseFuzzyDate } from "./db/fuzzyDate";
-
-// loose singletons / lists
-import { askScript, config, feedRows, inviteRows, memberRows, newsletter } from "./db/load";
+// loose singletons / lists (async getters)
+import { loadData } from "./db/load";
 import type { FeedItem, Invite, Member, NewsletterIssue, PastIssue, ScriptedExchange } from "./db/schema";
 
-export const feed: FeedItem[] = feedRows;
-export const members: Member[] = memberRows;
-export const invites: Invite[] = inviteRows;
-export const currentMemberId: string = config.currentMemberId;
-export const chestName: string = config.chestName;
+export async function getFeed(): Promise<FeedItem[]> { return (await loadData()).feedRows; }
+export async function getMembers(): Promise<Member[]> { return (await loadData()).memberRows; }
+export async function getInvites(): Promise<Invite[]> { return (await loadData()).inviteRows; }
+export async function getChestName(): Promise<string> { return (await loadData()).config.chestName; }
 /** Pinned "today" so date-relative UI (On This Day) is deterministic in the demo. */
-export const demoToday: string = config.demoToday;
+export async function getDemoToday(): Promise<string> { return (await loadData()).config.demoToday; }
 
-export const currentIssue: NewsletterIssue = newsletter.currentIssue;
-export const pastIssues: PastIssue[] = newsletter.pastIssues;
-export const exchanges: ScriptedExchange[] = askScript.exchanges;
-export const fallbackExchange: ScriptedExchange = askScript.fallbackExchange;
-
-/** Format a fuzzy date for display (the row already carries a `display` string). */
-export function formatDate(date: { display: string }): string {
-  return date.display;
-}
+export async function getCurrentIssue(): Promise<NewsletterIssue> { return (await loadData()).newsletter.currentIssue; }
+export async function getPastIssues(): Promise<PastIssue[]> { return (await loadData()).newsletter.pastIssues; }
+export async function getExchanges(): Promise<ScriptedExchange[]> { return (await loadData()).askScript.exchanges; }
+export async function getFallbackExchange(): Promise<ScriptedExchange> { return (await loadData()).askScript.fallbackExchange; }

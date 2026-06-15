@@ -41,8 +41,8 @@ function Frame({
   );
 }
 
-function PhotoStrip({ photoId, label }: { photoId: string; label?: string }) {
-  const photo = getPhoto(photoId);
+async function PhotoStrip({ photoId, label }: { photoId: string; label?: string }) {
+  const photo = await getPhoto(photoId);
   return (
     <Link
       href={`/photos/${photo.id}`}
@@ -67,10 +67,10 @@ function PhotoStrip({ photoId, label }: { photoId: string; label?: string }) {
   );
 }
 
-export function FeedItemCard({ item }: { item: FeedItem }) {
+export async function FeedItemCard({ item }: { item: FeedItem }) {
   switch (item.kind) {
     case "photo-added": {
-      const by = getPerson(item.byId);
+      const by = await getPerson(item.byId);
       return (
         <Frame
           icon={<CameraIcon className="size-4.5" />}
@@ -105,7 +105,7 @@ export function FeedItemCard({ item }: { item: FeedItem }) {
         </Frame>
       );
     case "new-copy-linked": {
-      const by = getPerson(item.byId);
+      const by = await getPerson(item.byId);
       return (
         <Frame
           icon={<CopiesIcon className="size-4.5" />}
@@ -124,7 +124,7 @@ export function FeedItemCard({ item }: { item: FeedItem }) {
       );
     }
     case "person-milestone": {
-      const person = getPerson(item.personId);
+      const person = await getPerson(item.personId);
       return (
         <Frame
           icon={<PeopleIcon className="size-4.5" />}
@@ -162,7 +162,7 @@ export function FeedItemCard({ item }: { item: FeedItem }) {
         </Frame>
       );
     case "comment-added": {
-      const by = getPerson(item.byId);
+      const by = await getPerson(item.byId);
       return (
         <Frame
           icon={<CommentIcon className="size-4.5" />}
@@ -180,8 +180,8 @@ export function FeedItemCard({ item }: { item: FeedItem }) {
       );
     }
     case "comment-reply": {
-      const by = getPerson(item.byId);
-      const parent = getPerson(item.parentAuthorId);
+      const by = await getPerson(item.byId);
+      const parent = await getPerson(item.parentAuthorId);
       return (
         <Frame
           icon={<ReplyIcon className="size-4.5" />}

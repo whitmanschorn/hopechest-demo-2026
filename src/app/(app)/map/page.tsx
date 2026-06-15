@@ -8,17 +8,19 @@ import { getPhoto, locationsWithCounts } from "@/data";
 
 export const metadata: Metadata = { title: "Map" };
 
-export default function MapPage() {
-  const places = locationsWithCounts();
-  const markers = places.map(({ location, count, coverPhotoId }) => ({
-    id: location.id,
-    label: location.label,
-    lat: location.lat,
-    lng: location.lng,
-    href: `/locations/${location.id}`,
-    photoSrc: coverPhotoId ? getPhoto(coverPhotoId).src : undefined,
-    meta: `${count} photo${count > 1 ? "s" : ""}`,
-  }));
+export default async function MapPage() {
+  const places = await locationsWithCounts();
+  const markers = await Promise.all(
+    places.map(async ({ location, count, coverPhotoId }) => ({
+      id: location.id,
+      label: location.label,
+      lat: location.lat,
+      lng: location.lng,
+      href: `/locations/${location.id}`,
+      photoSrc: coverPhotoId ? (await getPhoto(coverPhotoId)).src : undefined,
+      meta: `${count} photo${count > 1 ? "s" : ""}`,
+    })),
+  );
 
   return (
     <>

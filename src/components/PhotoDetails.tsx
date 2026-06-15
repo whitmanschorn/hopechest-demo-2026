@@ -28,8 +28,8 @@ function FactRow({ label, fact }: { label: string; fact: PhotoFact }) {
   );
 }
 
-export function PhotoDetails({ photo }: { photo: Photo }) {
-  const contributor = getPerson(photo.contributedById);
+export async function PhotoDetails({ photo }: { photo: Photo }) {
+  const contributor = await getPerson(photo.contributedById);
   const hasDeduced =
     photo.date.deduced ||
     [photo.photographer, photo.takenWhere].some((f) => f?.deduced);
