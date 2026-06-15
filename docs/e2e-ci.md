@@ -29,6 +29,11 @@ strings are step outputs and can't be shared across workflows). On `opened`/`reo
 builds, and runs the suite; on `closed` it deletes the branch. Branches also carry a
 14-day `expires_at` as a backstop. Runs on PRs only (no `main`-push job).
 
+After migrating, it also runs Neon's [`schema-diff-action`](https://github.com/neondatabase/schema-diff-action),
+which posts a comment on the PR showing how the branch's schema differs from production
+— i.e. what the PR's migrations change. That step needs `pull-requests: write`, which is
+granted on the job.
+
 The two Neon endpoints map onto the env vars the app already reads:
 
 | Env var (app) | Neon action output | Used by |

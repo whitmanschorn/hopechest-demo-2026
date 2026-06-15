@@ -31,6 +31,10 @@ jobs:
       || github.event.action == 'opened'
       || github.event.action == 'reopened')
     runs-on: ubuntu-latest
+    # schema-diff posts its comparison as a PR comment.
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Get branch expiration date as an env variable (2 weeks from now)
         id: get_expiration_date
@@ -70,6 +74,16 @@ jobs:
           npm run db:deploy
           npm run db:seed
           npm run build
+
+      # Post a comment on the PR showing how this branch's schema differs from
+      # production (i.e. what the PR's migrations change). Compares the migrated
+      # PR branch against its parent.
+      - name: Post schema diff comment to PR
+        uses: neondatabase/schema-diff-action@v1
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          compare_branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
+          api_key: ${{ secrets.NEON_API_KEY }}
 
       - name: Run Playwright login suite
         env:
