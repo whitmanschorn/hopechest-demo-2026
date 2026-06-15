@@ -1,157 +1,177 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useRef, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 
-import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { Img } from "./Img";
-import { CameraIcon, PeopleIcon, RestoreIcon, UploadIcon } from "./icons";
-import type { Photo } from "@/data";
+import { UploadIcon } from "./icons";
+import { uploadPhoto } from "@/app/(app)/upload/actions";
 
-type Step = "pick" | "detecting" | "restore" | "done";
+interface Picked {
+  file: File;
+  previewUrl: string;
+  width: number;
+  height: number;
+}
 
-/** Demo theater, now fed real data: a sample photo (one with a restoration),
- * the names of its tagged faces, and who scanned it. */
-export function UploadWizard({
-  photo,
-  scannerName,
-  faceNames,
-}: {
-  photo: Photo;
-  scannerName: string;
-  faceNames: string[];
-}) {
-  const [step, setStep] = useState<Step>("pick");
-  const faceCount = faceNames.length || 2;
-  const faceList = faceNames.length > 0 ? faceNames.join(" and ") : "two relatives";
+const inputClass =
+  "h-11 w-full rounded-lg border border-hairline bg-parchment px-3.5 text-[15px] text-ink placeholder:text-ink-soft/50 focus:border-sepia focus:outline-none focus:ring-2 focus:ring-sepia/20";
 
-  // simulate face detection working
-  useEffect(() => {
-    if (step !== "detecting") return;
-    const t = setTimeout(() => setStep("restore"), 1800);
-    return () => clearTimeout(t);
-  }, [step]);
+/** Real photo upload: pick an image, add a title/date/place, and it's saved to
+ * the chest. The image bytes are read client-side to capture dimensions and a
+ * preview; the file + fields POST to the `uploadPhoto` server action. */
+export function UploadWizard({ locations }: { locations: { id: string; label: string }[] }) {
+  const router = useRouter();
+  const [picked, setPicked] = useState<Picked | null>(null);
+  const [title, setTitle] = useState("");
+  const [dateInput, setDateInput] = useState("");
+  const [locationId, setLocationId] = useState("");
+  const [errors, setErrors] = useState<string[]>([]);
+  const [isPending, startTransition] = useTransition();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  if (step === "pick") {
-    return (
-      <button
-        type="button"
-        onClick={() => setStep("detecting")}
-        className="group flex w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-16 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
-      >
-        <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
-          <UploadIcon className="size-7" />
-        </span>
-        <span className="font-display text-xl font-semibold tracking-tight text-walnut">
-          Drop a photo here
-        </span>
-        <span className="max-w-sm text-sm leading-6 text-ink-soft">
-          Scans, prints, or phone pictures of prints — Hopechest figures out
-          what it&rsquo;s looking at. Tap to try it with a sample photo.
-        </span>
-      </button>
-    );
+  function onPick(file: File) {
+    const previewUrl = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      setPicked({ file, previewUrl, width: img.naturalWidth, height: img.naturalHeight });
+      if (!title) setTitle(file.name.replace(/\.[^.]+$/, ""));
+    };
+    img.src = previewUrl;
+    setErrors([]);
   }
 
-  if (step === "detecting") {
-    return (
-      <div className="flex flex-col items-center gap-5 rounded-2xl bg-cream px-6 py-10 ring-1 ring-hairline">
-        <div className="relative w-44 overflow-hidden rounded-lg">
-          <Img
-            src={photo.src}
-            alt="Uploading sample"
-            width={photo.width}
-            height={photo.height}
-            loading="eager"
-            className="w-full"
-          />
-          {/* scan line */}
-          <span className="absolute inset-x-0 top-0 h-10 animate-[scan_1.8s_ease-in-out_infinite] bg-gradient-to-b from-brass/0 via-brass/50 to-brass/0" />
-          <style>{`@keyframes scan { 0% { transform: translateY(-2.5rem); } 100% { transform: translateY(16rem); } }`}</style>
-        </div>
-        <div className="flex items-center gap-2.5 text-[15px] text-ink">
-          <PeopleIcon className="size-5 text-sepia" />
-          Detecting faces… <span className="font-medium">found {faceCount}</span>
-        </div>
-        <p className="text-sm text-ink-soft">
-          Checking for matching prints already in the chest…
-        </p>
-      </div>
-    );
+  function submit() {
+    if (!picked) return;
+    const data = new FormData();
+    data.set("file", picked.file);
+    data.set("title", title);
+    data.set("dateInput", dateInput);
+    data.set("locationId", locationId);
+    data.set("width", String(picked.width));
+    data.set("height", String(picked.height));
+    startTransition(async () => {
+      const result = await uploadPhoto(data);
+      if (result.ok && result.photoId) {
+        router.push(`/photos/${result.photoId}`);
+      } else {
+        setErrors(result.errors ?? ["Something went wrong — try again."]);
+      }
+    });
   }
 
-  if (step === "restore") {
+  if (!picked) {
     return (
-      <div className="flex flex-col gap-5 rounded-2xl bg-cream p-6 ring-1 ring-hairline">
-        <div>
-          <h2 className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight text-walnut">
-            <RestoreIcon className="size-5 text-brass" />
-            Hopechest can restore this print
-          </h2>
-          <p className="mt-1 text-sm leading-6 text-ink-soft">
-            Faded sepia, scratches, and vignetting detected — and{" "}
-            <span className="font-medium text-ink">
-              {faceCount} faces recognized: {faceList}
-            </span>{" "}
-            Preview the restoration:
-          </p>
-        </div>
-        <div className="mx-auto w-full max-w-sm">
-          <BeforeAfterSlider
-            beforeSrc={photo.src}
-            afterSrc={photo.restoration?.restoredSrc ?? photo.src}
-            alt={photo.title}
-            width={photo.width}
-            height={photo.height}
-          />
-        </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => setStep("done")}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-sepia px-6 text-sm font-medium text-cream transition-colors hover:bg-walnut"
-          >
-            Add to the chest, restored
-          </button>
-          <button
-            type="button"
-            onClick={() => setStep("done")}
-            className="inline-flex h-11 items-center justify-center rounded-full border border-sepia/40 px-6 text-sm font-medium text-sepia transition-colors hover:bg-sepia/10"
-          >
-            Keep it as-is
-          </button>
-        </div>
-      </div>
+      <>
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="group flex w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-16 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
+        >
+          <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
+            <UploadIcon className="size-7" />
+          </span>
+          <span className="font-display text-xl font-semibold tracking-tight text-walnut">Choose a photo</span>
+          <span className="max-w-sm text-sm leading-6 text-ink-soft">
+            A scan, a print, or a phone picture — JPEG, PNG, WebP, or GIF, up to 8MB.
+          </span>
+        </button>
+        <input
+          ref={fileInputRef}
+          data-testid="upload-input"
+          type="file"
+          accept="image/*"
+          className="sr-only"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) onPick(file);
+          }}
+        />
+        {errors.length > 0 ? <ErrorList errors={errors} /> : null}
+      </>
     );
   }
 
   return (
-    <div className="flex flex-col items-center gap-4 rounded-2xl bg-cream px-6 py-12 text-center ring-1 ring-hairline">
-      <span className="flex size-14 items-center justify-center rounded-full bg-brass/15 text-brass">
-        <CameraIcon className="size-7" />
-      </span>
-      <h2 className="font-display text-2xl font-semibold tracking-tight text-walnut">
-        Added to your chest
-      </h2>
-      <p className="max-w-md text-sm leading-6 text-ink-soft">
-        {faceCount} faces tagged, linked to the original print {scannerName}{" "}
-        scanned, and filed into two smart albums — automatically.
-      </p>
-      <div className="mt-2 flex flex-wrap justify-center gap-3">
-        <Link
-          href={`/photos/${photo.id}`}
-          className="inline-flex h-11 items-center justify-center rounded-full bg-sepia px-6 text-sm font-medium text-cream transition-colors hover:bg-walnut"
-        >
-          See the photo
-        </Link>
+    <div className="flex flex-col gap-5 rounded-2xl bg-cream p-6 ring-1 ring-hairline">
+      <Img
+        src={picked.previewUrl}
+        alt="Selected photo preview"
+        width={picked.width}
+        height={picked.height}
+        className="mx-auto max-h-72 w-auto rounded-lg ring-1 ring-hairline"
+      />
+      <label className="block">
+        <span className="mb-1.5 block text-sm font-medium text-ink">Title</span>
+        <input
+          data-testid="upload-title"
+          autoFocus
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="e.g. Grandpa at the lake"
+          className={inputClass}
+        />
+      </label>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="mb-1.5 block text-sm font-medium text-ink">
+            Date <span className="font-normal text-ink-soft">(optional)</span>
+          </span>
+          <input
+            value={dateInput}
+            onChange={(e) => setDateInput(e.target.value)}
+            placeholder="1950, 1950-06, circa 1950…"
+            className={inputClass}
+          />
+        </label>
+        <label className="block">
+          <span className="mb-1.5 block text-sm font-medium text-ink">
+            Place <span className="font-normal text-ink-soft">(optional)</span>
+          </span>
+          <select value={locationId} onChange={(e) => setLocationId(e.target.value)} className={inputClass}>
+            <option value="">—</option>
+            {locations.map((l) => (
+              <option key={l.id} value={l.id}>
+                {l.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {errors.length > 0 ? <ErrorList errors={errors} /> : null}
+      <div className="flex gap-2">
         <button
           type="button"
-          onClick={() => setStep("pick")}
-          className="inline-flex h-11 items-center justify-center rounded-full border border-sepia/40 px-6 text-sm font-medium text-sepia transition-colors hover:bg-sepia/10"
+          data-testid="upload-submit"
+          onClick={submit}
+          disabled={isPending}
+          className="inline-flex h-11 items-center rounded-full bg-sepia px-6 text-sm font-medium text-cream transition-colors hover:bg-walnut disabled:opacity-50"
         >
-          Upload another
+          {isPending ? "Adding…" : "Add to the chest"}
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            URL.revokeObjectURL(picked.previewUrl);
+            setPicked(null);
+            setErrors([]);
+          }}
+          disabled={isPending}
+          className="inline-flex h-11 items-center rounded-full px-4 text-sm text-ink-soft transition-colors hover:text-sepia disabled:opacity-50"
+        >
+          Choose another
         </button>
       </div>
     </div>
+  );
+}
+
+function ErrorList({ errors }: { errors: string[] }) {
+  return (
+    <ul className="space-y-1 rounded-lg bg-rosewood/10 px-3.5 py-2.5 text-sm text-rosewood ring-1 ring-rosewood/25">
+      {errors.map((err) => (
+        <li key={err}>{err}</li>
+      ))}
+    </ul>
   );
 }

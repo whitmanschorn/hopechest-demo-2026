@@ -73,6 +73,30 @@ export function parseFuzzyDate(input: string): FuzzyDate {
   };
 }
 
+/** Flatten a FuzzyDate into the Photo/LifeEvent `date*` columns — the inverse of
+ * `toFuzzyDate` in load.ts. Pure, so it can be unit-tested for round-tripping. */
+export function fuzzyDateToColumns(date: FuzzyDate): {
+  dateIso: string | null;
+  dateYear: number | null;
+  dateMonth: number | null;
+  dateDay: number | null;
+  datePrecision: string;
+  dateDisplay: string;
+  dateDeduced: boolean;
+  dateClue: string | null;
+} {
+  return {
+    dateIso: date.iso ?? null,
+    dateYear: date.year ?? null,
+    dateMonth: date.month ?? null,
+    dateDay: date.day ?? null,
+    datePrecision: date.precision,
+    dateDisplay: date.display,
+    dateDeduced: date.deduced ?? false,
+    dateClue: date.clue ?? null,
+  };
+}
+
 /** Format a fuzzy date for display (the row already carries a `display` string).
  * Lives here (prisma-free) so client components can import it without pulling
  * the server data layer into the browser bundle. */
