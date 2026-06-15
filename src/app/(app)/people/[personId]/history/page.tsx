@@ -2,15 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ChevronLeftIcon, HistoryIcon } from "@/components/icons";
-import { changelogForPerson, getPerson, people } from "@/data";
+import { changelogForPerson, getPerson } from "@/data";
 import { FIELD_LABELS, isEditablePersonField } from "@/data/db/personEdits";
 import type { Changelog } from "@/data";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return people.map((p) => ({ personId: p.id }));
-}
 
 export async function generateMetadata({
   params,
@@ -18,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ personId: string }>;
 }): Promise<Metadata> {
   const { personId } = await params;
-  return { title: `History · ${getPerson(personId).name}` };
+  return { title: `History · ${(await getPerson(personId)).name}` };
 }
 
 const SPECIAL_FIELD_LABELS: Record<string, string> = {
@@ -45,20 +39,12 @@ function formatEditedAt(iso: string): string {
   return Number.isNaN(parsed.getTime()) ? iso : dateFormat.format(parsed);
 }
 
-function editorName(editedById: string): string {
-  try {
-    return getPerson(editedById).name;
-  } catch {
-    return "Someone";
-  }
-}
-
-function RevisionRow({ entry }: { entry: Changelog }) {
+function RevisionRow({ entry, editorName }: { entry: Changelog; editorName: string }) {
   return (
     <li className="flex flex-col gap-1 rounded-xl bg-cream px-5 py-4 ring-1 ring-hairline">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <p className="text-[15px] text-ink">
-          <span className="font-medium text-walnut">{editorName(entry.editedById)}</span>{" "}
+          <span className="font-medium text-walnut">{editorName}</span>{" "}
           <span className="text-ink-soft">{entry.summary ?? `changed ${fieldLabel(entry.field).toLowerCase()}`}</span>
         </p>
         <time className="text-xs text-ink-soft" dateTime={entry.editedAt}>
@@ -89,8 +75,20 @@ export default async function PersonHistory({
   params: Promise<{ personId: string }>;
 }) {
   const { personId } = await params;
-  const person = getPerson(personId);
-  const revisions = changelogForPerson(personId);
+  const person = await getPerson(personId);
+  const revisions = await changelogForPerson(personId);
+
+  // Pre-resolve editor names (getPerson is async; can't call it in a sync row).
+  const editorNames = new Map<string, string>();
+  await Promise.all(
+    [...new Set(revisions.map((r) => r.editedById))].map(async (id) => {
+      try {
+        editorNames.set(id, (await getPerson(id)).name);
+      } catch {
+        editorNames.set(id, "Someone");
+      }
+    }),
+  );
 
   return (
     <>
@@ -113,7 +111,7 @@ export default async function PersonHistory({
       {revisions.length > 0 ? (
         <ol className="mt-6 flex flex-col gap-2.5">
           {revisions.map((entry) => (
-            <RevisionRow key={entry.id} entry={entry} />
+            <RevisionRow key={entry.id} entry={entry} editorName={editorNames.get(entry.editedById) ?? "Someone"} />
           ))}
         </ol>
       ) : (

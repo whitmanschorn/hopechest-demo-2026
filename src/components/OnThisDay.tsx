@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Img } from "./Img";
 import { CameraIcon } from "./icons";
-import { demoToday, onThisDay } from "@/data";
+import { getDemoToday, onThisDay } from "@/data";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -14,9 +14,10 @@ const MONTHS = [
  * in earlier years. Driven by precise photo dates and the demo's pinned today,
  * so it's deterministic and always populated.
  */
-export function OnThisDay() {
-  const [, mm, dd] = demoToday.split("-").map(Number);
-  const memories = onThisDay(mm, dd);
+export async function OnThisDay() {
+  const today = await getDemoToday();
+  const [, mm, dd] = today.split("-").map(Number);
+  const memories = await onThisDay(mm, dd);
   if (memories.length === 0) return null;
 
   const todayLabel = `${MONTHS[mm - 1]} ${dd}`;

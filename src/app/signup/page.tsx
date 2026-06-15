@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { FauxAuthButton } from "@/components/FauxAuthButton";
+import { LoginForm } from "@/components/LoginForm";
 import { ChestIcon } from "@/components/icons";
 
 export const metadata: Metadata = { title: "Create your chest" };
-
-const FIELDS = [
-  { label: "Your name", type: "text", placeholder: "Margaret Whitfield" },
-  { label: "Email", type: "email", placeholder: "you@example.com" },
-  { label: "Password", type: "password", placeholder: "••••••••" },
-] as const;
 
 export default function Signup() {
   return (
@@ -26,28 +20,11 @@ export default function Signup() {
           <h1 className="font-display text-2xl font-semibold tracking-tight text-walnut">
             Create your chest
           </h1>
-          <p className="mt-1 text-sm text-ink-soft">
-            A safe place for everything your family wants to keep.
+          <p className="mb-6 mt-1 text-sm text-ink-soft">
+            Enter your phone number — we&rsquo;ll text you a one-time code (shown
+            on screen in this demo). No passwords, ever.
           </p>
-          <div className="mt-6 flex flex-col gap-4">
-            {FIELDS.map((f) => (
-              <label key={f.label} className="block">
-                <span className="mb-1.5 block text-sm font-medium text-ink">
-                  {f.label}
-                </span>
-                <input
-                  type={f.type}
-                  placeholder={f.placeholder}
-                  className="h-11 w-full rounded-lg border border-hairline bg-parchment px-3.5 text-[15px] text-ink placeholder:text-ink-soft/50 focus:border-sepia focus:outline-none focus:ring-2 focus:ring-sepia/20"
-                />
-              </label>
-            ))}
-            <FauxAuthButton
-              label="Create my chest"
-              busyLabel="Setting things up…"
-              className="mt-1 w-full"
-            />
-          </div>
+          <LoginForm cta="Send my code" />
         </div>
         <p className="mt-5 text-center text-sm text-ink-soft">
           Already have a chest?{" "}

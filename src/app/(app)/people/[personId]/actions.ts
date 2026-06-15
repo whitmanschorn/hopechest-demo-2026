@@ -15,12 +15,8 @@ import {
   type FieldUpdate,
 } from "@/data/db/personEdits";
 import { parseFuzzyDate } from "@/data/db/fuzzyDate";
-import {
-  currentMemberId,
-  getLifeEvent,
-  getPerson,
-  locations,
-} from "@/data";
+import { getLifeEvent, getLocations, getPerson } from "@/data";
+import { requireCurrentPerson } from "@/lib/auth/session";
 import type {
   ChangelogRow,
   LifeEventKind,
@@ -53,8 +49,8 @@ function nowIso(): string {
   return new Date().toISOString();
 }
 
-function locationExists(id: string): boolean {
-  return locations.some((l) => l.id === id);
+async function locationExists(id: string): Promise<boolean> {
+  return (await getLocations()).some((l) => l.id === id);
 }
 
 function revalidatePerson(personId: string): void {
@@ -69,7 +65,7 @@ export async function updatePersonFields(
 ): Promise<ActionResult> {
   let person;
   try {
-    person = getPerson(personId);
+    person = await getPerson(personId);
   } catch {
     return { ok: false, errors: ["That person no longer exists."] };
   }
@@ -78,6 +74,7 @@ export async function updatePersonFields(
   if (errors.length > 0) return { ok: false, errors };
   if (changes.length === 0) return { ok: true };
 
+  const editorId = (await requireCurrentPerson()).id;
   await applyPersonPatch(personId, patch);
 
   const editedAt = nowIso();
@@ -94,7 +91,7 @@ export async function updatePersonFields(
       field: change.field,
       before: change.before,
       after: change.after,
-      editedById: currentMemberId,
+      editedById: editorId,
       editedAt,
       summary,
     });
@@ -112,12 +109,12 @@ export interface LifeEventInput {
   description?: string;
 }
 
-function validateLifeEvent(input: LifeEventInput): string[] {
+async function validateLifeEvent(input: LifeEventInput): Promise<string[]> {
   const errors: string[] = [];
   if (!input.title.trim()) errors.push("Title is required.");
   if (!input.dateInput.trim()) errors.push("Date is required.");
   if (!LIFE_EVENT_KINDS.includes(input.kind as LifeEventKind)) errors.push("Pick a valid event type.");
-  if (input.locationId && !locationExists(input.locationId)) errors.push("That place is not in the chest.");
+  if (input.locationId && !(await locationExists(input.locationId))) errors.push("That place is not in the chest.");
   return errors;
 }
 
@@ -139,17 +136,18 @@ export async function addLifeEvent(
   input: LifeEventInput,
 ): Promise<ActionResult> {
   try {
-    getPerson(personId);
+    await getPerson(personId);
   } catch {
     return { ok: false, errors: ["That person no longer exists."] };
   }
-  const errors = validateLifeEvent(input);
+  const errors = await validateLifeEvent(input);
   if (errors.length > 0) return { ok: false, errors };
 
+  const editorId = (await requireCurrentPerson()).id;
   const id = genId("le");
   const createdAt = nowIso();
   const fields = lifeEventFieldsFromInput(input);
-  await insertLifeEvent({ id, personId, createdById: currentMemberId, createdAt, ...fields });
+  await insertLifeEvent({ id, personId, createdById: editorId, createdAt, ...fields });
 
   await insertChangelog({
     id: genId("cl"),
@@ -159,7 +157,7 @@ export async function addLifeEvent(
     field: "(created)",
     before: null,
     after: fields.title,
-    editedById: currentMemberId,
+    editedById: editorId,
     editedAt: createdAt,
     summary: "Added a life event",
   });
@@ -176,13 +174,14 @@ export async function editLifeEvent(
 ): Promise<ActionResult> {
   let existing;
   try {
-    existing = getLifeEvent(eventId);
+    existing = await getLifeEvent(eventId);
   } catch {
     return { ok: false, errors: ["That life event no longer exists."] };
   }
-  const errors = validateLifeEvent(input);
+  const errors = await validateLifeEvent(input);
   if (errors.length > 0) return { ok: false, errors };
 
+  const editorId = (await requireCurrentPerson()).id;
   const fields = lifeEventFieldsFromInput(input);
   // Clear locationId/description if the edit removed them.
   await updateLifeEvent(eventId, {
@@ -199,7 +198,7 @@ export async function editLifeEvent(
     field: "(edited)",
     before: existing.title,
     after: fields.title,
-    editedById: currentMemberId,
+    editedById: editorId,
     editedAt: nowIso(),
     summary: "Edited a life event",
   });
@@ -215,10 +214,11 @@ export async function removeLifeEvent(
 ): Promise<ActionResult> {
   let existing;
   try {
-    existing = getLifeEvent(eventId);
+    existing = await getLifeEvent(eventId);
   } catch {
     return { ok: true };
   }
+  const editorId = (await requireCurrentPerson()).id;
   await deleteLifeEvent(eventId);
 
   await insertChangelog({
@@ -229,7 +229,7 @@ export async function removeLifeEvent(
     field: "(deleted)",
     before: existing.title,
     after: null,
-    editedById: currentMemberId,
+    editedById: editorId,
     editedAt: nowIso(),
     summary: "Removed a life event",
   } satisfies ChangelogRow);

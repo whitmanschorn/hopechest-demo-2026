@@ -5,7 +5,10 @@ import { getPerson, type Photo } from "@/data";
  * The photo with hover/tap-revealed face boxes. Box coordinates are
  * percentages of the image.
  */
-export function FaceTagOverlay({ photo }: { photo: Photo }) {
+export async function FaceTagOverlay({ photo }: { photo: Photo }) {
+  const people = await Promise.all(
+    photo.faceTags.map((tag) => getPerson(tag.personId)),
+  );
   return (
     <div className="group relative overflow-hidden rounded-xl ring-1 ring-hairline">
       <Img
@@ -16,8 +19,8 @@ export function FaceTagOverlay({ photo }: { photo: Photo }) {
         loading="eager"
         className="block w-full"
       />
-      {photo.faceTags.map((tag) => {
-        const person = getPerson(tag.personId);
+      {photo.faceTags.map((tag, i) => {
+        const person = people[i];
         return (
           <span
             key={tag.personId}

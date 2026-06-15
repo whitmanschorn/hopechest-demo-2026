@@ -1,26 +1,13 @@
 /**
  * Repositories: turn normalized rows (load.ts) into hydrated domain objects and
  * answer the queries the app needs. Pages/components call these (re-exported by
- * src/data/index.ts) and never touch JSON or join tables directly. A Postgres
- * port reimplements these function bodies; their signatures stay the same.
+ * src/data/index.ts) and never touch Prisma or join tables directly. Every
+ * function is async (Postgres-backed); the hydration step is memoized per
+ * request with React `cache()`.
  */
-import {
-  albumPhotoRows,
-  albumRows,
-  commentRows,
-  config,
-  documentRows,
-  getChangelogRows,
-  getLifeEventRows,
-  locationById,
-  locationRows,
-  personById,
-  personRows,
-  photoCaptureRows,
-  photoPersonRows,
-  photoRows,
-  reactionRows,
-} from "./load";
+import { cache } from "react";
+
+import { loadData } from "./load";
 import type {
   Album,
   Changelog,
@@ -28,7 +15,6 @@ import type {
   FaceTag,
   FamilyDocument,
   LifeEvent,
-  LifeEventRow,
   Location,
   Person,
   Photo,
@@ -36,150 +22,190 @@ import type {
   ReactionSummary,
 } from "./schema";
 
-// --- join indexes -----------------------------------------------------------
-const faceTagsByPhoto = new Map<string, FaceTag[]>();
-for (const r of photoPersonRows) {
-  const tag: FaceTag = { personId: r.personId, box: r.box, ...(r.confidence != null ? { confidence: r.confidence } : {}) };
-  (faceTagsByPhoto.get(r.photoId) ?? faceTagsByPhoto.set(r.photoId, []).get(r.photoId)!).push(tag);
+interface Hydrated {
+  locations: Location[];
+  people: Person[];
+  photos: Photo[];
+  documents: FamilyDocument[];
+  albums: Album[];
+  photoById: Map<string, Photo>;
+  albumById: Map<string, Album>;
+  personById: Map<string, Person>;
+  documentById: Map<string, FamilyDocument>;
+  locationById: Map<string, Location>;
+  /** Grouped reactions per target id, WITHOUT the `mine` flag (added per caller). */
+  reactionsByTarget: Map<string, { emoji: string; count: number; byIds: string[] }[]>;
+  commentRowsByPhoto: Map<string, { id: string; photoId: string; parentId: string | null; authorId: string; body: string; when: string }[]>;
 }
 
-const capturesByPhoto = new Map<string, PhotoCapture[]>();
-for (const r of photoCaptureRows) {
-  const cap: PhotoCapture = { id: r.id, capturedById: r.capturedById, capturedAt: r.capturedAt, device: r.device, framing: r.framing, ...(r.note != null ? { note: r.note } : {}) };
-  (capturesByPhoto.get(r.photoId) ?? capturesByPhoto.set(r.photoId, []).get(r.photoId)!).push(cap);
-}
+const build = cache(async (): Promise<Hydrated> => {
+  const d = await loadData();
 
-const orderedAlbumPhotos = [...albumPhotoRows].sort((a, b) => a.position - b.position);
-const photoIdsByAlbum = new Map<string, string[]>();
-const albumIdsByPhoto = new Map<string, string[]>();
-for (const r of orderedAlbumPhotos) {
-  (photoIdsByAlbum.get(r.albumId) ?? photoIdsByAlbum.set(r.albumId, []).get(r.albumId)!).push(r.photoId);
-  (albumIdsByPhoto.get(r.photoId) ?? albumIdsByPhoto.set(r.photoId, []).get(r.photoId)!).push(r.albumId);
-}
+  const faceTagsByPhoto = new Map<string, FaceTag[]>();
+  for (const r of d.photoPersonRows) {
+    const tag: FaceTag = { personId: r.personId, box: r.box, ...(r.confidence != null ? { confidence: r.confidence } : {}) };
+    (faceTagsByPhoto.get(r.photoId) ?? faceTagsByPhoto.set(r.photoId, []).get(r.photoId)!).push(tag);
+  }
 
-// --- hydration (done once; data is static) ----------------------------------
-function hydratePhoto(id: string): Photo {
-  const row = photoRows.find((p) => p.id === id)!;
-  const location = row.locationId ? locationById.get(row.locationId) : undefined;
-  return {
+  const capturesByPhoto = new Map<string, PhotoCapture[]>();
+  for (const r of d.photoCaptureRows) {
+    const cap: PhotoCapture = { id: r.id, capturedById: r.capturedById, capturedAt: r.capturedAt, device: r.device, framing: r.framing, ...(r.note != null ? { note: r.note } : {}) };
+    (capturesByPhoto.get(r.photoId) ?? capturesByPhoto.set(r.photoId, []).get(r.photoId)!).push(cap);
+  }
+
+  const orderedAlbumPhotos = [...d.albumPhotoRows].sort((a, b) => a.position - b.position);
+  const photoIdsByAlbum = new Map<string, string[]>();
+  const albumIdsByPhoto = new Map<string, string[]>();
+  for (const r of orderedAlbumPhotos) {
+    (photoIdsByAlbum.get(r.albumId) ?? photoIdsByAlbum.set(r.albumId, []).get(r.albumId)!).push(r.photoId);
+    (albumIdsByPhoto.get(r.photoId) ?? albumIdsByPhoto.set(r.photoId, []).get(r.photoId)!).push(r.albumId);
+  }
+
+  const photos: Photo[] = d.photoRows.map((row) => ({
     ...row,
-    location,
-    faceTags: faceTagsByPhoto.get(id) ?? [],
-    captures: capturesByPhoto.get(id) ?? [],
-    albumIds: albumIdsByPhoto.get(id) ?? [],
+    location: row.locationId ? d.locationById.get(row.locationId) : undefined,
+    faceTags: faceTagsByPhoto.get(row.id) ?? [],
+    captures: capturesByPhoto.get(row.id) ?? [],
+    albumIds: albumIdsByPhoto.get(row.id) ?? [],
+  }));
+  const photoById = new Map(photos.map((p) => [p.id, p]));
+
+  const albums: Album[] = d.albumRows.map((a) => {
+    const photoIds = photoIdsByAlbum.get(a.id) ?? [];
+    return { ...a, photoIds, photoCount: photoIds.length };
+  });
+
+  // group reactions by target id, then by emoji (no `mine` — added per caller)
+  const reactionsByTarget = new Map<string, { emoji: string; count: number; byIds: string[] }[]>();
+  {
+    const byTarget = new Map<string, Map<string, string[]>>();
+    for (const r of d.reactionRows) {
+      const emojis = byTarget.get(r.targetId) ?? byTarget.set(r.targetId, new Map()).get(r.targetId)!;
+      (emojis.get(r.emoji) ?? emojis.set(r.emoji, []).get(r.emoji)!).push(r.byId);
+    }
+    for (const [targetId, emojis] of byTarget) {
+      reactionsByTarget.set(
+        targetId,
+        [...emojis.entries()].map(([emoji, byIds]) => ({ emoji, count: byIds.length, byIds })).sort((a, b) => b.count - a.count),
+      );
+    }
+  }
+
+  const commentRowsByPhoto = new Map<string, typeof d.commentRows>();
+  for (const c of d.commentRows) {
+    (commentRowsByPhoto.get(c.photoId) ?? commentRowsByPhoto.set(c.photoId, []).get(c.photoId)!).push(c);
+  }
+
+  return {
+    locations: d.locationRows,
+    people: d.personRows,
+    photos,
+    documents: d.documentRows,
+    albums,
+    photoById,
+    albumById: new Map(albums.map((a) => [a.id, a])),
+    personById: d.personById,
+    documentById: d.documentById,
+    locationById: d.locationById,
+    reactionsByTarget,
+    commentRowsByPhoto,
   };
-}
-
-export const locations: Location[] = locationRows;
-export const people: Person[] = personRows;
-export const photos: Photo[] = photoRows.map((p) => hydratePhoto(p.id));
-export const documents: FamilyDocument[] = documentRows;
-
-const photoByIdHydrated = new Map(photos.map((p) => [p.id, p]));
-
-export const albums: Album[] = albumRows.map((a) => {
-  const photoIds = photoIdsByAlbum.get(a.id) ?? [];
-  return { ...a, photoIds, photoCount: photoIds.length };
 });
-const albumByIdHydrated = new Map(albums.map((a) => [a.id, a]));
+
+// --- collections ------------------------------------------------------------
+export async function getPhotos(): Promise<Photo[]> { return (await build()).photos; }
+export async function getPeople(): Promise<Person[]> { return (await build()).people; }
+export async function getAlbums(): Promise<Album[]> { return (await build()).albums; }
+export async function getLocations(): Promise<Location[]> { return (await build()).locations; }
+export async function getDocuments(): Promise<FamilyDocument[]> { return (await build()).documents; }
 
 // --- getters ----------------------------------------------------------------
-export function getPhoto(id: string): Photo {
-  const p = photoByIdHydrated.get(id);
+export async function getPhoto(id: string): Promise<Photo> {
+  const p = (await build()).photoById.get(id);
   if (!p) throw new Error(`Unknown photo: ${id}`);
   return p;
 }
-export function getPerson(id: string): Person {
-  const p = personById.get(id);
+export async function getPerson(id: string): Promise<Person> {
+  const p = (await build()).personById.get(id);
   if (!p) throw new Error(`Unknown person: ${id}`);
   return p;
 }
-export function getAlbum(id: string): Album {
-  const a = albumByIdHydrated.get(id);
+export async function getAlbum(id: string): Promise<Album> {
+  const a = (await build()).albumById.get(id);
   if (!a) throw new Error(`Unknown album: ${id}`);
   return a;
 }
-export function getDocument(id: string): FamilyDocument {
-  const d = documentRows.find((x) => x.id === id);
-  if (!d) throw new Error(`Unknown document: ${id}`);
-  return d;
+export async function getDocument(id: string): Promise<FamilyDocument> {
+  const dd = (await build()).documentById.get(id);
+  if (!dd) throw new Error(`Unknown document: ${id}`);
+  return dd;
 }
-export function getLocation(id: string): Location {
-  const l = locationById.get(id);
+export async function getLocation(id: string): Promise<Location> {
+  const l = (await build()).locationById.get(id);
   if (!l) throw new Error(`Unknown location: ${id}`);
   return l;
 }
 
 // --- queries ----------------------------------------------------------------
-export function photosForAlbum(album: Album): Photo[] {
-  return album.photoIds.map(getPhoto);
+export async function photosForAlbum(album: Album): Promise<Photo[]> {
+  const h = await build();
+  return album.photoIds.map((id) => h.photoById.get(id)).filter((p): p is Photo => Boolean(p));
 }
-export function photosForPerson(personId: string): Photo[] {
-  return photos.filter((p) => p.faceTags.some((t) => t.personId === personId));
+export async function photosForPerson(personId: string): Promise<Photo[]> {
+  return (await build()).photos.filter((p) => p.faceTags.some((t) => t.personId === personId));
 }
-export function photosForLocation(locationId: string): Photo[] {
-  return photos.filter((p) => p.locationId === locationId);
+export async function photosForLocation(locationId: string): Promise<Photo[]> {
+  return (await build()).photos.filter((p) => p.locationId === locationId);
 }
-export function albumsForPhoto(photo: Photo): Album[] {
-  return photo.albumIds.map(getAlbum);
+export async function albumsForPhoto(photo: Photo): Promise<Album[]> {
+  const h = await build();
+  return photo.albumIds.map((id) => h.albumById.get(id)).filter((a): a is Album => Boolean(a));
 }
 
 /** Locations that have at least one photo, with their photo counts (for maps). */
-export function locationsWithCounts(): { location: Location; count: number; coverPhotoId?: string }[] {
-  return locations
+export async function locationsWithCounts(): Promise<{ location: Location; count: number; coverPhotoId?: string }[]> {
+  const h = await build();
+  return h.locations
     .map((location) => {
-      const ps = photosForLocation(location.id);
+      const ps = h.photos.filter((p) => p.locationId === location.id);
       return { location, count: ps.length, coverPhotoId: ps[0]?.id };
     })
     .filter((x) => x.count > 0);
 }
 
-/**
- * "On this day" — photos with a known calendar day matching month/day, across
- * years, newest first. Defaults to the demo's pinned today.
- */
-export function onThisDay(month: number, day: number): Photo[] {
-  return photos
+/** "On this day" — photos with a known calendar day matching month/day, newest first. */
+export async function onThisDay(month: number, day: number): Promise<Photo[]> {
+  return (await build()).photos
     .filter((p) => p.date.precision === "day" && p.date.month === month && p.date.day === day)
     .sort((a, b) => (b.date.year ?? 0) - (a.date.year ?? 0));
 }
 
 // --- comments & reactions ---------------------------------------------------
-const reactionsByTarget = new Map<string, ReactionSummary[]>();
-{
-  // group raw reactions by target id, then by emoji
-  const byTarget = new Map<string, Map<string, string[]>>();
-  for (const r of reactionRows) {
-    const emojis = byTarget.get(r.targetId) ?? byTarget.set(r.targetId, new Map()).get(r.targetId)!;
-    (emojis.get(r.emoji) ?? emojis.set(r.emoji, []).get(r.emoji)!).push(r.byId);
-  }
-  for (const [targetId, emojis] of byTarget) {
-    reactionsByTarget.set(
-      targetId,
-      [...emojis.entries()]
-        .map(([emoji, byIds]) => ({ emoji, count: byIds.length, byIds, mine: byIds.includes(config.currentMemberId) }))
-        .sort((a, b) => b.count - a.count),
-    );
-  }
+function withMine(groups: { emoji: string; count: number; byIds: string[] }[] | undefined, meId?: string): ReactionSummary[] {
+  return (groups ?? []).map((g) => ({ ...g, mine: meId ? g.byIds.includes(meId) : false }));
 }
 
-const reactionsFor = (targetId: string): ReactionSummary[] => reactionsByTarget.get(targetId) ?? [];
-
-/** Grouped emoji reactions on a photo. */
-export function reactionsForPhoto(photoId: string): ReactionSummary[] {
-  return reactionsFor(photoId);
+/** Grouped emoji reactions on a photo. Pass the current member id to set `mine`. */
+export async function reactionsForPhoto(photoId: string, meId?: string): Promise<ReactionSummary[]> {
+  return withMine((await build()).reactionsByTarget.get(photoId), meId);
 }
 
 /** Threaded comments for a photo: top-level oldest-first, each with nested replies. */
-export function commentsForPhoto(photoId: string): Comment[] {
-  const rows = commentRows.filter((c) => c.photoId === photoId);
-  const repliesByParent = new Map<string, Comment[]>();
-  const hydrate = (id: string, photo: string, parentId: string | null, authorId: string, body: string, when: string): Comment => ({
-    id, photoId: photo, parentId, author: getPerson(authorId), body, when,
-    reactions: reactionsFor(id), replies: [],
-  });
-  const all = rows.map((c) => hydrate(c.id, c.photoId, c.parentId, c.authorId, c.body, c.when));
+export async function commentsForPhoto(photoId: string, meId?: string): Promise<Comment[]> {
+  const h = await build();
+  const rows = h.commentRowsByPhoto.get(photoId) ?? [];
+  const all: Comment[] = rows.map((c) => ({
+    id: c.id,
+    photoId: c.photoId,
+    parentId: c.parentId,
+    author: h.personById.get(c.authorId)!,
+    body: c.body,
+    when: c.when,
+    reactions: withMine(h.reactionsByTarget.get(c.id), meId),
+    replies: [],
+  }));
   const byId = new Map(all.map((c) => [c.id, c]));
+  const repliesByParent = new Map<string, Comment[]>();
   const roots: Comment[] = [];
   for (const c of all) {
     if (c.parentId && byId.has(c.parentId)) {
@@ -193,36 +219,33 @@ export function commentsForPhoto(photoId: string): Comment[] {
 }
 
 /** Total comments (including replies) on a photo. */
-export function commentCount(photoId: string): number {
-  return commentRows.filter((c) => c.photoId === photoId).length;
+export async function commentCount(photoId: string): Promise<number> {
+  return ((await build()).commentRowsByPhoto.get(photoId) ?? []).length;
 }
 
 // --- life events & change history -------------------------------------------
-// These read the live mutable stores (getLifeEventRows/getChangelogRows) on
-// every call so edits made through src/data/db/mutations.ts are visible at once.
 
-function hydrateLifeEvent(e: LifeEventRow): LifeEvent {
-  return { ...e, location: e.locationId ? locationById.get(e.locationId) : undefined };
-}
-
-/** A person's life events, oldest-first by best-known year. */
-export function lifeEventsForPerson(personId: string): LifeEvent[] {
-  return getLifeEventRows()
+/** A person's life events, oldest-first, with locations resolved. */
+export async function lifeEventsForPerson(personId: string): Promise<LifeEvent[]> {
+  const d = await loadData();
+  return d.lifeEventRows
     .filter((e) => e.personId === personId)
-    .map(hydrateLifeEvent)
+    .map((e) => ({ ...e, location: e.locationId ? d.locationById.get(e.locationId) : undefined }))
     .sort((a, b) => (a.date.year ?? 0) - (b.date.year ?? 0));
 }
 
-/** A single life event, hydrated. Throws if unknown. */
-export function getLifeEvent(id: string): LifeEvent {
-  const e = getLifeEventRows().find((x) => x.id === id);
+/** A single life event with its location resolved. */
+export async function getLifeEvent(id: string): Promise<LifeEvent> {
+  const d = await loadData();
+  const e = d.lifeEventRows.find((x) => x.id === id);
   if (!e) throw new Error(`Unknown life event: ${id}`);
-  return hydrateLifeEvent(e);
+  return { ...e, location: e.locationId ? d.locationById.get(e.locationId) : undefined };
 }
 
-/** Revision history for a person (their fields + their life events), newest-first. */
-export function changelogForPerson(personId: string): Changelog[] {
-  return getChangelogRows()
+/** A person's change history, newest edit first. */
+export async function changelogForPerson(personId: string): Promise<Changelog[]> {
+  const d = await loadData();
+  return d.changelogRows
     .filter((c) => c.personId === personId)
     .slice()
     .sort((a, b) => b.editedAt.localeCompare(a.editedAt));

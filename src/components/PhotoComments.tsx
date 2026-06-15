@@ -4,7 +4,9 @@ import { useRef, useState } from "react";
 
 import { InitialsAvatar } from "./InitialsAvatar";
 import { CommentIcon, ReplyIcon, SmileIcon } from "./icons";
-import { REACTION_EMOJI, type Comment, type Person, type ReactionSummary } from "@/data";
+// Import from the prisma-free schema module so this client component doesn't
+// pull the server data layer (Prisma/pg) into the browser bundle.
+import { REACTION_EMOJI, type Comment, type Person, type ReactionSummary } from "@/data/db/schema";
 
 // --- pure helpers (optimistic, client-only — nothing persists) --------------
 function applyReaction(summaries: ReactionSummary[], emoji: string, meId: string): ReactionSummary[] {

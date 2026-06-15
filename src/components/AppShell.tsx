@@ -15,7 +15,7 @@ import {
   PeopleIcon,
   UploadIcon,
 } from "./icons";
-import { currentMemberId, getPerson } from "@/data";
+import type { Person } from "@/data";
 
 const PRIMARY_NAV = [
   { href: "/home", label: "Home", Icon: HomeIcon },
@@ -32,8 +32,7 @@ const SECONDARY_NAV = [
   { href: "/newsletter", label: "Newsletter", Icon: MailIcon },
 ] as const;
 
-export function AppShell({ children }: { children: ReactNode }) {
-  const me = getPerson(currentMemberId);
+export function AppShell({ children, me }: { children: ReactNode; me: Person }) {
   return (
     <div className="flex min-h-dvh flex-1">
       {/* Desktop sidebar */}

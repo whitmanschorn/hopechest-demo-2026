@@ -72,3 +72,10 @@ export function parseFuzzyDate(input: string): FuzzyDate {
     deduced: true,
   };
 }
+
+/** Format a fuzzy date for display (the row already carries a `display` string).
+ * Lives here (prisma-free) so client components can import it without pulling
+ * the server data layer into the browser bundle. */
+export function formatDate(date: { display: string }): string {
+  return date.display;
+}

@@ -10,8 +10,8 @@ const KIND_LABEL: Record<FamilyDocument["kind"], string> = {
 };
 
 /** Typographic "paper" card — every document reads like the artifact itself. */
-export function DocumentCard({ doc }: { doc: FamilyDocument }) {
-  const by = getPerson(doc.uploadedById);
+export async function DocumentCard({ doc }: { doc: FamilyDocument }) {
+  const by = await getPerson(doc.uploadedById);
   const telegram = doc.kind === "telegram";
   return (
     <article className="flex flex-col overflow-hidden rounded-xl bg-cream ring-1 ring-hairline transition-shadow hover:shadow-lg hover:shadow-walnut/10">

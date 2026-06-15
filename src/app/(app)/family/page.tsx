@@ -6,12 +6,12 @@ import { InviteForm } from "@/components/InviteForm";
 import { SectionHeader, SubHeader } from "@/components/SectionHeader";
 import { MailIcon } from "@/components/icons";
 import {
-  currentMemberId,
+  getInvites,
+  getMembers,
   getPerson,
-  invites,
-  members,
   type Role,
 } from "@/data";
+import { requireCurrentPerson } from "@/lib/auth/session";
 
 export const metadata: Metadata = { title: "Family" };
 
@@ -27,7 +27,16 @@ const ROLE_HINT: Record<Role, string> = {
   Viewer: "browses and comments",
 };
 
-export default function Family() {
+export default async function Family() {
+  const me = await requireCurrentPerson();
+  const members = await getMembers();
+  const invites = await getInvites();
+  const memberRows = await Promise.all(
+    members.map(async (member) => ({
+      member,
+      person: await getPerson(member.personId),
+    })),
+  );
   return (
     <div className="mx-auto max-w-3xl">
       <SectionHeader
@@ -35,9 +44,8 @@ export default function Family() {
         subtitle="Everyone with a key to the Kowalski–Whitfield chest."
       />
       <div className="overflow-hidden rounded-xl bg-cream ring-1 ring-hairline">
-        {members.map((member, i) => {
-          const person = getPerson(member.personId);
-          const isMe = member.personId === currentMemberId;
+        {memberRows.map(({ member, person }, i) => {
+          const isMe = member.personId === me.id;
           return (
             <div
               key={member.personId}

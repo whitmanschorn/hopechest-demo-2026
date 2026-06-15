@@ -1,14 +1,13 @@
 import Link from "next/link";
 
-import { FauxAuthButton } from "@/components/FauxAuthButton";
 import { Img } from "@/components/Img";
+import { LoginForm } from "@/components/LoginForm";
 import { ChestIcon } from "@/components/icons";
-import { getPhoto } from "@/data";
+import { getPhotos } from "@/data";
 
-export default function Welcome() {
-  const hero = getPhoto("klara-and-sarah-1933");
-  const wedding = getPhoto("wedding-day-1950");
-  const picnic = getPhoto("family-picnic-1962");
+export default async function Welcome() {
+  const photos = await getPhotos();
+  const [hero, wedding, picnic] = photos;
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-6 py-12">
       <div className="grid w-full max-w-5xl items-center gap-12 lg:grid-cols-2">
@@ -26,23 +25,18 @@ export default function Welcome() {
             Keep every photo, letter, and story safe in one chest — and let the
             whole family rediscover them together.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <FauxAuthButton label="Sign in" busyLabel="Opening the chest…" />
-            <Link
-              href="/signup"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-sepia/40 px-7 text-[15px] font-medium text-sepia transition-colors hover:bg-sepia/10"
-            >
-              Create your chest
-            </Link>
+          <div className="mx-auto mt-8 max-w-sm lg:mx-0">
+            <LoginForm cta="Sign in with your phone" />
+            <p className="mt-5 text-sm text-ink-soft">
+              New here?{" "}
+              <Link
+                href="/signup"
+                className="font-medium text-sepia underline decoration-hairline underline-offset-4"
+              >
+                Create your chest
+              </Link>
+            </p>
           </div>
-          <p className="mt-5 text-sm text-ink-soft">
-            <Link
-              href="/forgot-password"
-              className="underline decoration-hairline underline-offset-4 hover:text-sepia"
-            >
-              Forgot your password?
-            </Link>
-          </p>
         </div>
 
         {/* Photo collage */}
@@ -78,7 +72,7 @@ export default function Welcome() {
                 className="aspect-[3/4] w-full object-cover"
               />
               <span className="mt-2 block text-center font-display text-xs italic text-ink-soft">
-                Klara &amp; Sarah, c. 1933
+                {hero.title}
               </span>
             </div>
           </div>

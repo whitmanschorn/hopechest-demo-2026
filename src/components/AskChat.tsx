@@ -8,18 +8,13 @@ import { Img } from "./Img";
 import { InitialsAvatar } from "./InitialsAvatar";
 import { MentionLink } from "./MentionLink";
 import { AskIcon, DocumentIcon, SendIcon, SparkleIcon } from "./icons";
-import {
-  currentMemberId,
-  exchanges,
-  fallbackExchange,
-  getDocument,
-  getPerson,
-  getPhoto,
-  people,
-  suggestMentions,
-  type AnswerBlock,
-  type MentionSuggestion,
-  type ScriptedExchange,
+import { suggestMentionsAction } from "@/app/(app)/ask/actions";
+import type {
+  AnswerBlock,
+  MentionSuggestion,
+  Person,
+  Photo,
+  ScriptedExchange,
 } from "@/data";
 
 const THINK_MS = 1400;
@@ -37,27 +32,28 @@ interface Turn {
   state: "thinking" | "answered";
 }
 
-function matchExchange(input: string): ScriptedExchange {
-  const words = input.toLowerCase().split(/\W+/).filter(Boolean);
-  let best: ScriptedExchange | null = null;
-  let bestScore = 0;
-  for (const ex of exchanges) {
-    const score = ex.keywords.filter((k) => words.includes(k)).length;
-    if (score > bestScore) {
-      best = ex;
-      bestScore = score;
-    }
-  }
-  return bestScore >= 2 && best ? best : fallbackExchange;
+interface AskChatProps {
+  me: Person;
+  people: Person[];
+  exchanges: ScriptedExchange[];
+  fallbackExchange: ScriptedExchange;
+  /** Photos referenced by answer blocks, pre-resolved on the server. */
+  photosById: Record<string, Photo>;
+  /** Documents referenced by answer blocks, pre-resolved on the server. */
+  docsById: Record<string, { id: string; title: string }>;
 }
+
+const MENTION_RE = /@([a-zA-Z-]*)$/;
 
 /** Render the question text, swapping resolved mentions for smart links. */
 function QuestionText({
   text,
   mentions,
+  peopleById,
 }: {
   text: string;
   mentions: Mention[];
+  peopleById: Record<string, Person>;
 }) {
   if (mentions.length === 0) return <>{text}</>;
   const parts: ReactNode[] = [];
@@ -78,18 +74,30 @@ function QuestionText({
       break;
     }
     if (idx > 0) parts.push(rest.slice(0, idx));
-    parts.push(<MentionLink key={key++} person={getPerson(hit.personId)} />);
+    const person = peopleById[hit.personId];
+    if (person) parts.push(<MentionLink key={key++} person={person} />);
     rest = rest.slice(idx + hit.text.length);
   }
   return <>{parts}</>;
 }
 
-function AnswerBlockView({ block }: { block: AnswerBlock }) {
+function AnswerBlockView({
+  block,
+  peopleById,
+  photosById,
+  docsById,
+}: {
+  block: AnswerBlock;
+  peopleById: Record<string, Person>;
+  photosById: Record<string, Photo>;
+  docsById: Record<string, { id: string; title: string }>;
+}) {
   switch (block.kind) {
     case "text":
       return <p className="text-[15px] leading-7 text-ink">{block.text}</p>;
     case "photo": {
-      const photo = getPhoto(block.photoId);
+      const photo = photosById[block.photoId];
+      if (!photo) return null;
       return (
         <Link
           href={`/photos/${photo.id}`}
@@ -114,7 +122,8 @@ function AnswerBlockView({ block }: { block: AnswerBlock }) {
       );
     }
     case "source": {
-      const doc = getDocument(block.documentId);
+      const doc = docsById[block.documentId];
+      if (!doc) return null;
       return (
         <Link href="/documents" className="inline-block">
           <Badge tone="sepia" className="transition-colors hover:ring-sepia/50">
@@ -128,7 +137,8 @@ function AnswerBlockView({ block }: { block: AnswerBlock }) {
       return (
         <span className="flex flex-wrap gap-2">
           {block.personIds.map((id) => {
-            const person = getPerson(id);
+            const person = peopleById[id];
+            if (!person) return null;
             return (
               <Link
                 key={id}
@@ -162,26 +172,68 @@ function ThinkingDots({ label }: { label: string }) {
   );
 }
 
-const MENTION_RE = /@([a-zA-Z-]*)$/;
+export function AskChat({
+  me,
+  people,
+  exchanges,
+  fallbackExchange,
+  photosById,
+  docsById,
+}: AskChatProps) {
+  const peopleById: Record<string, Person> = Object.fromEntries(people.map((p) => [p.id, p]));
 
-export function AskChat() {
-  const me = getPerson(currentMemberId);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
   const [draftMentions, setDraftMentions] = useState<Mention[]>([]);
+  // Kinship-aware results for the current query, fetched via server action.
+  const [asyncSug, setAsyncSug] = useState<{ q: string; items: MentionSuggestion[] }>({ q: "", items: [] });
   const nextId = useRef(1);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const mentionMatch = MENTION_RE.exec(draft);
-  const suggestions: MentionSuggestion[] = mentionMatch
-    ? mentionMatch[1].length > 0
-      ? suggestMentions(mentionMatch[1], currentMemberId)
-      : people
-          .filter((p) => p.id !== currentMemberId)
+
+  function matchExchange(input: string): ScriptedExchange {
+    const words = input.toLowerCase().split(/\W+/).filter(Boolean);
+    let best: ScriptedExchange | null = null;
+    let bestScore = 0;
+    for (const ex of exchanges) {
+      const score = ex.keywords.filter((k) => words.includes(k)).length;
+      if (score > bestScore) {
+        best = ex;
+        bestScore = score;
+      }
+    }
+    return bestScore >= 2 && best ? best : fallbackExchange;
+  }
+
+  // Fetch kinship-aware suggestions for a non-empty @query via server action.
+  // (setState happens only in the async callback, never synchronously.)
+  useEffect(() => {
+    const m = MENTION_RE.exec(draft);
+    if (!m || m[1].length === 0) return;
+    const q = m[1];
+    let active = true;
+    suggestMentionsAction(q, me.id).then((items) => {
+      if (active) setAsyncSug({ q, items });
+    });
+    return () => {
+      active = false;
+    };
+  }, [draft, me.id]);
+
+  // Derived during render: empty @ = a few people; otherwise the async results
+  // matching the current query.
+  const suggestions: MentionSuggestion[] = !mentionMatch
+    ? []
+    : mentionMatch[1].length === 0
+      ? people
+          .filter((p) => p.id !== me.id)
           .slice(0, 4)
           .map((p) => ({ person: p, why: p.relation, viaKinship: false }))
-    : [];
+      : asyncSug.q === mentionMatch[1]
+        ? asyncSug.items
+        : [];
 
   useEffect(() => {
     if (turns.length > 0) {
@@ -230,8 +282,7 @@ export function AskChat() {
           </h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-ink-soft">
             Hopechest reads every photo, face tag, letter, and record in the
-            chest — 412 photos and 38 documents so far — and answers like
-            someone who was there.
+            chest and answers like someone who was there.
           </p>
         </div>
       ) : (
@@ -244,6 +295,7 @@ export function AskChat() {
                   <QuestionText
                     text={turn.question}
                     mentions={turn.mentions}
+                    peopleById={peopleById}
                   />
                 </p>
                 <InitialsAvatar person={me} size="sm" className="mt-1" />
@@ -259,7 +311,13 @@ export function AskChat() {
                   ) : (
                     <div className="flex animate-fade-up flex-col gap-3.5">
                       {turn.exchange.answer.map((block, i) => (
-                        <AnswerBlockView key={i} block={block} />
+                        <AnswerBlockView
+                          key={i}
+                          block={block}
+                          peopleById={peopleById}
+                          photosById={photosById}
+                          docsById={docsById}
+                        />
                       ))}
                     </div>
                   )}

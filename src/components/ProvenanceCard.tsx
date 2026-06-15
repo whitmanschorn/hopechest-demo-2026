@@ -6,8 +6,12 @@ import { getPerson, type Photo } from "@/data";
  * The heart of the originals-and-copies concept: one canonical print, with
  * every family capture of it linked underneath.
  */
-export function ProvenanceCard({ photo }: { photo: Photo }) {
+export async function ProvenanceCard({ photo }: { photo: Photo }) {
   if (photo.captures.length === 0) return null;
+  const scannedBy = await getPerson(photo.contributedById);
+  const capturedBy = await Promise.all(
+    photo.captures.map((capture) => getPerson(capture.capturedById)),
+  );
   return (
     <section className="rounded-xl bg-cream p-5 ring-1 ring-hairline">
       <h2 className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-walnut">
@@ -23,14 +27,13 @@ export function ProvenanceCard({ photo }: { photo: Photo }) {
           <span className="font-medium text-ink">The original print</span>
           <span className="text-ink-soft">
             {" "}
-            — scanned by {getPerson("eleanor").shortName}, April 2024. Kept in
-            Sarah&rsquo;s baby book.
+            — scanned by {scannedBy.shortName}, {photo.contributedWhen}.
           </span>
         </p>
       </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        {photo.captures.map((capture) => {
-          const by = getPerson(capture.capturedById);
+        {photo.captures.map((capture, i) => {
+          const by = capturedBy[i];
           return (
             <figure key={capture.id} className="flex flex-col">
               <PhotoOfPhoto photo={photo} framing={capture.framing} />

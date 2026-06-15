@@ -12,18 +12,11 @@ import { ChevronLeftIcon, RestoreIcon } from "@/components/icons";
 import {
   albumsForPhoto,
   commentsForPhoto,
-  currentMemberId,
   getPerson,
   getPhoto,
-  photos,
   reactionsForPhoto,
 } from "@/data";
-
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return photos.map((p) => ({ photoId: p.id }));
-}
+import { requireCurrentPerson } from "@/lib/auth/session";
 
 export async function generateMetadata({
   params,
@@ -31,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ photoId: string }>;
 }): Promise<Metadata> {
   const { photoId } = await params;
-  return { title: getPhoto(photoId).title };
+  return { title: (await getPhoto(photoId)).title };
 }
 
 export default async function PhotoView({
@@ -40,8 +33,12 @@ export default async function PhotoView({
   params: Promise<{ photoId: string }>;
 }) {
   const { photoId } = await params;
-  const photo = getPhoto(photoId);
-  const albums = albumsForPhoto(photo);
+  const me = await requireCurrentPerson();
+  const photo = await getPhoto(photoId);
+  const albums = await albumsForPhoto(photo);
+  const faceTagPeople = await Promise.all(
+    photo.faceTags.map((tag) => getPerson(tag.personId)),
+  );
   return (
     <>
       <Link
@@ -56,10 +53,10 @@ export default async function PhotoView({
         <div className="mx-auto w-full max-w-xl lg:max-w-none">
           <FaceTagOverlay photo={photo} />
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            {photo.faceTags.map((tag) => (
+            {photo.faceTags.map((tag, i) => (
               <PersonChip
                 key={tag.personId}
-                person={getPerson(tag.personId)}
+                person={faceTagPeople[i]}
                 detail={
                   tag.confidence
                     ? `${Math.round(tag.confidence * 100)}% match`
@@ -147,9 +144,9 @@ export default async function PhotoView({
       <div className="mt-8 mx-auto max-w-3xl">
         <PhotoComments
           photoId={photo.id}
-          me={getPerson(currentMemberId)}
-          initialReactions={reactionsForPhoto(photo.id)}
-          initialComments={commentsForPhoto(photo.id)}
+          me={me}
+          initialReactions={await reactionsForPhoto(photo.id, me.id)}
+          initialComments={await commentsForPhoto(photo.id, me.id)}
         />
       </div>
     </>
