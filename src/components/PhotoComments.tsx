@@ -86,7 +86,10 @@ function ReactionBar({
           <SmileIcon className="size-4" />
         </button>
         {open ? (
-          <div className="absolute bottom-full left-0 z-20 mb-1.5 flex gap-0.5 rounded-full bg-cream p-1 shadow-lg shadow-walnut/15 ring-1 ring-hairline">
+          <div
+            data-testid="reaction-picker"
+            className="absolute bottom-full left-0 z-20 mb-1.5 flex gap-0.5 rounded-full bg-cream p-1 shadow-lg shadow-walnut/15 ring-1 ring-hairline"
+          >
             {REACTION_EMOJI.map((emoji) => (
               <button
                 key={emoji}
@@ -177,7 +180,7 @@ function CommentNode({
 }) {
   const [replying, setReplying] = useState(false);
   return (
-    <div className={depth > 0 ? "border-l border-hairline pl-3 sm:pl-4" : ""}>
+    <div data-testid="comment" className={depth > 0 ? "border-l border-hairline pl-3 sm:pl-4" : ""}>
       <div className="flex items-start gap-2.5">
         <InitialsAvatar person={comment.author} size="sm" className="mt-0.5" />
         <div className="min-w-0 flex-1">
