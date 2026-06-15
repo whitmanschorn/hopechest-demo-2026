@@ -9,8 +9,12 @@ type Step = "phone" | "code" | "name";
 
 /**
  * Phone + one-time-code sign in. No passwords. In the demo the code isn't texted
- * — the dev phone provider returns it and we show it on screen so anyone can log
- * in. New numbers get an onboarding name step; known ones go straight to /home.
+ * — the dev phone provider returns it (`surfacedCode`), so we skip the typing
+ * entirely: one click runs the real requestCode → verifyCode round-trip and you
+ * land on /home. This keeps the OTP path genuinely exercised (great for CI) while
+ * losing the friction. A future real SMS provider returns no surfacedCode, so we
+ * fall back to the manual "type the 6-digit code" step. New numbers still get an
+ * onboarding name step; known ones go straight to /home.
  */
 export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
   const router = useRouter();
@@ -22,14 +26,28 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
   const [error, setError] = useState<string | undefined>();
   const [pending, start] = useTransition();
 
+  // Route after a successful verifyCode: known users → /home, new ones → name step.
+  const afterVerify = (res: { onboardingComplete?: boolean }) => {
+    if (res.onboardingComplete) router.push("/home");
+    else setStep("name");
+  };
+
   const onPhone = (e: React.FormEvent) => {
     e.preventDefault();
     setError(undefined);
     start(async () => {
       const res = await requestCode(phone);
       if (!res.ok) return setError(res.error);
-      setPhone(res.phone ?? phone);
+      const verifiedPhone = res.phone ?? phone;
+      setPhone(verifiedPhone);
       setDevCode(res.surfacedCode);
+      // Demo/dev provider surfaces the code → verify it now so one click signs in.
+      // A real SMS provider returns no code → fall back to the manual code step.
+      if (res.surfacedCode) {
+        const verify = await verifyCode(verifiedPhone, res.surfacedCode);
+        if (verify.ok) return afterVerify(verify);
+        setError(verify.error);
+      }
       setStep("code");
     });
   };
@@ -40,8 +58,7 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
     start(async () => {
       const res = await verifyCode(phone, code);
       if (!res.ok) return setError(res.error);
-      if (res.onboardingComplete) router.push("/home");
-      else setStep("name");
+      afterVerify(res);
     });
   };
 
@@ -68,6 +85,8 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
             <span className="mb-1.5 block text-sm font-medium text-ink">Phone number</span>
             <input
               type="tel"
+              name="phone"
+              data-testid="login-phone"
               autoFocus
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -75,8 +94,8 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
               className={inputCls}
             />
           </label>
-          <button type="submit" disabled={pending} className={btnCls}>
-            {pending ? "Sending code…" : cta}
+          <button type="submit" disabled={pending} data-testid="login-submit" className={btnCls}>
+            {pending ? "Signing in…" : cta}
           </button>
         </form>
       )}
@@ -84,7 +103,7 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
       {step === "code" && (
         <form onSubmit={onCode} className="flex flex-col gap-3">
           {devCode && (
-            <p className="rounded-lg bg-brass/10 px-3.5 py-2.5 text-sm text-ink ring-1 ring-brass/30">
+            <p data-testid="login-demo-code" className="rounded-lg bg-brass/10 px-3.5 py-2.5 text-sm text-ink ring-1 ring-brass/30">
               Demo: your code is <span className="font-semibold tracking-wider">{devCode}</span>{" "}
               (normally texted to {phone}).
             </p>
