@@ -1,9 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 
 import { Img } from "./Img";
 import { SparkleIcon, UploadIcon } from "./icons";
+import { createAlbum } from "@/app/(app)/albums/actions";
+
+/** A photo the standard-album picker can choose from. */
+export interface PickablePhoto {
+  id: string;
+  src: string;
+  title: string;
+}
 
 /** A thing the chest can build a smart album around (person / place / decade). */
 export interface SmartFacet {
@@ -42,7 +51,7 @@ function interpret(description: string, facets: SmartFacet[]): SmartFacet | null
 type Mode = "idle" | "standard" | "smart";
 type SmartStep = "describe" | "preview" | "done";
 
-export function AlbumCreators({ facets }: { facets: SmartFacet[] }) {
+export function AlbumCreators({ facets, photos }: { facets: SmartFacet[]; photos: PickablePhoto[] }) {
   const [mode, setMode] = useState<Mode>("idle");
 
   if (mode === "idle") {
@@ -71,7 +80,7 @@ export function AlbumCreators({ facets }: { facets: SmartFacet[] }) {
   return (
     <div className="mb-6 rounded-2xl bg-cream p-5 ring-1 ring-hairline">
       {mode === "standard" ? (
-        <StandardForm onClose={() => setMode("idle")} />
+        <StandardForm photos={photos} onClose={() => setMode("idle")} />
       ) : (
         <SmartWizard facets={facets} onClose={() => setMode("idle")} />
       )}
@@ -79,24 +88,38 @@ export function AlbumCreators({ facets }: { facets: SmartFacet[] }) {
   );
 }
 
-function StandardForm({ onClose }: { onClose: () => void }) {
+function StandardForm({ photos, onClose }: { photos: PickablePhoto[]; onClose: () => void }) {
+  const router = useRouter();
   const [title, setTitle] = useState("");
-  const [done, setDone] = useState(false);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [errors, setErrors] = useState<string[]>([]);
+  const [isPending, startTransition] = useTransition();
 
-  if (done) {
-    return (
-      <Done
-        heading={`“${title || "New album"}” created`}
-        body="Empty for now — add photos from any photo's page, or drag a batch in. (Demo: nothing is saved.)"
-        onClose={onClose}
-      />
-    );
+  function toggle(id: string) {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
   }
+
+  function save() {
+    startTransition(async () => {
+      const result = await createAlbum(title, [...selected]);
+      if (result.ok && result.albumId) {
+        router.push(`/albums/${result.albumId}`);
+      } else {
+        setErrors(result.errors ?? ["Something went wrong — try again."]);
+      }
+    });
+  }
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setDone(true);
+        save();
       }}
     >
       <Header title="New album" onClose={onClose} />
@@ -110,9 +133,43 @@ function StandardForm({ onClose }: { onClose: () => void }) {
           className="h-11 w-full rounded-lg border border-hairline bg-parchment px-3.5 text-[15px] text-ink placeholder:text-ink-soft/50 focus:border-sepia focus:outline-none focus:ring-2 focus:ring-sepia/20"
         />
       </label>
+      <p className="mt-4 mb-1.5 text-sm font-medium text-ink">
+        Pick photos <span className="font-normal text-ink-soft">({selected.size} selected)</span>
+      </p>
+      <div className="grid max-h-72 grid-cols-3 gap-2 overflow-y-auto rounded-lg bg-parchment p-2 ring-1 ring-hairline sm:grid-cols-4">
+        {photos.map((p) => {
+          const isOn = selected.has(p.id);
+          return (
+            <button
+              key={p.id}
+              type="button"
+              data-testid="album-photo"
+              aria-pressed={isOn}
+              onClick={() => toggle(p.id)}
+              className={`relative overflow-hidden rounded-md ring-2 transition-all ${
+                isOn ? "ring-sepia" : "ring-transparent hover:ring-sepia/40"
+              }`}
+            >
+              <Img src={p.src} alt={p.title} width={120} height={90} className="aspect-[4/3] w-full object-cover" />
+              {isOn ? (
+                <span className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-sepia text-xs text-cream">✓</span>
+              ) : null}
+            </button>
+          );
+        })}
+      </div>
+      {errors.length > 0 ? (
+        <ul className="mt-4 space-y-1 rounded-lg bg-rosewood/10 px-3.5 py-2.5 text-sm text-rosewood ring-1 ring-rosewood/25">
+          {errors.map((err) => (
+            <li key={err}>{err}</li>
+          ))}
+        </ul>
+      ) : null}
       <div className="mt-5 flex gap-2">
-        <button type="submit" className={primaryBtn}>Create album</button>
-        <button type="button" onClick={onClose} className={ghostBtn}>Cancel</button>
+        <button type="submit" data-testid="album-create" disabled={isPending} className={`${primaryBtn} disabled:opacity-50`}>
+          {isPending ? "Creating…" : "Create album"}
+        </button>
+        <button type="button" onClick={onClose} disabled={isPending} className={ghostBtn}>Cancel</button>
       </div>
     </form>
   );

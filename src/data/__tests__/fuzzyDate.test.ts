@@ -1,4 +1,39 @@
-import { parseFuzzyDate } from "@/data/db/fuzzyDate";
+import { fuzzyDateToColumns, parseFuzzyDate } from "@/data/db/fuzzyDate";
+import type { FuzzyDate } from "@/data/db/schema";
+
+/** Rebuild a FuzzyDate from flattened columns — mirrors load.ts `toFuzzyDate`. */
+function columnsToFuzzyDate(c: ReturnType<typeof fuzzyDateToColumns>): FuzzyDate {
+  return {
+    ...(c.dateIso != null ? { iso: c.dateIso } : {}),
+    ...(c.dateYear != null ? { year: c.dateYear } : {}),
+    ...(c.dateMonth != null ? { month: c.dateMonth } : {}),
+    ...(c.dateDay != null ? { day: c.dateDay } : {}),
+    precision: c.datePrecision as FuzzyDate["precision"],
+    display: c.dateDisplay,
+    ...(c.dateDeduced ? { deduced: true } : {}),
+    ...(c.dateClue != null ? { clue: c.dateClue } : {}),
+  };
+}
+
+describe("fuzzyDateToColumns", () => {
+  test("round-trips a day-precision date through the flattened columns", () => {
+    const date = parseFuzzyDate("1950-06-10");
+    expect(columnsToFuzzyDate(fuzzyDateToColumns(date))).toEqual(date);
+  });
+  test("round-trips a circa date (deduced flag preserved)", () => {
+    const date = parseFuzzyDate("circa 1950");
+    expect(columnsToFuzzyDate(fuzzyDateToColumns(date))).toEqual(date);
+  });
+  test("absent fields become null columns", () => {
+    expect(fuzzyDateToColumns(parseFuzzyDate("1950"))).toMatchObject({
+      dateIso: null,
+      dateMonth: null,
+      dateDay: null,
+      dateYear: 1950,
+      datePrecision: "year",
+    });
+  });
+});
 
 describe("parseFuzzyDate", () => {
   test("full ISO date → day precision", () => {

@@ -65,13 +65,14 @@ export default async function Albums() {
   const allAlbums = await getAlbums();
   const standard = allAlbums.filter((a) => a.kind === "standard");
   const smart = allAlbums.filter((a) => a.kind === "smart");
+  const pickablePhotos = (await getPhotos()).map((p) => ({ id: p.id, src: p.src, title: p.title }));
   return (
     <>
       <SectionHeader
         title="Albums"
         subtitle="Collections the family curates — and ones Hopechest builds on its own."
       />
-      <AlbumCreators facets={await buildFacets()} />
+      <AlbumCreators facets={await buildFacets()} photos={pickablePhotos} />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {standard.map((album) => (
           <AlbumCard key={album.id} album={album} />

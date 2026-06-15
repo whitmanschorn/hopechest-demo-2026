@@ -6,8 +6,9 @@
  * Single-writer demo: no locking, last-write-wins.
  */
 import { prisma } from "@/lib/prisma";
+import { fuzzyDateToColumns } from "./fuzzyDate";
 import { nextReactionEmoji } from "./reactions";
-import type { ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow } from "./schema";
+import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow, PhotoRow } from "./schema";
 
 /** Mutate a person's editable fields. `undefined` in the patch clears the field
  * (→ null for scalars, [] for the array columns). */
@@ -60,6 +61,52 @@ export async function updateLifeEvent(
 /** Remove a life event. No-op if already gone. */
 export async function deleteLifeEvent(id: string): Promise<void> {
   await prisma.lifeEvent.deleteMany({ where: { id } });
+}
+
+// --- photos & albums --------------------------------------------------------
+
+/** Insert a newly-uploaded photo. The FuzzyDate is flattened into date* columns;
+ * the variant blobs (photographer/takenWhere/restoration) are JSON or null. */
+export async function insertPhoto(row: PhotoRow): Promise<void> {
+  await prisma.photo.create({
+    data: {
+      id: row.id,
+      title: row.title,
+      src: row.src,
+      width: row.width,
+      height: row.height,
+      description: row.description ?? null,
+      contributedById: row.contributedById,
+      contributedWhen: row.contributedWhen,
+      photographer: (row.photographer as unknown as object) ?? undefined,
+      takenWhere: (row.takenWhere as unknown as object) ?? undefined,
+      locationId: row.locationId ?? null,
+      restoration: (row.restoration as unknown as object) ?? undefined,
+      ...fuzzyDateToColumns(row.date),
+    },
+  });
+}
+
+/** Create an album (standard or smart). */
+export async function insertAlbum(row: AlbumRow): Promise<void> {
+  await prisma.album.create({
+    data: {
+      id: row.id,
+      title: row.title,
+      kind: row.kind,
+      coverPhotoId: row.coverPhotoId,
+      rule: row.rule ?? null,
+      subtitle: row.subtitle ?? null,
+      smartQuery: (row.smartQuery as unknown as object) ?? undefined,
+      createdAt: row.createdAt,
+      updatedAt: row.updatedAt,
+    },
+  });
+}
+
+/** Add photos to an album (ordered by `position`). */
+export async function insertAlbumPhotos(rows: AlbumPhotoRow[]): Promise<void> {
+  await prisma.albumPhoto.createMany({ data: rows });
 }
 
 // --- comments & reactions ---------------------------------------------------
