@@ -58,19 +58,24 @@ expected to fail there — fine for this private demo.)
 
 ## Running it locally
 
-You just need a seeded Postgres. The Playwright config's `webServer` runs
-`next start`, so build once first. Point the Prisma env vars at any local database:
+You just need a seeded Postgres — any local instance works (no container required).
+Put its URL in a gitignored `.env.local`; the Prisma CLI reads it via `prisma.config.ts`
+and the runtime client reads it too, so no exports are needed:
 
 ```bash
-export POSTGRES_URL_NON_POOLING="postgresql://postgres@localhost:5432/hopechest"
-export POSTGRES_PRISMA_URL="$POSTGRES_URL_NON_POOLING"
-npm run db:deploy && npm run db:seed
-npm run build
-npm run test:e2e
+# .env.local (point both at your local Postgres / database):
+#   POSTGRES_URL_NON_POOLING="postgresql://USER@localhost:5432/hopechest"
+#   POSTGRES_PRISMA_URL="postgresql://USER@localhost:5432/hopechest"
+npm run db:deploy && npm run db:seed   # apply migrations, then seed
+npm run test:e2e                       # Playwright's webServer builds + `next start`s
+# npm run dev                          # …or just run the app
 ```
 
-(Already have a server running? Skip the build and set `PLAYWRIGHT_BASE_URL` to it —
-`reuseExistingServer` picks it up outside CI.)
+`POSTGRES_URL_NON_POOLING` is the direct URL (migrate/seed); `POSTGRES_PRISMA_URL` is
+the pooled URL in prod, but locally both point at the same database.
+
+(Already have a server running? Set `PLAYWRIGHT_BASE_URL` to it — `reuseExistingServer`
+picks it up outside CI, skipping the build.)
 
 Seeded demo numbers are `+15550000001`…`+15550000005`. Each test that signs in uses a
 distinct number on purpose: `verifyCode` matches the newest code issued for a phone, so

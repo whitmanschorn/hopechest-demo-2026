@@ -40,6 +40,7 @@ export {
   albumsForPhoto,
   changelogForPerson,
   commentCount,
+  commentRowById,
   commentsForPhoto,
   getAlbum,
   getAlbums,
