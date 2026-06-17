@@ -53,6 +53,17 @@ test("manual path: reading the surfaced OTP and typing it in signs in", async ({
   await expect(page.getByRole("heading", { name: /welcome back/i })).toBeVisible();
 });
 
+test("the 'sign in as a demo user' button lands a seeded user on /home", async ({ page }) => {
+  await page.goto("/");
+
+  // No phone, no code — one click opens a session as the seeded demo Admin.
+  await page.getByTestId("login-demo").click();
+
+  await page.waitForURL("**/home");
+  await expect(page).toHaveURL(/\/home$/);
+  await expect(page.getByRole("heading", { name: /welcome back/i })).toBeVisible();
+});
+
 test("an unauthenticated protected page redirects to the login screen", async ({ page }) => {
   await page.goto("/home");
 
