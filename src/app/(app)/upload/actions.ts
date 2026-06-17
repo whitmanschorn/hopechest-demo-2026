@@ -2,10 +2,17 @@
 
 import { revalidatePath } from "next/cache";
 
-import { getLocations, getPeople } from "@/data";
+import { getAlbums, getLocations, getPeople } from "@/data";
 import { isValidBox } from "@/data/db/faceTag";
 import { parseFuzzyDate } from "@/data/db/fuzzyDate";
-import { insertFeedItem, insertPhoto, insertPhotoPersonTags } from "@/data/db/mutations";
+import {
+  insertAlbum,
+  insertAlbumPhotos,
+  insertFeedItem,
+  insertLocation,
+  insertPhoto,
+  insertPhotoPersonTags,
+} from "@/data/db/mutations";
 import type { FaceBox, FuzzyDate } from "@/data/db/schema";
 import { requireCurrentPerson } from "@/lib/auth/session";
 import { getStorageProvider, isAllowedImage, MAX_UPLOAD_BYTES } from "@/lib/storage/storage-provider";
@@ -18,6 +25,60 @@ export interface UploadResult {
 
 function genId(prefix: string): string {
   return `${prefix}_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+}
+
+// Every uploaded photo lands in an album. With nothing chosen, it goes to this
+// shared catch-all (created the first time a photo needs it).
+const DEFAULT_ALBUM_ID = "album_uploads";
+const DEFAULT_ALBUM_TITLE = "Recently added";
+
+/** Resolve the typed-in place to a location id: match an existing place by
+ * label (case-insensitive), otherwise create a new one (coordinates unknown). */
+async function resolveLocationId(name: string): Promise<string | undefined> {
+  if (!name) return undefined;
+  const existing = (await getLocations()).find(
+    (l) => l.label.toLowerCase() === name.toLowerCase(),
+  );
+  if (existing) return existing.id;
+  const id = genId("loc");
+  await insertLocation({ id, label: name });
+  return id;
+}
+
+/** Make sure the new photo belongs to an album: the one the uploader picked, a
+ * brand-new album they named, or the shared default (find-or-create). */
+async function assignToAlbum(
+  photoId: string,
+  choice: { albumId: string; newAlbumTitle: string },
+): Promise<void> {
+  const albums = await getAlbums();
+
+  // 1. An existing standard album was chosen.
+  const chosen = choice.albumId
+    ? albums.find((a) => a.id === choice.albumId && a.kind === "standard")
+    : undefined;
+  if (chosen) {
+    await insertAlbumPhotos([{ albumId: chosen.id, photoId, position: chosen.photoCount }]);
+    return;
+  }
+
+  // 2. A new album was named.
+  const now = new Date().toISOString();
+  if (choice.newAlbumTitle) {
+    const id = genId("album");
+    await insertAlbum({ id, title: choice.newAlbumTitle, kind: "standard", coverPhotoId: photoId, createdAt: now, updatedAt: now });
+    await insertAlbumPhotos([{ albumId: id, photoId, position: 0 }]);
+    return;
+  }
+
+  // 3. Fall back to the shared "Recently added" album.
+  const def = albums.find((a) => a.id === DEFAULT_ALBUM_ID);
+  if (def) {
+    await insertAlbumPhotos([{ albumId: def.id, photoId, position: def.photoCount }]);
+  } else {
+    await insertAlbum({ id: DEFAULT_ALBUM_ID, title: DEFAULT_ALBUM_TITLE, kind: "standard", coverPhotoId: photoId, createdAt: now, updatedAt: now });
+    await insertAlbumPhotos([{ albumId: DEFAULT_ALBUM_ID, photoId, position: 0 }]);
+  }
 }
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -57,7 +118,9 @@ export async function uploadPhoto(formData: FormData): Promise<UploadResult> {
   const file = formData.get("file");
   const title = String(formData.get("title") ?? "").trim();
   const dateInput = String(formData.get("dateInput") ?? "").trim();
-  const locationId = String(formData.get("locationId") ?? "").trim();
+  const locationName = String(formData.get("locationName") ?? "").trim();
+  const albumId = String(formData.get("albumId") ?? "").trim();
+  const newAlbumTitle = String(formData.get("newAlbumTitle") ?? "").trim();
   const width = Number(formData.get("width"));
   const height = Number(formData.get("height"));
 
@@ -69,13 +132,11 @@ export async function uploadPhoto(formData: FormData): Promise<UploadResult> {
   if (!Number.isInteger(width) || !Number.isInteger(height) || width <= 0 || height <= 0) {
     errors.push("Couldn't read the image's dimensions — try a different file.");
   }
-  if (locationId && !(await getLocations()).some((l) => l.id === locationId)) {
-    errors.push("That place isn't in the chest.");
-  }
   if (errors.length > 0) return { ok: false, errors };
 
   const me = await requireCurrentPerson();
   const { url } = await getStorageProvider().put(file as File);
+  const locationId = await resolveLocationId(locationName);
 
   const date: FuzzyDate = dateInput
     ? parseFuzzyDate(dateInput)
@@ -98,6 +159,8 @@ export async function uploadPhoto(formData: FormData): Promise<UploadResult> {
   const tags = parseTags(String(formData.get("tags") ?? "[]"), knownPersonIds);
   await insertPhotoPersonTags(tags.map((t) => ({ photoId: id, personId: t.personId, box: t.box, confidence: null })));
 
+  await assignToAlbum(id, { albumId, newAlbumTitle });
+
   await insertFeedItem({
     kind: "photo-added",
     id: genId("f"),
@@ -109,5 +172,6 @@ export async function uploadPhoto(formData: FormData): Promise<UploadResult> {
 
   revalidatePath("/home");
   revalidatePath("/albums");
+  revalidatePath("/map");
   return { ok: true, photoId: id };
 }

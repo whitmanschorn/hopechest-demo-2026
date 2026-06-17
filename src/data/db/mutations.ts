@@ -10,7 +10,7 @@ import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { fuzzyDateToColumns } from "./fuzzyDate";
 import { nextReactionEmoji } from "./reactions";
-import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, PersonRow, PhotoPersonRow, PhotoRow } from "./schema";
+import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, LocationRow, PersonRow, PhotoPersonRow, PhotoRow } from "./schema";
 
 /** Mutate a person's editable fields. `undefined` in the patch clears the field
  * (→ null for scalars, [] for the array columns). */
@@ -84,6 +84,23 @@ export async function updateLifeEvent(
 /** Remove a life event. No-op if already gone. */
 export async function deleteLifeEvent(id: string): Promise<void> {
   await prisma.lifeEvent.deleteMany({ where: { id } });
+}
+
+/** Create a location (e.g. a place typed in while uploading a photo). New
+ * places have no coordinates yet, so lat/lng stay null until someone pins it. */
+export async function insertLocation(row: LocationRow): Promise<void> {
+  await prisma.location.create({
+    data: {
+      id: row.id,
+      label: row.label,
+      street: row.street ?? null,
+      city: row.city ?? null,
+      state: row.state ?? null,
+      country: row.country ?? null,
+      lat: row.lat ?? null,
+      lng: row.lng ?? null,
+    },
+  });
 }
 
 // --- photos & albums --------------------------------------------------------

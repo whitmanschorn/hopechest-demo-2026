@@ -134,8 +134,8 @@ model Location {
   city    String?
   state   String?
   country String?
-  lat     Float
-  lng     Float
+  lat     Float?
+  lng     Float?
 
   photos     Photo[]
   documents  Document[]

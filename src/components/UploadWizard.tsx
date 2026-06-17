@@ -4,9 +4,10 @@ import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 import { PhotoTagger, type DraftTag } from "./PhotoTagger";
-import { UploadIcon } from "./icons";
+import { CameraIcon, UploadIcon } from "./icons";
 import { uploadPhoto } from "@/app/(app)/upload/actions";
 import { createPerson } from "@/app/(app)/people/actions";
+import { isHeic } from "@/lib/storage/image";
 import type { Person } from "@/data/db/schema";
 
 interface Picked {
@@ -22,23 +23,32 @@ const inputClass =
 /** Real photo upload: pick an image, add a title/date/place, and it's saved to
  * the chest. The image bytes are read client-side to capture dimensions and a
  * preview; the file + fields POST to the `uploadPhoto` server action. */
+const NEW_ALBUM = "__new__";
+const DEFAULT_ALBUM = "__default__";
+
 export function UploadWizard({
   locations,
+  albums,
   people,
 }: {
   locations: { id: string; label: string }[];
+  albums: { id: string; title: string }[];
   people: Person[];
 }) {
   const router = useRouter();
   const [picked, setPicked] = useState<Picked | null>(null);
   const [title, setTitle] = useState("");
   const [dateInput, setDateInput] = useState("");
-  const [locationId, setLocationId] = useState("");
+  const [place, setPlace] = useState("");
+  const [albumChoice, setAlbumChoice] = useState(DEFAULT_ALBUM);
+  const [newAlbumTitle, setNewAlbumTitle] = useState("");
   const [tags, setTags] = useState<DraftTag[]>([]);
   const [roster, setRoster] = useState<Person[]>(people);
   const [errors, setErrors] = useState<string[]>([]);
+  const [converting, setConverting] = useState(false);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   async function createAndAppend(input: { name: string; gender: string; relation?: string }): Promise<Person | null> {
     const result = await createPerson(input);
@@ -47,15 +57,32 @@ export function UploadWizard({
     return result.person;
   }
 
-  function onPick(file: File) {
-    const previewUrl = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      setPicked({ file, previewUrl, width: img.naturalWidth, height: img.naturalHeight });
+  async function onPick(file: File) {
+    setErrors([]);
+    // iPhones save photos as HEIC, which most browsers can't display. Convert
+    // to JPEG on-device (lazy-loading the codec) before previewing/uploading.
+    let source = file;
+    if (isHeic(file)) {
+      setConverting(true);
+      try {
+        const heic2any = (await import("heic2any")).default;
+        const out = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.92 });
+        const blob = Array.isArray(out) ? out[0] : out;
+        source = new File([blob], `${file.name.replace(/\.[^.]+$/, "")}.jpg`, { type: "image/jpeg" });
+      } catch {
+        setConverting(false);
+        setErrors(["That HEIC photo couldn't be converted — try another, or a JPEG."]);
+        return;
+      }
+      setConverting(false);
+    }
+    const previewUrl = URL.createObjectURL(source);
+    const probe = new Image();
+    probe.onload = () => {
+      setPicked({ file: source, previewUrl, width: probe.naturalWidth, height: probe.naturalHeight });
       if (!title) setTitle(file.name.replace(/\.[^.]+$/, ""));
     };
-    img.src = previewUrl;
-    setErrors([]);
+    probe.src = previewUrl;
   }
 
   function submit() {
@@ -64,7 +91,9 @@ export function UploadWizard({
     data.set("file", picked.file);
     data.set("title", title);
     data.set("dateInput", dateInput);
-    data.set("locationId", locationId);
+    data.set("locationName", place);
+    if (albumChoice === NEW_ALBUM) data.set("newAlbumTitle", newAlbumTitle);
+    else if (albumChoice !== DEFAULT_ALBUM) data.set("albumId", albumChoice);
     data.set("width", String(picked.width));
     data.set("height", String(picked.height));
     data.set("tags", JSON.stringify(tags));
@@ -81,24 +110,53 @@ export function UploadWizard({
   if (!picked) {
     return (
       <>
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="group flex w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-16 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
-        >
-          <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
-            <UploadIcon className="size-7" />
-          </span>
-          <span className="font-display text-xl font-semibold tracking-tight text-walnut">Choose a photo</span>
-          <span className="max-w-sm text-sm leading-6 text-ink-soft">
-            A scan, a print, or a phone picture — JPEG, PNG, WebP, or GIF, up to 8MB.
-          </span>
-        </button>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <button
+            type="button"
+            data-testid="upload-camera"
+            onClick={() => cameraInputRef.current?.click()}
+            disabled={converting}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5 disabled:opacity-50"
+          >
+            <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
+              <CameraIcon className="size-7" />
+            </span>
+            <span className="font-display text-xl font-semibold tracking-tight text-walnut">Take a photo</span>
+            <span className="text-sm leading-6 text-ink-soft">Snap one now with your camera.</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={converting}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5 disabled:opacity-50"
+          >
+            <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
+              <UploadIcon className="size-7" />
+            </span>
+            <span className="font-display text-xl font-semibold tracking-tight text-walnut">Choose a photo</span>
+            <span className="text-sm leading-6 text-ink-soft">A scan, a print, or one from your library.</span>
+          </button>
+        </div>
+        <p className="mt-3 text-center text-sm text-ink-soft">
+          {converting ? "Converting your photo…" : "JPEG, PNG, WebP, HEIC, or GIF, up to 8MB."}
+        </p>
+        <input
+          ref={cameraInputRef}
+          data-testid="upload-camera-input"
+          type="file"
+          accept="image/*,.heic,.heif"
+          capture="environment"
+          className="sr-only"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) onPick(file);
+          }}
+        />
         <input
           ref={fileInputRef}
           data-testid="upload-input"
           type="file"
-          accept="image/*"
+          accept="image/*,.heic,.heif"
           className="sr-only"
           onChange={(e) => {
             const file = e.target.files?.[0];
@@ -149,16 +207,48 @@ export function UploadWizard({
           <span className="mb-1.5 block text-sm font-medium text-ink">
             Place <span className="font-normal text-ink-soft">(optional)</span>
           </span>
-          <select value={locationId} onChange={(e) => setLocationId(e.target.value)} className={inputClass}>
-            <option value="">—</option>
+          <input
+            data-testid="upload-place"
+            list="upload-place-options"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+            placeholder="Start typing, or add a new place…"
+            className={inputClass}
+          />
+          <datalist id="upload-place-options">
             {locations.map((l) => (
-              <option key={l.id} value={l.id}>
-                {l.label}
-              </option>
+              <option key={l.id} value={l.label} />
             ))}
-          </select>
+          </datalist>
         </label>
       </div>
+      <label className="block">
+        <span className="mb-1.5 block text-sm font-medium text-ink">Album</span>
+        <select
+          data-testid="upload-album"
+          value={albumChoice}
+          onChange={(e) => setAlbumChoice(e.target.value)}
+          className={inputClass}
+        >
+          <option value={DEFAULT_ALBUM}>Recently added (default)</option>
+          {albums.map((a) => (
+            <option key={a.id} value={a.id}>
+              {a.title}
+            </option>
+          ))}
+          <option value={NEW_ALBUM}>+ New album…</option>
+        </select>
+        {albumChoice === NEW_ALBUM ? (
+          <input
+            data-testid="upload-new-album"
+            autoFocus
+            value={newAlbumTitle}
+            onChange={(e) => setNewAlbumTitle(e.target.value)}
+            placeholder="New album name"
+            className={`${inputClass} mt-2`}
+          />
+        ) : null}
+      </label>
       {errors.length > 0 ? <ErrorList errors={errors} /> : null}
       <div className="flex gap-2">
         <button

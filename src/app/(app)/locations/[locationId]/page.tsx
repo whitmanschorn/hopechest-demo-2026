@@ -27,22 +27,27 @@ export default async function LocationView({
   const address = [location.street, location.city, location.state, location.country]
     .filter(Boolean)
     .join(", ");
+  // A place typed in during upload may not have coordinates yet.
+  const coords =
+    location.lat != null && location.lng != null
+      ? { lat: location.lat, lng: location.lng }
+      : null;
 
-  const markers = photos.length
-    ? [
-        {
-          id: location.id,
-          label: location.label,
-          lat: location.lat,
-          lng: location.lng,
-          href: `/photos/${photos[0].id}`,
-          photoSrc: photos[0].src,
-          meta: `${photos.length} photo${photos.length > 1 ? "s" : ""} here`,
-        },
-      ]
-    : [
-        { id: location.id, label: location.label, lat: location.lat, lng: location.lng, href: "#" },
-      ];
+  const markers = !coords
+    ? []
+    : photos.length
+      ? [
+          {
+            id: location.id,
+            label: location.label,
+            lat: coords.lat,
+            lng: coords.lng,
+            href: `/photos/${photos[0].id}`,
+            photoSrc: photos[0].src,
+            meta: `${photos.length} photo${photos.length > 1 ? "s" : ""} here`,
+          },
+        ]
+      : [{ id: location.id, label: location.label, lat: coords.lat, lng: coords.lng, href: "#" }];
 
   return (
     <>
@@ -56,16 +61,20 @@ export default async function LocationView({
       <SectionHeader
         title={location.label}
         subtitle={
-          `${address}${address ? " · " : ""}` +
-          `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`
+          coords
+            ? `${address}${address ? " · " : ""}${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`
+            : address || "A place in the chest"
         }
       />
       <div className="mb-6 flex items-center gap-2 text-sm text-ink-soft">
         <MapPinIcon className="size-4 text-sepia" />
-        Precise coordinates — {photos.length} photo{photos.length === 1 ? "" : "s"} taken here.
+        {coords ? "Precise coordinates — " : ""}
+        {photos.length} photo{photos.length === 1 ? "" : "s"} taken here.
       </div>
 
-      <MapView markers={markers} center={[location.lat, location.lng]} zoom={13} className="mb-7 h-80" />
+      {coords ? (
+        <MapView markers={markers} center={[coords.lat, coords.lng]} zoom={13} className="mb-7 h-80" />
+      ) : null}
 
       {photos.length > 0 ? (
         <PhotoGrid photos={photos} />

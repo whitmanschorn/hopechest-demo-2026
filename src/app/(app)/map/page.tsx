@@ -10,17 +10,25 @@ export const metadata: Metadata = { title: "Map" };
 
 export default async function MapPage() {
   const places = await locationsWithCounts();
-  const markers = await Promise.all(
-    places.map(async ({ location, count, coverPhotoId }) => ({
-      id: location.id,
-      label: location.label,
-      lat: location.lat,
-      lng: location.lng,
-      href: `/locations/${location.id}`,
-      photoSrc: coverPhotoId ? (await getPhoto(coverPhotoId)).src : undefined,
-      meta: `${count} photo${count > 1 ? "s" : ""}`,
-    })),
-  );
+  // Only places with coordinates get a pin; ones typed in while uploading
+  // (no lat/lng yet) still appear in the list below.
+  const markers = (
+    await Promise.all(
+      places.map(async ({ location, count, coverPhotoId }) =>
+        location.lat == null || location.lng == null
+          ? null
+          : {
+              id: location.id,
+              label: location.label,
+              lat: location.lat,
+              lng: location.lng,
+              href: `/locations/${location.id}`,
+              photoSrc: coverPhotoId ? (await getPhoto(coverPhotoId)).src : undefined,
+              meta: `${count} photo${count > 1 ? "s" : ""}`,
+            },
+      ),
+    )
+  ).filter((m): m is NonNullable<typeof m> => m !== null);
 
   return (
     <>
