@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 
-import { completeOnboarding, requestCode, verifyCode } from "@/lib/auth/actions";
+import { completeOnboarding, requestCode, signInAsDemo, verifyCode } from "@/lib/auth/actions";
 
 type Step = "phone" | "code" | "name";
 
@@ -59,6 +59,16 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
     requestAndGo(false);
   };
 
+  // One-click demo sign-in: no phone, no code — opens a session as a seeded user.
+  const onDemo = () => {
+    setError(undefined);
+    start(async () => {
+      const res = await signInAsDemo();
+      if (!res.ok) return setError(res.error);
+      router.push("/home");
+    });
+  };
+
   const onCode = (e: React.FormEvent) => {
     e.preventDefault();
     setError(undefined);
@@ -112,6 +122,21 @@ export function LoginForm({ cta = "Sign in" }: { cta?: string }) {
             className="text-sm text-ink-soft underline decoration-hairline underline-offset-4 hover:text-sepia disabled:opacity-70"
           >
             Enter the code manually
+          </button>
+
+          <div className="my-1 flex items-center gap-3 text-xs uppercase tracking-wide text-ink-soft/60">
+            <span className="h-px flex-1 bg-hairline" />
+            or
+            <span className="h-px flex-1 bg-hairline" />
+          </div>
+          <button
+            type="button"
+            disabled={pending}
+            data-testid="login-demo"
+            onClick={onDemo}
+            className="inline-flex h-11 w-full items-center justify-center rounded-full border border-sepia/40 px-7 text-[15px] font-medium text-sepia transition-colors hover:bg-sepia/5 disabled:opacity-70"
+          >
+            Sign in as a demo user
           </button>
         </form>
       )}

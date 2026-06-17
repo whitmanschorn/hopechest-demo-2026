@@ -80,6 +80,33 @@ export async function verifyCode(
   return { ok: true, onboardingComplete: user.onboardingComplete && Boolean(user.memberId) };
 }
 
+/**
+ * Demo convenience: sign in as a seeded demo user in one click — no phone, no
+ * code. Picks the lowest demo number (+15550000001, the Admin in the seed) and
+ * opens a normal session cookie, so everything downstream behaves as a real
+ * login. Returns an error if no demo account is seeded.
+ */
+export async function signInAsDemo(): Promise<{ ok: boolean; error?: string }> {
+  const user = await prisma.user.findFirst({
+    where: { phone: { startsWith: "+1555000000" }, memberId: { not: null } },
+    orderBy: { phone: "asc" },
+  });
+  if (!user) return { ok: false, error: "No demo account is seeded yet." };
+
+  const token = randomBytes(32).toString("hex");
+  await prisma.session.create({
+    data: { token, userId: user.id, expiresAt: new Date(Date.now() + SESSION_TTL_DAYS * 86_400_000) },
+  });
+  (await cookies()).set(SESSION_COOKIE, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    maxAge: SESSION_TTL_DAYS * 86_400,
+  });
+  return { ok: true };
+}
+
 /** Create a family profile for a freshly-signed-up user and mark onboarding done. */
 export async function completeOnboarding(
   displayName: string,
