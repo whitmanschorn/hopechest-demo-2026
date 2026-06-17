@@ -27,6 +27,9 @@ test("an uploaded photo (with a person tag) and a new album persist across a rel
 
   // --- Upload a photo, tagging one person on the preview --------------------
   await page.goto("/upload");
+  // The "Take a photo" path wires a camera-capture input (native iOS camera).
+  // Playwright can't drive the OS camera, so just assert the markup is present.
+  await expect(page.getByTestId("upload-camera-input")).toHaveAttribute("capture", "environment");
   await page.getByTestId("upload-input").setInputFiles("e2e/fixtures/sample.png");
   await page.getByTestId("tagger-image").click({ position: { x: 30, y: 30 } }); // waits for the form
   await page.getByTestId("tagger-person").first().click();

@@ -4,7 +4,7 @@ import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 import { PhotoTagger, type DraftTag } from "./PhotoTagger";
-import { UploadIcon } from "./icons";
+import { CameraIcon, UploadIcon } from "./icons";
 import { uploadPhoto } from "@/app/(app)/upload/actions";
 import { createPerson } from "@/app/(app)/people/actions";
 import type { Person } from "@/data/db/schema";
@@ -39,6 +39,7 @@ export function UploadWizard({
   const [errors, setErrors] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   async function createAndAppend(input: { name: string; gender: string; relation?: string }): Promise<Person | null> {
     const result = await createPerson(input);
@@ -81,19 +82,44 @@ export function UploadWizard({
   if (!picked) {
     return (
       <>
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="group flex w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-16 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
-        >
-          <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
-            <UploadIcon className="size-7" />
-          </span>
-          <span className="font-display text-xl font-semibold tracking-tight text-walnut">Choose a photo</span>
-          <span className="max-w-sm text-sm leading-6 text-ink-soft">
-            A scan, a print, or a phone picture — JPEG, PNG, WebP, or GIF, up to 8MB.
-          </span>
-        </button>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <button
+            type="button"
+            data-testid="upload-camera"
+            onClick={() => cameraInputRef.current?.click()}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
+          >
+            <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
+              <CameraIcon className="size-7" />
+            </span>
+            <span className="font-display text-xl font-semibold tracking-tight text-walnut">Take a photo</span>
+            <span className="text-sm leading-6 text-ink-soft">Snap one now with your camera.</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
+          >
+            <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
+              <UploadIcon className="size-7" />
+            </span>
+            <span className="font-display text-xl font-semibold tracking-tight text-walnut">Choose a photo</span>
+            <span className="text-sm leading-6 text-ink-soft">A scan, a print, or one from your library.</span>
+          </button>
+        </div>
+        <p className="mt-3 text-center text-sm text-ink-soft">JPEG, PNG, WebP, or GIF, up to 8MB.</p>
+        <input
+          ref={cameraInputRef}
+          data-testid="upload-camera-input"
+          type="file"
+          accept="image/*"
+          capture="environment"
+          className="sr-only"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) onPick(file);
+          }}
+        />
         <input
           ref={fileInputRef}
           data-testid="upload-input"
