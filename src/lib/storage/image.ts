@@ -9,6 +9,19 @@ export function isAllowedImage(type: string): boolean {
   return (ALLOWED_IMAGE_TYPES as readonly string[]).includes(type);
 }
 
+/**
+ * Modern iPhones save photos as HEIC, which most non-Safari browsers can't
+ * decode or display — so we convert them to JPEG client-side before upload.
+ * The `type` is often empty or unreliable for HEIC, so we also sniff the name.
+ */
+export function isHeic(file: { name: string; type: string }): boolean {
+  return (
+    file.type === "image/heic" ||
+    file.type === "image/heif" ||
+    /\.(heic|heif)$/i.test(file.name)
+  );
+}
+
 /** Encode the real uploaded bytes as a data: URL (the no-token dev storage path). */
 export async function fileToDataUrl(file: File): Promise<string> {
   const base64 = Buffer.from(await file.arrayBuffer()).toString("base64");

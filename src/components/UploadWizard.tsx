@@ -7,6 +7,7 @@ import { PhotoTagger, type DraftTag } from "./PhotoTagger";
 import { CameraIcon, UploadIcon } from "./icons";
 import { uploadPhoto } from "@/app/(app)/upload/actions";
 import { createPerson } from "@/app/(app)/people/actions";
+import { isHeic } from "@/lib/storage/image";
 import type { Person } from "@/data/db/schema";
 
 interface Picked {
@@ -37,6 +38,7 @@ export function UploadWizard({
   const [tags, setTags] = useState<DraftTag[]>([]);
   const [roster, setRoster] = useState<Person[]>(people);
   const [errors, setErrors] = useState<string[]>([]);
+  const [converting, setConverting] = useState(false);
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
@@ -48,15 +50,32 @@ export function UploadWizard({
     return result.person;
   }
 
-  function onPick(file: File) {
-    const previewUrl = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      setPicked({ file, previewUrl, width: img.naturalWidth, height: img.naturalHeight });
+  async function onPick(file: File) {
+    setErrors([]);
+    // iPhones save photos as HEIC, which most browsers can't display. Convert
+    // to JPEG on-device (lazy-loading the codec) before previewing/uploading.
+    let source = file;
+    if (isHeic(file)) {
+      setConverting(true);
+      try {
+        const heic2any = (await import("heic2any")).default;
+        const out = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.92 });
+        const blob = Array.isArray(out) ? out[0] : out;
+        source = new File([blob], `${file.name.replace(/\.[^.]+$/, "")}.jpg`, { type: "image/jpeg" });
+      } catch {
+        setConverting(false);
+        setErrors(["That HEIC photo couldn't be converted — try another, or a JPEG."]);
+        return;
+      }
+      setConverting(false);
+    }
+    const previewUrl = URL.createObjectURL(source);
+    const probe = new Image();
+    probe.onload = () => {
+      setPicked({ file: source, previewUrl, width: probe.naturalWidth, height: probe.naturalHeight });
       if (!title) setTitle(file.name.replace(/\.[^.]+$/, ""));
     };
-    img.src = previewUrl;
-    setErrors([]);
+    probe.src = previewUrl;
   }
 
   function submit() {
@@ -87,7 +106,8 @@ export function UploadWizard({
             type="button"
             data-testid="upload-camera"
             onClick={() => cameraInputRef.current?.click()}
-            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
+            disabled={converting}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5 disabled:opacity-50"
           >
             <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
               <CameraIcon className="size-7" />
@@ -98,7 +118,8 @@ export function UploadWizard({
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5"
+            disabled={converting}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-sepia/35 bg-cream px-6 py-12 text-center transition-colors hover:border-sepia hover:bg-sepia/5 disabled:opacity-50"
           >
             <span className="flex size-14 items-center justify-center rounded-full bg-sepia/10 text-sepia transition-transform group-hover:-translate-y-0.5">
               <UploadIcon className="size-7" />
@@ -107,12 +128,14 @@ export function UploadWizard({
             <span className="text-sm leading-6 text-ink-soft">A scan, a print, or one from your library.</span>
           </button>
         </div>
-        <p className="mt-3 text-center text-sm text-ink-soft">JPEG, PNG, WebP, or GIF, up to 8MB.</p>
+        <p className="mt-3 text-center text-sm text-ink-soft">
+          {converting ? "Converting your photo…" : "JPEG, PNG, WebP, HEIC, or GIF, up to 8MB."}
+        </p>
         <input
           ref={cameraInputRef}
           data-testid="upload-camera-input"
           type="file"
-          accept="image/*"
+          accept="image/*,.heic,.heif"
           capture="environment"
           className="sr-only"
           onChange={(e) => {
@@ -124,7 +147,7 @@ export function UploadWizard({
           ref={fileInputRef}
           data-testid="upload-input"
           type="file"
-          accept="image/*"
+          accept="image/*,.heic,.heif"
           className="sr-only"
           onChange={(e) => {
             const file = e.target.files?.[0];
