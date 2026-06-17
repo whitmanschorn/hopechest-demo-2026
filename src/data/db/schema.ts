@@ -71,8 +71,9 @@ export interface LocationRow {
   city?: string;
   state?: string;
   country?: string;
-  lat: number;
-  lng: number;
+  /** Map coordinates. Null for places typed in while uploading — no pin yet. */
+  lat?: number | null;
+  lng?: number | null;
 }
 
 export interface PhotoRow {

@@ -35,6 +35,10 @@ test("an uploaded photo (with a person tag) and a new album persist across a rel
   await page.getByTestId("tagger-person").first().click();
   const photoTitle = `E2E uploaded photo ${Date.now()}`;
   await page.getByTestId("upload-title").fill(photoTitle);
+  // Type a brand-new place (free-text autocomplete) — the action creates it.
+  const placeName = `E2E Place ${Date.now()}`;
+  await page.getByTestId("upload-place").fill(placeName);
+  // Leave the album on its default — the photo should still land in an album.
   await page.getByTestId("upload-submit").click();
   await page.waitForURL(/\/photos\/.+/);
   const photoUrl = page.url();
@@ -44,7 +48,12 @@ test("an uploaded photo (with a person tag) and a new album persist across a rel
     await expect(page).toHaveURL(photoUrl);
     await expect(page.getByText(photoTitle).first()).toBeVisible({ timeout: 3000 });
     await expect(page.getByText(/1 face/i).first()).toBeVisible({ timeout: 3000 }); // the tag persisted
+    await expect(page.getByText(placeName).first()).toBeVisible({ timeout: 3000 }); // the new place persisted
   }).toPass({ timeout: 20000 });
+
+  // With no album chosen, the upload falls into the shared default album.
+  await page.goto("/albums");
+  await expect(page.getByText("Recently added").first()).toBeVisible();
 
   // --- Create a standard album ---------------------------------------------
   await page.goto("/albums");

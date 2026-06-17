@@ -23,18 +23,25 @@ const inputClass =
 /** Real photo upload: pick an image, add a title/date/place, and it's saved to
  * the chest. The image bytes are read client-side to capture dimensions and a
  * preview; the file + fields POST to the `uploadPhoto` server action. */
+const NEW_ALBUM = "__new__";
+const DEFAULT_ALBUM = "__default__";
+
 export function UploadWizard({
   locations,
+  albums,
   people,
 }: {
   locations: { id: string; label: string }[];
+  albums: { id: string; title: string }[];
   people: Person[];
 }) {
   const router = useRouter();
   const [picked, setPicked] = useState<Picked | null>(null);
   const [title, setTitle] = useState("");
   const [dateInput, setDateInput] = useState("");
-  const [locationId, setLocationId] = useState("");
+  const [place, setPlace] = useState("");
+  const [albumChoice, setAlbumChoice] = useState(DEFAULT_ALBUM);
+  const [newAlbumTitle, setNewAlbumTitle] = useState("");
   const [tags, setTags] = useState<DraftTag[]>([]);
   const [roster, setRoster] = useState<Person[]>(people);
   const [errors, setErrors] = useState<string[]>([]);
@@ -84,7 +91,9 @@ export function UploadWizard({
     data.set("file", picked.file);
     data.set("title", title);
     data.set("dateInput", dateInput);
-    data.set("locationId", locationId);
+    data.set("locationName", place);
+    if (albumChoice === NEW_ALBUM) data.set("newAlbumTitle", newAlbumTitle);
+    else if (albumChoice !== DEFAULT_ALBUM) data.set("albumId", albumChoice);
     data.set("width", String(picked.width));
     data.set("height", String(picked.height));
     data.set("tags", JSON.stringify(tags));
@@ -198,16 +207,48 @@ export function UploadWizard({
           <span className="mb-1.5 block text-sm font-medium text-ink">
             Place <span className="font-normal text-ink-soft">(optional)</span>
           </span>
-          <select value={locationId} onChange={(e) => setLocationId(e.target.value)} className={inputClass}>
-            <option value="">—</option>
+          <input
+            data-testid="upload-place"
+            list="upload-place-options"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+            placeholder="Start typing, or add a new place…"
+            className={inputClass}
+          />
+          <datalist id="upload-place-options">
             {locations.map((l) => (
-              <option key={l.id} value={l.id}>
-                {l.label}
-              </option>
+              <option key={l.id} value={l.label} />
             ))}
-          </select>
+          </datalist>
         </label>
       </div>
+      <label className="block">
+        <span className="mb-1.5 block text-sm font-medium text-ink">Album</span>
+        <select
+          data-testid="upload-album"
+          value={albumChoice}
+          onChange={(e) => setAlbumChoice(e.target.value)}
+          className={inputClass}
+        >
+          <option value={DEFAULT_ALBUM}>Recently added (default)</option>
+          {albums.map((a) => (
+            <option key={a.id} value={a.id}>
+              {a.title}
+            </option>
+          ))}
+          <option value={NEW_ALBUM}>+ New album…</option>
+        </select>
+        {albumChoice === NEW_ALBUM ? (
+          <input
+            data-testid="upload-new-album"
+            autoFocus
+            value={newAlbumTitle}
+            onChange={(e) => setNewAlbumTitle(e.target.value)}
+            placeholder="New album name"
+            className={`${inputClass} mt-2`}
+          />
+        ) : null}
+      </label>
       {errors.length > 0 ? <ErrorList errors={errors} /> : null}
       <div className="flex gap-2">
         <button
