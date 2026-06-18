@@ -28,5 +28,9 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
+    // The recognition E2E drives /api/recognition/debug/* (reset + seed). Those
+    // are gated; enable them for the test server. Harmless for the rest of the
+    // suite. (VERCEL_ENV is unset locally/CI, so the prod guard still holds.)
+    env: { ENABLE_DEBUG_ENDPOINTS: "true" },
   },
 });

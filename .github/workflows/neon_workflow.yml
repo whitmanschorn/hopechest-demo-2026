@@ -85,11 +85,14 @@ jobs:
           compare_branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
           api_key: ${{ secrets.NEON_API_KEY }}
 
-      - name: Run Playwright login suite
+      - name: Run Playwright suite
         env:
           POSTGRES_URL_NON_POOLING: ${{ steps.create_neon_branch.outputs.db_url }}
           POSTGRES_PRISMA_URL: ${{ steps.create_neon_branch.outputs.db_url_pooled }}
           PHONE_PROVIDER: dev
+          # Recognition E2E drives the gated /api/recognition/debug/* endpoints.
+          # VERCEL_ENV is unset here, so the production guard still holds.
+          ENABLE_DEBUG_ENDPOINTS: "true"
           CI: "true"
         run: npm run test:e2e
 

@@ -1,0 +1,8 @@
+# Machine-generated data — collapse in GitHub diffs and exclude from language
+# stats. These are produced by tooling, not hand-edited:
+#   - recognition fixtures: scripts/gen-fixtures.ts
+#   - descriptor references: scripts/gen-seed-descriptors.cjs / face-api
+fixtures/recognition/*.json linguist-generated=true
+
+# Bulk demo photo fixtures (binary, downloaded) — keep them out of the diff too.
+fixtures/oceans11/** linguist-generated=true

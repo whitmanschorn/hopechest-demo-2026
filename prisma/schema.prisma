@@ -110,6 +110,7 @@ model Person {
   lifeEventsCreated LifeEvent[]    @relation("LifeEventCreator")
   changelog         Changelog[]    @relation("PersonChangelog")
   changelogEdited   Changelog[]    @relation("ChangelogEditor")
+  faceIdentities    FaceIdentity[] // recognition bridge (see prisma/schema — recognition subsystem)
 
   @@map("people")
 }
@@ -179,6 +180,7 @@ model Photo {
   comments      Comment[]
   reactions     Reaction[]
   coverOfAlbums Album[]       @relation("AlbumCover")
+  facePhotos    FacePhoto[]  // recognition bridge (see recognition subsystem below)
 
   @@index([dateMonth, dateDay])
   @@index([locationId])
@@ -469,4 +471,77 @@ model Changelog {
 
   @@index([personId])
   @@map("changelog")
+}
+
+// --- face recognition subsystem ---------------------------------------------
+//
+// Self-contained vector pipeline. A face "person" here is NOT a Hope Chest
+// `Person` — the words are deliberately different:
+//   - FaceCluster  = ephemeral, system-proposed grouping ("we think these are
+//                    the same person"); truncated + regenerated every rebuild.
+//   - FaceIdentity = durable, human-confirmed identity ("we decided this shared
+//                    face is someone"); survives rebuilds. Optionally bridged to
+//                    a real `people` row via appPersonId for future integration.
+//
+// The `embedding` / `centroid` vector(128) columns are added by the raw
+// migration (Unsupported here, so excluded from the generated client) and are
+// read/written only via $queryRaw/$executeRaw in src/lib/recognition/db.ts.
+// HNSW indexes also live in the raw migration. See docs/recognition.md.
+
+model FaceIdentity {
+  id          String   @id @default(uuid())
+  name        String
+  appPersonId String?  @map("app_person_id") // bridge -> people.id (back-prop seam)
+  createdAt   DateTime @default(now())
+
+  appPerson Person? @relation(fields: [appPersonId], references: [id], onDelete: SetNull)
+  faces     Face[]
+
+  @@index([appPersonId])
+  @@map("face_identities")
+}
+
+model FacePhoto {
+  id         String   @id @default(uuid())
+  blobUrl    String   @map("blob_url")
+  appPhotoId String?  @map("app_photo_id") // bridge -> photos.id
+  uploadedAt DateTime @default(now())
+
+  appPhoto Photo? @relation(fields: [appPhotoId], references: [id], onDelete: SetNull)
+  faces    Face[]
+
+  @@index([appPhotoId])
+  @@map("face_photos")
+}
+
+// Ephemeral. TRUNCATEd and regenerated each rebuild; `centroid vector(128)` is
+// added by the raw migration. representativeFaceId is the medoid (UI thumbnail).
+model FaceCluster {
+  id                   String   @id @default(uuid())
+  size                 Int
+  representativeFaceId String?  @map("representative_face_id")
+  createdAt            DateTime @default(now())
+
+  @@map("face_clusters")
+}
+
+model Face {
+  id         String   @id @default(uuid())
+  photoId    String   @map("photo_id")
+  bbox       Json // {x,y,width,height} in source-image px
+  thumbUrl   String?  @map("thumb_url")
+  quality    Float? // detector score / sharpness; medoid tiebreak
+  clusterId  String?  @map("cluster_id") // ephemeral; rewritten every rebuild (no FK by design)
+  identityId String?  @map("identity_id") // durable truth
+  createdAt  DateTime @default(now())
+
+  // embedding vector(128) NOT NULL -- added by the raw migration (Unsupported)
+
+  photo    FacePhoto     @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  identity FaceIdentity? @relation(fields: [identityId], references: [id], onDelete: SetNull)
+
+  @@index([clusterId])
+  @@index([identityId])
+  @@index([photoId])
+  @@map("faces")
 }

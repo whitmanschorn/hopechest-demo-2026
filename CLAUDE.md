@@ -16,6 +16,11 @@
 - The data layer is seam-based: **reads** go through `src/data/db/repos.ts` (hydration memoized per request with React `cache()`), **writes** go through `src/data/db/mutations.ts`, and storage mapping lives in `src/data/db/load.ts`. Pages import from `@/data` and never touch Prisma directly. Keep that boundary.
 - Server actions (`"use server"`) own validation + attribution (`requireCurrentPerson()`) + `revalidatePath()`; mirror the existing ones in `app/(app)/people/[personId]/actions.ts` and `app/(app)/photos/[photoId]/actions.ts`.
 
+#### Face recognition subsystem
+
+- Self-contained vector pipeline in `src/lib/recognition/` + `app/api/recognition/**`. Uses **pgvector** — the migration runs `CREATE EXTENSION vector`. Neon has it built in; a **local native Postgres needs the extension installed first** (e.g. `brew install pgvector`) or `db:deploy` fails. Full design + terminology + the eps-calibration harness in **`docs/recognition.md`**.
+- Vector reads/writes do NOT go through the `@/data` seam (Prisma's pgvector support is weak; `embedding`/`centroid` are `Unsupported`). They use raw SQL in `src/lib/recognition/db.ts`. A face "identity" is **not** a Hope Chest `Person` — see the doc.
+
 ### Tests
 
 - **Unit (Jest):** `npm test`. Pure logic only (date/edit/reaction helpers, kinship) — no DB. Put testable rules in a pure module and unit-test those rather than the Prisma write path.
