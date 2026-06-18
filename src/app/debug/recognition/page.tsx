@@ -9,6 +9,7 @@ import { DEFAULT_CONFIG } from "@/lib/recognition/types";
 import type { Scenario } from "@/lib/recognition/scenario";
 
 import { RecognitionPanel } from "./RecognitionPanel";
+import type { OceansSample } from "./OceansShowcase";
 
 // Test surface for the recognition pipeline — the same endpoints Playwright
 // drives. Reachable now that the whole deployment sits behind Vercel Auth
@@ -48,7 +49,33 @@ function loadCalibration(): CalibrationReport | null {
   }
 }
 
+// The Ocean's Eleven crew descriptors, for the live-clustering showcase. The
+// clusterer reruns in the browser, so we just ship the raw vectors + the file
+// each came from (images are served by /api/oceans11/<identity>/<file>).
+function loadOceans(): OceansSample[] {
+  const path = join(process.cwd(), "fixtures", "recognition", "oceans11-descriptors.json");
+  try {
+    const { samples } = JSON.parse(readFileSync(path, "utf8")) as {
+      samples: { identity: string; file: string; embedding: number[] }[];
+    };
+    return (samples ?? []).map((s) => ({
+      id: `${s.identity}/${s.file}`,
+      identity: s.identity,
+      file: s.file,
+      embedding: s.embedding,
+    }));
+  } catch {
+    return [];
+  }
+}
+
 export default function RecognitionDebugPage() {
   if (!debugEnabled()) notFound();
-  return <RecognitionPanel fixtures={loadFixtures()} calibration={loadCalibration()} />;
+  return (
+    <RecognitionPanel
+      fixtures={loadFixtures()}
+      calibration={loadCalibration()}
+      oceans={loadOceans()}
+    />
+  );
 }

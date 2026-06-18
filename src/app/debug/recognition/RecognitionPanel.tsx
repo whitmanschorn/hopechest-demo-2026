@@ -13,6 +13,8 @@ import type {
   RecognizeResponse,
 } from "@/lib/recognition/types";
 
+import { OceansShowcase, type OceansSample } from "./OceansShowcase";
+
 const API = "/api/recognition";
 
 async function post<T>(path: string, body?: unknown): Promise<T> {
@@ -27,10 +29,13 @@ async function post<T>(path: string, body?: unknown): Promise<T> {
 export function RecognitionPanel({
   fixtures,
   calibration,
+  oceans,
 }: {
   fixtures: Scenario[];
   calibration: CalibrationReport | null;
+  oceans: OceansSample[];
 }) {
+  const [tab, setTab] = useState<"pipeline" | "showcase">("pipeline");
   const [config, setConfig] = useState<PipelineConfig>(DEFAULT_CONFIG);
   const set = <K extends keyof PipelineConfig>(k: K, v: PipelineConfig[K]) =>
     setConfig((c) => ({ ...c, [k]: v }));
@@ -147,6 +152,28 @@ export function RecognitionPanel({
         </p>
       </header>
 
+      {/* --- tabs --- */}
+      <nav className="flex gap-2 border-b">
+        {(["pipeline", "showcase"] as const).map((t) => (
+          <button
+            key={t}
+            data-testid={`tab-${t}`}
+            onClick={() => setTab(t)}
+            className={`-mb-px border-b-2 px-3 py-1 ${
+              tab === t
+                ? "border-blue-600 font-semibold text-blue-700"
+                : "border-transparent text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            {t === "pipeline" ? "Pipeline" : "🎬 Ocean's 11 showcase"}
+          </button>
+        ))}
+      </nav>
+
+      {tab === "showcase" && <OceansShowcase samples={oceans} />}
+
+      {tab === "pipeline" && (
+        <>
       {/* --- real-face calibration (committed descriptors) --- */}
       {calibration && (
         <section className="space-y-2 rounded border p-4" data-testid="calibration">
@@ -382,6 +409,8 @@ export function RecognitionPanel({
           Browser-side detect/crop/embed via face-api, then POST to ingest. Requires the optional dependency + model weights.
         </p>
       </section>
+        </>
+      )}
     </main>
   );
 }
