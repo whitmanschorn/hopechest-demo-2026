@@ -1,11 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 
 import { Img } from "@/components/Img";
 import { calibrate } from "@/lib/recognition/calibration";
 import { rebuild, type ClusterFace } from "@/lib/recognition/cluster";
 import { DEFAULT_CONFIG } from "@/lib/recognition/types";
+
+// The "sort" animation sweeps eps from a scattered pile up to the calibrated
+// default, so you watch the eleven groups coalesce.
+const EPS_START = 0.35;
+const EPS_END = DEFAULT_CONFIG.eps; // 0.6 — the clean result
+const EPS_STEP = 0.01;
+const TICK_MS = 130;
 
 // One committed Ocean's Eleven descriptor + where its photo lives. The image is
 // served by /api/oceans11/<identity>/<file>.
@@ -53,6 +60,7 @@ function majority(ids: string[], byId: Map<string, OceansSample>) {
 export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
   const [eps, setEps] = useState(DEFAULT_CONFIG.eps);
   const [minPts, setMinPts] = useState(DEFAULT_CONFIG.minPts);
+  const [playing, setPlaying] = useState(false);
 
   const byId = useMemo(() => new Map(samples.map((s) => [s.id, s])), [samples]);
 
@@ -74,6 +82,40 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
     }
   }, [samples, eps]);
 
+  // While playing, advance eps one step per tick and stop at the end. epsRef
+  // holds the latest eps so the interval needn't restart each step; setState in
+  // the timer callback (not the effect body) keeps the renders cheap. Manual
+  // slider edits set playing=false, so they take over cleanly.
+  const epsRef = useRef(eps);
+  useEffect(() => {
+    epsRef.current = eps;
+  }, [eps]);
+  useEffect(() => {
+    if (!playing) return;
+    const h = setInterval(() => {
+      const next = Math.min(EPS_END, Math.round((epsRef.current + EPS_STEP) * 100) / 100);
+      setEps(next);
+      if (next >= EPS_END) setPlaying(false);
+    }, TICK_MS);
+    return () => clearInterval(h);
+  }, [playing]);
+
+  const start = () => {
+    if (eps >= EPS_END) setEps(EPS_START); // replay if parked at the end
+    setPlaying(true);
+  };
+  const pause = () => setPlaying(false);
+  const restart = () => {
+    setEps(EPS_START);
+    setPlaying(true);
+  };
+  const onSlider = (set: (n: number) => void) => (e: ChangeEvent<HTMLInputElement>) => {
+    setPlaying(false); // manual control pauses the animation
+    set(Number(e.target.value));
+  };
+
+  const progress = Math.max(0, Math.min(1, (eps - EPS_START) / (EPS_END - EPS_START)));
+
   if (samples.length === 0) {
     return (
       <section className="rounded border p-4" data-testid="oceans-showcase">
@@ -86,15 +128,55 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
 
   return (
     <div className="space-y-4" data-testid="oceans-showcase">
+      <style>{`@keyframes oceansPop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}.oceans-pop{animation:oceansPop .35s ease both}`}</style>
       {/* --- intro + live controls --- */}
       <section className="space-y-3 rounded border p-4">
         <div>
           <h2 className="font-semibold">Ocean&apos;s Eleven — sort the crew</h2>
           <p className="text-xs text-gray-500">
             {samples.length} real face-api descriptors of the eleven crew actors, clustered live by
-            the pipeline&apos;s DBSCAN (<code>cluster.ts</code>) in your browser. Drag the knobs and
-            watch the photos re-group — nothing is saved, it recomputes each time.
+            the pipeline&apos;s DBSCAN (<code>cluster.ts</code>) in your browser. Hit Start to sweep
+            eps from a scattered pile up to the clean eleven groups — nothing is saved, it
+            recomputes each frame.
           </p>
+        </div>
+
+        {/* playback */}
+        <div className="space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              data-testid="oceans-play"
+              onClick={start}
+              disabled={playing}
+              className="rounded border px-3 py-1 disabled:opacity-40"
+            >
+              ▶ Start
+            </button>
+            <button
+              data-testid="oceans-pause"
+              onClick={pause}
+              disabled={!playing}
+              className="rounded border px-3 py-1 disabled:opacity-40"
+            >
+              ⏸ Pause
+            </button>
+            <button
+              data-testid="oceans-restart"
+              onClick={restart}
+              className="rounded border px-3 py-1"
+            >
+              ↻ Restart
+            </button>
+            <span className="font-mono text-xs text-gray-500">
+              {playing ? "sorting…" : eps >= EPS_END ? "sorted ✓" : "paused"} · eps {eps.toFixed(2)}
+            </span>
+          </div>
+          <div className="h-1.5 w-full overflow-hidden rounded bg-gray-200">
+            <div
+              className="h-full bg-blue-500 transition-all"
+              style={{ width: `${progress * 100}%` }}
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -109,7 +191,7 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
               max={1.0}
               step={0.01}
               value={eps}
-              onChange={(e) => setEps(Number(e.target.value))}
+              onChange={onSlider(setEps)}
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -123,7 +205,7 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
               max={8}
               step={1}
               value={minPts}
-              onChange={(e) => setMinPts(Number(e.target.value))}
+              onChange={onSlider(setMinPts)}
             />
           </label>
         </div>
@@ -163,7 +245,7 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
             <section
               key={c.memberIds[0]}
               data-testid="oceans-cluster"
-              className="space-y-2 rounded border p-3 transition-all"
+              className="oceans-pop space-y-2 rounded border p-3 transition-all"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">{prettify(maj.name)}</h3>
@@ -188,7 +270,7 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
                       src={imgSrc(s)}
                       alt={s.file}
                       title={`${s.identity} · ${s.file}`}
-                      className={`h-16 w-16 rounded object-cover ${
+                      className={`oceans-pop h-16 w-16 rounded object-cover ${
                         isMedoid
                           ? "ring-2 ring-blue-500"
                           : offIdentity
@@ -224,7 +306,7 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
                   src={imgSrc(s)}
                   alt={s.file}
                   title={`${s.identity} · ${s.file}`}
-                  className="h-16 w-16 rounded object-cover opacity-70 grayscale"
+                  className="oceans-pop h-16 w-16 rounded object-cover opacity-70 grayscale"
                 />
               );
             })}
