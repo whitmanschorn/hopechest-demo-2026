@@ -3,16 +3,9 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 
 import { Img } from "@/components/Img";
-import { calibrate } from "@/lib/recognition/calibration";
-import { rebuild, type ClusterFace } from "@/lib/recognition/cluster";
-import { DEFAULT_CONFIG } from "@/lib/recognition/types";
-
-// The "sort" animation sweeps eps from a scattered pile up to the calibrated
-// default, so you watch the eleven groups coalesce.
-const EPS_START = 0.35;
-const EPS_END = DEFAULT_CONFIG.eps; // 0.6 — the clean result
-const EPS_STEP = 0.01;
-const TICK_MS = 130;
+import { l2 } from "@/lib/recognition/distance";
+import { pickMatch } from "@/lib/recognition/recognize";
+import { cfg, DEFAULT_CONFIG } from "@/lib/recognition/types";
 
 // One committed Ocean's Eleven descriptor + where its photo lives. The image is
 // served by /api/oceans11/<identity>/<file>.
@@ -23,98 +16,126 @@ export interface OceansSample {
   embedding: number[];
 }
 
+// Reference photos enrolled per known person (the "we already know these
+// people" gallery); the rest become photos to auto-tag.
+const ENROLL_PER = 3;
+const TICK_MS = 220; // one photo tagged per tick during playback
+
+// Structurally a recognize.ts NeighborRow — declared locally so this client
+// component never imports the server-only db module.
+type Neighbor = { faceId: string; identityId: string | null; name: string | null; distance: number };
+
 const prettify = (slug: string) =>
   slug
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-const imgSrc = (s: OceansSample) =>
+const imgSrc = (s: { identity: string; file: string }) =>
   `/api/oceans11/${encodeURIComponent(s.identity)}/${encodeURIComponent(s.file)}`;
 
-// Most common actor slug among a set of member ids, with its count (for the
-// cluster label + purity).
-function majority(ids: string[], byId: Map<string, OceansSample>) {
-  const counts = new Map<string, number>();
-  for (const id of ids) {
-    const who = byId.get(id)?.identity ?? "?";
-    counts.set(who, (counts.get(who) ?? 0) + 1);
-  }
-  let name = "?";
-  let count = 0;
-  for (const [k, v] of counts) {
-    if (v > count || (v === count && k < name)) {
-      name = k;
-      count = v;
-    }
-  }
-  return { name, count };
-}
-
 /**
- * Ocean's Eleven super-showcase: runs the pipeline's real DBSCAN clusterer
- * (cluster.ts#rebuild) over the committed crew descriptors, live in the
- * browser, and lays the photos out by cluster. Drag eps/minPts and watch the
- * groups re-sort. Nothing is persisted — it recomputes every render.
+ * Ocean's Eleven super-showcase, framed as the product's real job: tagging new
+ * photos against PRE-KNOWN people. We enroll a few reference photos per crew
+ * actor (named, "known"), then auto-tag the remaining photos with the
+ * pipeline's actual recognize decision (recognize.ts#pickMatch) — kNN against
+ * the enrolled gallery, threshold + optional vote. Start/Pause/Restart play the
+ * tagging as it happens; nothing is persisted (recomputed each render).
  */
 export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
-  const [eps, setEps] = useState(DEFAULT_CONFIG.eps);
-  const [minPts, setMinPts] = useState(DEFAULT_CONFIG.minPts);
+  const [threshold, setThreshold] = useState(DEFAULT_CONFIG.recognizeThreshold);
+  const [vote, setVote] = useState(DEFAULT_CONFIG.recognizeVote);
   const [playing, setPlaying] = useState(false);
+  const [revealed, setRevealed] = useState(0);
 
-  const byId = useMemo(() => new Map(samples.map((s) => [s.id, s])), [samples]);
-
-  const result = useMemo(() => {
-    const faces: ClusterFace[] = samples.map((s) => ({ id: s.id, embedding: s.embedding }));
-    return rebuild(faces, { ...DEFAULT_CONFIG, eps, minPts });
-  }, [samples, eps, minPts]);
-
-  // Separation readout from the pipeline's own calibrator (pure), at this eps.
-  const cal = useMemo(() => {
-    if (samples.length < 2) return null;
-    try {
-      return calibrate(
-        samples.map((s) => ({ identity: s.identity, embedding: s.embedding })),
-        eps,
-      );
-    } catch {
-      return null;
+  // Split each actor's photos into an enrolled gallery (known) + photos to tag.
+  // Query photos are round-robined across actors so the reveal populates many
+  // people early.
+  const { gallery, query, people } = useMemo(() => {
+    const byActor = new Map<string, OceansSample[]>();
+    for (const s of [...samples].sort((a, b) => (a.file < b.file ? -1 : 1))) {
+      const list = byActor.get(s.identity);
+      if (list) list.push(s);
+      else byActor.set(s.identity, [s]);
     }
-  }, [samples, eps]);
+    const sorted = [...byActor.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1));
+    const gallery: { id: string; identity: string; name: string; embedding: number[] }[] = [];
+    const people: { identity: string; name: string; enrolled: OceansSample[] }[] = [];
+    const rests: OceansSample[][] = [];
+    for (const [identity, list] of sorted) {
+      const name = prettify(identity);
+      const enrolled = list.slice(0, ENROLL_PER);
+      enrolled.forEach((s) => gallery.push({ id: s.id, identity, name, embedding: s.embedding }));
+      people.push({ identity, name, enrolled });
+      rests.push(list.slice(ENROLL_PER));
+    }
+    const query: OceansSample[] = [];
+    for (let i = 0; ; i++) {
+      let any = false;
+      for (const r of rests) {
+        if (i < r.length) {
+          query.push(r[i]);
+          any = true;
+        }
+      }
+      if (!any) break;
+    }
+    return { gallery, query, people };
+  }, [samples]);
 
-  // While playing, advance eps one step per tick and stop at the end. epsRef
-  // holds the latest eps so the interval needn't restart each step; setState in
-  // the timer callback (not the effect body) keeps the renders cheap. Manual
-  // slider edits set playing=false, so they take over cleanly.
-  const epsRef = useRef(eps);
+  const config = useMemo(
+    () => cfg({ recognizeThreshold: threshold, recognizeVote: vote }),
+    [threshold, vote],
+  );
+
+  // The actual recognition decision per query photo: kNN vs the enrolled
+  // gallery → pickMatch (mirrors /api/recognition/recognize, sans DB).
+  const results = useMemo(
+    () =>
+      query.map((q) => {
+        const neighbors: Neighbor[] = gallery
+          .map((g) => ({
+            faceId: g.id,
+            identityId: g.identity,
+            name: g.name,
+            distance: l2(q.embedding, g.embedding),
+          }))
+          .sort((a, b) => a.distance - b.distance)
+          .slice(0, config.recognizeK);
+        const match = pickMatch(neighbors, config);
+        return { q, match, correct: match != null && match.identityId === q.identity };
+      }),
+    [query, gallery, config],
+  );
+
+  // Playback reveals query photos one per tick (the tagging "happening").
+  const revealedRef = useRef(revealed);
   useEffect(() => {
-    epsRef.current = eps;
-  }, [eps]);
+    revealedRef.current = revealed;
+  }, [revealed]);
   useEffect(() => {
     if (!playing) return;
     const h = setInterval(() => {
-      const next = Math.min(EPS_END, Math.round((epsRef.current + EPS_STEP) * 100) / 100);
-      setEps(next);
-      if (next >= EPS_END) setPlaying(false);
+      const next = revealedRef.current + 1;
+      setRevealed(Math.min(query.length, next));
+      if (next >= query.length) setPlaying(false);
     }, TICK_MS);
     return () => clearInterval(h);
-  }, [playing]);
+  }, [playing, query.length]);
 
   const start = () => {
-    if (eps >= EPS_END) setEps(EPS_START); // replay if parked at the end
+    if (revealed >= query.length) setRevealed(0); // replay if finished
     setPlaying(true);
   };
   const pause = () => setPlaying(false);
   const restart = () => {
-    setEps(EPS_START);
+    setRevealed(0);
     setPlaying(true);
   };
-  const onSlider = (set: (n: number) => void) => (e: ChangeEvent<HTMLInputElement>) => {
-    setPlaying(false); // manual control pauses the animation
-    set(Number(e.target.value));
+  const tagAll = () => {
+    setPlaying(false);
+    setRevealed(query.length);
   };
-
-  const progress = Math.max(0, Math.min(1, (eps - EPS_START) / (EPS_END - EPS_START)));
 
   if (samples.length === 0) {
     return (
@@ -126,18 +147,37 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
     );
   }
 
+  const shown = results.slice(0, revealed);
+  const taggedByPerson = new Map<string, typeof shown>();
+  const unknown: typeof shown = [];
+  for (const r of shown) {
+    if (r.match) {
+      const arr = taggedByPerson.get(r.match.identityId);
+      if (arr) arr.push(r);
+      else taggedByPerson.set(r.match.identityId, [r]);
+    } else {
+      unknown.push(r);
+    }
+  }
+  const tagged = shown.length - unknown.length;
+  const correct = shown.filter((r) => r.correct).length;
+  const acc = shown.length ? Math.round((correct / shown.length) * 100) : 0;
+  const progress = query.length ? revealed / query.length : 0;
+
   return (
     <div className="space-y-4" data-testid="oceans-showcase">
-      <style>{`@keyframes oceansPop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}.oceans-pop{animation:oceansPop .35s ease both}`}</style>
-      {/* --- intro + live controls --- */}
+      <style>{`@keyframes oceansPop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}.oceans-pop{animation:oceansPop .3s ease both}`}</style>
+
+      {/* --- intro + controls --- */}
       <section className="space-y-3 rounded border p-4">
         <div>
-          <h2 className="font-semibold">Ocean&apos;s Eleven — sort the crew</h2>
+          <h2 className="font-semibold">Ocean&apos;s Eleven — tag the known crew</h2>
           <p className="text-xs text-gray-500">
-            {samples.length} real face-api descriptors of the eleven crew actors, clustered live by
-            the pipeline&apos;s DBSCAN (<code>cluster.ts</code>) in your browser. Hit Start to sweep
-            eps from a scattered pile up to the clean eleven groups — nothing is saved, it
-            recomputes each frame.
+            We&apos;ve already enrolled the eleven crew actors as <b>known people</b> ({ENROLL_PER}{" "}
+            reference photos each). Hit Start and the pipeline&apos;s recognizer (
+            <code>recognize.ts</code>) tags each remaining photo to the right person — nearest
+            enrolled face within the threshold, with a confidence — exactly the Hope Chest
+            &ldquo;who is this?&rdquo; path. Runs in your browser; nothing is saved.
           </p>
         </div>
 
@@ -167,8 +207,16 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
             >
               ↻ Restart
             </button>
-            <span className="font-mono text-xs text-gray-500">
-              {playing ? "sorting…" : eps >= EPS_END ? "sorted ✓" : "paused"} · eps {eps.toFixed(2)}
+            <button
+              data-testid="oceans-tagall"
+              onClick={tagAll}
+              className="rounded border px-3 py-1 text-gray-600"
+            >
+              ⤓ Tag all
+            </button>
+            <span className="font-mono text-xs text-gray-500" data-testid="oceans-summary">
+              {playing ? "tagging…" : revealed >= query.length ? "done ✓" : "paused"} · {revealed}/
+              {query.length} photos · {tagged} tagged · {acc}% correct
             </span>
           </div>
           <div className="h-1.5 w-full overflow-hidden rounded bg-gray-200">
@@ -179,137 +227,110 @@ export function OceansShowcase({ samples }: { samples: OceansSample[] }) {
           </div>
         </div>
 
+        {/* recognize knobs */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <label className="flex flex-col gap-1">
             <span className="text-xs text-gray-500">
-              eps (same-person L2 threshold) — <b className="font-mono">{eps.toFixed(2)}</b>
+              accept threshold (max L2 to a known face) —{" "}
+              <b className="font-mono">{threshold.toFixed(2)}</b>
             </span>
             <input
-              data-testid="oceans-eps"
+              data-testid="oceans-threshold"
               type="range"
               min={0.3}
               max={1.0}
               step={0.01}
-              value={eps}
-              onChange={onSlider(setEps)}
+              value={threshold}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setThreshold(Number(e.target.value))}
             />
           </label>
-          <label className="flex flex-col gap-1">
-            <span className="text-xs text-gray-500">
-              minPts (core-point support) — <b className="font-mono">{minPts}</b>
-            </span>
+          <label className="flex items-center gap-2 self-end text-xs text-gray-500">
             <input
-              data-testid="oceans-minpts"
-              type="range"
-              min={1}
-              max={8}
-              step={1}
-              value={minPts}
-              onChange={onSlider(setMinPts)}
+              data-testid="oceans-vote"
+              type="checkbox"
+              checked={vote}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setVote(e.target.checked)}
             />
+            majority vote among k={config.recognizeK} nearest (vs single nearest)
           </label>
         </div>
-
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="font-mono text-xs" data-testid="oceans-summary">
-            {samples.length} photos → <b>{result.clusters.length}</b> groups ·{" "}
-            <b>{result.noise.length}</b> unsorted · eps {eps.toFixed(2)} · minPts {minPts}
-          </p>
-          <button
-            className="rounded border px-2 py-1 text-xs"
-            onClick={() => {
-              setEps(DEFAULT_CONFIG.eps);
-              setMinPts(DEFAULT_CONFIG.minPts);
-            }}
-          >
-            reset to {DEFAULT_CONFIG.eps} / {DEFAULT_CONFIG.minPts}
-          </button>
-          {cal && (
-            <span
-              className={`rounded px-2 py-0.5 text-xs ${cal.clean ? "bg-green-50 text-green-800" : "bg-amber-50 text-amber-900"}`}
-            >
-              {cal.clean
-                ? `CLEAN · intra p95 ${cal.intra.p95.toFixed(2)} < eps < inter p5 ${cal.inter.p5.toFixed(2)}`
-                : `SMEAR · intra p95 ${cal.intra.p95.toFixed(2)} / inter p5 ${cal.inter.p5.toFixed(2)}`}
-            </span>
-          )}
-        </div>
+        <p className="text-xs text-gray-500">
+          Enrolled {people.length} people · {gallery.length} reference faces · {query.length} photos
+          to tag. <span className="text-emerald-700">green ring = enrolled reference</span> ·{" "}
+          <span className="text-red-600">red ring = mis-tagged</span>.
+        </p>
       </section>
 
-      {/* --- the clusters --- */}
+      {/* --- known people, each with their enrolled refs + freshly tagged photos --- */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        {result.clusters.map((c) => {
-          const maj = majority(c.memberIds, byId);
-          const pure = maj.count === c.size;
+        {people.map((p) => {
+          const tags = taggedByPerson.get(p.identity) ?? [];
           return (
             <section
-              key={c.memberIds[0]}
-              data-testid="oceans-cluster"
-              className="oceans-pop space-y-2 rounded border p-3 transition-all"
+              key={p.identity}
+              data-testid="oceans-person"
+              className="space-y-2 rounded border p-3"
             >
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold">{prettify(maj.name)}</h3>
-                <div className="flex items-center gap-1">
-                  <span className="rounded bg-gray-200 px-2 text-xs">{c.size} photos</span>
-                  <span
-                    className={`rounded px-2 text-xs ${pure ? "bg-green-100 text-green-800" : "bg-amber-100 text-amber-900"}`}
-                  >
-                    {pure ? "pure" : `${maj.count}/${c.size}`}
-                  </span>
-                </div>
+                <h3 className="font-semibold">{p.name}</h3>
+                <span className="rounded bg-gray-200 px-2 text-xs">
+                  +{tags.length} tagged
+                </span>
               </div>
               <div className="flex flex-wrap gap-1">
-                {c.memberIds.map((id) => {
-                  const s = byId.get(id);
-                  if (!s) return null;
-                  const isMedoid = id === c.representativeFaceId;
-                  const offIdentity = s.identity !== maj.name;
-                  return (
+                {/* enrolled references */}
+                {p.enrolled.map((s) => (
+                  <Img
+                    key={s.id}
+                    src={imgSrc(s)}
+                    alt={s.file}
+                    title={`enrolled · ${s.file}`}
+                    className="h-14 w-14 rounded object-cover ring-2 ring-emerald-500"
+                  />
+                ))}
+                {/* a divider between enrolled and tagged */}
+                {tags.length > 0 && <div className="mx-1 w-px self-stretch bg-gray-200" />}
+                {/* freshly tagged photos */}
+                {tags.map((r) => (
+                  <div key={r.q.id} className="oceans-pop relative">
                     <Img
-                      key={id}
-                      src={imgSrc(s)}
-                      alt={s.file}
-                      title={`${s.identity} · ${s.file}`}
-                      className={`oceans-pop h-16 w-16 rounded object-cover ${
-                        isMedoid
-                          ? "ring-2 ring-blue-500"
-                          : offIdentity
-                            ? "ring-2 ring-red-400"
-                            : ""
-                      }`}
+                      src={imgSrc(r.q)}
+                      alt={r.q.file}
+                      title={`${r.q.identity} · ${r.q.file}`}
+                      className={`h-14 w-14 rounded object-cover ${r.correct ? "" : "ring-2 ring-red-500"}`}
                     />
-                  );
-                })}
+                    <span className="absolute bottom-0 right-0 rounded-tl bg-black/60 px-1 text-[10px] leading-tight text-white">
+                      {Math.round((r.match?.confidence ?? 0) * 100)}%
+                    </span>
+                  </div>
+                ))}
               </div>
             </section>
           );
         })}
       </div>
 
-      {/* --- noise / unsorted --- */}
-      {result.noise.length > 0 && (
-        <section className="space-y-2 rounded border border-dashed p-3" data-testid="oceans-noise">
+      {/* --- unknown / below threshold --- */}
+      {unknown.length > 0 && (
+        <section className="space-y-2 rounded border border-dashed p-3" data-testid="oceans-unknown">
           <h3 className="font-semibold text-gray-600">
-            Unsorted / outliers ({result.noise.length})
+            No confident match ({unknown.length})
           </h3>
           <p className="text-xs text-gray-500">
-            Below the core-point bar at this eps/minPts — typically group or red-carpet shots where
-            a co-star&apos;s face dominates.
+            Nearest enrolled face is farther than the threshold ({threshold.toFixed(2)}) — the
+            recognizer declines to tag rather than guess. Raise the threshold to tag more (at the
+            risk of mistakes).
           </p>
           <div className="flex flex-wrap gap-1">
-            {result.noise.map((id) => {
-              const s = byId.get(id);
-              if (!s) return null;
-              return (
-                <Img
-                  key={id}
-                  src={imgSrc(s)}
-                  alt={s.file}
-                  title={`${s.identity} · ${s.file}`}
-                  className="oceans-pop h-16 w-16 rounded object-cover opacity-70 grayscale"
-                />
-              );
-            })}
+            {unknown.map((r) => (
+              <Img
+                key={r.q.id}
+                src={imgSrc(r.q)}
+                alt={r.q.file}
+                title={`${r.q.identity} · ${r.q.file}`}
+                className="oceans-pop h-14 w-14 rounded object-cover opacity-70 grayscale"
+              />
+            ))}
           </div>
         </section>
       )}
