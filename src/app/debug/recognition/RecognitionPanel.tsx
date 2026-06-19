@@ -13,7 +13,16 @@ import type {
   RecognizeResponse,
 } from "@/lib/recognition/types";
 
-import { OceansShowcase, type OceansSample } from "./OceansShowcase";
+import { OceansShowcase } from "./OceansShowcase";
+import { OceansIdentify } from "./OceansIdentify";
+import type { OceansSample } from "./oceans";
+
+const TAB_LABELS = {
+  pipeline: "Pipeline",
+  showcase: "🎬 Ocean's 11 showcase",
+  identify: "🔍 Who is this?",
+} as const;
+type Tab = keyof typeof TAB_LABELS;
 
 const API = "/api/recognition";
 
@@ -35,7 +44,7 @@ export function RecognitionPanel({
   calibration: CalibrationReport | null;
   oceans: OceansSample[];
 }) {
-  const [tab, setTab] = useState<"pipeline" | "showcase">("pipeline");
+  const [tab, setTab] = useState<Tab>("pipeline");
   const [config, setConfig] = useState<PipelineConfig>(DEFAULT_CONFIG);
   const set = <K extends keyof PipelineConfig>(k: K, v: PipelineConfig[K]) =>
     setConfig((c) => ({ ...c, [k]: v }));
@@ -154,7 +163,7 @@ export function RecognitionPanel({
 
       {/* --- tabs --- */}
       <nav className="flex gap-2 border-b">
-        {(["pipeline", "showcase"] as const).map((t) => (
+        {(Object.keys(TAB_LABELS) as Tab[]).map((t) => (
           <button
             key={t}
             data-testid={`tab-${t}`}
@@ -165,12 +174,13 @@ export function RecognitionPanel({
                 : "border-transparent text-gray-500 hover:text-gray-700"
             }`}
           >
-            {t === "pipeline" ? "Pipeline" : "🎬 Ocean's 11 showcase"}
+            {TAB_LABELS[t]}
           </button>
         ))}
       </nav>
 
       {tab === "showcase" && <OceansShowcase samples={oceans} />}
+      {tab === "identify" && <OceansIdentify samples={oceans} />}
 
       {tab === "pipeline" && (
         <>

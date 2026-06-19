@@ -7,14 +7,9 @@ import { l2 } from "@/lib/recognition/distance";
 import { pickMatch } from "@/lib/recognition/recognize";
 import { cfg, DEFAULT_CONFIG } from "@/lib/recognition/types";
 
-// One committed Ocean's Eleven descriptor + where its photo lives. The image is
-// served by /api/oceans11/<identity>/<file>.
-export interface OceansSample {
-  id: string; // `${identity}/${file}`
-  identity: string; // actor slug, e.g. "george-clooney"
-  file: string; // e.g. "george-clooney-01.jpg"
-  embedding: number[];
-}
+import { imgSrc, prettify, type OceansSample } from "./oceans";
+
+export type { OceansSample };
 
 // Reference photos enrolled per known person (the "we already know these
 // people" gallery); the rest become photos to auto-tag.
@@ -24,15 +19,6 @@ const TICK_MS = 220; // one photo tagged per tick during playback
 // Structurally a recognize.ts NeighborRow — declared locally so this client
 // component never imports the server-only db module.
 type Neighbor = { faceId: string; identityId: string | null; name: string | null; distance: number };
-
-const prettify = (slug: string) =>
-  slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-
-const imgSrc = (s: { identity: string; file: string }) =>
-  `/api/oceans11/${encodeURIComponent(s.identity)}/${encodeURIComponent(s.file)}`;
 
 /**
  * Ocean's Eleven super-showcase, framed as the product's real job: tagging new

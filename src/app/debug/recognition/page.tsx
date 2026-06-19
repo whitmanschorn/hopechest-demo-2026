@@ -9,7 +9,7 @@ import { DEFAULT_CONFIG } from "@/lib/recognition/types";
 import type { Scenario } from "@/lib/recognition/scenario";
 
 import { RecognitionPanel } from "./RecognitionPanel";
-import type { OceansSample } from "./OceansShowcase";
+import type { OceansSample } from "./oceans";
 
 // Test surface for the recognition pipeline — the same endpoints Playwright
 // drives. Reachable now that the whole deployment sits behind Vercel Auth
