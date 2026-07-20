@@ -5,12 +5,12 @@
  *
  * Single-writer demo: no locking, last-write-wins.
  */
-import type { Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
 import { fuzzyDateToColumns } from "./fuzzyDate";
 import { nextReactionEmoji } from "./reactions";
-import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, LocationRow, PersonRow, PhotoPersonRow, PhotoRow } from "./schema";
+import type { AlbumPhotoRow, AlbumRow, ChangelogRow, CommentRow, FeedItem, LifeEventRow, LocationRow, MailingListSignupRow, PersonRow, PhotoPersonRow, PhotoRow } from "./schema";
 
 /** Mutate a person's editable fields. `undefined` in the patch clears the field
  * (→ null for scalars, [] for the array columns). */
@@ -268,6 +268,29 @@ export async function insertFeedItem(item: FeedItem): Promise<void> {
       excerpt: optional.excerpt ?? null,
     },
   });
+}
+
+// --- mailing list -----------------------------------------------------------
+
+/**
+ * Add an email to the "notify me at launch" mailing list. Idempotent by design:
+ * the unique index on `email` is the source of truth, so a repeat signup surfaces
+ * as a P2002 and comes back `{ created: false }` instead of throwing — the form
+ * then shows an "already on the list" message. Leaning on the constraint (rather
+ * than a read-then-write) keeps it race-safe under concurrent signups.
+ */
+export async function insertMailingListSignup(
+  row: MailingListSignupRow,
+): Promise<{ created: boolean }> {
+  try {
+    await prisma.mailingListSignup.create({ data: { id: row.id, email: row.email } });
+    return { created: true };
+  } catch (err) {
+    if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === "P2002") {
+      return { created: false };
+    }
+    throw err;
+  }
 }
 
 /** Append a changelog entry. */

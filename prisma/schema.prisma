@@ -286,6 +286,18 @@ model Invite {
   @@map("invites")
 }
 
+// "Notify me when the real Hope Chest launches" signups from the public demo
+// banner. `email` is unique so a repeat signup is caught by the DB (P2002) and
+// reported as "already on the list" rather than duplicated — see
+// mutations.insertMailingListSignup.
+model MailingListSignup {
+  id        String   @id
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  @@map("mailing_list_signups")
+}
+
 model Comment {
   id        String    @id
   photoId   String

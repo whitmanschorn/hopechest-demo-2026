@@ -34,9 +34,9 @@ const SECONDARY_NAV = [
 
 export function AppShell({ children, me }: { children: ReactNode; me: Person }) {
   return (
-    <div className="flex min-h-dvh flex-1">
-      {/* Desktop sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-20 hidden w-60 flex-col bg-walnut text-cream lg:flex">
+    <div className="flex min-h-[calc(100dvh-var(--banner-h))] flex-1">
+      {/* Desktop sidebar — starts below the fixed demo banner (--banner-h). */}
+      <aside className="fixed bottom-0 left-0 top-[var(--banner-h)] z-20 hidden w-60 flex-col bg-walnut text-cream lg:flex">
         <Link
           href="/home"
           className="flex items-center gap-2.5 px-6 pt-7 pb-6"
@@ -87,8 +87,8 @@ export function AppShell({ children, me }: { children: ReactNode; me: Person }) 
         </Link>
       </aside>
 
-      {/* Mobile top bar */}
-      <header className="fixed inset-x-0 top-0 z-20 flex items-center justify-between border-b border-hairline bg-parchment/90 px-4 py-3 backdrop-blur lg:hidden">
+      {/* Mobile top bar — sits just under the fixed demo banner (--banner-h). */}
+      <header className="fixed inset-x-0 top-[var(--banner-h)] z-20 flex items-center justify-between border-b border-hairline bg-parchment/90 px-4 py-3 backdrop-blur lg:hidden">
         <Link href="/home" className="flex items-center gap-2">
           <ChestIcon className="size-6 text-sepia" />
           <span className="font-display text-xl font-semibold tracking-tight text-walnut">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Geist } from "next/font/google";
 import "./globals.css";
 
+import { DemoBanner } from "@/components/DemoBanner";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,7 +34,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${fraunces.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col pt-[var(--banner-h)]">
+        <DemoBanner />
+        {children}
+      </body>
     </html>
   );
 }
