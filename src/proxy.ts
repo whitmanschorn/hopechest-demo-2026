@@ -9,7 +9,7 @@ import type { NextRequest } from "next/server";
 
 import { SESSION_COOKIE } from "@/lib/auth/constants";
 
-const PUBLIC_PATHS = ["/", "/signup", "/forgot-password"];
+const PUBLIC_PATHS = ["/", "/signup", "/forgot-password", "/mailing-list"];
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

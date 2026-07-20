@@ -42,6 +42,12 @@
   }
 }
 
+:root {
+  /* Height of the site-wide demo bar (DemoBanner). RootLayout pads the body by
+     this, and AppShell offsets its fixed chrome by it, so the bar never overlaps. */
+  --banner-h: 2.75rem;
+}
+
 body {
   @apply bg-parchment text-ink font-sans antialiased;
   /* subtle paper grain */

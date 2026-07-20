@@ -172,6 +172,12 @@ export interface InviteRow {
   sent: string;
 }
 
+/** A "notify me at launch" mailing-list signup. `email` is unique (see schema). */
+export interface MailingListSignupRow {
+  id: string;
+  email: string;
+}
+
 /** The fixed reaction palette offered on photos and comments. */
 export const REACTION_EMOJI = ["❤️", "😂", "😮", "🥲", "👍", "🙏", "😢", "🎉"] as const;
 export type ReactionEmoji = (typeof REACTION_EMOJI)[number];
