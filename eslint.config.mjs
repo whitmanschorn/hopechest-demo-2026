@@ -13,6 +13,10 @@ const eslintConfig = defineConfig([
     "build/**",
     "coverage/**",
     "next-env.d.ts",
+    // One-off real-face descriptor generator: heavy face-api deps are NOT in
+    // package.json (installed --no-save for the one run), so it's kept out of
+    // lint/typecheck. See docs/recognition.md.
+    "scripts/gen-seed-descriptors.cjs",
   ]),
 ]);
 
